@@ -7,6 +7,15 @@ import { useTranslation } from "react-i18next";
 import { useRedirectToCloudSelect } from "@/ee/hooks/use-redirect-to-cloud-select.tsx";
 import { useTrackOrigin } from "@/hooks/use-track-origin";
 
+const HelpEditor = import.meta.env.DEV
+  ? lazy(() => import("@/features/helpcenter/editor/help-editor.tsx"))
+  : () => null;
+
+const SiteManagement = import.meta.env.DEV
+  ? lazy(() => import("@/features/helpcenter/management/site-management.tsx"))
+  : () => null;
+
+const Helpcenter = lazy(() => import("@/features/helpcenter/helpcenter.tsx"));
 
 const SetupWorkspace = lazy(() => import("@/pages/auth/setup-workspace.tsx"));
 const LoginPage = lazy(() => import("@/pages/auth/login"));
@@ -128,6 +137,15 @@ export default function App() {
           <Route path={"/share/p/:pageSlug"} element={<SharedPage />} />
         </Route>
 
+        {import.meta.env.DEV && (
+          <>
+            <Route path="/help/bearbeiten" element={<HelpEditor />} />
+            <Route path="/help/verwalten" element={<SiteManagement />} />
+          </>
+        )}
+        <Route path="/help" element={<Helpcenter />} />
+        <Route path="/help/themen/:category" element={<Helpcenter />} />
+        <Route path="/help/:slug" element={<Helpcenter />} />
         <Route path={"/docs"} element={<PublicSpaceDirectoryPage />} />
         <Route element={<PublicSpaceLayout />}>
           <Route path={"/docs/:spaceSlug"} element={<PublicSpacePage />} />
@@ -149,16 +167,10 @@ export default function App() {
           <Route path={"/favorites"} element={<FavoritesPage />} />
           <Route path={"/labels/:labelName"} element={<LabelPage />} />
           <Route path={"/templates"} element={<TemplateList />} />
-          <Route
-            path={"/templates/:templateId"}
-            element={<TemplateEditor />}
-          />
+          <Route path={"/templates/:templateId"} element={<TemplateEditor />} />
           <Route path={"/s/:spaceSlug"} element={<SpaceHome />} />
           <Route path={"/s/:spaceSlug/trash"} element={<SpaceTrash />} />
-          <Route
-            path={"/s/:spaceSlug/p/:pageSlug"}
-            element={<Page />}
-          />
+          <Route path={"/s/:spaceSlug/p/:pageSlug"} element={<Page />} />
 
           <Route path={"/base/:pageId"} element={<BasePage />} />
 

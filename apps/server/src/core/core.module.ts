@@ -1,3 +1,4 @@
+import { HelpAuthoringController } from './help-authoring/help-authoring.controller';
 import {
   MiddlewareConsumer,
   Module,
@@ -27,6 +28,7 @@ import { SessionModule } from './session/session.module';
 import { ClsMiddleware } from 'nestjs-cls';
 
 @Module({
+  controllers: [HelpAuthoringController],
   imports: [
     UserModule,
     AuthModule,

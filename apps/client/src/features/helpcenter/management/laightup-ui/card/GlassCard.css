@@ -1,0 +1,723 @@
+/* GlassCard.css — size-scaled shadows + interactive states
+   Composes with .glass from glass-utilities.css. The .glass class owns
+   the backdrop-filter, tint, specular ::before, and prismatic rim ::after.
+   This file adds ONLY:
+     1. Size-specific padding + multi-layer shadow stacks
+     2. .glass-card-interactive hover/active/focus/disabled states
+     3. Night mode overrides for both */
+
+@layer component {
+
+  /* ── Size shadows — physical depth model ──
+     Larger cards = deeper shadows = glass floating higher above canvas.
+     Each size gets: contact shadow (tight, dark) + cast shadow (wide, softer).
+     xl adds a third ambient layer. */
+
+  .glass-card--sm {
+    --glass-card-pad-x: 12px;
+    --glass-card-pad-y: 12px;
+    --glass-card-gap: 8px;
+    --glass-card-inner-radius: 10px;
+    padding: 12px;
+    box-shadow:
+      0 4px 16px -8px hsl(from var(--shadow-base, hsl(250 30% 12%)) h s l / 0.12),
+      0 2px 6px -4px hsl(from var(--shadow-base, hsl(250 30% 12%)) h s l / 0.08),
+      inset 1.3px 1.3px 0 hsl(0 0% 100% / 0.9),
+      inset -1px -1px 0 var(--glass-rim-inset),
+      inset -3px -3px 0 var(--glass-rim-inset-warm);
+  }
+
+  .glass-card--md {
+    --glass-card-pad-x: 16px;
+    --glass-card-pad-y: 16px;
+    --glass-card-gap: 12px;
+    --glass-card-inner-radius: 12px;
+    padding: 16px;
+    box-shadow:
+      0 8px 24px -12px hsl(from var(--shadow-base, hsl(250 30% 12%)) h s l / 0.14),
+      0 4px 12px -6px hsl(from var(--shadow-base, hsl(250 30% 12%)) h s l / 0.09),
+      inset 1.3px 1.3px 0 hsl(0 0% 100% / 0.9),
+      inset -1px -1px 0 var(--glass-rim-inset),
+      inset -3px -3px 0 var(--glass-rim-inset-warm);
+  }
+
+  .glass-card--lg {
+    --glass-card-pad-x: 24px;
+    --glass-card-pad-y: 24px;
+    --glass-card-gap: 16px;
+    --glass-card-inner-radius: 16px;
+    padding: 24px;
+    box-shadow:
+      0 16px 40px -16px hsl(from var(--shadow-base, hsl(250 30% 12%)) h s l / 0.16),
+      0 6px 16px -8px hsl(from var(--shadow-base, hsl(250 30% 12%)) h s l / 0.10),
+      inset 1.3px 1.3px 0 hsl(0 0% 100% / 0.9),
+      inset -1px -1px 0 var(--glass-rim-inset),
+      inset -3px -3px 0 var(--glass-rim-inset-warm);
+  }
+
+  .glass-card--xl {
+    --glass-card-pad-x: 32px;
+    --glass-card-pad-y: 32px;
+    --glass-card-gap: 20px;
+    --glass-card-inner-radius: 20px;
+    padding: 32px;
+    box-shadow:
+      0 24px 60px -24px hsl(from var(--shadow-base, hsl(250 30% 12%)) h s l / 0.18),
+      0 8px 24px -8px hsl(from var(--shadow-base, hsl(250 30% 12%)) h s l / 0.11),
+      0 2px 8px hsl(from var(--shadow-base, hsl(250 30% 12%)) h s l / 0.05),
+      inset 1.3px 1.3px 0 hsl(0 0% 100% / 0.9),
+      inset -1px -1px 0 var(--glass-rim-inset),
+      inset -3px -3px 0 var(--glass-rim-inset-warm);
+  }
+
+  /* ── Interactive states ──
+     Opt-in via .glass-card-interactive class.
+     Values from glass-typography-spacing.md research. */
+
+  .glass-card-interactive {
+    cursor: pointer;
+    transition:
+      transform 150ms ease,
+      box-shadow 150ms ease,
+      border-color 150ms ease,
+      background 150ms ease;
+  }
+
+  .glass-card-interactive:hover {
+    transform: translateY(-1px);
+    background: hsl(0 0% 100% / 0.26);
+    border-color: hsl(0 0% 100% / 0.70);
+  }
+
+  .glass-card-interactive:active {
+    transform: translateY(0) scale(0.97);
+    transition-duration: 75ms;
+  }
+
+  /* Suppress the card's press animation when a nested interactive
+     element is the real target. CSS :active propagates to ancestors
+     by default — without this rule, clicking a SelectToggle, drag
+     handle, favorite star, overlay button, or any other nested
+     control would animate BOTH the control AND the card, producing
+     a jittery double-press. :has() lets us detect a descendant being
+     activated and fall back to the hover-lift transform instead. */
+  .glass-card-interactive:has(:is(button, a, [role="button"], [role="checkbox"], [role="switch"]):active):active {
+    transform: translateY(-1px);
+  }
+
+  .glass-card-interactive:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 2px hsl(0 0% 100% / 0.9),
+      0 0 0 4px hsl(var(--theme-h, 268) var(--theme-s, 70%) var(--theme-l, 62%) / 0.8);
+  }
+
+  .glass-card-interactive:disabled,
+  .glass-card-interactive[aria-disabled="true"] {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  /* ── Night mode overrides ── */
+
+  .laightup-management[data-mode="night"] .glass-card--sm,
+  [data-mode="night"] .glass-card--sm {
+    box-shadow:
+      0 4px 16px -8px hsl(235 45% 6% / 0.35),
+      0 2px 6px -4px hsl(240 35% 8% / 0.25),
+      inset 1.3px 1.3px 0 hsl(210 25% 92% / 0.35),
+      inset -1px -1px 0 var(--glass-rim-inset),
+      inset -3px -3px 0 var(--glass-rim-inset-warm);
+  }
+
+  .laightup-management[data-mode="night"] .glass-card--md,
+  [data-mode="night"] .glass-card--md {
+    box-shadow:
+      0 8px 24px -12px hsl(235 45% 6% / 0.40),
+      0 4px 12px -6px hsl(240 35% 8% / 0.28),
+      inset 1.3px 1.3px 0 hsl(210 25% 92% / 0.35),
+      inset -1px -1px 0 var(--glass-rim-inset),
+      inset -3px -3px 0 var(--glass-rim-inset-warm);
+  }
+
+  .laightup-management[data-mode="night"] .glass-card--lg,
+  [data-mode="night"] .glass-card--lg {
+    box-shadow:
+      0 16px 40px -16px hsl(235 45% 6% / 0.45),
+      0 6px 16px -8px hsl(240 35% 8% / 0.30),
+      inset 1.3px 1.3px 0 hsl(210 25% 92% / 0.35),
+      inset -1px -1px 0 var(--glass-rim-inset),
+      inset -3px -3px 0 var(--glass-rim-inset-warm);
+  }
+
+  .laightup-management[data-mode="night"] .glass-card--xl,
+  [data-mode="night"] .glass-card--xl {
+    box-shadow:
+      0 24px 60px -24px hsl(235 45% 6% / 0.50),
+      0 8px 24px -8px hsl(240 35% 8% / 0.32),
+      0 2px 8px hsl(235 40% 5% / 0.15),
+      inset 1.3px 1.3px 0 hsl(210 25% 92% / 0.35),
+      inset -1px -1px 0 var(--glass-rim-inset),
+      inset -3px -3px 0 var(--glass-rim-inset-warm);
+  }
+
+  .laightup-management[data-mode="night"] .glass-card-interactive:hover,
+  [data-mode="night"] .glass-card-interactive:hover {
+    background: hsl(220 22% 18% / 0.16);
+    border-color: hsl(210 25% 85% / 0.30);
+  }
+
+  /* ── Parallax tilt ──
+     Opt-in via .glass-card-tilt. Transform + cursor-tracking specular
+     highlight are controlled by --tilt-x/y and --hl-x/y custom properties
+     which the component sets on pointermove. Design-intent reserves this
+     for hero cards — if it tilts, it's saying "notice me". */
+
+  .glass-card-tilt {
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform:
+      perspective(1000px)
+      rotateX(var(--tilt-y, 0deg))
+      rotateY(var(--tilt-x, 0deg));
+    transition:
+      transform 0.55s cubic-bezier(0.2, 0.8, 0.3, 1),
+      --hl-x 0.6s ease-out,
+      --hl-y 0.6s ease-out;
+    will-change: transform;
+  }
+
+  /* Active-hover: short smoothing so highlight follows cursor without the
+     long glide-back chasing every pointermove event. */
+  .glass-card-tilt.glass-card-tilt--hovering {
+    transition:
+      transform 0.1s linear,
+      --hl-x 0.1s linear,
+      --hl-y 0.1s linear;
+  }
+
+  /* Day-mode specular becomes a cursor-tracking radial hot spot.
+     Overrides the global-light radial from glass-utilities.css at equal
+     specificity (0,1,1) via declaration order. */
+  .glass-card-tilt::before {
+    background: radial-gradient(
+      90% 70% at var(--hl-x, 50%) var(--hl-y, 40%),
+      hsl(0 0% 100% / 0.45) 0%,
+      hsl(0 0% 100% / 0.1) 32%,
+      transparent 65%
+    );
+    transition: background 0.25s ease-out;
+  }
+
+  /* Night mode: keep linear directional wash (moonlight can't form hot spots
+     — design-intent rule 6a). Specificity (0,2,1) matches the utilities' night
+     override; declared later so it wins at equal specificity. */
+  .laightup-management[data-mode="night"] .glass-card-tilt::before,
+  [data-mode="night"] .glass-card-tilt::before {
+    background: linear-gradient(
+      var(--light-angle, 225deg),
+      hsl(215 30% 92% / 0.14) 0%,
+      hsl(218 28% 85% / 0.07) 18%,
+      hsl(222 30% 72% / 0.025) 42%,
+      transparent 72%
+    );
+    mix-blend-mode: soft-light;
+  }
+
+  /* Reduced motion: disable tilt transform entirely; card stays flat.
+     The JS effect also bails early on pointer handlers, but this guards
+     against any residual state. */
+  @media (prefers-reduced-motion: reduce) {
+    .glass-card-tilt {
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* ── Selected state — prismatic rim ──
+     Three stacked inset box-shadows using the existing --rim-c1..c3
+     tokens. In day mode the palette reads warm-gold → pink → plum; in
+     night mode the same tokens hold silver → blue → violet automatically
+     via .laightup-management[data-mode="night"] token overrides. Ring thickness 2px
+     matches the rounded outer radius. */
+
+  .glass-card[data-selected="true"] {
+    box-shadow:
+      inset 0 0 0 2px var(--rim-c1, hsl(50 100% 95% / 0.75)),
+      inset 0 0 0 4px var(--rim-c2, hsl(30 100% 85% / 0.50)),
+      0 0 0 1px var(--rim-c3, hsl(320 85% 80% / 0.35)),
+      /* retain the card's existing shadow stack by appending it below
+         in size-specific rules — box-shadow is additive in effect but
+         replaces the value outright, so this rule intentionally overrides
+         the base size shadow. Consumer migrations from non-selected to
+         selected get a visually distinct lift. */
+      0 12px 32px -14px hsl(from var(--shadow-base, hsl(250 30% 12%)) h s l / 0.16);
+    /* Subtle forward-pop — amplifies the contrast against dimmed siblings
+       without making the selected card feel hot. Works in concert with
+       the aggressive dim filter below. */
+    filter: saturate(1.08) brightness(1.03);
+    transition: box-shadow 180ms ease, filter 180ms ease;
+  }
+
+  /* ── Highlighted state: linked hover from outside the card ──
+     Ambient violet wash (body hue, hover family), never the cyan spotlight.
+     .glass.glass-card beats the .glass.glass-solid background. */
+
+  .glass.glass-card[data-highlighted="true"] {
+    background-image: linear-gradient(
+      hsl(var(--theme-body-h, 248) 68% 54% / 0.08),
+      hsl(var(--theme-body-h, 248) 68% 54% / 0.08)
+    );
+    border-color: hsl(var(--theme-body-h, 248) 68% 54% / 0.42);
+  }
+  .laightup-management[data-mode="night"] .glass.glass-card[data-highlighted="true"],
+  [data-mode="night"] .glass.glass-card[data-highlighted="true"] {
+    background-image: linear-gradient(
+      hsl(var(--theme-body-h, 248) 55% 70% / 0.12),
+      hsl(var(--theme-body-h, 248) 55% 70% / 0.12)
+    );
+    border-color: hsl(var(--theme-body-h, 248) 55% 70% / 0.4);
+  }
+
+  /* ── Dim state — recede non-selected cards ──
+     Reduces glass tint + desaturates + dips brightness. Industry norm
+     for non-selected in multi-select grids (Photos, Finder icon view)
+     is ~0.4–0.5 saturate with a mild brightness drop. No opacity change
+     (glass transparency + opacity multiplies and the card becomes
+     illegible). */
+
+  .glass-card[data-dim="true"] {
+    --glass-tint-alpha: 0.08;
+    filter: saturate(0.5) brightness(0.9);
+    transition: filter 180ms ease, background 180ms ease;
+  }
+
+  /* Night mode keeps saturation slightly higher since the palette is
+     already cool-leaning and a 0.5 drop would flatten the scene
+     further than needed. Brightness does more work here. */
+  .laightup-management[data-mode="night"] .glass-card[data-dim="true"],
+  [data-mode="night"] .glass-card[data-dim="true"] {
+    --glass-tint-alpha: 0.05;
+    filter: saturate(0.6) brightness(0.85);
+  }
+
+  /* ── Stacked-layout default ──
+     Cards with compound children flex-column naturally. A card with NO
+     compound children (flat content) is unaffected: flex-column of one
+     anonymous text node behaves identically to a plain block. */
+
+  .glass-card[data-layout="stacked"] {
+    display: flex;
+    flex-direction: column;
+    gap: var(--glass-card-gap, 12px);
+  }
+
+  /* ── Header ──
+     2-col grid: title/description stack left, Action pins top-right. */
+
+  .glass-card-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 12px;
+    align-items: start;
+  }
+
+  /* Inner flex column for Title + Description (they are direct children
+     of Header; grid auto-placement stacks them in column 1).
+     Title occupies grid-row 1, Description grid-row 2, Action grid-row 1
+     grid-column 2 spanning rows via align-self. */
+
+  .glass-card-header > .glass-card-title,
+  .glass-card-header > .glass-card-description {
+    grid-column: 1;
+    min-width: 0;
+  }
+
+  .glass-card-header > .glass-card-action {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    align-self: start;
+  }
+
+  /* ── Title typography scale ── */
+
+  .glass-card-title {
+    margin: 0;
+    font-family: var(--font-display, var(--ci-font-family, 'Geist', system-ui, sans-serif));
+    color: hsl(230 25% 15%);
+    letter-spacing: -0.01em;
+  }
+
+  .glass-card-title--sm { font-size: 14px; font-weight: 600; line-height: 1.3; }
+  .glass-card-title--md { font-size: 16px; font-weight: 600; line-height: 1.3; }
+  .glass-card-title--lg { font-size: 20px; font-weight: 600; line-height: 1.25; }
+  .glass-card-title--xl { font-size: 24px; font-weight: 700; line-height: 1.2; }
+
+  .laightup-management[data-mode="night"] .glass-card-title,
+  [data-mode="night"] .glass-card-title { color: hsl(215 20% 96%); }
+
+  /* ── Description typography scale ── */
+
+  .glass-card-description {
+    margin: 0;
+    color: hsl(230 25% 35%);
+  }
+
+  .glass-card-description--sm { font-size: 12px; line-height: 1.4; }
+  .glass-card-description--md { font-size: 13px; line-height: 1.45; }
+  .glass-card-description--lg { font-size: 14px; line-height: 1.45; }
+  .glass-card-description--xl { font-size: 15px; line-height: 1.5; }
+
+  .laightup-management[data-mode="night"] .glass-card-description,
+  [data-mode="night"] .glass-card-description { color: hsl(215 20% 75%); }
+
+  /* ── Action slot ── No visual styling beyond structural role in Header. */
+
+  .glass-card-action {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* ── Content ── No forced styling; flex-grow so it fills space in
+     stacked layouts where Footer pins to the bottom. */
+
+  .glass-card[data-layout="stacked"] > .glass-card-content {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  /* ── Footer — stacked mode: hairline separator + top padding ── */
+
+  .glass-card[data-layout="stacked"] > .glass-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: var(--glass-card-gap, 12px);
+    border-top: 1px solid hsl(0 0% 100% / 0.18);
+  }
+
+  .laightup-management[data-mode="night"] .glass-card[data-layout="stacked"] > .glass-card-footer {
+    border-top-color: hsl(210 25% 85% / 0.12);
+  }
+
+  /* ── Media base — nested-radius principle ──
+     Non-bleed media sits inside card padding and uses a smaller inner
+     radius (~0.7× outer) for visual rhythm. Concentric radii look off
+     when inner == outer; slightly tighter inside reads as "contained."
+     Bleed overrides below restore the card's outer radius on bleeding
+     edges only, while non-bleeding edges (where media meets Header /
+     Content / Footer) sit flush with radius 0 — a curve-into-straight
+     seam reads cleanly; curve-into-curve does not. */
+
+  .glass-card-media {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--glass-card-inner-radius, 12px);
+  }
+
+  /* When bleeding, start flush on all edges; restore bleeding corners
+     below based on DOM position. */
+  .glass-card-media[data-bleed="true"] {
+    border-radius: 0;
+  }
+
+  /* First child = top edges bleed → top corners match the card. */
+  .glass-card-media[data-bleed="true"]:first-child {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+  }
+
+  /* Last child = bottom edges bleed → bottom corners match the card. */
+  .glass-card-media[data-bleed="true"]:last-child {
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+  }
+
+  /* Media-only card (first AND last child) gets all four corners via the
+     two rules above — no additional rule needed. */
+
+  /* ── Row layout — 3-column grid ──
+     Col 1: Media (leading). Col 2: Header + Content stacked. Col 3: Footer. */
+
+  .glass-card[data-layout="row"] {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    column-gap: 12px;
+    align-items: center;
+  }
+
+  .glass-card[data-layout="row"] > .glass-card-media {
+    grid-column: 1;
+    grid-row: 1 / -1;
+  }
+
+  .glass-card[data-layout="row"] > .glass-card-footer {
+    grid-column: 3;
+    grid-row: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .glass-card[data-layout="row"] > .glass-card-header,
+  .glass-card[data-layout="row"] > .glass-card-content {
+    grid-column: 2;
+    min-width: 0;
+  }
+
+  /* ── Row-mode header downgrade ──
+     Spec: In row mode, Header collapses to a compact two-line flex:
+       Row 1: Title (grows) + Action (margin-left: auto anchors inline-end)
+       Row 2: Description (flex: 0 0 100% forces wrap to its own line)
+     Saves horizontal space vs the stacked 2-col grid. Action stays on the
+     Title row so the row card reads Title + Action as a unit, with
+     Description as secondary beneath. */
+
+  .glass-card[data-layout="row"] > .glass-card-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2px 8px;
+  }
+
+  .glass-card[data-layout="row"] > .glass-card-header > .glass-card-title {
+    grid-column: auto;          /* cancel stacked grid-column */
+    flex: 1 1 auto;             /* grows to fill row 1 alongside Action */
+    min-width: 0;
+  }
+
+  .glass-card[data-layout="row"] > .glass-card-header > .glass-card-description {
+    grid-column: auto;
+    flex: 0 0 100%;             /* forces its own row */
+    min-width: 0;
+  }
+
+  .glass-card[data-layout="row"] > .glass-card-header > .glass-card-action {
+    grid-column: auto;
+    grid-row: auto;
+    flex: 0 0 auto;             /* content-sized */
+    margin-left: auto;          /* anchor inline-end of row 1 */
+  }
+
+  /* ── GlassCardSelectToggle — top-right overlay on Media ──
+     Visibility: hidden (opacity 0) by default, revealed on card hover
+     or when the parent card carries data-selected / data-dim. Click
+     events stopPropagation in JS so the card's onClick doesn't fire. */
+
+  .glass-card-select-toggle {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 5;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 1px solid hsl(0 0% 100% / 0.65);
+    border-radius: 8px;
+    /* Milky-glass chip substrate — opaque enough to guarantee glyph
+       contrast against any underlying media (bright gradients, photos,
+       dark scenes). Small transient overlays can run denser than the
+       card-scale glass. */
+    background: hsl(0 0% 100% / 0.55);
+    backdrop-filter: blur(10px) saturate(1.3);
+    color: hsl(230 40% 18%);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 150ms ease, background 150ms ease, border-color 150ms ease;
+  }
+
+  .glass-card-select-toggle[data-checked="true"] {
+    background: hsl(var(--theme-h, 268) var(--theme-s, 70%) var(--theme-l, 62%) / 0.9);
+    border-color: hsl(var(--theme-h, 268) var(--theme-s, 70%) var(--theme-l, 62%));
+    /* White glyph on the theme-colored fill (overrides the dark
+       unchecked color). */
+    color: hsl(0 0% 100%);
+  }
+
+  /* Visible triggers: card hover, OR parent card is selected, OR parent
+     card is dimmed (selection mode is active somewhere in the grid). */
+  .glass-card:hover .glass-card-select-toggle,
+  .glass-card[data-selected="true"] .glass-card-select-toggle,
+  .glass-card[data-dim="true"] .glass-card-select-toggle {
+    opacity: 1;
+  }
+
+  .laightup-management[data-mode="night"] .glass-card-select-toggle {
+    border-color: hsl(210 25% 85% / 0.35);
+    background: hsl(220 25% 14% / 0.62);
+    color: hsl(215 25% 92%);
+  }
+
+  /* ── GlassCardDragHandle — top-left overlay on Media ──
+     Hover-reveal only. Never always-visible. */
+
+  .glass-card-drag-handle {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 5;
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 1px solid hsl(0 0% 100% / 0.65);
+    border-radius: 8px;
+    /* Milky-glass chip — dense enough that the dark grip dots read on
+       any underlying media (bright gradient thumbnails, photos, etc.).
+       The previous 0.18 alpha was too transparent; varied backgrounds
+       bled through and killed the glyph contrast. */
+    background: hsl(0 0% 100% / 0.55);
+    backdrop-filter: blur(10px) saturate(1.3);
+    color: hsl(230 40% 18%);
+    cursor: grab;
+    opacity: 0;
+    transition: opacity 150ms ease;
+  }
+
+  .glass-card-drag-handle:active {
+    cursor: grabbing;
+  }
+
+  .glass-card:hover .glass-card-drag-handle {
+    opacity: 1;
+  }
+
+  .laightup-management[data-mode="night"] .glass-card-drag-handle {
+    border-color: hsl(210 25% 85% / 0.35);
+    background: hsl(220 25% 14% / 0.62);
+    color: hsl(215 25% 92%);
+  }
+
+  /* ── GlassCardFavoriteToggle — always-visible star ──
+     No forced position; consumer places. Day pressed is warm gold;
+     night pressed is themed lavender to respect the moonlight-optics
+     rule (no warm accents in night mode except the moon disc). */
+
+  .glass-card-favorite-toggle {
+    width: 28px;
+    height: 28px;
+    display: inline-grid;
+    place-items: center;
+    padding: 0;
+    border: 1px solid hsl(0 0% 100% / 0.4);
+    border-radius: 999px;
+    background: hsl(0 0% 100% / 0.22);
+    backdrop-filter: blur(8px) saturate(1.2);
+    color: hsl(230 25% 45%);
+    cursor: pointer;
+    transition: color 150ms ease, background 150ms ease, border-color 150ms ease;
+  }
+
+  .glass-card-favorite-toggle[data-pressed="true"] {
+    color: hsl(45 100% 55%);
+    background: hsl(45 100% 90% / 0.45);
+    border-color: hsl(45 100% 55% / 0.55);
+  }
+
+  .laightup-management[data-mode="night"] .glass-card-favorite-toggle {
+    border-color: hsl(210 25% 85% / 0.28);
+    background: hsl(220 22% 18% / 0.42);
+    color: hsl(215 20% 75%);
+  }
+
+  .laightup-management[data-mode="night"] .glass-card-favorite-toggle[data-pressed="true"] {
+    color: hsl(268 55% 75%);
+    background: hsl(268 50% 30% / 0.45);
+    border-color: hsl(268 55% 65% / 0.55);
+  }
+
+  /* ── GlassCardOverlay — bottom gradient / full scrim ──
+     Absolute cover on the parent .glass-card-media. Hidden by default,
+     revealed on card hover. Dimmed cards suppress the overlay entirely
+     to keep the grid readable when selection-mode is active. */
+
+  .glass-card-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 150ms ease;
+  }
+
+  .glass-card-overlay[data-position="bottom"] {
+    bottom: 0;
+    height: 60%;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    padding: 12px;
+    /* Stronger substrate at the bottom so consumer-supplied children
+       stay readable even over busy photographic media. Previous 0.55
+       max alpha was too forgiving — a consumer picking text-only
+       ghost buttons (common reflex) disappeared. At 0.7 the bottom
+       band reliably contrasts light content; upward fade keeps the
+       top of the media visible. */
+    background: linear-gradient(
+      to top,
+      hsl(230 40% 6% / 0.7),
+      hsl(230 40% 6% / 0.35) 50%,
+      transparent 100%
+    );
+  }
+
+  .glass-card-overlay[data-position="full"] {
+    top: 0;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+    background: hsl(230 40% 6% / 0.45);
+  }
+
+  .laightup-management[data-mode="night"] .glass-card-overlay[data-position="bottom"] {
+    background: linear-gradient(
+      to top,
+      hsl(235 45% 4% / 0.8),
+      hsl(235 45% 4% / 0.4) 50%,
+      transparent 100%
+    );
+  }
+
+  .laightup-management[data-mode="night"] .glass-card-overlay[data-position="full"] {
+    background: hsl(235 45% 4% / 0.55);
+  }
+
+  /* Re-enable pointer events on overlay children so buttons/links inside
+     are clickable when visible. */
+  .glass-card-overlay > * {
+    pointer-events: auto;
+  }
+
+  .glass-card:hover .glass-card-overlay {
+    opacity: 1;
+  }
+
+  /* Dimmed cards suppress overlay entirely so selection-mode view stays
+     clean. */
+  .glass-card[data-dim="true"] .glass-card-overlay {
+    opacity: 0 !important;
+  }
+
+  /* ── Media bleed — negate card padding + honor first/last edge ── */
+
+  .glass-card-media[data-bleed="true"] {
+    margin-left: calc(var(--glass-card-pad-x, 16px) * -1);
+    margin-right: calc(var(--glass-card-pad-x, 16px) * -1);
+  }
+
+  .glass-card-media[data-bleed="true"]:first-child {
+    margin-top: calc(var(--glass-card-pad-y, 16px) * -1);
+  }
+
+  .glass-card-media[data-bleed="true"]:last-child {
+    margin-bottom: calc(var(--glass-card-pad-y, 16px) * -1);
+  }
+}

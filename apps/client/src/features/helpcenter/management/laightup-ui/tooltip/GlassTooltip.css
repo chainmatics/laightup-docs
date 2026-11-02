@@ -1,0 +1,168 @@
+/* GlassTooltip.css — Radix Tooltip styled as a glass surface.
+
+   Simplified glass recipe (no ::before specular, no ::after prismatic rim).
+   Same rule as Toast / FilterPill / Menu / Input / Badge: small transient
+   surfaces pick up artifacts from card-scale pseudo-element effects.
+
+   Tooltips are info surfaces — always the neutral palette (no semantic
+   variants). Night mode uses the indigo-glass neutral from the rest of
+   Phase 2b. No warm accents. */
+
+@layer component {
+
+  /* ── Base wrapper ──
+     The visible tooltip body. Radix renders this as a <div> with
+     data-state and data-side attributes for animation hooks. Note:
+     Radix also renders a visually-hidden <span role="tooltip"> for
+     aria-describedby wiring — that span is a separate element and
+     does NOT carry data-state/data-side. */
+
+  .glass-tooltip {
+    max-width: 240px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem; /* 12px */
+    font-weight: 500;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+    white-space: normal;
+    /* pointer-events: none makes the tooltip unreachable by pointer. This
+       makes any `disableHoverableContent` setting on the Provider a no-op
+       for GlassTooltip — intentional, since GlassTooltip is display-only. */
+    pointer-events: none;
+
+    /* Stacking: a tooltip is a transient, top-most surface — it must paint
+       above every overlay, dialog, drawer, and lightbox in the host app.
+       Radix's Popper copies the *content's* computed z-index onto the
+       portaled wrapper (it reads getComputedStyle(content).zIndex), so we
+       set it here rather than fighting the wrapper's inline style with
+       !important. z-index only computes to a number on a positioned box, so
+       position:relative is required for Radix to read anything but `auto` —
+       without it the wrapper stayed at `auto` and tooltips opened *behind*
+       the lightbox (z-index 9999). --glass-z-tooltip clears that ceiling;
+       the literal fallback keeps the tooltip working if a consumer mounts it
+       without the glass tokens loaded. */
+    position: relative;
+    z-index: var(--glass-z-tooltip, 10000);
+
+    /* Glass-tinted day palette — high opacity + strong backdrop blur
+       guarantees legibility over arbitrary page content without breaking
+       the glass visual language. */
+    background: hsl(0 0% 100% / 0.82);
+    backdrop-filter: blur(14px) saturate(1.4);
+    border: 1px solid hsl(0 0% 100% / 0.55);
+    color: hsl(230 25% 15%);
+    box-shadow:
+      0 4px 14px hsl(260 40% 12% / 0.18),
+      inset 0 1px 0 hsl(0 0% 100% / 0.65);
+  }
+
+  /* ── Truncation variant ──
+     Emitted by GlassTooltip's `onlyWhenTruncated` mode (data-truncation on
+     the content). The whole point of this tooltip is to reveal a name/path
+     the trigger had to clip, so the narrow 240px label width is wrong here —
+     it would just re-clip the value. The Radix popper wrapper shrink-wraps to
+     content, so the box grows to fit short-to-medium names on one line and
+     only wraps (never truncates, via overflow-wrap) once a name is genuinely
+     huge. 90vw keeps it inside the viewport; 600px is the comfortable upper
+     bound for filename-length strings. */
+  .glass-tooltip[data-truncation] {
+    max-width: min(90vw, 600px);
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  /* ── Arrow ──
+     SVG element rendered by Radix below (or beside) the content. SVG fill
+     cannot inherit backdrop-filter — we use the same alpha as the body
+     so the arrow reads as part of the same glass shape. */
+
+  .glass-tooltip__arrow {
+    fill: hsl(0 0% 100% / 0.82);
+  }
+
+  /* ── Entrance / exit animation ──
+     Radix sets data-state="delayed-open"/"instant-open" when opening
+     and data-state="closed" when dismissing. Keyframes fade + nudge the
+     tooltip 2px toward the trigger for a subtle directional feel. */
+
+  .glass-tooltip[data-state="closed"] {
+    animation: glass-tooltip-out 100ms ease-in;
+  }
+
+  /* Per-side translate direction: the tooltip enters FROM the trigger's
+     direction. A top-placed tooltip nudges down-to-up (starts 2px below,
+     ends at rest); a bottom-placed tooltip nudges up-to-down; etc. */
+
+  @keyframes glass-tooltip-out {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+
+  .glass-tooltip[data-side="top"][data-state="delayed-open"],
+  .glass-tooltip[data-side="top"][data-state="instant-open"] {
+    animation: glass-tooltip-in-top 150ms ease-out;
+  }
+
+  .glass-tooltip[data-side="bottom"][data-state="delayed-open"],
+  .glass-tooltip[data-side="bottom"][data-state="instant-open"] {
+    animation: glass-tooltip-in-bottom 150ms ease-out;
+  }
+
+  .glass-tooltip[data-side="left"][data-state="delayed-open"],
+  .glass-tooltip[data-side="left"][data-state="instant-open"] {
+    animation: glass-tooltip-in-left 150ms ease-out;
+  }
+
+  .glass-tooltip[data-side="right"][data-state="delayed-open"],
+  .glass-tooltip[data-side="right"][data-state="instant-open"] {
+    animation: glass-tooltip-in-right 150ms ease-out;
+  }
+
+  @keyframes glass-tooltip-in-top {
+    from { opacity: 0; transform: translateY(2px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes glass-tooltip-in-bottom {
+    from { opacity: 0; transform: translateY(-2px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes glass-tooltip-in-left {
+    from { opacity: 0; transform: translateX(2px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes glass-tooltip-in-right {
+    from { opacity: 0; transform: translateX(-2px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  /* ══════════════════════════════════════════════════════════════════════
+     Night mode — indigo-glass neutral.
+
+     No semantic variants. Tooltips are always informational, so the
+     night-mode palette mirrors the GlassBadge neutral-variant recipe:
+     indigo-tinted glass, silver-ish border, near-white text. Opacity
+     bumps to 0.92 (from 0.82 day) because moonlit scenes are already
+     dim and extra background bleed-through hurts legibility. Blur is
+     slightly stronger (16px vs 14px) per moonlight-optics research:
+     "scotopic vision needs slightly more blur."
+     ══════════════════════════════════════════════════════════════════════ */
+
+  .laightup-management[data-mode="night"] .glass-tooltip {
+    background: hsl(220 22% 16% / 0.92);
+    backdrop-filter: blur(16px) saturate(0.9);
+    border-color: hsl(210 25% 85% / 0.22);
+    color: hsl(215 20% 96%);
+    box-shadow:
+      0 4px 14px hsl(235 45% 6% / 0.55),
+      inset 0 1px 0 hsl(210 25% 92% / 0.14);
+  }
+
+  .laightup-management[data-mode="night"] .glass-tooltip__arrow {
+    fill: hsl(220 22% 16% / 0.92);
+  }
+
+}

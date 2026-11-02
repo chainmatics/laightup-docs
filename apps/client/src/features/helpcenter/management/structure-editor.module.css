@@ -1,0 +1,244 @@
+.editor {
+  color: var(--glass-text-default);
+}
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+.toolbar > div {
+  margin-right: auto;
+  display: grid;
+  gap: 6px;
+}
+.toolbar strong {
+  font-size: 15px;
+  font-weight: 550;
+}
+.toolbar span {
+  color: var(--glass-text-muted);
+  font-size: 12px;
+}
+.groups {
+  display: grid;
+  gap: 14px;
+}
+.topic {
+  padding: 0 !important;
+  overflow: hidden;
+}
+.topic summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 20px 22px;
+  list-style: none;
+}
+.topic summary::-webkit-details-marker {
+  display: none;
+}
+.topic summary::before {
+  content: "›";
+  font-size: 18px;
+  color: var(--glass-text-muted);
+}
+.topic details[open] > summary::before {
+  transform: rotate(90deg);
+}
+.topic summary strong {
+  font-size: 14px;
+  font-weight: 550;
+}
+.topic summary > span {
+  margin-left: auto;
+  color: var(--glass-text-muted);
+  font-size: 12px;
+}
+.groupSettings {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  padding: 6px 22px 18px;
+}
+.groupSettings > label {
+  flex: 1;
+  min-width: 0;
+}
+.groupActions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.groupDescription {
+  margin: 0 22px 22px;
+}
+.pages {
+  list-style: none;
+  padding: 0 14px 12px;
+  margin: 0;
+}
+.page {
+  margin-left: calc(var(--page-depth) * 22px);
+  border-top: 1px solid
+    color-mix(in srgb, var(--glass-text-subtle) 16%, transparent);
+}
+.pageRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 12px 8px;
+  min-height: 55px;
+}
+.pageIcon {
+  flex-shrink: 0;
+  color: var(--glass-text-muted);
+}
+.pageTitle {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.pageTitle > span {
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.pageTitle small {
+  color: var(--glass-text-muted);
+  background: rgba(130, 110, 160, 0.09);
+  border-radius: 5px;
+  font-size: 11px;
+  padding: 2px 6px;
+  white-space: nowrap;
+}
+.pageActions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 5px;
+}
+.pageActions > button:disabled {
+  opacity: 0.32;
+}
+.formCard {
+  margin-bottom: 26px;
+}
+.formCard form {
+  display: grid;
+  gap: 20px;
+  padding: 6px;
+}
+.formCard header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.formCard h2 {
+  font-size: 18px;
+  font-weight: 550;
+  margin: 0;
+}
+.formCard p,
+.hint {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--glass-text-muted);
+  margin: 0;
+}
+.formCard footer {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding-top: 4px;
+}
+.formCard label {
+  min-width: 0;
+}
+.error {
+  margin-bottom: 20px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: #fff0ed;
+  color: #843528;
+  font-size: 13px;
+}
+.empty {
+  padding: 8px 22px 24px;
+  color: var(--glass-text-muted);
+  font-size: 13px;
+}
+.hint {
+  margin-top: 22px;
+}
+@media (max-width: 900px) {
+  .toolbar {
+    flex-wrap: wrap;
+  }
+  .toolbar > div {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+  .groupSettings {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .groupSettings > label {
+    flex-basis: 100%;
+  }
+  .pageRow {
+    flex-wrap: wrap;
+  }
+  .pageActions {
+    margin-left: auto;
+  }
+}
+@media (max-width: 600px) {
+  .topic summary {
+    padding: 16px 14px;
+    gap: 9px;
+  }
+  .topic summary strong {
+    flex: 1;
+  }
+  .topic summary > span {
+    font-size: 11px;
+  }
+  .groupSettings {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .groupDescription {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+  .pages {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .page {
+    margin-left: calc(var(--page-depth) * 13px);
+  }
+  .pageTitle {
+    flex-basis: calc(100% - 28px);
+  }
+  .pageActions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .pageActions > button {
+    min-height: 36px;
+    min-width: 36px;
+  }
+  .formCard footer {
+    flex-wrap: wrap;
+  }
+}
+.formCard { scroll-margin-top:145px; }
+.formCard h2 { min-width:0; overflow-wrap:anywhere; }
+@media(max-width:700px) { .formCard { scroll-margin-top:190px; } }

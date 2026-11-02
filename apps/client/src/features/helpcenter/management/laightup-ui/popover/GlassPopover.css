@@ -1,0 +1,276 @@
+@layer component {
+  /* ─────────────────────────────────────────────────────────────────
+     GlassPopover — anchored mini-surface skin
+
+     Composition order in this file:
+       1. base box (radius, padding, background, shadow, position)
+       2. size variants (sm/md/lg max-width)
+       3. backdrop-filter — Tier 1 default + Tier 2 @supports upgrade
+       4. prismatic rim (::before conic gradient + mask trick)
+       5. entry/exit motion keyframes (data-state hooks)
+       6. arrow + close skin
+     ───────────────────────────────────────────────────────────────── */
+
+  .glass-popover-content {
+    box-sizing: border-box;
+    width: max-content;
+    padding: var(--glass-popover-padding);
+    border-radius: var(--glass-popover-radius);
+    background: var(--glass-popover-tint);
+    color: inherit;
+    box-shadow: var(--glass-popover-shadow);
+    overflow: hidden;
+    position: relative;
+    isolation: isolate;
+    /* Above the dialog surface: popovers, selects and comboboxes are routinely
+       opened from inside a dialog, so their portaled content must out-rank it
+       (--glass-z-popover > --glass-z-dialog). Still below the tooltip band. */
+    z-index: var(--glass-z-popover, 1100);
+    /* Collision-aware max-height. Radix sets
+       --radix-popover-content-available-height on Content based on
+       viewport space remaining toward the chosen side (after flip).
+       We cap with --glass-popover-max-height (default 70vh) so the
+       popover never feels like a full-screen takeover. Consumers
+       wrap their tall content in <GlassScrollArea> for in-popover
+       scrolling. */
+    max-height: min(
+      var(--radix-popover-content-available-height, 70vh),
+      var(--glass-popover-max-height)
+    );
+  }
+
+  .glass-popover-content--sm { max-width: var(--glass-popover-width-sm); }
+  .glass-popover-content--md { max-width: var(--glass-popover-width-md); }
+  .glass-popover-content--lg { max-width: var(--glass-popover-width-lg); }
+
+  /* ─── Refraction tier ────────────────────────────────────────────
+     Tier 1 (default): pure CSS blur + saturate. The +4px on blur is
+     compensation for losing the SVG feDisplacementMap microvariation
+     that Tier 2 provides — without it, Tier 1 can read as too clean.
+     Tier 2 (@supports): replaces with feDisplacementMap-driven
+     refraction. The cap on displacement scale is 18 per skill rules;
+     we run at 12 (day) / 14 (night) via tokens. */
+  .glass-popover-content {
+    backdrop-filter:
+      blur(calc(var(--glass-popover-blur) + 4px))
+      saturate(var(--glass-popover-saturate));
+  }
+
+  @supports (backdrop-filter: url('#x')) {
+    /* Mirror the canonical `.glass` refract rule in glass-utilities.css: the
+       real filter id is #glass-refract-md (GlassFilters never emits a bare
+       #glass-filter, so the old ref silently broke the blur in Chromium even
+       though @supports passed). Write ONLY the unprefixed property — Lightning
+       CSS auto-adds the -webkit- prefix; writing both makes its dedup drop the
+       unprefixed (Chrome) one and the refraction/blur leaks away. */
+    .glass-popover-content {
+      backdrop-filter:
+        url(#glass-refract-md)
+        blur(var(--glass-popover-blur))
+        saturate(var(--glass-popover-saturate));
+    }
+  }
+
+  /* ─── Inner sheen ─────────────────────────────────────────────
+     Soft radial highlight at --light-x/y consuming --rim-c1 (warm
+     near-white day, silver-white night) — same identity signature
+     as GlassDialog::after. Lower opacity here since popovers are
+     smaller and the highlight saturates a small surface fast.
+     z-index: -1 pins it below content; isolation:isolate on .content
+     traps the negative-z inside. */
+  .glass-popover-content::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      130% 100% at var(--light-x, 30%) var(--light-y, 18%),
+      var(--rim-c1),
+      transparent 55%
+    );
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: -1;
+    mix-blend-mode: soft-light;
+  }
+  .laightup-management[data-mode="night"] .glass-popover-content::after,
+  [data-mode="night"] .glass-popover-content::after {
+    opacity: 0.14;
+    mix-blend-mode: screen;
+  }
+
+  /* ─── Prismatic rim ───────────────────────────────────────────
+     Conic gradient through 5 stops (warm→cool day, silver→violet
+     night) anchored to --light-angle. Padding-mask trick (inset
+     content-box + outer gradient + mask-composite:exclude) keeps
+     only the 1px band visible. Lower base opacity than Dialog
+     (0.30 vs 0.35) — popovers are anchored mini-surfaces and
+     the rim shouldn't compete with content for attention. */
+  .glass-popover-content::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(
+      from var(--light-angle, 135deg),
+      var(--rim-c1),
+      var(--rim-c2),
+      var(--rim-c3),
+      var(--rim-c4),
+      var(--rim-c5),
+      var(--rim-c1)
+    );
+    opacity: 0.30;
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+            mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+  .laightup-management[data-mode="night"] .glass-popover-content::before,
+  [data-mode="night"] .glass-popover-content::before {
+    opacity: 0.38;
+  }
+
+  /* ─── Entry / exit motion ────────────────────────────────────
+     Quicker spring than Dialog's premium 280ms — popovers are
+     anchored and ephemeral, the snappier 200ms reads as
+     "responsive premium." Curve cubic-bezier(0.34, 1.15, 0.64, 1)
+     is Dialog's overshoot (1.20) tamed to settle faster. Side-aware
+     keyframes nudge the surface 6px along the perpendicular axis
+     so the entry feels anchored to the trigger. */
+  @keyframes glass-popover-in-bottom {
+    from { opacity: 0; transform: translateY(-6px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0)    scale(1); }
+  }
+  @keyframes glass-popover-in-top {
+    from { opacity: 0; transform: translateY(6px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0)   scale(1); }
+  }
+  @keyframes glass-popover-in-left {
+    from { opacity: 0; transform: translateX(6px) scale(0.98); }
+    to   { opacity: 1; transform: translateX(0)   scale(1); }
+  }
+  @keyframes glass-popover-in-right {
+    from { opacity: 0; transform: translateX(-6px) scale(0.98); }
+    to   { opacity: 1; transform: translateX(0)    scale(1); }
+  }
+  @keyframes glass-popover-out {
+    from { opacity: 1; transform: scale(1); }
+    to   { opacity: 0; transform: scale(0.98); }
+  }
+
+  .glass-popover-content[data-state='open'][data-side='bottom'] {
+    animation: glass-popover-in-bottom 200ms cubic-bezier(0.34, 1.15, 0.64, 1);
+  }
+  .glass-popover-content[data-state='open'][data-side='top'] {
+    animation: glass-popover-in-top 200ms cubic-bezier(0.34, 1.15, 0.64, 1);
+  }
+  .glass-popover-content[data-state='open'][data-side='left'] {
+    animation: glass-popover-in-left 200ms cubic-bezier(0.34, 1.15, 0.64, 1);
+  }
+  .glass-popover-content[data-state='open'][data-side='right'] {
+    animation: glass-popover-in-right 200ms cubic-bezier(0.34, 1.15, 0.64, 1);
+  }
+  .glass-popover-content[data-state='closed'] {
+    animation: glass-popover-out 140ms ease-in;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .glass-popover-content[data-state='open'],
+    .glass-popover-content[data-state='closed'] {
+      animation-duration: 1ms !important;
+    }
+  }
+
+  /* ─── Menu variant ──────────────────────────────────────────
+     variant="menu": the popover paints the GlassMenu chrome itself (vars from
+     GlassMenu.css) and drops its rim + sheen, so a hosted GlassMenu flattens
+     and the whole thing reads as ONE surface. Doubled class beats the base
+     rules and the Tier 2 @supports override regardless of import order. */
+  .glass-popover-content.glass-popover-content--menu {
+    min-width: 180px;
+    max-width: min(320px, 92vw);
+    padding: var(--glass-menu-padding);
+    border-radius: var(--glass-menu-radius);
+    background: var(--glass-menu-bg);
+    backdrop-filter: var(--glass-menu-backdrop);
+    border: 1px solid var(--glass-menu-border);
+    box-shadow: var(--glass-menu-shadow);
+    color: var(--glass-menu-ink);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .glass-popover-content.glass-popover-content--menu::before,
+  .glass-popover-content.glass-popover-content--menu::after {
+    content: none;
+  }
+  .glass-popover-content--menu .glass-popover-arrow {
+    fill: var(--glass-menu-bg);
+    filter: none;
+  }
+
+  /* ─── Solid surface ─────────────────────────────────────────
+     surface="solid": near-opaque milky fill for popovers over imagery, so
+     translucent controls inside keep their contrast. Only the fill changes
+     (blur, radius, shadow, rim, sheen stay); declared after the menu variant
+     so a solid menu keeps the menu chrome and takes the solid fill. */
+  .glass-popover-content.glass-popover-content--solid {
+    background: var(--glass-popover-solid-tint);
+  }
+  .glass-popover-content--solid .glass-popover-arrow {
+    fill: var(--glass-popover-solid-tint);
+  }
+
+  /* ─── Arrow ──────────────────────────────────────────────────
+     Triangle SVG (Radix-positioned to anchor side). Fill matches
+     the body tint so the seam reads as continuous. The drop-shadow
+     paints a 1px hint of --rim-c2 at the arrow base, simulating
+     prismatic-rim continuation across the body→arrow seam. The
+     arrow does NOT pick up feDisplacementMap refraction — that's
+     an accepted tradeoff (documented in spec). */
+  .glass-popover-arrow {
+    fill: var(--glass-popover-tint);
+    filter: drop-shadow(0 1px 0 var(--rim-c2));
+  }
+
+  /* ─── Close button ───────────────────────────────────────────
+     Top-right square 24x24 in the muted reading ink (mode-aware token);
+     hover lifts to the default ink over a faint body-violet wash;
+     focus-visible paints a rim-c3 outline (warm pink day, periwinkle
+     night), matching the prismatic spectrum, never a generic OS ring. */
+  .glass-popover-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    inline-size: 24px;
+    block-size: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--glass-text-muted);
+    cursor: pointer;
+    transition: background 120ms ease, color 120ms ease;
+    z-index: 2;
+  }
+  .glass-popover-close:hover {
+    background: hsl(var(--theme-body-h, 248) var(--theme-body-s, 68%) var(--theme-body-l, 54%) / 0.10);
+    color: var(--glass-text-default);
+  }
+  .glass-popover-close:focus-visible {
+    outline: 2px solid var(--rim-c3);
+    outline-offset: 2px;
+  }
+  .laightup-management[data-mode="night"] .glass-popover-close:hover,
+  [data-mode="night"] .glass-popover-close:hover {
+    background: hsl(var(--theme-body-h, 248) 60% 78% / 0.16);
+  }
+}

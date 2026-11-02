@@ -1,0 +1,407 @@
+/* GlassSettings.css - settings page primitives (section, row, nav, page header).
+   Calm, Linear-like: one grouped glass surface per section, hairline row
+   dividers, quiet sidebar with a subtle filled active state. */
+
+@layer component {
+
+  .glass-settings-section,
+  .glass-settings-nav,
+  .glass-settings-page-header {
+    --glass-settings-hairline: color-mix(in oklab, var(--glass-text-subtle) 24%, transparent);
+    --glass-settings-hover: hsl(var(--theme-body-h, 248) var(--theme-body-s, 68%) var(--theme-body-l, 54%) / 0.07);
+    --glass-settings-active: hsl(var(--theme-body-h, 248) var(--theme-body-s, 68%) var(--theme-body-l, 54%) / 0.12);
+  }
+  .laightup-management[data-mode="night"] .glass-settings-section,
+  .laightup-management[data-mode="night"] .glass-settings-nav,
+  .laightup-management[data-mode="night"] .glass-settings-page-header {
+    --glass-settings-hover: hsl(var(--theme-body-h, 248) 40% 80% / 0.08);
+    --glass-settings-active: hsl(var(--theme-body-h, 248) 40% 80% / 0.14);
+  }
+
+  /* ── Page header ── */
+
+  .glass-settings-page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .glass-settings-page-header__text {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .glass-settings-page-header__title {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: var(--glass-text-default);
+  }
+  .glass-settings-page-header__description {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--glass-text-muted);
+  }
+  .glass-settings-page-header__actions {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ── Section ── */
+
+  .glass-settings-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .glass-settings-section__header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 2px;
+  }
+  .glass-settings-section__title {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--glass-text-default);
+  }
+  .glass-settings-section__description {
+    margin: 0;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    color: var(--glass-text-muted);
+  }
+  .glass-settings-section .glass-settings-section__surface {
+    padding: 0;
+    gap: 0;
+    container-type: inline-size;
+    overflow: hidden;
+  }
+  .laightup-management[data-mode="night"] .glass-settings-section .glass-settings-section__surface {
+    background: linear-gradient(180deg, hsl(226 24% 15% / 0.72), hsl(226 26% 12% / 0.72));
+    box-shadow:
+      inset 0 0 0 1px hsl(220 30% 90% / 0.08),
+      inset 0 1px 0 hsl(220 30% 95% / 0.07),
+      0 8px 24px -14px hsl(235 45% 4% / 0.6);
+  }
+  .glass-settings-section .glass-settings-section__surface--padded {
+    padding: 14px 18px;
+  }
+
+  /* ── Row ── */
+
+  .glass-settings-row {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px 18px;
+    position: relative;
+  }
+  .glass-settings-row + .glass-settings-row::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 18px;
+    right: 18px;
+    border-top: 1px solid color-mix(in oklab, var(--glass-text-subtle) 10%, transparent);
+  }
+  .laightup-management[data-mode="night"] .glass-settings-row + .glass-settings-row::before {
+    border-top-color: hsl(220 30% 90% / 0.07);
+  }
+  .glass-settings-row__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 28px;
+  }
+  .glass-settings-row__leading {
+    margin-right: -10px;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+  }
+  .glass-settings-row[data-interactive] {
+    cursor: pointer;
+    transition: background-color 150ms ease;
+  }
+  .glass-settings-row[data-interactive]:hover {
+    background: var(--glass-settings-hover);
+  }
+  .glass-settings-row[role="button"]:focus-visible {
+    outline: none;
+    box-shadow: inset 0 0 0 2px hsl(var(--theme-h, 268) var(--theme-s, 70%) var(--theme-l, 62%) / 0.7);
+  }
+  .glass-settings-row[data-selected] {
+    background: var(--glass-settings-active);
+  }
+  .glass-settings-row__text {
+    min-width: 0;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .glass-settings-row__label {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    font-weight: 500;
+    color: var(--glass-text-default);
+  }
+  .glass-settings-row__description {
+    margin: 0;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    color: var(--glass-text-muted);
+  }
+  .glass-settings-row__control {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    min-width: 0;
+  }
+  .glass-settings-row__value {
+    font-size: 0.875rem;
+    color: var(--glass-text-default);
+  }
+  .glass-settings-row__content {
+    min-width: 0;
+  }
+
+  @container (max-width: 480px) {
+    .glass-settings-row__main {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
+    .glass-settings-row__control {
+      justify-content: flex-start;
+    }
+    .glass-settings-row[data-inline] .glass-settings-row__main {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  /* ── Sidebar nav ── */
+
+  .glass-settings-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    min-height: 0;
+    padding: 16px 12px;
+    color: var(--glass-text-default);
+    background: hsl(0 0% 100% / 0.42);
+    backdrop-filter: blur(18px) saturate(1.3);
+    border-right: 1px solid var(--glass-settings-hairline);
+  }
+  .laightup-management[data-mode="night"] .glass-settings-nav {
+    background: hsl(226 26% 12%);
+  }
+
+  .glass-settings-nav-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .glass-settings-nav-group__label {
+    padding: 0 10px 4px;
+    font-size: 0.75rem;
+    line-height: 1.3;
+    font-weight: 500;
+    color: var(--glass-text-subtle);
+  }
+  .glass-settings-nav-group__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .glass-settings-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 32px;
+    padding: 6px 10px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--glass-text-muted);
+    font: inherit;
+    font-size: 0.875rem;
+    line-height: 1.3;
+    font-weight: 500;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 120ms ease, color 120ms ease;
+  }
+  .glass-settings-nav-item:hover {
+    background: var(--glass-settings-hover);
+    color: var(--glass-text-default);
+  }
+  .glass-settings-nav-item:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px hsl(var(--theme-h, 268) var(--theme-s, 70%) var(--theme-l, 62%) / 0.7);
+  }
+  .glass-settings-nav-item[data-active="true"] {
+    background: var(--glass-settings-active);
+    color: var(--glass-text-default);
+  }
+  .glass-settings-nav-item__icon {
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    opacity: 0.75;
+  }
+  .glass-settings-nav-item[data-active="true"] .glass-settings-nav-item__icon {
+    opacity: 1;
+  }
+  .glass-settings-nav-item__label {
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* ── Sidebar footer (user block) ── */
+
+  .glass-settings-nav-footer {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 10px 2px;
+    margin-top: auto;
+    border-top: 1px solid var(--glass-settings-hairline);
+  }
+  .glass-settings-nav-footer__identity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+  .glass-settings-nav-footer__avatar {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: var(--glass-settings-active);
+    color: var(--glass-text-default);
+    font-size: 0.6875rem;
+    font-weight: 600;
+  }
+  .glass-settings-nav-footer__text {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .glass-settings-nav-footer__name {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--glass-text-default);
+  }
+  .glass-settings-nav-footer__role {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.6875rem;
+    color: var(--glass-text-muted);
+  }
+  .glass-settings-nav-footer__logout {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--glass-text-muted);
+    cursor: pointer;
+    transition: background 120ms ease, color 120ms ease;
+  }
+  .glass-settings-nav-footer__logout:hover {
+    background: var(--glass-settings-hover);
+    color: var(--glass-text-default);
+  }
+  .glass-settings-nav-footer__logout:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px hsl(var(--theme-h, 268) var(--theme-s, 70%) var(--theme-l, 62%) / 0.7);
+  }
+  .glass-settings-nav-footer__logout-icon {
+    width: 15px;
+    height: 15px;
+  }
+  /* Icon-only button at rest; the label is for accessibility and small screens. */
+  .glass-settings-nav-footer__logout-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  /* ── Mobile collapsed nav: compact bar, footer only in the expanded menu ── */
+
+  @media (max-width: 767px) {
+    .glass-settings-nav[data-mobile-collapsed="true"] {
+      height: auto;
+      max-height: 110px;
+    }
+    .glass-settings-nav-footer[data-mobile-collapsed="true"] {
+      display: none;
+    }
+  }
+
+  /* ── Content area wash (subtle, settings detail pane only) ── */
+
+  .glass-settings-content-wash {
+    position: relative;
+    isolation: isolate;
+  }
+  .glass-settings-content-wash::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(ellipse 70% 60% at 85% -10%, hsl(var(--ci-accent-quiet-h, 185) var(--ci-accent-quiet-s, 95%) 85% / 0.35), transparent 70%);
+  }
+  .laightup-management[data-mode="night"] .glass-settings-content-wash {
+    background-color: hsl(226 28% 9%);
+  }
+  .laightup-management[data-mode="night"] .glass-settings-content-wash::before {
+    background: radial-gradient(ellipse 70% 60% at 85% -10%, hsl(var(--ci-accent-quiet-h, 185) 80% 35% / 0.20), transparent 70%);
+  }
+}

@@ -1,0 +1,974 @@
+{
+  "groups": {
+    "start": {
+      "title": "Erste Schritte",
+      "description": "Von der ersten Idee zur Ausspielung."
+    },
+    "installation": {
+      "title": "Installation & Start",
+      "description": "Den passenden Player vorbereiten und sicher starten."
+    },
+    "inhalte": {
+      "title": "Inhalte & Designs",
+      "description": "Dateien organisieren und Designs erstellen."
+    },
+    "ki": {
+      "title": "Gestalten mit AI",
+      "description": "Mit Easy Flow von der Idee zum Motiv."
+    },
+    "playlists": {
+      "title": "Playlists",
+      "description": "Inhalte zusammenstellen und abspielen."
+    },
+    "sendeplaene": {
+      "title": "Sendepläne",
+      "description": "Das richtige Programm zur richtigen Zeit."
+    },
+    "displays": {
+      "title": "Displays & Standorte",
+      "description": "Bildschirme verbinden und zuordnen."
+    },
+    "parameter": {
+      "title": "Parameter & Platzhalter",
+      "description": "Ein Design. Passende Werte für jeden Standort."
+    },
+    "freigaben": {
+      "title": "Versionen & Freigaben",
+      "description": "Änderungen prüfen und kontrolliert veröffentlichen."
+    },
+    "hilfe": {
+      "title": "Probleme lösen",
+      "description": "Antworten für die tägliche Arbeit."
+    },
+    "verwaltung": {
+      "title": "Team & Verwaltung",
+      "description": "Menschen, Rollen und Zuständigkeiten organisieren."
+    },
+    "einstellungen": {
+      "title": "Einstellungen",
+      "description": "Arbeitsbereich, Sprache und Markenauftritt anpassen."
+    }
+  },
+  "articles": {
+    "schnellstart": {
+      "slug": "schnellstart",
+      "title": "Dein erster Inhalt auf dem Bildschirm",
+      "description": "Verstehe die fünf Bausteine deiner ersten Ausspielung.",
+      "audience": "Alle Teams",
+      "outcome": "Verstehe die fünf Bausteine deiner ersten Ausspielung.",
+      "tags": [
+        "start",
+        "Alle Teams",
+        "guide"
+      ]
+    },
+    "grundbegriffe": {
+      "slug": "grundbegriffe",
+      "title": "So funktioniert laightup",
+      "description": "Datei, Design, Playlist, Sendeplan und Display einfach erklärt.",
+      "audience": "Alle Teams",
+      "outcome": "Datei, Design, Playlist, Sendeplan und Display einfach erklärt.",
+      "tags": [
+        "start",
+        "Alle Teams",
+        "concept"
+      ]
+    },
+    "bibliothek": {
+      "slug": "bibliothek",
+      "title": "Dateien, Designs und Importe",
+      "description": "Organisiere Medien und übernimm vorhandene Gestaltung in laightup.",
+      "audience": "Alle Teams",
+      "outcome": "Organisiere das Material für deine digitale Kommunikation.",
+      "tags": [
+        "inhalte",
+        "Alle Teams",
+        "guide",
+        "Tags",
+        "PDF",
+        "IDML",
+        "InDesign",
+        "Design Studio",
+        "Ebenen",
+        "Import"
+      ]
+    },
+    "design-varianten": {
+      "slug": "design-varianten",
+      "title": "Designs und Formatvarianten",
+      "description": "Bereite Inhalte für unterschiedliche Bildschirmformate vor.",
+      "audience": "Alle Teams",
+      "outcome": "Bereite Inhalte für unterschiedliche Bildschirmformate vor.",
+      "tags": [
+        "inhalte",
+        "Alle Teams",
+        "guide",
+        "Standard-Variante",
+        "Bedingungen",
+        "Gerätetest"
+      ]
+    },
+    "easy-flow": {
+      "slug": "easy-flow",
+      "title": "Mit Easy Flow ein Design erstellen",
+      "description": "Beschreibe deine Idee, vergleiche Motive und übernimm dein Ergebnis.",
+      "audience": "Alle Teams",
+      "outcome": "Beschreibe deine Idee, vergleiche Motive und übernimm dein Ergebnis.",
+      "tags": [
+        "ki",
+        "Alle Teams",
+        "guide"
+      ]
+    },
+    "ai-referenzen": {
+      "slug": "ai-referenzen",
+      "title": "Bildreferenzen und Markenbezug",
+      "description": "Verstehe, wie Referenzbilder und Stimmungsbilder ein Motiv beeinflussen.",
+      "audience": "Alle Teams",
+      "outcome": "Verstehe, wie Referenzbilder und Stimmungsbilder ein Motiv beeinflussen.",
+      "tags": [
+        "ki",
+        "Alle Teams",
+        "guide"
+      ]
+    },
+    "motiv-bearbeiten": {
+      "slug": "motiv-bearbeiten",
+      "title": "Ein Motiv bearbeiten und retuschieren",
+      "description": "Ändere ein ausgewähltes Bild mit einer klaren Anweisung.",
+      "audience": "Alle Teams",
+      "outcome": "Ändere ein ausgewähltes Bild mit einer klaren Anweisung.",
+      "tags": [
+        "ki",
+        "Alle Teams",
+        "guide"
+      ]
+    },
+    "playlist-erstellen": {
+      "slug": "playlist-erstellen",
+      "title": "Eine Playlist zusammenstellen",
+      "description": "Fasse Designs zu einem gemeinsamen Programm zusammen.",
+      "audience": "Alle Teams",
+      "outcome": "Fasse Designs zu einem gemeinsamen Programm zusammen.",
+      "tags": [
+        "playlists",
+        "Alle Teams",
+        "guide"
+      ]
+    },
+    "wiedergabemodi": {
+      "slug": "wiedergabemodi",
+      "title": "Reihenfolge, Zufall und Gewichtung",
+      "description": "Wähle, wie Inhalte innerhalb einer Playlist abgespielt werden.",
+      "audience": "Alle Teams",
+      "outcome": "Wähle, wie Inhalte innerhalb einer Playlist abgespielt werden.",
+      "tags": [
+        "playlists",
+        "Alle Teams",
+        "concept"
+      ]
+    },
+    "sendeplaene-verstehen": {
+      "slug": "sendeplaene-verstehen",
+      "title": "Sendepläne verstehen",
+      "description": "Kombiniere Playlists zu einem Programm für deine Displays.",
+      "audience": "Alle Teams",
+      "outcome": "Kombiniere Playlists zu einem Programm für deine Displays.",
+      "tags": [
+        "sendeplaene",
+        "Alle Teams",
+        "concept"
+      ]
+    },
+    "dauerprogramm": {
+      "slug": "dauerprogramm",
+      "title": "Ein Dauerprogramm planen",
+      "description": "Lege das Grundprogramm für deine Displays fest.",
+      "audience": "Alle Teams",
+      "outcome": "Lege das Grundprogramm für deine Displays fest.",
+      "tags": [
+        "sendeplaene",
+        "Alle Teams",
+        "guide"
+      ]
+    },
+    "exklusivprogramm": {
+      "slug": "exklusivprogramm",
+      "title": "Exklusivprogramme und Prioritäten",
+      "description": "Übernimm das laufende Grundprogramm für ein bestimmtes Zeitfenster.",
+      "audience": "Alle Teams",
+      "outcome": "Übernimm das laufende Grundprogramm für ein bestimmtes Zeitfenster.",
+      "tags": [
+        "sendeplaene",
+        "Alle Teams",
+        "guide"
+      ]
+    },
+    "mix-ins": {
+      "slug": "mix-ins",
+      "title": "Hinweise mit Mix-Ins einstreuen",
+      "description": "Ergänze dein Programm um wiederkehrende Inhalte.",
+      "audience": "Alle Teams",
+      "outcome": "Ergänze dein Programm um wiederkehrende Inhalte.",
+      "tags": [
+        "sendeplaene",
+        "Alle Teams",
+        "guide"
+      ]
+    },
+    "kalender-vorschau": {
+      "slug": "kalender-vorschau",
+      "title": "Kalender und Simulation",
+      "description": "Prüfe, welches Programm zu einem bestimmten Zeitpunkt gilt.",
+      "audience": "Alle Teams",
+      "outcome": "Prüfe, welches Programm zu einem bestimmten Zeitpunkt gilt.",
+      "tags": [
+        "sendeplaene",
+        "Alle Teams",
+        "guide",
+        "Simulation",
+        "Favoriten",
+        "Gerätevergleich",
+        "Vorschau"
+      ]
+    },
+    "display-verbinden": {
+      "slug": "display-verbinden",
+      "title": "Ein Display mit laightup verbinden",
+      "description": "Kopple deinen Player über den angezeigten Code.",
+      "audience": "Standortbetrieb",
+      "outcome": "Kopple deinen Player über den angezeigten Code.",
+      "tags": [
+        "displays",
+        "Standortbetrieb",
+        "guide"
+      ]
+    },
+    "standorte": {
+      "slug": "standorte",
+      "title": "Standorte und Gerätegruppen",
+      "description": "Halte dein Display-Netzwerk übersichtlich.",
+      "audience": "Standortbetrieb",
+      "outcome": "Halte dein Display-Netzwerk übersichtlich.",
+      "tags": [
+        "displays",
+        "Standortbetrieb",
+        "guide"
+      ]
+    },
+    "programm-zuweisen": {
+      "slug": "programm-zuweisen",
+      "title": "Einem Display ein Programm zuweisen",
+      "description": "Wähle eine veröffentlichte Playlist oder einen Sendeplan für dein Gerät.",
+      "audience": "Standortbetrieb",
+      "outcome": "Wähle eine veröffentlichte Playlist oder einen Sendeplan für dein Gerät.",
+      "tags": [
+        "displays",
+        "Standortbetrieb",
+        "guide"
+      ]
+    },
+    "versionen-freigeben": {
+      "slug": "versionen-freigeben",
+      "title": "Entwürfe, Versionen und Freigaben",
+      "description": "Verstehe den Weg von einer Änderung zur veröffentlichten Version.",
+      "audience": "Alle Teams",
+      "outcome": "Verstehe den Weg von einer Änderung zur veröffentlichten Version.",
+      "tags": [
+        "freigaben",
+        "Alle Teams",
+        "guide"
+      ]
+    },
+    "inhalt-fehlt": {
+      "slug": "inhalt-fehlt",
+      "title": "Ein Inhalt erscheint nicht auf dem Display",
+      "description": "Prüfe die Ausspielung entlang der gesamten Kette.",
+      "audience": "Alle Teams",
+      "outcome": "Prüfe die Ausspielung entlang der gesamten Kette.",
+      "tags": [
+        "hilfe",
+        "Alle Teams",
+        "troubleshooting"
+      ]
+    },
+    "faq": {
+      "slug": "faq",
+      "title": "Häufige Fragen",
+      "description": "Kurze Antworten auf typische Fragen zur Ausspielung.",
+      "audience": "Alle Teams",
+      "outcome": "Kurze Antworten auf typische Fragen zur Ausspielung.",
+      "tags": [
+        "hilfe",
+        "Alle Teams",
+        "troubleshooting"
+      ]
+    },
+    "installation": {
+      "slug": "installation",
+      "title": "Installation: den richtigen Player vorbereiten",
+      "description": "Wähle den Weg für dein Display, bevor du mit der Registrierung beginnst.",
+      "audience": "Standortbetrieb",
+      "outcome": "Wähle den Weg für dein Display, bevor du mit der Registrierung beginnst.",
+      "tags": [
+        "installation",
+        "Standortbetrieb",
+        "guide"
+      ]
+    },
+    "standort-anlegen": {
+      "slug": "standort-anlegen",
+      "title": "Einen Standort anlegen und pflegen",
+      "description": "Erfasse Adresse und Betriebsinformationen für deine Filiale.",
+      "audience": "Standortbetrieb",
+      "outcome": "Erfasse Adresse und Betriebsinformationen für deine Filiale.",
+      "tags": [
+        "displays",
+        "Standortbetrieb",
+        "guide"
+      ]
+    },
+    "standort-betriebszeiten": {
+      "slug": "standort-betriebszeiten",
+      "title": "Betriebszeiten und Neustartzeit einstellen",
+      "description": "Unterscheide Standortzeiten von der inhaltlichen Sendeplanung.",
+      "audience": "Standortbetrieb",
+      "outcome": "Unterscheide Standortzeiten von der inhaltlichen Sendeplanung.",
+      "tags": [
+        "displays",
+        "Standortbetrieb",
+        "guide"
+      ]
+    },
+    "geraete-verwalten": {
+      "slug": "geraete-verwalten",
+      "title": "Geräte benennen, drehen und gruppieren",
+      "description": "Pflege dein Display-Netzwerk, ohne Inhalte neu zu gestalten.",
+      "audience": "Standortbetrieb",
+      "outcome": "Pflege dein Display-Netzwerk, ohne Inhalte neu zu gestalten.",
+      "tags": [
+        "displays",
+        "Standortbetrieb",
+        "guide"
+      ]
+    },
+    "parameter-platzhalter": {
+      "slug": "parameter-platzhalter",
+      "title": "Parameter und Platzhalter verstehen",
+      "description": "Lasse dasselbe Design auf unterschiedlichen Geräten passende Werte zeigen.",
+      "audience": "Alle Teams",
+      "outcome": "Lasse dasselbe Design auf unterschiedlichen Geräten passende Werte zeigen.",
+      "tags": [
+        "parameter",
+        "Alle Teams",
+        "concept",
+        "Parameter",
+        "dynamische Inhalte",
+        "Platzhalter"
+      ]
+    },
+    "platzhalter-anlegen": {
+      "slug": "platzhalter-anlegen",
+      "title": "Eigene Platzhalter einrichten und testen",
+      "description": "Lege wiederverwendbare Werte für standortbezogene Designs an.",
+      "audience": "Alle Teams",
+      "outcome": "Lege wiederverwendbare Werte für standortbezogene Designs an.",
+      "tags": [
+        "parameter",
+        "Alle Teams",
+        "guide",
+        "Parameter",
+        "dynamische Inhalte",
+        "Platzhalter"
+      ]
+    },
+    "platzhalter-regeln": {
+      "slug": "platzhalter-regeln",
+      "title": "Bedingungen, Reihenfolge und Standardwerte",
+      "description": "Verstehe, welche Zeile für ein Gerät gewinnt.",
+      "audience": "Alle Teams",
+      "outcome": "Verstehe, welche Zeile für ein Gerät gewinnt.",
+      "tags": [
+        "parameter",
+        "Alle Teams",
+        "reference",
+        "Parameter",
+        "dynamische Inhalte",
+        "Platzhalter"
+      ]
+    },
+    "systemplatzhalter": {
+      "slug": "systemplatzhalter",
+      "title": "Standort, Gerätename und Uhrzeit einsetzen",
+      "description": "Nutze vorhandene Informationen, ohne eigene Wertetabellen zu pflegen.",
+      "audience": "Alle Teams",
+      "outcome": "Nutze vorhandene Informationen, ohne eigene Wertetabellen zu pflegen.",
+      "tags": [
+        "parameter",
+        "Alle Teams",
+        "reference",
+        "Parameter",
+        "dynamische Inhalte",
+        "Platzhalter"
+      ]
+    },
+    "wiedergabe-parameter": {
+      "slug": "wiedergabe-parameter",
+      "title": "Wiedergabeparameter auf einen Blick",
+      "description": "Finde die richtige Einstellung für das gewünschte Verhalten.",
+      "audience": "Alle Teams",
+      "outcome": "Finde die richtige Einstellung für das gewünschte Verhalten.",
+      "tags": [
+        "sendeplaene",
+        "Wiedergabe",
+        "Gewicht",
+        "Priorität",
+        "Intervall"
+      ]
+    },
+    "einstellungen-ueberblick": {
+      "slug": "einstellungen-ueberblick",
+      "title": "Die richtigen Einstellungen finden",
+      "description": "Unterscheide persönliche Einstellungen, Arbeitsbereich und Systemverwaltung.",
+      "audience": "Administration",
+      "outcome": "Unterscheide persönliche Einstellungen, Arbeitsbereich und Systemverwaltung.",
+      "tags": [
+        "einstellungen",
+        "Administration",
+        "reference"
+      ]
+    },
+    "arbeitsbereich-einstellen": {
+      "slug": "arbeitsbereich-einstellen",
+      "title": "Arbeitsbereich und Standardwerte einstellen",
+      "description": "Pflege Name, Standardsprache und Ersatzbild an zentraler Stelle.",
+      "audience": "Administration",
+      "outcome": "Pflege Name, Standardsprache und Ersatzbild an zentraler Stelle.",
+      "tags": [
+        "einstellungen",
+        "Administration",
+        "guide"
+      ]
+    },
+    "persoenliche-einstellungen": {
+      "slug": "persoenliche-einstellungen",
+      "title": "Persönliche Sprache und Profil pflegen",
+      "description": "Passe deine Arbeitsumgebung an, ohne gemeinsame Standortdaten zu ändern.",
+      "audience": "Administration",
+      "outcome": "Passe deine Arbeitsumgebung an, ohne gemeinsame Standortdaten zu ändern.",
+      "tags": [
+        "einstellungen",
+        "Administration",
+        "guide"
+      ]
+    },
+    "team-verwalten": {
+      "slug": "team-verwalten",
+      "title": "Team, Rollen und Berechtigungen verwalten",
+      "description": "Finde die richtige Stelle für Mitglieder und Zugriffsrechte.",
+      "audience": "Administration",
+      "outcome": "Finde die richtige Stelle für Mitglieder und Zugriffsrechte.",
+      "tags": [
+        "verwaltung",
+        "Administration",
+        "guide"
+      ]
+    },
+    "usecase-standort": {
+      "slug": "usecase-standort",
+      "title": "Den ersten Standort live bringen",
+      "description": "Vom passenden Player bis zum sichtbaren Programm.",
+      "audience": "Standortbetrieb",
+      "outcome": "Am Standort läuft das zugewiesene Programm auf einem registrierten Display.",
+      "tags": [
+        "start",
+        "Standortbetrieb",
+        "journey"
+      ]
+    },
+    "usecase-kampagne": {
+      "slug": "usecase-kampagne",
+      "title": "Eine Aktion auf die Screens bringen",
+      "description": "Ein Motiv gestalten, planen und auf den richtigen Displays ausspielen.",
+      "audience": "Content-Team",
+      "outcome": "Deine Aktion ist freigegeben, zeitlich geplant und den passenden Displays zugeordnet.",
+      "tags": [
+        "start",
+        "Content-Team",
+        "journey"
+      ]
+    },
+    "usecase-lokalisierung": {
+      "slug": "usecase-lokalisierung",
+      "title": "Inhalte je Standort personalisieren",
+      "description": "Ein gemeinsames Design mit lokalen Texten und Werten verwenden.",
+      "audience": "Content-Team",
+      "outcome": "Du hast auf mindestens zwei Geräten geprüft, welche lokalen Werte erscheinen.",
+      "tags": [
+        "start",
+        "Content-Team",
+        "journey",
+        "Platzhalter",
+        "dynamische Inhalte",
+        "Parameter",
+        "personalisieren"
+      ]
+    },
+    "usecase-team": {
+      "slug": "usecase-team",
+      "title": "Den Arbeitsbereich organisieren",
+      "description": "Gemeinsame Einstellungen und klare Zuständigkeiten für dein Team.",
+      "audience": "Administration",
+      "outcome": "Gemeinsame Vorgaben und Zugriffsrechte sind anhand einer konkreten Aufgabe überprüft.",
+      "tags": [
+        "start",
+        "Administration",
+        "journey"
+      ]
+    },
+    "mitglieder-einladen": {
+      "slug": "mitglieder-einladen",
+      "title": "Mitglieder einladen und Rollen zuweisen",
+      "description": "Nimm eine Person mit passenden Zugriffsrechten in dein Team auf.",
+      "audience": "Administration",
+      "outcome": "Nimm eine Person mit passenden Zugriffsrechten in dein Team auf.",
+      "tags": [
+        "Verwaltung",
+        "Mitglieder",
+        "Team",
+        "Rollen",
+        "Administration"
+      ]
+    },
+    "mitglieder-verwalten": {
+      "slug": "mitglieder-verwalten",
+      "title": "Mitglieder finden, bearbeiten und deaktivieren",
+      "description": "Halte die Mitgliederliste deines Arbeitsbereichs aktuell.",
+      "audience": "Administration",
+      "outcome": "Halte die Mitgliederliste deines Arbeitsbereichs aktuell.",
+      "tags": [
+        "Verwaltung",
+        "Mitglieder",
+        "Team",
+        "Rollen",
+        "Administration"
+      ]
+    }
+  },
+  "updates": {
+    "2026-10-29-produkt": {
+      "title": "Easy Flow: genauer im Brief, konsistenter im Design",
+      "description": "Der Easy Flow übernimmt Vorgaben für Texte, Markenauftritt und Formate zuverlässiger. Downloads kommen in den passenden Plattformmaßen.",
+      "highlights": [
+        "Easy Flow",
+        "Brand Kit",
+        "Formate"
+      ],
+      "changes": {
+        "change-01": {
+          "title": "Vor dem Generieren den Brief prüfen",
+          "description": "Die Ready-Karte zeigt Format, Logo-Status und Annahmen. Du kannst den erfassten Brief korrigieren. Vorgegebene Headlines werden besser beibehalten; auf ein angekündigtes, noch fehlendes Foto wartet der Chat.",
+          "linkLabels": {
+            "easy-flow": "Mit Easy Flow ein Design erstellen"
+          }
+        },
+        "change-02": {
+          "title": "Logo und Markenstil getrennt steuern",
+          "description": "Du kannst das Logo abwählen und Farben sowie Schriften des Brand Kits weiter verwenden. Die passende Logo-Variante wird nach dem Hintergrund gewählt; Textfarbregeln und Farbwünsche werden genauer berücksichtigt. Stilreferenzen dienen als Vorlage für Stimmung und Palette.",
+          "linkLabels": {
+            "ai-referenzen": "Bildreferenzen und Markenbezug"
+          }
+        },
+        "change-03": {
+          "title": "Passende Formate und verlässlichere Bearbeitung",
+          "description": "Ein im Chat genanntes Format gilt schon für die ersten Varianten. Downloads erhalten die exakten Zielmaße, etwa 1080 × 1350 Pixel für 4:5. Formatwechsel funktionieren auch beim Verfeinern, laufende Formatvarianten bleiben beim Speichern erhalten. Doppelte Anfragen erzeugen keine doppelten Generierungsjobs oder Abbuchungen.",
+          "linkLabels": {
+            "design-varianten": "Designs und Formatvarianten",
+            "motiv-bearbeiten": "Ein Motiv bearbeiten und retuschieren"
+          }
+        },
+        "change-04": {
+          "title": "Fortschritt beim Hochladen sehen",
+          "description": "Datei-Uploads zeigen ihren Fortschritt in einer Meldung. Bei fehlgeschlagenen Android-Paketinstallationen lädt das Gerät die Datei beim nächsten Versuch neu herunter.",
+          "linkLabels": {
+            "bibliothek": "Dateien, Designs und Importe",
+            "installation": "Installation: den richtigen Player vorbereiten"
+          }
+        }
+      }
+    },
+    "2026-10-22-produkt": {
+      "title": "Inhalte mit Tags organisieren und PDFs importieren",
+      "description": "Tags verbinden die Organisation von Inhalten und Standorten. PDFs lassen sich als Medien, Designs oder Referenzen übernehmen.",
+      "highlights": [
+        "Tags",
+        "PDF-Import",
+        "Bedienung"
+      ],
+      "changes": {
+        "change-01": {
+          "title": "Tags zuweisen, verwalten und filtern",
+          "description": "Designs, Medien, Playlists, Sendepläne, Standorte und Brand Kits können Tags erhalten. In den Einstellungen verwalten Administratoren Namen, Farben und Verwendung. Mediathek, Playlists und Sendepläne lassen sich nach Tags filtern.",
+          "linkLabels": {
+            "bibliothek": "Dateien, Designs und Importe",
+            "einstellungen-ueberblick": "Die richtigen Einstellungen finden"
+          }
+        },
+        "change-02": {
+          "title": "PDF-Seiten gezielt übernehmen",
+          "description": "Ein PDF kann als Bildmedium, als Design mit mehreren Seiten oder als einzelne Designs importiert werden. Auch Referenz-Uploads im Easy Flow akzeptieren ausgewählte PDF-Seiten. Pro Import werden bis zu 100 Seiten übernommen.",
+          "linkLabels": {
+            "bibliothek": "Dateien, Designs und Importe",
+            "ai-referenzen": "Bildreferenzen und Markenbezug"
+          }
+        },
+        "change-03": {
+          "title": "Kommentare werden separat freigeschaltet",
+          "description": "Das Release enthält Kommentar-Threads für Designs, Playlists und Sendepläne, die über Versionen hinweg erhalten bleiben. Die Funktion wird separat freigeschaltet und ist deshalb nicht automatisch in jedem Arbeitsbereich verfügbar.",
+          "linkLabels": {
+            "versionen-freigeben": "Entwürfe, Versionen und Freigaben"
+          }
+        },
+        "change-04": {
+          "title": "Klarere Rückmeldungen und bessere Bedienung",
+          "description": "Bei fehlenden KI-Credits erscheint eine verständliche Meldung. Die Playlist- und Sendeplan-Übersicht funktioniert auch in schmalen Fenstern. Administratoren können die Standardsprache des Arbeitsbereichs wieder ändern.",
+          "linkLabels": {
+            "playlist-erstellen": "Eine Playlist zusammenstellen",
+            "arbeitsbereich-einstellen": "Arbeitsbereich und Standardwerte einstellen"
+          }
+        }
+      }
+    },
+    "2026-10-12-produkt": {
+      "title": "Bild-Designs in bearbeitbare Ebenen zerlegen",
+      "description": "Aus einem Bild können editierbare Texte, Logos und Grafiken werden. Dazu kommen der InDesign-Import und mehr Platz beim Verfeinern.",
+      "highlights": [
+        "Design Studio",
+        "Ebenen",
+        "IDML-Import"
+      ],
+      "changes": {
+        "change-01": {
+          "title": "Ein Bild als editierbares Design weiterverwenden",
+          "description": "Das Kontextmenü der Bibliothek erstellt aus einem Bild-Design ein neues Design mit Text-, Logo- und Grafik-Ebenen. Das Original bleibt erhalten. Auch einzelne Bild-Ebenen lassen sich im Design Studio zerlegen. Die Zerlegung kostet einen festen Betrag an KI-Credits; bei Fehlern werden diese erstattet.",
+          "linkLabels": {
+            "bibliothek": "Dateien, Designs und Importe",
+            "design-varianten": "Designs und Formatvarianten"
+          }
+        },
+        "change-02": {
+          "title": "InDesign-Dateien importieren",
+          "description": "IDML-Dateien und gezippte InDesign-Pakete können in die Design-Bibliothek hochgeladen werden. Vor dem Import wählst du, welche Bilder und Schriften in Bibliothek beziehungsweise Brand Kit übernommen oder nur im Design verwendet werden.",
+          "linkLabels": {
+            "bibliothek": "Dateien, Designs und Importe"
+          }
+        },
+        "change-03": {
+          "title": "Mehr Platz für die Verfeinerung",
+          "description": "Die größere Bearbeitungsansicht bietet Zoom und ausblendbare Bedienelemente. Langsame Generierungen behalten die hinterlegten Logo- und Bildreferenzen. Die Sendeplan-Hinweise beschreiben außerdem korrekt, dass Mix-Ins auch über einem Exklusivprogramm laufen; die Abspiellogik bleibt unverändert.",
+          "linkLabels": {
+            "motiv-bearbeiten": "Ein Motiv bearbeiten und retuschieren",
+            "mix-ins": "Hinweise mit Mix-Ins einstreuen"
+          }
+        }
+      }
+    },
+    "2026-10-04-produkt": {
+      "title": "Design-Varianten mit festem Standard",
+      "description": "Alle Varianten eines Designs werden gemeinsam bearbeitet. Eine feste Standard-Variante übernimmt die Ausgabe, wenn keine andere Bedingung passt.",
+      "highlights": [
+        "Varianten",
+        "Standard",
+        "Kalender"
+      ],
+      "changes": {
+        "change-01": {
+          "title": "Alle Varianten in einem Dialog bearbeiten",
+          "description": "Im gemeinsamen Dialog siehst du die Auswertungsreihenfolge, sortierst Varianten per Drag-and-drop und testest sie an einem Gerät. Gespeichert wird das gesamte Set auf einmal.",
+          "linkLabels": {
+            "design-varianten": "Designs und Formatvarianten"
+          }
+        },
+        "change-02": {
+          "title": "Ein klarer Rückfall für jedes Gerät",
+          "description": "Jedes Design hat genau eine Standard-Variante ohne Bedingungen am Ende der Liste. Andere Varianten benötigen mindestens eine Bedingung. Gleichzeitige Änderungen an Varianten oder Platzhaltern lösen einen Hinweis aus, statt unbemerkt überschrieben zu werden.",
+          "linkLabels": {
+            "design-varianten": "Designs und Formatvarianten",
+            "platzhalter-regeln": "Bedingungen, Reihenfolge und Standardwerte"
+          }
+        },
+        "change-03": {
+          "title": "Ruhigere Datumsauswahl",
+          "description": "Die Enddatum-Auswahl öffnet im Monat des gewählten Startdatums. Der Kalender behält beim Blättern seine Höhe.",
+          "linkLabels": {
+            "kalender-vorschau": "Kalender und Simulation"
+          }
+        }
+      }
+    },
+    "2026-10-03-produkt": {
+      "title": "Platzhalter zentral pflegen und direkt ausspielen",
+      "description": "Preise, Öffnungszeiten und andere Werte lassen sich in Gruppen verwalten und über Bedingungen an Geräte anpassen.",
+      "highlights": [
+        "Platzhalter",
+        "Gerätetest",
+        "Einladungen"
+      ],
+      "changes": {
+        "change-01": {
+          "title": "Werte ändern, ohne das Design neu freizugeben",
+          "description": "Unter Datenquellen gibt es eine Platzhalterverwaltung mit Gruppen, Bedingungszeilen und Standardwerten. Nach dem bestätigten Speichern werden Werte ohne zusätzlichen Freigabeprozess ausgespielt. Die Variablenauswahl im Editor führt direkt zur Verwaltung.",
+          "linkLabels": {
+            "parameter-platzhalter": "Parameter und Platzhalter verstehen",
+            "platzhalter-anlegen": "Eigene Platzhalter einrichten und testen"
+          }
+        },
+        "change-02": {
+          "title": "Bedingungen vorab am Gerät prüfen",
+          "description": "Der Gerätetest hebt die passende Zeile hervor. Hinweise zeigen fehlende Abdeckung; Rückgängig und Wiederholen erleichtern die Bearbeitung. Größere Vorschaubilder helfen bei der Kontrolle von Geräten und Standorten.",
+          "linkLabels": {
+            "platzhalter-regeln": "Bedingungen, Reihenfolge und Standardwerte",
+            "geraete-verwalten": "Geräte benennen, drehen und gruppieren"
+          }
+        },
+        "change-03": {
+          "title": "Beitritt zum Arbeitsbereich per Einladung",
+          "description": "Der automatische Beitritt über die E-Mail-Domain entfällt. Neue Mitglieder benötigen auch bei SSO-Anmeldung eine Einladung. Designs lassen sich außerdem direkt im Kontextmenü zur Freigabe einreichen oder freigeben.",
+          "linkLabels": {
+            "mitglieder-einladen": "Mitglieder einladen und Rollen zuweisen",
+            "versionen-freigeben": "Entwürfe, Versionen und Freigaben"
+          }
+        }
+      }
+    },
+    "2026-09-24-produkt": {
+      "title": "Design Studio und gemeinsame Simulation",
+      "description": "Der neue Design-Editor ersetzt den bisherigen Editor. Die Simulation verbindet die Vorschauen für Playlists, Sendepläne und Geräte.",
+      "highlights": [
+        "Design Studio",
+        "Simulation",
+        "Medien"
+      ],
+      "changes": {
+        "change-01": {
+          "title": "Designs im Design Studio bearbeiten",
+          "description": "Texte, Elemente und Dateien aus der Medienbibliothek stehen im eingebetteten Editor zur Verfügung. Farben und Schriften kommen aus dem gewählten Brand Kit. Gespeichert wird bewusst über den Speichern-Button; vor dem Verlassen mit offenen Änderungen erscheint eine Rückfrage. Der bisherige Vorlagen-Bereich entfällt.",
+          "linkLabels": {
+            "bibliothek": "Dateien, Designs und Importe",
+            "design-varianten": "Designs und Formatvarianten"
+          }
+        },
+        "change-02": {
+          "title": "Bis zu vier Geräte gemeinsam simulieren",
+          "description": "Die gemeinsame Simulationsseite verwendet dieselbe Abspiellogik wie die Geräte und deren tatsächliche Bildschirmformate. Bis zu vier Geräte laufen an einer gemeinsamen Uhr. Eine Tagesliste zeigt die Ausspielungen; Simulationen lassen sich als Favoriten speichern.",
+          "linkLabels": {
+            "kalender-vorschau": "Kalender und Simulation",
+            "programm-zuweisen": "Einem Display ein Programm zuweisen"
+          }
+        },
+        "change-03": {
+          "title": "Schneller laden und direkt umbenennen",
+          "description": "Bilder und Medien werden im Browser zwischengespeichert. Ein Klick auf den Titel im Sendeplan-Builder erlaubt das Umbenennen.",
+          "linkLabels": {
+            "bibliothek": "Dateien, Designs und Importe",
+            "sendeplaene-verstehen": "Sendepläne verstehen"
+          }
+        }
+      }
+    },
+    "2026-09-20-produkt": {
+      "title": "Neuer öffentlicher Einstieg auf laightup.com",
+      "description": "Die Website und die Anwendung sind unter einem Dach erreichbar. Die öffentliche Startseite führt zum Produkt und zur Anmeldung.",
+      "highlights": [
+        "Website",
+        "Anmeldung"
+      ],
+      "changes": {
+        "change-01": {
+          "title": "Produkt kennenlernen und anmelden",
+          "description": "laightup.com zeigt die öffentliche Produktseite. Der neu gestaltete Anmeldebildschirm ergänzt das Formular um ein Markenpanel mit einem als KI-generiert gekennzeichneten Anwendungsbeispiel. Die Arbeitsflächen sind weiterhin nur nach Anmeldung zugänglich.",
+          "linkLabels": {
+            "schnellstart": "Dein erster Inhalt auf dem Bildschirm"
+          }
+        }
+      }
+    },
+    "2026-09-17-produkt": {
+      "title": "Bilder gezielt bearbeiten und Ergebnisse vergleichen",
+      "description": "Easy Flow bietet einen Vorher-Nachher-Vergleich, eine Bearbeitungshistorie und höhere Bildauflösungen. Sendepläne weisen auf fehlende Inhalte hin.",
+      "highlights": [
+        "Retusche",
+        "Vergleich",
+        "Sendepläne"
+      ],
+      "changes": {
+        "change-01": {
+          "title": "Bearbeitungen vergleichen und zurücknehmen",
+          "description": "Gezielte Änderungen erhalten die übrigen Bildinhalte besser. Ausgangsbild und Ergebnis lassen sich per Regler oder nebeneinander vergleichen. Bearbeitungsschritte können ohne neue Generierung kostenfrei zurückgenommen und wiederhergestellt werden, auch nach einem Neuladen.",
+          "linkLabels": {
+            "motiv-bearbeiten": "Ein Motiv bearbeiten und retuschieren"
+          }
+        },
+        "change-02": {
+          "title": "Höhere Auflösung und passend komponierte Formate",
+          "description": "Fertige Bilder können ohne Neugenerierung hochskaliert werden. Weitere Formate werden für ihr Seitenverhältnis neu komponiert. Rückmeldungen zur Regeneration fließen in den Bildauftrag ein.",
+          "linkLabels": {
+            "easy-flow": "Mit Easy Flow ein Design erstellen",
+            "design-varianten": "Designs und Formatvarianten"
+          }
+        },
+        "change-03": {
+          "title": "Lücken und neue Design-Versionen erkennen",
+          "description": "Der Sendeplan warnt, wenn eine Playlist an gewählten Tagen oder in Zeitfenstern keinen aktiven Inhalt liefert. Playlists zeigen an, wenn ein enthaltenes Design neu veröffentlicht wurde.",
+          "linkLabels": {
+            "inhalt-fehlt": "Ein Inhalt erscheint nicht auf dem Display",
+            "versionen-freigeben": "Entwürfe, Versionen und Freigaben"
+          }
+        }
+      }
+    },
+    "2026-09-10-produkt": {
+      "title": "Formate behalten und Medienordner verschieben",
+      "description": "Das Verfeinern im Easy Flow erhält bestehende Formate. Medienordner lassen sich im Verzeichnisbaum neu ordnen.",
+      "highlights": [
+        "Easy Flow",
+        "Medienordner",
+        "Zeitfenster"
+      ],
+      "changes": {
+        "change-01": {
+          "title": "Das gewählte Format weiterbearbeiten",
+          "description": "Beim Verfeinern wird das ausgewählte Format bearbeitet, statt auf das Ursprungsbild zurückzufallen. Bereits erzeugte Formate bleiben sichtbar. Meldungen informieren auch bei minimiertem Easy Flow über Erfolg oder Fehler einer Generierung.",
+          "linkLabels": {
+            "motiv-bearbeiten": "Ein Motiv bearbeiten und retuschieren",
+            "design-varianten": "Designs und Formatvarianten"
+          }
+        },
+        "change-02": {
+          "title": "Ordner per Drag-and-drop organisieren",
+          "description": "Ordner samt Unterordnern können im Medienbaum verschoben werden. Kontextmenüs öffnen am Mauszeiger; Löschdialoge nennen den Ordnernamen und weisen auf nicht leere Ordner hin.",
+          "linkLabels": {
+            "bibliothek": "Dateien, Designs und Importe"
+          }
+        },
+        "change-03": {
+          "title": "Datumsangaben zuverlässig speichern",
+          "description": "Gelöschte Beginn- und Enddaten werden übernommen. Beim Wechsel des Programmtyps bleibt ein ganztägiges Zeitfenster erhalten. Sichtbare Eingabefehler verhindern das Speichern.",
+          "linkLabels": {
+            "sendeplaene-verstehen": "Sendepläne verstehen"
+          }
+        }
+      }
+    },
+    "2026-09-08-produkt": {
+      "title": "Hotfix: Veröffentlichen in Edge und Chrome",
+      "description": "Eine Fehlerseite nach erfolgreichem Veröffentlichen wurde behoben. Betroffen waren bestimmte Browserübersetzungs- und Autofill-Situationen.",
+      "highlights": [
+        "Hotfix",
+        "Veröffentlichen"
+      ],
+      "changes": {
+        "change-01": {
+          "title": "Nach dem Veröffentlichen weiterarbeiten",
+          "description": "Die automatische Browserübersetzung wird für laightup abgeschaltet, damit sie die Oberfläche nach dem Veröffentlichen nicht verändert. Autofill in Edge verursacht keine Abstürze der Befehlspalette oder von Rückgängig und Wiederholen im Editor mehr.",
+          "linkLabels": {
+            "versionen-freigeben": "Entwürfe, Versionen und Freigaben"
+          }
+        }
+      }
+    },
+    "2026-09-03-produkt": {
+      "title": "Programme regelbasiert an Geräte verteilen",
+      "description": "Die Gerätezuweisung unterstützt wieder Kriterien statt ausschließlich einer manuellen Einzelauswahl.",
+      "highlights": [
+        "Geräte",
+        "Zuweisung"
+      ],
+      "changes": {
+        "change-01": {
+          "title": "Zielgeräte nach Kriterien auswählen",
+          "description": "Playlists und Sendepläne können über Regeln zugewiesen werden. Die Vorschau zählt die tatsächlich passenden Geräte; die Umschaltung der Zuweisungsart steht oben im Dialog.",
+          "linkLabels": {
+            "programm-zuweisen": "Einem Display ein Programm zuweisen"
+          }
+        },
+        "change-02": {
+          "title": "Teilauswahl je Standort erkennen",
+          "description": "Wenn nur ein Teil der Geräte eines Standorts gewählt ist, zeigt die Standortauswahl das direkt an. Auch lange Standortlisten bleiben im Dialog bedienbar.",
+          "linkLabels": {
+            "standorte": "Standorte und Gerätegruppen",
+            "geraete-verwalten": "Geräte benennen, drehen und gruppieren"
+          }
+        }
+      }
+    },
+    "2026-08-31-produkt": {
+      "title": "Sendeplan-Zeilen gezielt für Geräte steuern",
+      "description": "Mix-Ins und Exklusivprogramme können innerhalb eines gemeinsamen Sendeplans unterschiedliche Gerätezielgruppen erhalten.",
+      "highlights": [
+        "Bedingungen",
+        "Sendepläne",
+        "Brand Kits"
+      ],
+      "changes": {
+        "change-01": {
+          "title": "Bedingungen pro Plan-Zeile festlegen",
+          "description": "Für Mix-Ins und Exklusivprogramme lässt sich eine Gerätebedingung hinterlegen. Nicht passende Zeilen entfallen für das jeweilige Gerät; das Dauerprogramm bleibt bedingungslos. Ein Gerätetest prüft auch noch ungespeicherte Bedingungen.",
+          "linkLabels": {
+            "mix-ins": "Hinweise mit Mix-Ins einstreuen",
+            "exklusivprogramm": "Exklusivprogramme und Prioritäten"
+          }
+        },
+        "change-02": {
+          "title": "Entwürfe und Versionen klarer erkennen",
+          "description": "Sendepläne erhalten dasselbe Entwurfsbanner und dieselbe Statusdarstellung wie Playlists. Die Übersicht zeigt die Versionsnummer, beim Öffnen erscheint der aktuelle Entwurf.",
+          "linkLabels": {
+            "versionen-freigeben": "Entwürfe, Versionen und Freigaben"
+          }
+        },
+        "change-03": {
+          "title": "Mit mehreren Brand Kits arbeiten",
+          "description": "Ein Arbeitsbereich kann mehrere Brand Kits führen. Die Auswahl gilt pro Tab, sodass mehrere Personen parallel mit verschiedenen Marken arbeiten können. Doppelte Standortanlagen durch mehrfaches Absenden werden verhindert.",
+          "linkLabels": {
+            "ai-referenzen": "Bildreferenzen und Markenbezug",
+            "standort-anlegen": "Einen Standort anlegen und pflegen"
+          }
+        }
+      }
+    },
+    "2026-08-20-produkt": {
+      "title": "Verlässlichere Zeitpläne und gezieltere Retusche",
+      "description": "Korrekturen an Zeitfenstern, Gerätezuweisung und Easy Flow helfen bei der Planung und Bearbeitung.",
+      "highlights": [
+        "Zeitpläne",
+        "Displays",
+        "Retusche"
+      ],
+      "changes": {
+        "change-01": {
+          "title": "Betriebszeiten und Mix-Ins richtig berücksichtigen",
+          "description": "Gespeicherte Wochentage bleiben beim erneuten Öffnen erhalten. Gleichzeitig laufende Mix-Ins sind vollständig und lesbar im Kalender zu sehen. Außerhalb der hinterlegten Display-Zeiten des Standorts erfolgt keine Ausgabe.",
+          "linkLabels": {
+            "standort-betriebszeiten": "Betriebszeiten und Neustartzeit einstellen",
+            "mix-ins": "Hinweise mit Mix-Ins einstreuen"
+          }
+        },
+        "change-02": {
+          "title": "Nur veröffentlichte Inhalte zuweisen",
+          "description": "Playlists und Sendepläne ohne veröffentlichte Version können im Zuweisungsdialog nicht gewählt werden. Der Dialog erklärt die Voraussetzung; Geräte folgen der jeweils veröffentlichten Version.",
+          "linkLabels": {
+            "programm-zuweisen": "Einem Display ein Programm zuweisen",
+            "versionen-freigeben": "Entwürfe, Versionen und Freigaben"
+          }
+        },
+        "change-03": {
+          "title": "Änderungen gezielt anwenden",
+          "description": "Easy Flow unterscheidet bestätigte Bearbeitung, Retusche und neue Varianten. Beim Maskieren reicht eine nahezu geschlossene Umrandung; die Fläche wird gefüllt und vor dem Absenden als Vorschau gezeigt.",
+          "linkLabels": {
+            "motiv-bearbeiten": "Ein Motiv bearbeiten und retuschieren"
+          }
+        }
+      }
+    }
+  }
+}

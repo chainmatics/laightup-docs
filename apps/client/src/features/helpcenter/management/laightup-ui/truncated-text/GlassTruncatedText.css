@@ -1,0 +1,39 @@
+.glass-truncated-text {
+  min-width: 0;
+}
+
+.glass-truncated-text--single {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.glass-truncated-text--clamp {
+  /* A nowrap ancestor (glass menu labels, select triggers) would collapse the clamp to one line. */
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--glass-truncated-text-lines, 2);
+  line-clamp: var(--glass-truncated-text-lines, 2);
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+
+.glass-truncated-text--wrap {
+  /* A nowrap ancestor would otherwise disable the wrapping. */
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.glass-truncated-text--inline {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+/* line-clamp needs a -webkit-box display; plain inline-block would kill it. */
+.glass-truncated-text--clamp.glass-truncated-text--inline {
+  display: -webkit-inline-box;
+}

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "sourceLocale": "de",
+  "locales": {
+    "de": {
+      "status": "published",
+      "languageTag": "de-DE",
+      "pathPrefix": "/help"
+    }
+  }
+}

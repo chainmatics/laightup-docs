@@ -1,0 +1,9 @@
+.laightup-management .glass-btn-base { position:relative; display:inline-flex; align-items:center; justify-content:center; user-select:none; outline:none; overflow:hidden; height:40px; padding:0 20px; font-size:14px; gap:8px; }
+.laightup-management .glass-btn-base.h-8 { height:32px; padding:0 14px; gap:6px; }
+.laightup-management .glass-btn-base.h-9 { height:36px; padding:0 16px; }
+.laightup-management .glass-btn-base.h-12 { height:48px; padding:0 24px; font-size:16px; gap:10px; }
+.laightup-management .glass-btn-base svg { width:16px; height:16px; flex-shrink:0; }
+.laightup-management .glass-settings-nav-group__list > li { list-style:none; }
+@media(prefers-reduced-motion:reduce) { .laightup-management *,.laightup-management *::before,.laightup-management *::after { animation:none!important; transition:none!important; } }
+.laightup-management .glass-popover-content--menu { background:rgba(255,255,255,.97); }
+.laightup-management .glass-menu-item--selected { color:var(--glass-text-default); }

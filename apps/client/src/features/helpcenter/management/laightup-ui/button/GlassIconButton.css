@@ -1,0 +1,396 @@
+/* GlassIconButton.css — compact square button for icon-only utility
+   actions. Sibling to GlassButton; transparent background at rest, hover
+   tint pulled from the same --theme-h / --theme-accent-h tokens the rest
+   of the lib uses.
+
+   Per /laightup-ci dual-accent rule:
+     brand        → --theme-body-h violet ink (default; NOT --theme-h, an alias of cyan --theme-accent-h, CHA-1308)
+     ghost        → white glyph, violet hover wash, dark/colored surfaces only
+     destructive  → red destructive token
+     primary      → --theme-accent-h (cyan, 180° default)
+
+   Sizes are perfectly square so the icon centers visually without
+   off-balance horizontal padding. */
+
+@layer component {
+
+  .glass-icon-btn {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: hsl(0 0% 100% / 0.65);
+    cursor: pointer;
+    transition:
+      background 120ms ease,
+      color 120ms ease,
+      box-shadow 120ms ease,
+      transform 80ms ease;
+  }
+
+  .glass-icon-btn:hover {
+    color: hsl(0 0% 100% / 0.95);
+  }
+
+  .glass-icon-btn:active {
+    transform: scale(0.94);
+  }
+
+  .glass-icon-btn:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 2px hsl(0 0% 100% / 0.7),
+      0 0 0 3px hsl(var(--theme-h, 248) var(--theme-s, 70%) var(--theme-l, 62%) / 0.55);
+  }
+
+  .glass-icon-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  /* Soft-disabled: keeps pointer events so a tooltip can explain the block. */
+  .glass-icon-btn[aria-disabled='true'] {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  /* ── Size variants (always square) ── */
+
+  .glass-icon-btn--sm {
+    width: 24px;
+    height: 24px;
+  }
+  .glass-icon-btn--sm svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .glass-icon-btn--md {
+    width: 28px;
+    height: 28px;
+  }
+  .glass-icon-btn--md svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .glass-icon-btn--lg {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+  }
+  .glass-icon-btn--lg svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .glass-icon-btn--xl {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+  }
+  .glass-icon-btn--xl svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* ── Shape: circle (after the size rules so it wins the border-radius) ── */
+  .glass-icon-btn--circle {
+    border-radius: 9999px;
+  }
+
+  /* ── Variant: ghost (white glyph, dark/colored surfaces) ── */
+  /* Subtle violet wash on hover, picking up --theme-h so the button
+     matches whatever theme hue the surrounding surface uses. Hover
+     background uses a low-alpha violet so it reads as "interactable"
+     without dominating dense rows. */
+  .glass-icon-btn--ghost {
+    color: hsl(0 0% 100% / 0.55);
+  }
+  .glass-icon-btn--ghost:hover {
+    background: hsl(var(--theme-body-h, 248) var(--theme-body-s, 70%) var(--theme-body-l, 62%) / 0.14);
+    color: hsl(0 0% 100% / 0.95);
+  }
+  .laightup-management[data-mode='night'] .glass-icon-btn--ghost {
+    color: hsl(215 20% 94% / 0.55);
+  }
+  .laightup-management[data-mode='night'] .glass-icon-btn--ghost:hover {
+    background: hsl(var(--theme-body-h, 248) var(--theme-body-s, 52%) var(--theme-body-l, 68%) / 0.18);
+    color: hsl(215 20% 94% / 0.95);
+  }
+
+  /* ── Variant: destructive (red rim per CI) ── */
+  /* Red icon at rest so the destructive intent is obvious before hover;
+     hover deepens the red tint and adds a wash. */
+  .glass-icon-btn--destructive {
+    color: hsl(4 75% 65% / 0.85);
+  }
+  .glass-icon-btn--destructive:hover {
+    background: hsl(4 80% 55% / 0.16);
+    color: hsl(4 90% 70% / 1);
+  }
+  .glass-icon-btn--destructive:focus-visible {
+    box-shadow:
+      0 0 0 2px hsl(0 0% 100% / 0.7),
+      0 0 0 3px hsl(4 80% 60% / 0.65);
+  }
+  .laightup-management[data-mode='night'] .glass-icon-btn--destructive {
+    color: hsl(4 78% 70% / 0.85);
+  }
+  .laightup-management[data-mode='night'] .glass-icon-btn--destructive:hover {
+    background: hsl(4 80% 55% / 0.20);
+    color: hsl(4 90% 75% / 1);
+  }
+
+  /* ── Variant: primary (cyan accent) ── */
+  /* Reserve for true primary icon affordances — the dual-accent rule
+     wants ONE cyan thing per section. */
+  .glass-icon-btn--primary {
+    color: hsl(var(--theme-accent-h, 180) var(--theme-accent-s, 96%) var(--theme-accent-l, 43%) / 0.9);
+  }
+  .glass-icon-btn--primary:hover {
+    background: hsl(var(--theme-accent-h, 180) var(--theme-accent-s, 96%) var(--theme-accent-l, 43%) / 0.16);
+    color: hsl(var(--theme-accent-h, 180) var(--theme-accent-s, 96%) var(--theme-accent-l, 50%));
+  }
+  .glass-icon-btn--primary:focus-visible {
+    box-shadow:
+      0 0 0 2px hsl(0 0% 100% / 0.7),
+      0 0 0 3px hsl(var(--theme-accent-h, 180) var(--theme-accent-s, 96%) var(--theme-accent-l, 43%) / 0.6);
+  }
+
+  /* ── Variant: brand (default, violet body ink) ── */
+  /* Violet glyph at rest so the affordance reads on LIGHT glass panels,
+     where ghost's white glyph washes out. Uses --theme-body-* (CI violet),
+     NOT --theme-h (which aliases the cyan accent) — the accent is reserved
+     for spotlight CTAs per the CI dual-accent rule; brand is body chrome. */
+  .glass-icon-btn--brand {
+    color: hsl(var(--theme-body-h, 248) var(--theme-body-s, 68%) 48% / 0.95);
+  }
+  .glass-icon-btn--brand:hover {
+    background: hsl(var(--theme-body-h, 248) var(--theme-body-s, 68%) var(--theme-body-l, 54%) / 0.16);
+    color: hsl(var(--theme-body-h, 248) var(--theme-body-s, 68%) 42%);
+  }
+  .glass-icon-btn--brand:focus-visible {
+    box-shadow:
+      0 0 0 2px hsl(0 0% 100% / 0.7),
+      0 0 0 3px hsl(var(--theme-body-h, 248) var(--theme-body-s, 68%) var(--theme-body-l, 54%) / 0.6);
+  }
+  .laightup-management[data-mode='night'] .glass-icon-btn--brand {
+    color: hsl(var(--theme-body-h, 248) 62% 80% / 0.95);
+  }
+  .laightup-management[data-mode='night'] .glass-icon-btn--brand:hover {
+    background: hsl(var(--theme-body-h, 248) 52% 68% / 0.20);
+    color: hsl(var(--theme-body-h, 248) 70% 86%);
+  }
+
+  /* ── Modifier: elevated ──
+     Opt-in resting container + soft elevation, instead of the default
+     transparent-until-hover treatment. Reads as a discrete button (like
+     a dialog's close ×) rather than a bare glyph. Composes on top of any
+     variant; the per-variant blocks below re-tint the container so the
+     destructive button stays in the red family, etc.
+
+     Neutral (no variant / ghost) base: milky white surface, hairline
+     border, inset top highlight + a low outer drop shadow for lift. */
+  .glass-icon-btn--elevated {
+    background: hsl(0 0% 100% / 0.12);
+    border: 1px solid hsl(0 0% 100% / 0.22);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.25),
+      0 2px 6px hsl(0 0% 0% / 0.10);
+  }
+  .glass-icon-btn--elevated:hover {
+    background: hsl(0 0% 100% / 0.20);
+    border-color: hsl(0 0% 100% / 0.32);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.35),
+      0 4px 12px hsl(0 0% 0% / 0.14);
+    transform: translateY(-1px);
+  }
+  .glass-icon-btn--elevated:active {
+    transform: translateY(0) scale(0.94);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.15),
+      0 1px 3px hsl(0 0% 0% / 0.10);
+  }
+  .laightup-management[data-mode='night'] .glass-icon-btn--elevated {
+    background: hsl(230 28% 60% / 0.12);
+    border-color: hsl(230 28% 60% / 0.24);
+    box-shadow:
+      inset 0 1px 0 hsl(230 30% 70% / 0.15),
+      0 2px 6px hsl(230 40% 6% / 0.30);
+  }
+  .laightup-management[data-mode='night'] .glass-icon-btn--elevated:hover {
+    background: hsl(230 28% 60% / 0.20);
+    border-color: hsl(230 28% 60% / 0.34);
+    box-shadow:
+      inset 0 1px 0 hsl(230 30% 70% / 0.22),
+      0 4px 12px hsl(230 40% 6% / 0.38);
+  }
+
+  /* Elevated + destructive — red-family container (destructive is its own
+     color family per /laightup-ci, not body-violet). Red icon stays;
+     the surface, border and shadow all pick up the warning hue. */
+  .glass-icon-btn--elevated.glass-icon-btn--destructive {
+    background: linear-gradient(hsl(4 75% 55% / 0.14), hsl(4 75% 55% / 0.14)), hsl(0 0% 100% / 0.92);
+    border-color: hsl(4 75% 55% / 0.35);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.18),
+      0 2px 6px hsl(4 60% 28% / 0.18);
+  }
+  .glass-icon-btn--elevated.glass-icon-btn--destructive:hover {
+    background: linear-gradient(hsl(4 80% 55% / 0.22), hsl(4 80% 55% / 0.22)), hsl(0 0% 100% / 0.92);
+    border-color: hsl(4 80% 58% / 0.45);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.22),
+      0 4px 12px hsl(4 60% 28% / 0.25);
+    transform: translateY(-1px);
+  }
+  .laightup-management[data-mode='night'] .glass-icon-btn--elevated.glass-icon-btn--destructive {
+    background: linear-gradient(hsl(4 78% 58% / 0.20), hsl(4 78% 58% / 0.20)), hsl(228 26% 13% / 0.92);
+    border-color: hsl(4 78% 60% / 0.34);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.14),
+      0 2px 6px hsl(4 50% 12% / 0.34);
+  }
+  .laightup-management[data-mode='night'] .glass-icon-btn--elevated.glass-icon-btn--destructive:hover {
+    background: linear-gradient(hsl(4 80% 58% / 0.30), hsl(4 80% 58% / 0.30)), hsl(228 26% 13% / 0.92);
+    border-color: hsl(4 80% 62% / 0.48);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.18),
+      0 4px 12px hsl(4 50% 12% / 0.42);
+  }
+
+  /* Elevated + brand — violet-family container so the resting surface
+     itself reads on light glass panels, matching the violet glyph. */
+  .glass-icon-btn--elevated.glass-icon-btn--brand {
+    background: hsl(var(--theme-body-h, 248) var(--theme-body-s, 68%) 62% / 0.12);
+    border-color: hsl(var(--theme-body-h, 248) var(--theme-body-s, 68%) 55% / 0.32);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.25),
+      0 2px 6px hsl(var(--theme-body-h, 248) 40% 30% / 0.15);
+  }
+  .glass-icon-btn--elevated.glass-icon-btn--brand:hover {
+    background: hsl(var(--theme-body-h, 248) var(--theme-body-s, 68%) 62% / 0.20);
+    border-color: hsl(var(--theme-body-h, 248) var(--theme-body-s, 68%) 55% / 0.48);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.30),
+      0 4px 12px hsl(var(--theme-body-h, 248) 40% 30% / 0.22);
+    transform: translateY(-1px);
+  }
+  .laightup-management[data-mode='night'] .glass-icon-btn--elevated.glass-icon-btn--brand {
+    background: hsl(var(--theme-body-h, 248) 45% 68% / 0.14);
+    border-color: hsl(var(--theme-body-h, 248) 45% 70% / 0.30);
+    box-shadow:
+      inset 0 1px 0 hsl(var(--theme-body-h, 248) 40% 80% / 0.18),
+      0 2px 6px hsl(230 40% 6% / 0.32);
+  }
+  .laightup-management[data-mode='night'] .glass-icon-btn--elevated.glass-icon-btn--brand:hover {
+    background: hsl(var(--theme-body-h, 248) 45% 68% / 0.22);
+    border-color: hsl(var(--theme-body-h, 248) 45% 72% / 0.42);
+  }
+
+  /* Elevated + primary — the soft GlassButton primary fill for an icon-only
+     focal action (e.g. send). Same ink as the soft primary for contrast. */
+  .glass-icon-btn--elevated.glass-icon-btn--primary {
+    background: hsl(var(--theme-accent-h, 180) var(--theme-accent-s, 96%) var(--theme-accent-l, 43%) / 0.55);
+    backdrop-filter: blur(12px) saturate(1.2);
+    border-color: hsl(var(--theme-accent-h, 180) var(--theme-accent-s, 96%) var(--theme-accent-l, 43%) / 0.4);
+    color: var(--glass-text-default);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.25),
+      0 2px 8px hsl(var(--theme-accent-h, 180) 40% 20% / 0.2);
+  }
+  .glass-icon-btn--elevated.glass-icon-btn--primary:hover {
+    background: hsl(var(--theme-accent-h, 180) var(--theme-accent-s, 96%) var(--theme-accent-l, 43%) / 0.7);
+    border-color: hsl(var(--theme-accent-h, 180) var(--theme-accent-s, 96%) var(--theme-accent-l, 43%) / 0.55);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.35),
+      0 4px 16px hsl(var(--theme-accent-h, 180) 40% 20% / 0.25);
+    transform: translateY(-1px);
+  }
+  .laightup-management[data-mode='night'] .glass-icon-btn--elevated.glass-icon-btn--primary {
+    background: hsl(var(--theme-accent-h, 180) var(--theme-accent-s, 96%) calc(var(--theme-accent-l, 43%) + 8%) / 0.42);
+    border-color: hsl(var(--theme-accent-h, 180) var(--theme-accent-s, 96%) calc(var(--theme-accent-l, 43%) + 8%) / 0.35);
+    color: hsl(215 20% 96%);
+  }
+  .laightup-management[data-mode='night'] .glass-icon-btn--elevated.glass-icon-btn--primary:hover {
+    background: hsl(var(--theme-accent-h, 180) var(--theme-accent-s, 96%) calc(var(--theme-accent-l, 43%) + 8%) / 0.58);
+  }
+
+  /* ── Modifier: onMedia ──
+     For icon buttons overlaid directly on photography/imagery (e.g. the
+     delete affordance on gallery image tiles), where the default
+     transparent-until-hover glyph vanishes against busy or light content.
+     Lays down a dark translucent scrim + blur so the glyph keeps contrast
+     on ANY image, and a hairline light border for edge definition on dark
+     images too. Composes on top of any variant; the icon colour stays
+     variant-driven (destructive red, etc.), which reads well on the scrim.
+     Unlike `elevated` (a light milky surface for glass panels), this is a
+     dark scrim tuned for arbitrary media. */
+  .glass-icon-btn--on-media {
+    background: hsl(0 0% 0% / 0.42);
+    border: 1px solid hsl(0 0% 100% / 0.16);
+    /* Unprefixed only — Lightning CSS adds -webkit- and keeps both; writing the
+       prefix ourselves makes its dedup drop the unprefixed one (Chrome 149+). */
+    backdrop-filter: blur(4px);
+    box-shadow: 0 1px 3px hsl(0 0% 0% / 0.28);
+  }
+  .glass-icon-btn--on-media:hover {
+    background: hsl(0 0% 0% / 0.58);
+    border-color: hsl(0 0% 100% / 0.24);
+  }
+  .glass-icon-btn--on-media:active {
+    transform: scale(0.94);
+  }
+
+  /* ── Modifier: floating ── (doubled class: must beat per-variant hover/night rules) */
+  .glass-icon-btn--floating {
+    --glass-fab-fill: hsl(var(--theme-body-h, 248) var(--theme-body-s, 68%) 55% / 0.5);
+    --glass-fab-fill-hover: hsl(var(--theme-body-h, 248) var(--theme-body-s, 68%) 58% / 0.62);
+    --glass-fab-border: hsl(0 0% 100% / 0.4);
+    --glass-fab-shadow:
+      0 10px 24px -8px hsl(var(--theme-body-h, 248) 55% 28% / 0.45),
+      inset 0 1px 0 hsl(0 0% 100% / 0.35);
+  }
+  .laightup-management[data-mode='night'] .glass-icon-btn--floating {
+    --glass-fab-fill: hsl(var(--theme-body-h, 248) var(--theme-body-s, 68%) 60% / 0.42);
+    --glass-fab-fill-hover: hsl(var(--theme-body-h, 248) var(--theme-body-s, 68%) 64% / 0.55);
+    --glass-fab-border: hsl(0 0% 100% / 0.22);
+    --glass-fab-shadow:
+      0 10px 24px -8px hsl(var(--theme-body-h, 248) 60% 6% / 0.55),
+      inset 0 1px 0 hsl(0 0% 100% / 0.18);
+  }
+  .glass-icon-btn.glass-icon-btn--floating,
+  .laightup-management[data-mode='night'] .glass-icon-btn.glass-icon-btn--floating {
+    background: var(--glass-fab-fill);
+    border: 1px solid var(--glass-fab-border);
+    color: hsl(0 0% 100%);
+    /* Unprefixed only: Lightning CSS adds the -webkit- copy itself. */
+    backdrop-filter: blur(12px) saturate(1.5);
+    box-shadow: var(--glass-fab-shadow);
+  }
+  .glass-icon-btn.glass-icon-btn--floating:hover,
+  .laightup-management[data-mode='night'] .glass-icon-btn.glass-icon-btn--floating:hover {
+    background: var(--glass-fab-fill-hover);
+    border-color: var(--glass-fab-border);
+    color: hsl(0 0% 100%);
+    box-shadow: var(--glass-fab-shadow);
+  }
+  .glass-icon-btn.glass-icon-btn--floating:active {
+    transform: scale(0.93);
+  }
+  .glass-icon-btn.glass-icon-btn--floating:focus-visible,
+  .laightup-management[data-mode='night'] .glass-icon-btn.glass-icon-btn--floating:focus-visible {
+    box-shadow:
+      0 0 0 2px hsl(0 0% 100% / 0.7),
+      0 0 0 3px hsl(var(--theme-h, 248) var(--theme-s, 70%) var(--theme-l, 62%) / 0.55),
+      var(--glass-fab-shadow);
+  }
+}

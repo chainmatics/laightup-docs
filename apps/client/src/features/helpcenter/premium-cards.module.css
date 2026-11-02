@@ -1,0 +1,196 @@
+.artwork {
+  height: 178px;
+  background: #f1eef7;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid var(--line);
+  isolation: isolate;
+}
+.artwork::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#a292ba33 0.6px, transparent 0.6px);
+  background-size: 8px 8px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+.artwork svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-family: GeistHelp, sans-serif;
+}
+.artwork[data-art="site"] {
+  background: linear-gradient(120deg, #f5f1e9, #eee9f6);
+}
+.artwork[data-art="campaign"] {
+  background: linear-gradient(120deg, #ede8f7, #e6e6f7);
+}
+.artwork[data-art="local"] {
+  background: linear-gradient(120deg, #e6f1f0, #eef0f8);
+}
+.artwork[data-art="team"] {
+  background: linear-gradient(120deg, #edebf1, #e9e4f4);
+}
+.artFloat {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+:global(a:hover) .artFloat {
+  transform: translateY(-3px);
+}
+.topicArtwork {
+  position: relative;
+  min-height: 111px;
+  display: grid;
+  place-items: center;
+  background: #f1eef7;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+.topicOrbit {
+  position: absolute;
+  width: 182px;
+  height: 182px;
+  border: 1px solid #503bd912;
+  border-radius: 50%;
+  transform: translate(34px, 10px);
+}
+.topicOrbit::after {
+  content: "";
+  position: absolute;
+  inset: 24px;
+  border: 1px solid #503bd917;
+  border-radius: 50%;
+}
+.topicSheet,
+.topicSheetBack {
+  width: 76px;
+  height: 61px;
+  background: #ffffffb5;
+  border: 1px solid #ded6eb;
+  border-radius: 8px;
+  position: absolute;
+  transform: translate(14px, -1px) rotate(10deg);
+  box-shadow: 0 5px 12px #32008a05;
+}
+.topicSheetBack {
+  transform: translate(-8px, 3px) rotate(-8deg);
+  background: #fff;
+}
+.topicSymbol {
+  position: relative;
+  color: #503bd9;
+  z-index: 1;
+  transform: translate(-8px, 3px) rotate(-8deg);
+  transition: transform 0.25s;
+}
+.topicArtwork > i {
+  position: absolute;
+  background: #04d9d9;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  right: calc(50% - 58px);
+  top: 30px;
+}
+.topicArtwork > i:last-child {
+  width: 3px;
+  height: 3px;
+  right: calc(50% + 61px);
+  top: 78px;
+  background: #a698c4;
+}
+.topicArtwork[data-topic="parameter"],
+.topicArtwork[data-topic="ki"],
+.topicArtwork[data-topic="sendeplaene"] {
+  background: #32008a;
+}
+.topicArtwork[data-topic="parameter"] .topicSheet,
+.topicArtwork[data-topic="ki"] .topicSheet,
+.topicArtwork[data-topic="sendeplaene"] .topicSheet {
+  background: #ffffff10;
+  border-color: #ffffff30;
+}
+.topicArtwork[data-topic="parameter"] .topicSheetBack,
+.topicArtwork[data-topic="ki"] .topicSheetBack,
+.topicArtwork[data-topic="sendeplaene"] .topicSheetBack {
+  background: #ffffff0a;
+  border-color: #ffffff50;
+}
+.topicArtwork[data-topic="parameter"] .topicSymbol,
+.topicArtwork[data-topic="ki"] .topicSymbol,
+.topicArtwork[data-topic="sendeplaene"] .topicSymbol {
+  color: #04d9d9;
+}
+.topicArtwork[data-topic="parameter"] .topicOrbit,
+.topicArtwork[data-topic="ki"] .topicOrbit,
+.topicArtwork[data-topic="sendeplaene"] .topicOrbit {
+  border-color: #ffffff12;
+}
+.topicArtwork[data-topic="installation"],
+.topicArtwork[data-topic="displays"] {
+  background: #e7f1f0;
+}
+.topicArtwork[data-topic="verwaltung"],
+.topicArtwork[data-topic="freigaben"] {
+  background: #efebf3;
+}
+:global(a:hover) .topicSymbol {
+  transform: translate(-8px, 0) rotate(-4deg);
+}
+@media (max-width: 650px) {
+  .artwork {
+    height: 160px;
+  }
+  .topicArtwork {
+    min-height: 100px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .artFloat,
+  .topicSymbol {
+    transition: none;
+  }
+  :global(a:hover) .artFloat {
+    transform: none;
+  }
+  :global(a:hover) .topicSymbol {
+    transform: translate(-8px, 3px) rotate(-8deg);
+  }
+}
+@media print {
+  .artwork,
+  .topicArtwork {
+    display: none;
+  }
+}
+.topicArtwork {
+  --art-panel: #fff;
+  --art-stroke: #d2c8df;
+  --art-solid: #503bd9;
+}
+.topicVector {
+  width: 100%;
+  height: 111px;
+  transition: transform 0.3s;
+}
+.topicArtwork[data-topic="parameter"],
+.topicArtwork[data-topic="ki"],
+.topicArtwork[data-topic="sendeplaene"] {
+  --art-panel: #ffffff0d;
+  --art-stroke: #ffffff3d;
+  --art-solid: #04d9d9;
+}
+:global(a:hover) .topicVector {
+  transform: translateY(-2px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .topicVector {
+    transition: none;
+  }
+  :global(a:hover) .topicVector {
+    transform: none;
+  }
+}

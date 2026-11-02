@@ -1,0 +1,154 @@
+@layer component {
+  /* ─────────────────────────────────────────────────────────────────
+     GlassCheckbox — surface skin + states + motion
+
+     Composition:
+       1. base box (size / radius / bg / rim)
+       2. size variants (sm / md / lg)
+       3. checked / indeterminate fill + glyph
+       4. hover / focus-visible / disabled states
+       5. spring motion on state change
+     ───────────────────────────────────────────────────────────────── */
+
+  .glass-checkbox {
+    position: relative;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background: var(--glass-checkbox-bg);
+    border: 1px solid var(--glass-checkbox-rim);
+    box-shadow: 0 1px 2px var(--glass-checkbox-shadow);
+    cursor: pointer;
+    transition:
+      background var(--glass-checkbox-duration) var(--glass-checkbox-easing),
+      border-color var(--glass-checkbox-duration) var(--glass-checkbox-easing),
+      transform 140ms var(--glass-checkbox-easing);
+  }
+
+  /* Reset Radix's default button styling */
+  button.glass-checkbox {
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    line-height: 0;
+  }
+
+  /* ── Sizes ── */
+  .glass-checkbox--sm {
+    inline-size: var(--glass-checkbox-size-sm);
+    block-size: var(--glass-checkbox-size-sm);
+    border-radius: var(--glass-checkbox-radius-sm);
+  }
+  .glass-checkbox--md {
+    inline-size: var(--glass-checkbox-size-md);
+    block-size: var(--glass-checkbox-size-md);
+    border-radius: var(--glass-checkbox-radius-md);
+  }
+  .glass-checkbox--lg {
+    inline-size: var(--glass-checkbox-size-lg);
+    block-size: var(--glass-checkbox-size-lg);
+    border-radius: var(--glass-checkbox-radius-lg);
+  }
+
+  /* ── Hover (off state) ── */
+  .glass-checkbox:hover:not([data-disabled]) {
+    background: var(--glass-checkbox-bg-hover);
+    border-color: var(--glass-checkbox-rim-hover);
+  }
+
+  /* ── Active press (subtle compress) ── */
+  .glass-checkbox:active:not([data-disabled]) {
+    transform: scale(0.94);
+  }
+
+  /* ── Focus-visible (keyboard) ── */
+  .glass-checkbox:focus-visible {
+    outline: 2px solid var(--glass-checkbox-focus-ring);
+    outline-offset: 2px;
+  }
+
+  /* ── Checked / indeterminate fill ── */
+  .glass-checkbox[data-state='checked'],
+  .glass-checkbox[data-state='indeterminate'] {
+    background: var(--glass-checkbox-fill);
+    border-color: var(--glass-checkbox-fill);
+  }
+  .glass-checkbox[data-state='checked']:hover:not([data-disabled]),
+  .glass-checkbox[data-state='indeterminate']:hover:not([data-disabled]) {
+    background: var(--glass-checkbox-fill-hover);
+    border-color: var(--glass-checkbox-fill-hover);
+  }
+
+  /* ── Disabled ── */
+  .glass-checkbox[data-disabled] {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  /* ─── Indicator (glyph) ─────────────────────────────────────────── */
+
+  .glass-checkbox__indicator {
+    inline-size: 80%;
+    block-size: 80%;
+    color: var(--glass-checkbox-glyph);
+    pointer-events: none;
+    /* Spring-overshoot on state change. forceMount keeps the SVG in the
+       DOM so we can animate transform/opacity rather than crossfading
+       a mounted element. */
+    transform: scale(0);
+    opacity: 0;
+    transition:
+      transform var(--glass-checkbox-duration) var(--glass-checkbox-easing),
+      opacity 140ms ease-out;
+  }
+  .glass-checkbox__indicator svg {
+    inline-size: 100%;
+    block-size: 100%;
+  }
+  .glass-checkbox[data-state='checked'] .glass-checkbox__indicator,
+  .glass-checkbox[data-state='indeterminate'] .glass-checkbox__indicator {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .glass-checkbox,
+    .glass-checkbox__indicator {
+      transition-duration: 1ms !important;
+    }
+  }
+
+  /* ─── Mark (visual only, the surrounding row is the control) ───── */
+
+  .glass-checkbox--mark {
+    pointer-events: none;
+  }
+
+  /* ─── Label wrapper ─────────────────────────────────────────────── */
+
+  .glass-checkbox__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .glass-checkbox__label--sm .glass-checkbox__label-text {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .glass-checkbox__label--md .glass-checkbox__label-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .glass-checkbox__label--lg .glass-checkbox__label-text {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .glass-checkbox__label:has(.glass-checkbox[data-disabled]) {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
