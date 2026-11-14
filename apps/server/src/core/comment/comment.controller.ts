@@ -33,6 +33,7 @@ import {
   IAuditService,
 } from '../../integrations/audit/audit.service';
 import { WsService } from '../../ws/ws.service';
+import { ApiKeyScope } from '../../common/decorators/api-key-scope.decorator';
 
 @UseGuards(JwtAuthGuard)
 @Controller('comments')
@@ -104,6 +105,7 @@ export class CommentController {
     return this.commentService.findByPageId(page.id, pagination);
   }
 
+  @ApiKeyScope('read')
   @HttpCode(HttpStatus.OK)
   @Post('info')
   async findOne(
@@ -145,7 +147,19 @@ export class CommentController {
 
     await this.pageAccessService.validateCanComment(page, user, workspace.id);
 
-    return this.commentService.update(comment, dto, user);
+    const updatedComment = await this.commentService.update(comment, dto, user);
+
+    this.auditService.log({
+      event: AuditEvent.COMMENT_UPDATED,
+      resourceType: AuditResource.COMMENT,
+      resourceId: comment.id,
+      spaceId: comment.spaceId,
+      metadata: {
+        pageId: comment.pageId,
+      },
+    });
+
+    return updatedComment;
   }
 
   @HttpCode(HttpStatus.OK)

@@ -1,9 +1,9 @@
-import { markInputRule } from "@tiptap/core";
+import { markInputRule, type Editor } from "@tiptap/core";
 import { StarterKit } from "@tiptap/starter-kit";
 import { TiptapDocument } from "@/features/editor/extensions/document";
 import { Code } from "@tiptap/extension-code";
 import { TextAlign } from "@tiptap/extension-text-align";
-import { TaskList, TaskItem } from "@tiptap/extension-list";
+import { TaskList } from "@tiptap/extension-list";
 import { CharacterCount, UndoRedo } from "@tiptap/extensions";
 import { Placeholder } from "@/features/editor/extensions/placeholder";
 import { Superscript } from "@tiptap/extension-superscript";
@@ -55,8 +55,14 @@ import {
   Heading,
   Highlight,
   Indent,
+  ListItem,
+  TaskItem,
   UniqueID,
   SharedStorage,
+  IntegrationCard,
+  IntegrationMention,
+  MicrosoftFile,
+  MicrosoftFolder,
   Columns,
   Column,
   Status,
@@ -67,6 +73,10 @@ import {
   Footnotes,
   Footnote,
   FootnoteReference,
+  Tabs,
+  Tab,
+  TabLabel,
+  TabPanel,
 } from "@docmost/editor-ext";
 import {
   randomElement,
@@ -95,9 +105,16 @@ import ExcalidrawView from "@/features/editor/components/excalidraw/excalidraw-v
 import EmbedView from "@/features/editor/components/embed/embed-view.tsx";
 import PdfView from "@/features/editor/components/pdf/pdf-view.tsx";
 import SubpagesView from "@/features/editor/components/subpages/subpages-view.tsx";
+import IntegrationCardView from "@/features/editor/components/integration-link/integration-card-view.tsx";
+import IntegrationMentionView from "@/features/editor/components/integration-link/integration-mention-view.tsx";
+import { IntegrationPasteMenuExtension } from "@/features/editor/extensions/integration-paste-menu";
+import { BasePasteMenuExtension } from "@/features/editor/extensions/base-paste-menu";
+import TabsView from "@/features/editor/components/tabs/tabs-view.tsx";
 import TransclusionView from "@/features/editor/components/transclusion/transclusion-view.tsx";
 import TransclusionReferenceView from "@/features/editor/components/transclusion/transclusion-reference-view.tsx";
 import { BaseEmbedView } from "@/features/editor/components/base-embed/base-embed-view.tsx";
+import MicrosoftFileView from "@/features/editor/components/microsoft/microsoft-file-view.tsx";
+import MicrosoftFolderView from "@/features/editor/components/microsoft/microsoft-folder-view.tsx";
 import { common, createLowlight } from "lowlight";
 import plaintext from "highlight.js/lib/languages/plaintext";
 import powershell from "highlight.js/lib/languages/powershell";
@@ -141,6 +158,7 @@ export const mainExtensions = [
     undoRedo: false,
     link: false,
     trailingNode: false,
+    listItem: false,
     dropcursor: {
       width: 3,
       color: "#70CFF8",
@@ -223,6 +241,7 @@ export const mainExtensions = [
   }),
   TextAlign.configure({ types: ["heading", "paragraph"] }),
   Indent,
+  ListItem,
   TaskList,
   TaskItem.configure({
     nested: true,
@@ -242,7 +261,7 @@ export const mainExtensions = [
   Typography,
   TrailingNode,
   GlobalDragHandle.configure({
-    customNodes: ["transclusionSource", "transclusionReference"],
+    customNodes: ["transclusionSource", "transclusionReference", "tabPanel"],
     atomNodes: ["base"],
   }),
   TextStyle,
@@ -297,6 +316,12 @@ export const mainExtensions = [
   Details,
   DetailsSummary,
   DetailsContent,
+  Tabs.configure({
+    view: TabsView,
+  }),
+  Tab,
+  TabLabel,
+  TabPanel,
   Youtube.configure({
     addPasteHandler: false,
     controls: true,
@@ -385,6 +410,20 @@ export const mainExtensions = [
   Subpages.configure({
     view: SubpagesView,
   }),
+  IntegrationCard.configure({
+    view: IntegrationCardView,
+  }),
+  IntegrationMention.configure({
+    view: IntegrationMentionView,
+  }),
+  IntegrationPasteMenuExtension,
+  BasePasteMenuExtension,
+  MicrosoftFile.configure({
+    view: MicrosoftFileView,
+  }),
+  MicrosoftFolder.configure({
+    view: MicrosoftFolderView,
+  }),
   Status.configure({
     view: StatusView,
   }),
@@ -443,14 +482,16 @@ const TEMPLATE_EXCLUDED_SLASH_ITEMS = new Set([
   "Audio",
   "Synced block",
   "Base (Inline)",
-  "Kanban"
+  "Kanban",
+  "SharePoint file"
 ]);
 
 const TemplateSlashCommand = Command.configure({
   suggestion: {
-    items: ({ query }: { query: string }) =>
+    items: ({ query, editor }: { query: string; editor: Editor }) =>
       getSuggestionItems({
         query,
+        editor,
         excludeItems: TEMPLATE_EXCLUDED_SLASH_ITEMS,
       }),
     render: renderItems,

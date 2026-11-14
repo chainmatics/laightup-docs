@@ -22,6 +22,7 @@ export default defineConfig(({ mode }) => {
     HELP_EDITOR_WORKSPACE_ID,
     AI_VECTOR_DRIVER,
     BETA_PUBLIC_SPACES,
+    UNSPLASH_ACCESS_KEY,
   } = loadEnv(mode, envPath, "");
 
   return {
@@ -40,6 +41,7 @@ export default defineConfig(({ mode }) => {
         POSTHOG_KEY,
         AI_VECTOR_DRIVER,
         BETA_PUBLIC_SPACES,
+        UNSPLASH_ENABLED: UNSPLASH_ACCESS_KEY?.trim() ? "true" : undefined,
       },
       APP_VERSION: JSON.stringify(process.env.npm_package_version),
     },

@@ -17,6 +17,7 @@ export enum EventName {
   WORKSPACE_CREATED = 'workspace.created',
   WORKSPACE_UPDATED = 'workspace.updated',
   WORKSPACE_DELETED = 'workspace.deleted',
+  NOTIFICATION_CREATED = 'notification.created',
 
   BASE_CREATED = 'base.created',
   BASE_UPDATED = 'base.updated',
@@ -42,4 +43,6 @@ export enum EventName {
   BASE_ROWS_UPDATED = 'base.rows.updated',
   BASE_FORMULA_RECOMPUTE_STARTED = 'base.formula.recompute.started',
   BASE_FORMULA_RECOMPUTE_COMPLETED = 'base.formula.recompute.completed',
+  BASE_IMPORT_PROGRESS = 'base.import.progress',
+  BASE_IMPORT_COMPLETED = 'base.import.completed',
 }

@@ -95,6 +95,14 @@ import { GeneralQueueProcessor } from './processors/general-queue.processor';
       },
     }),
     BullModule.registerQueue({
+      name: QueueName.INTEGRATION_QUEUE,
+      defaultJobOptions: {
+        removeOnComplete: true,
+        removeOnFail: { count: 50 },
+        attempts: 3,
+      },
+    }),
+    BullModule.registerQueue({
       name: QueueName.SIEM_QUEUE,
       defaultJobOptions: {
         removeOnComplete: true,
@@ -106,6 +114,14 @@ import { GeneralQueueProcessor } from './processors/general-queue.processor';
       name: QueueName.BASE_QUEUE,
       defaultJobOptions: {
         attempts: 2,
+        removeOnComplete: { count: 200 },
+        removeOnFail: { count: 100 },
+      },
+    }),
+    BullModule.registerQueue({
+      name: QueueName.BASE_IMPORT_QUEUE,
+      defaultJobOptions: {
+        attempts: 1,
         removeOnComplete: { count: 200 },
         removeOnFail: { count: 100 },
       },
