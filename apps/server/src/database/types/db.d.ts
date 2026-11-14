@@ -30,6 +30,26 @@ export type JsonValue = JsonArray | JsonObject | JsonPrimitive;
 
 export type Timestamp = ColumnType<Date, Date | string, Date | string>;
 
+export interface Announcements {
+  archivedAt: Timestamp | null;
+  audience: Generated<string>;
+  color: string;
+  content: Json;
+  createdAt: Generated<Timestamp>;
+  creatorId: string | null;
+  endsAt: Timestamp | null;
+  id: Generated<string>;
+  isDismissible: Generated<boolean>;
+  lastUpdatedById: string | null;
+  startsAt: Generated<Timestamp>;
+  textContent: string;
+  title: string;
+  tsv: string | null;
+  type: string;
+  updatedAt: Generated<Timestamp>;
+  workspaceId: string;
+}
+
 export interface ApiKeys {
   createdAt: Generated<Timestamp>;
   deletedAt: Timestamp | null;
@@ -37,6 +57,7 @@ export interface ApiKeys {
   id: Generated<string>;
   lastUsedAt: Timestamp | null;
   name: string | null;
+  scopes: Generated<Json>;
   updatedAt: Generated<Timestamp>;
   creatorId: string;
   workspaceId: string;
@@ -52,6 +73,7 @@ export interface Attachments {
   filePath: string;
   fileSize: Int8 | null;
   id: Generated<string>;
+  indexedAt: Timestamp | null;
   mimeType: string | null;
   pageId: string | null;
   spaceId: string | null;
@@ -313,7 +335,9 @@ export interface PageHistory {
 export interface Pages {
   content: Json | null;
   contributorIds: Generated<string[] | null>;
+  coverAttribution: Json | null;
   coverPhoto: string | null;
+  coverPosition: number | null;
   createdAt: Generated<Timestamp>;
   creatorId: string | null;
   deletedAt: Timestamp | null;
@@ -399,11 +423,14 @@ export interface SiemDestinations {
 }
 
 export interface Spaces {
+  archivedAt: Timestamp | null;
+  archivedById: string | null;
   createdAt: Generated<Timestamp>;
   creatorId: string | null;
   defaultRole: Generated<string>;
   deletedAt: Timestamp | null;
   description: string | null;
+  homePageId: string | null;
   id: Generated<string>;
   isPersonal: Generated<boolean>;
   logo: string | null;
@@ -464,9 +491,11 @@ export interface UserTokens {
 export interface WorkspaceInvitations {
   createdAt: Generated<Timestamp>;
   email: string | null;
+  expiresAt: Timestamp;
   groupIds: string[] | null;
   id: Generated<string>;
   invitedById: string | null;
+  message: string | null;
   role: string;
   token: string;
   updatedAt: Generated<Timestamp>;
@@ -543,6 +572,34 @@ export interface Watchers {
   createdAt: Generated<Timestamp>;
 }
 
+export interface Integrations {
+  id: Generated<string>;
+  workspaceId: string;
+  type: string;
+  settings: Json | null;
+  installedById: string | null;
+  createdAt: Generated<Timestamp>;
+  updatedAt: Generated<Timestamp>;
+  deletedAt: Timestamp | null;
+}
+
+export interface IntegrationConnections {
+  id: Generated<string>;
+  integrationId: string;
+  userId: string;
+  workspaceId: string;
+  providerUserId: string | null;
+  accessToken: string | null;
+  refreshToken: string | null;
+  tokenExpiresAt: Timestamp | null;
+  invalidatedAt: Timestamp | null;
+  scopes: string | null;
+  kind: string;
+  metadata: Json | null;
+  createdAt: Generated<Timestamp>;
+  updatedAt: Generated<Timestamp>;
+}
+
 export interface Labels {
   id: Generated<string>;
   name: string;
@@ -599,6 +656,10 @@ export interface PageVerifications {
   rejectedAt: Timestamp | null;
   rejectedById: string | null;
   rejectionComment: string | null;
+  invalidatedAt: Timestamp | null;
+  invalidatedById: string | null;
+  verifiedHistoryId: string | null;
+  rejectedHistoryId: string | null;
   data: Json | null;
   creatorId: string | null;
   createdAt: Generated<Timestamp>;
@@ -733,6 +794,7 @@ export interface OauthTokens {
 export interface DB {
   aiChats: AiChats;
   aiChatMessages: AiChatMessages;
+  announcements: Announcements;
   apiKeys: ApiKeys;
   attachments: Attachments;
   audit: Audit;
@@ -748,6 +810,8 @@ export interface DB {
   fileTasks: FileTasks;
   groups: Groups;
   groupUsers: GroupUsers;
+  integrationConnections: IntegrationConnections;
+  integrations: Integrations;
   labels: Labels;
   notifications: Notifications;
   pageAccess: PageAccess;

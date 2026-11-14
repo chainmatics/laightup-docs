@@ -1,0 +1,177 @@
+{
+  "siteTitle": "laightup Hilfebereich",
+  "language": "Deutsch",
+  "kindLabels": {
+    "guide": "Anleitung",
+    "concept": "Grundlagen",
+    "reference": "Nachschlagen",
+    "troubleshooting": "Problemlösung",
+    "journey": "Lernpfad"
+  },
+  "categories": {
+    "product": "Produkt"
+  },
+  "searchSynonyms": {
+    "bildschirm": "display",
+    "bildschirme": "display",
+    "pairing": "kopplung",
+    "playout": "sendeplan",
+    "broadcast": "sendeplan",
+    "ai": "ki",
+    "genehmigung": "freigabe",
+    "parameter": "platzhalter",
+    "registrierung": "registrier",
+    "registrieren": "registrier",
+    "installieren": "install",
+    "installation": "install",
+    "filiale": "standort",
+    "dynamisch": "platzhalter"
+  },
+  "home": {
+    "tasks": {
+      "usecase-standort": {
+        "label": "Einen Standort live bringen",
+        "role": "Standortbetrieb",
+        "description": "Player installieren, Standort anlegen und dein erstes Display verbinden.",
+        "time": "4 Schritte"
+      },
+      "usecase-kampagne": {
+        "label": "Eine Aktion ausspielen",
+        "role": "Content-Team",
+        "description": "Von deinem Motiv zum zeitlich geplanten Programm auf den richtigen Screens.",
+        "time": "4 Schritte"
+      },
+      "usecase-lokalisierung": {
+        "label": "Inhalte lokal personalisieren",
+        "role": "Content-Team",
+        "description": "Ein Design für alle Filialen – mit passenden Texten, Preisen und Standortdaten.",
+        "time": "4 Schritte"
+      },
+      "usecase-team": {
+        "label": "Unseren Arbeitsbereich organisieren",
+        "role": "Administration",
+        "description": "Gemeinsame Einstellungen pflegen und Zuständigkeiten im Team klären.",
+        "time": "4 Schritte"
+      }
+    }
+  },
+  "updates": {
+    "eyebrow": "NEUES BEI LAIGHTUP",
+    "headingStart": "Was ist",
+    "headingEmphasis": "neu?",
+    "introFirst": "Neue Möglichkeiten für deine Inhalte.",
+    "introSecond": "Entdecke, was dazugekommen ist – und wie du es nutzt.",
+    "discover": "Neuerungen entdecken",
+    "helpLink": "Zum Hilfebereich",
+    "latest": "Letztes Produktupdate · {date}",
+    "edition": "GESTALTEN. PLANEN. AUSSPIELEN.",
+    "searchLabel": "Neuerungen durchsuchen",
+    "searchInputLabel": "Updates durchsuchen",
+    "searchPlaceholder": "Neuerungen durchsuchen, z. B. PDF, Platzhalter oder Formate …",
+    "clear": "Suche zurücksetzen",
+    "entryOne": "{count} Eintrag",
+    "entryOther": "{count} Einträge",
+    "archiveLabel": "Neueste Änderungen",
+    "emptyTitle": "Keine passenden Updates",
+    "emptyDescription": "Versuche einen anderen Suchbegriff.",
+    "coverProduct": "NEUES IN LAIGHTUP",
+    "editorial": "REDAKTIONELLER ÜBERBLICK & ANLEITUNGEN",
+    "older": "Ältere Updates anzeigen",
+    "back": "Alle Themen im Helpcenter",
+    "details": "Alle Produktänderungen",
+    "detailsLabel": "Vollständige Neuerungen",
+    "additionalLabel": "Ergänzende Details",
+    "additionalIntro": "Weitere Produktänderungen dieses Updates.",
+    "date": "Update vom {date}",
+    "additionalTitle": "Weitere Details zu diesem Update",
+    "guideDetails": "Anleitungen zu diesem Update",
+    "artwork": {
+      "illustration": "Funktionsillustration",
+      "brief": {
+        "label": "Easy Flow",
+        "alt": "Illustration: Ein geprüfter Brief mit Markenfarben wird zu einem Design im Format 4:5.",
+        "brief": "Der Brief",
+        "headline": "Ein klarer Auftrag.",
+        "ready": "Bereit zum Generieren",
+        "brand": "Deine Marke",
+        "posterLine1": "Dein Stil.",
+        "posterLine2": "Dein Format."
+      },
+      "tags": {
+        "label": "Bibliothek",
+        "alt": "Illustration: PDF-Seiten werden als Inhalte übernommen und mit Tags organisiert.",
+        "campaign": "Kampagne",
+        "summer": "Sommer",
+        "store": "Filiale"
+      },
+      "layers": {
+        "label": "Design Studio",
+        "alt": "Illustration: Ein Bild wird in getrennte Text-, Bild- und Grafikebenen zerlegt.",
+        "text": "Text",
+        "image": "Bild",
+        "shape": "Grafik"
+      },
+      "variants": {
+        "label": "Design-Varianten",
+        "alt": "Illustration: Ein Design in zwei Bildschirmformaten mit festgelegter Standard-Variante.",
+        "design": "Ein Design",
+        "default": "Standard-Variante"
+      },
+      "screenshotAlt": "Originalansicht von laightup: Easy Flow mit generierten Design-Varianten sowie den Aktionen Verfeinern und Format.",
+      "screenshotCaption": "laightup · Easy Flow"
+    }
+  },
+  "languagePicker": {
+    "trigger": "Sprache wählen – aktuell Deutsch",
+    "close": "Sprachauswahl schließen",
+    "eyebrow": "LAIGHTUP IN DEINER SPRACHE",
+    "heading": "Welche Sprache sprichst du?",
+    "description": "Suche nach Sprache oder Land. Deine Favoriten sind immer direkt erreichbar.",
+    "searchLabel": "Sprache oder Land suchen",
+    "searchPlaceholder": "Deutsch, English, 日本語, Frankreich …",
+    "clear": "Sprachsuche leeren",
+    "regionLabel": "Sprachen nach Region filtern",
+    "availability": "Aktuell verfügbar:",
+    "german": "Deutsch",
+    "moreSoon": "Weitere Sprachfassungen kannst du vormerken.",
+    "notice": "{language} ist als bevorzugte Sprache gespeichert. Diese Sprachfassung ist noch nicht verfügbar; du liest weiterhin auf Deutsch.",
+    "quick": "DEINE SCHNELLAUSWAHL",
+    "matches": "PASSENDE SPRACHEN",
+    "catalogCount": "{count} Sprachen im Katalog",
+    "one": "{count} Sprache",
+    "other": "{count} Sprachen",
+    "select": "{language} auswählen",
+    "reserve": "{language} vormerken",
+    "current": "Aktuelle Sprache",
+    "reserved": "Vorgemerkt",
+    "pending": "Übersetzung folgt",
+    "favoriteAdd": "{language} zu Favoriten hinzufügen",
+    "favoriteRemove": "{language} aus Favoriten entfernen",
+    "empty": "Keine passende Sprache. Versuche ihren Namen auf Deutsch oder in der Originalsprache.",
+    "all": "Alle {count} Sprachen ansehen",
+    "more": "Weitere Sprachen anzeigen",
+    "favoriteHint": "Mit ★ als Favorit speichern",
+    "storageHint": "Sprachwunsch und Favoriten werden auf diesem Gerät gespeichert.",
+    "regions": {
+      "all": "Alle",
+      "west": "Westeuropa",
+      "central": "Mitteleuropa",
+      "north": "Nordeuropa",
+      "south": "Südeuropa",
+      "east": "Osteuropa",
+      "southeast": "Südosteuropa",
+      "caucasus": "Kaukasus",
+      "japan": "Japan"
+    },
+    "title": "Sprache wählen",
+    "quickLabel": "Schnellwahl",
+    "europe": "Europa",
+    "asia": "Asien",
+    "favorites": "Favoriten",
+    "continentLabel": "Sprachen nach Kontinent",
+    "europeFilter": "Europa eingrenzen",
+    "compactSearch": "Sprache oder Land …",
+    "noMatches": "Keine Treffer",
+    "backToRegions": "Regionen"
+  }
+}

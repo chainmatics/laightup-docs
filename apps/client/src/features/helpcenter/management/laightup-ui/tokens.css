@@ -1,0 +1,946 @@
+/* ═════════════════════════════════════════════════════════════════════════
+   @chainmatics/laightup-glass — tokens.css
+   The single source of truth for every tunable value in laightup Glass.
+
+   Cascade layers declared at the top so that mode overrides (night/day)
+   always beat state overrides (hover/active/focus) per the
+   "mode must beat state" specificity principle in design-intent.md.
+   ═════════════════════════════════════════════════════════════════════════ */
+
+@layer tokens, state, mode, component;
+
+@layer tokens {
+  /* ────────────────────────────────────────────────
+     Typed custom properties via @property
+
+     Declaring these with @property makes CSS treat them as interpolatable
+     — transitions and GSAP's quickTo can animate them smoothly, rather
+     than jumping between string values. All position / angle / percentage
+     vars must be declared here before .laightup-management assigns their defaults.
+     ──────────────────────────────────────────────── */
+
+  @property --light-x {
+    syntax: "<percentage>";
+    inherits: true;
+    initial-value: 30%;
+  }
+  @property --light-y {
+    syntax: "<percentage>";
+    inherits: true;
+    initial-value: 18%;
+  }
+  @property --light-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 135deg;
+  }
+
+  /* Tier 3 per-card hover overrides. Fall back to --light-x/y via the
+     custom property cascade when no hover is active. */
+  @property --hl-x {
+    syntax: "<percentage>";
+    inherits: true;
+    initial-value: 30%;
+  }
+  @property --hl-y {
+    syntax: "<percentage>";
+    inherits: true;
+    initial-value: 18%;
+  }
+
+  /* Theme hue/sat/lightness. Kept separate so theme swap is a
+     3-variable replacement, never a per-component rule. */
+  @property --theme-h {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 268;
+  }
+  @property --theme-s {
+    syntax: "<percentage>";
+    inherits: true;
+    initial-value: 70%;
+  }
+  @property --theme-l {
+    syntax: "<percentage>";
+    inherits: true;
+    initial-value: 62%;
+  }
+
+  /* Glass backdrop tuning */
+  @property --glass-saturate {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 1.6;
+  }
+  @property --glass-blur-extra {
+    syntax: "<length>";
+    inherits: true;
+    initial-value: 0px;
+  }
+
+  /* Directional shadow offsets. Positive x/y = shadow falls toward lower-right
+     (sun upper-left case); negative x = lower-left (moon upper-right case). */
+  @property --shadow-x {
+    syntax: "<length>";
+    inherits: true;
+    initial-value: 6px;
+  }
+  @property --shadow-y {
+    syntax: "<length>";
+    inherits: true;
+    initial-value: 12px;
+  }
+  @property --shadow-base {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: hsl(260 40% 12%);
+  }
+
+  /* Prismatic rim gradient stops c1 (brightest, facing light) through c5
+     (furthest from light). Distinct in light vs dark mode — dark mode
+     skips warm hues per moonlight palette rule 6. */
+  @property --rim-c1 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: hsl(50 100% 95% / 0.95);
+  }
+  @property --rim-c2 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: hsl(30 100% 85% / 0.62);
+  }
+  @property --rim-c3 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: hsl(320 85% 80% / 0.55);
+  }
+  @property --rim-c4 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: hsl(260 85% 82% / 0.5);
+  }
+  @property --rim-c5 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: hsl(210 90% 80% / 0.45);
+  }
+
+  /* Sunbeam / moonlight wash colors + blend mode. Day uses warm soft-light,
+     night uses silver screen. */
+  @property --beam-dim {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: hsl(45 100% 95% / 0.42);
+  }
+  @property --beam-mid {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: hsl(45 100% 97% / 0.8);
+  }
+  /* --beam-blend is a keyword, not a typed property. Cannot use @property
+     for it — declared as a normal custom property below in .laightup-management. */
+
+  /* ────────────────────────────────────────────────
+     .laightup-management — DAY MODE DEFAULTS (sun upper-left, CI Teal palette default)
+     ──────────────────────────────────────────────── */
+
+  .laightup-management {
+    /* ────────────────────────────────────────────────
+       Tier 1 — laightup CI tokens (source of truth)
+
+       Source: docs/ci/Laightup_Styleguide 01_260429.pdf (SG01, Teal)
+               docs/ci/Laightup_Styleguide 02_260429.pdf (SG02, Red)
+
+       Default palette is Teal. Switch to Red by setting
+       data-laightup-palette="red" on <html> or any ancestor; only
+       the accent + accent gradient swap. Violet body, foundation,
+       and typography are shared between palettes per CI.
+
+       Hex tokens for direct fills; matching -h/-s/-l triplets
+       enable HSL-derived shades (alpha, lighten, darken) without
+       baking opacity into a flat hex.
+       ──────────────────────────────────────────────── */
+
+    /* Violet body family (~45% of perception) — palette-shared */
+    --ci-violet-dark:    #28005a;  /* 10% — under-logo zones, gradient origin */
+    --ci-violet-medium:  #32008a;  /* 20% — DOMINANT surface violet */
+    --ci-violet-bright:  #503bd9;  /* 15% — accent shapes, gradient end */
+    --ci-violet-dark-h:    267;
+    --ci-violet-dark-s:    100%;
+    --ci-violet-dark-l:    18%;
+    --ci-violet-medium-h:  262;
+    --ci-violet-medium-s:  100%;
+    --ci-violet-medium-l:  27%;
+    --ci-violet-bright-h:  248;
+    --ci-violet-bright-s:  68%;
+    --ci-violet-bright-l:  54%;
+
+    /* Foundation family (~35% of perception) — palette-shared */
+    --ci-light-grey:     #f0f0f5;
+    --ci-white:          #ffffff;
+
+    /* Accent family (~20% of perception) — palette-driven (Teal default) */
+    --ci-accent-quiet:   #05b9c8;  /* 5%  supporting accent */
+    --ci-accent-loud:    #04d9d9;  /* 15% loud accent (CTA, brand star) */
+    --ci-accent-quiet-h:  185;
+    --ci-accent-quiet-s:  95%;
+    --ci-accent-quiet-l:  40%;
+    --ci-accent-loud-h:   180;
+    --ci-accent-loud-s:   96%;
+    --ci-accent-loud-l:   43%;
+
+    /* CI gradients — radial, geometry locked per styleguide */
+    --ci-gradient-dark:
+      radial-gradient(
+        circle at 100% 0%,
+        var(--ci-violet-bright) 0%,
+        var(--ci-violet-medium) 45%,
+        var(--ci-violet-dark) 100%
+      );
+    --ci-gradient-accent:
+      radial-gradient(
+        circle at 100% 0%,
+        var(--ci-accent-loud) 0%,
+        var(--ci-accent-quiet) 100%
+      );
+
+    /* ── Dashboard sky atmosphere (DAY) ───────────────────────────────
+       Warm sun specular upper-left (the "faint yellow"), airy cool wash
+       lower-right, violet-white body. Consumed by GlassBackground's
+       dashboard atmosphere + the dashboard backdrop. Night value lives
+       in the [data-mode="night"] block below (same custom-prop name). */
+    --ci-gradient-sky-day:
+      radial-gradient(ellipse 70% 55% at 16% 6%,  hsl(45 100% 92% / 0.55), transparent 52%),
+      radial-gradient(ellipse 80% 70% at 95% 92%, hsl(200 100% 90% / 0.50), transparent 60%),
+      linear-gradient(135deg,
+        hsl(var(--ci-violet-bright-h) 40% 98%) 0%,
+        hsl(255 45% 96%) 48%,
+        hsl(210 35% 97%) 100%);
+
+    /* Just the warm-sun specular, if a surface wants only the yellow bloom. */
+    --ci-glow-sun:
+      radial-gradient(ellipse 70% 55% at 16% 6%, hsl(45 100% 92% / 0.55), transparent 52%);
+
+    /* ── Easy Flow CTA body skin (pearl → Bright-Teal) ────────────────
+       3-stop vertical gradient on the .ef-cta key-button. Keyed to CI
+       accent + white, so it follows palette overrides (teal default / red). */
+    --ci-gradient-ef-cta:
+      linear-gradient(180deg,
+        color-mix(in srgb, var(--ci-accent-loud) 12%, var(--ci-white)) 0%,
+        color-mix(in srgb, var(--ci-accent-loud) 55%, var(--ci-white)) 50%,
+        var(--ci-accent-loud) 100%);
+
+    /* Decorative violet→teal thumb fill — empty/loading media cells only
+       (real assets render real thumbnails in production). */
+    --ci-gradient-thumb-violet:
+      linear-gradient(150deg, hsl(var(--ci-violet-bright-h) 55% 86%), hsl(var(--ci-accent-loud-h) 60% 86%));
+
+    /* CI typography — Geist single typeface; +0.02em letter-spacing
+       per CI rule (see typography-web reference for per-size curve). */
+    --ci-font-family:
+      "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --ci-letter-spacing: 0.02em;
+
+    /* Light position */
+    --light-x: 30%;
+    --light-y: 18%;
+    --light-angle: 135deg;
+
+    /* ────────────────────────────────────────────────
+       Tier 2 — Glass adapter layer (split semantic axes)
+
+       Per CI's body-vs-accent decomposition:
+         --theme-body-* → derives from --ci-violet-bright-* (palette-shared)
+            Use for: surface tints with subtle brand presence, sky / atmosphere
+            in GlassBackground, secondary button chrome, body-role rim stops,
+            anywhere a touch of "laightup brand" is wanted without spotlighting.
+         --theme-accent-* → derives from --ci-accent-loud-* (palette-driven)
+            Use for: spotlight only — primary CTA, Switch on-state, Progress
+            fill, focus rings, selected day in date picker, brand star.
+
+       --theme-h/s/l (legacy alias) → continues to alias the accent so
+       components correctly using it for spotlight (Switch, Progress,
+       Checkbox, Card focus ring, Input focus border) work unchanged.
+       Components using it for body chrome migrate to --theme-body-*. */
+
+    /* Body theme — violet, palette-shared. */
+    --theme-body-h: var(--ci-violet-bright-h);
+    --theme-body-s: var(--ci-violet-bright-s);
+    --theme-body-l: var(--ci-violet-bright-l);
+
+    /* Accent theme — palette-driven (Teal default, Red override). */
+    --theme-accent-h: var(--ci-accent-loud-h);
+    --theme-accent-s: var(--ci-accent-loud-s);
+    --theme-accent-l: var(--ci-accent-loud-l);
+
+    /* Legacy "spotlight" alias — Switch / Progress / Checkbox / focus rings
+       reference --theme-h/s/l for their engaged/on states, which stay the CI
+       ACCENT (teal/cyan). The filter-pill + input FOCUS/active states are the
+       exception (violet per the dual-accent rule): they remap this alias to
+       --theme-body-* locally inside .glass-input / .glass-filter-pill (CHA-1288),
+       so the accent stays cyan globally here. */
+    --theme-h: var(--theme-accent-h);
+    --theme-s: var(--theme-accent-s);
+    --theme-l: var(--theme-accent-l);
+
+    /* Destructive (warning semantic, palette-locked).
+       Per CI conversation 2026-05-06: destructive is not a brand statement
+       — use the SG02 Red accent regardless of which palette the rest of
+       the page uses. Stays warm even in night mode (warning context
+       supersedes the moonlight rule for this single semantic). */
+    --theme-destructive-h: 8;
+    --theme-destructive-s: 100%;
+    --theme-destructive-l: 64%;
+
+    /* ────────────────────────────────────────────────
+       Foreground tokens (added 2026-05-06)
+
+       Mode-aware text colors. --glass-text-default is the body reading
+       weight; --glass-text-muted sits between body and accent — a
+       desaturated CI-violet-tinted grey that gives utility surfaces
+       (ghost buttons, toast actions, "..." menu triggers, secondary
+       button text) a subtle brand touch without spotlighting them as
+       accent. Replaces the prior pattern where utility text inherited
+       the loud accent color.
+       ──────────────────────────────────────────────── */
+    --glass-text-default:                    hsl(230 25% 15%);
+    --glass-text-muted:                      hsl(var(--theme-body-h, 248) 18% 38%);
+    --glass-text-subtle:                     hsl(var(--theme-body-h, 248) 14% 52%);
+
+    /* ────────────────────────────────────────────────
+       Inset rim highlight (added 2026-05-06, tuned 3 times)
+
+       The thin "edge highlight" along the bottom-right of glass surfaces.
+       Previously hardcoded hsl(260 70% 80% / 0.38) (amethyst lavender).
+
+       Tuning history:
+         v1 (L=64%, A=0.42) — too solid/heavy
+         v2 (L=80%, A=0.38) — matched old softness but too pale to read
+                              as "violet" on bright surfaces
+         v3 (L=72%, A=0.46) — middle ground, brand-discernible without
+                              losing the soft-pastel character. Saturation
+                              lifted to 78% so the brand violet identity
+                              actually reads. */
+    --glass-rim-inset:                       hsl(var(--theme-body-h, 248) 78% 72% / 0.46);
+
+    /* Inset rim WARM sibling (added 2026-05-06, Phase A.5-9 — sunny rim).
+       Stacks behind the cool CI-violet inset rim as a 2px wider sun-warmed
+       halo on the bottom-right. Justified the same way --rim-c1 keeps a
+       warm sun specular: this is a *lighting effect*, not a brand color —
+       it expresses "sunlit edge" without altering CI body or accent
+       palettes. Day mode only carries warm; night mode carries silver
+       (Hard Rule #1: no warm in night except the moon disc).
+
+       Tuning history:
+         v1 (α=0.22) — too quiet, edges read flat, no 3D pop
+         v2 (α=0.40) — bolder; warm halo carves depth with the lit
+                        top-left highlight, gives glass dimensional thickness
+       Pair with -3px width (not -2px) at consumption sites: the wider
+       inset gives the warm a visible BAND, not a 1px piping line. */
+    --glass-rim-inset-warm:                  hsl(48 100% 80% / 0.40);
+
+    /* Glass tuning */
+    --glass-saturate: 1.6;
+    --glass-blur-extra: 0px;
+    --glass-tint-alpha: 0.18;
+
+    /* Archived / historical read-only preview treatment — desaturates +
+       slightly flattens a surface so a frozen snapshot (e.g. viewing a past
+       version) reads as "not the live thing", on top of any banner/read-only
+       state. Mode-agnostic: the relative desaturation cue reads in both day
+       and night; tune per-mode in the [data-mode="night"] block if ever needed.
+       Consume via the .glass-archived utility or `filter: var(--glass-filter-archived)`. */
+    --glass-filter-archived: saturate(0.6) contrast(0.96);
+
+    /* Directional shadows */
+    --shadow-x: 6px;
+    --shadow-y: 12px;
+    --shadow-base: hsl(260 40% 12%);
+
+    /* Prismatic rim — CI brand spectrum (Phase A.5 redesign 2026-05-06).
+       Anchors to CI vocabulary while preserving the day/moon optical
+       metaphor. c1 keeps the warm sun specular highlight (the "lit"
+       facet); c2-c4 cycle through CI violet body family with a cool
+       transition; c5 closes on the palette accent. Compared to the
+       prior warm→cool spectrum (gold/peach/pink/violet/blue), this
+       reads as "laightup brand prism" rather than "rainbow." */
+    --rim-c1: hsl(48 100% 96% / 0.92);                  /* warm sun specular */
+    --rim-c2: hsl(var(--ci-violet-bright-h) 70% 92% / 0.55);  /* pale violet */
+    --rim-c3: hsl(var(--ci-violet-bright-h) 68% 75% / 0.55);  /* CI bright violet */
+    --rim-c4: hsl(214 75% 80% / 0.50);                  /* cool sky transition */
+    --rim-c5: hsl(var(--ci-accent-loud-h) 75% 78% / 0.45);    /* palette accent (cooled) */
+
+    /* ── Glass MEDIA-EDGE rim (a reusable 4-stop inset stack) ───────────────
+       Distinct from the prismatic --rim-c* spectrum above: that is the
+       full-object selection/identity outline; THIS is the lightweight
+       "screen bezel" edge for an opaque MEDIA surface (a photo/video filling
+       a rounded card). It reads as overhead-lit glass: a bright top-edge
+       specular, a soft inner top glow (refraction halo), a faint brand-cyan
+       atmospheric tint in the upper third, and a thin dark bottom-edge line
+       for depth. Originated on the Step 1 onboarding signage cards
+       (Step1HeroCollage.css, 2026-05-27); promoted here verbatim so any
+       media-backed card can share one source of truth.
+
+       Mode-agnostic on purpose: the stack is neutral-white + cool-cyan +
+       a 1px black contrast line — it carries no warm accent, so it is already
+       night-safe (the one-warm-anchor rule is about ambient chrome, not a
+       1px media bezel). Kept as the exact approved values; a night-cooled
+       variant can be layered later via .laightup-management[data-mode="night"] if needed.
+
+       HOW TO APPLY:
+         • Background-image surface (e.g. onboarding .signage-card) — set it
+           directly:  box-shadow: var(--glass-edge-rim), <your drop shadows>;
+         • Child-media container (media is a real <img>/<video> child, e.g.
+           the drawer .dv-preview) — an inset shadow on the box would paint
+           UNDER the child and vanish, so put it on a pointer-events:none
+           ::after overlay:  .x::after { box-shadow: var(--glass-edge-rim); } */
+    --glass-edge-rim:
+      inset 0 1.5px 0 rgba(255, 255, 255, 0.75),
+      inset 0 2px 8px 0 rgba(255, 255, 255, 0.28),
+      inset 0 6px 14px -8px rgba(4, 217, 217, 0.22),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.32);
+
+    /* ── Glass FLOATING composition (3D icon in a 3D container) ─────────────
+       The empty-state coin's signature "floating" look, promoted to a reusable
+       pair so any small tinted glass container holding an icon can lift the
+       same way:
+         • --glass-float-shadow — a soft drop + a bright top inner highlight
+           that lifts the container off the surface (use as `box-shadow:`).
+         • --glass-float-icon-shadow — a brand-violet drop-shadow that floats
+           the icon glyph above its container (use as `filter:` on the <svg>).
+       Both flip to the moonlight palette under [data-mode="night"] below.
+       Consumers: .lib-empty-coin (empty state) and .lib-folder-glass-icon
+       (folder-strip card icon). */
+    --glass-float-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.6),
+      0 4px 12px hsl(250 30% 12% / 0.12);
+    --glass-float-icon-shadow: drop-shadow(0 2px 4px hsl(248 68% 30% / 0.30));
+
+    /* Glossy brand-star FLOAT — the 3D lift for a <BrandStar glossy>. The glossy
+       SHEEN gradient lives inside the SVG (BrandStar's `glossy` prop); this token
+       is the shape-aware float applied via `filter:` on the mark, so the lift is
+       defined once and reused everywhere instead of re-writing the CSS per call
+       site. Day = a soft teal-tinted drop. Consumers: BrandStar `.glossy`
+       (collapsed nav rail star, Easy Flow CTA + dialog stars). */
+    --glass-star-gloss-float:
+      drop-shadow(0 1.5px 2px hsl(from var(--ci-accent-loud, #04d9d9) h s l / 0.42));
+
+    /* Generic ease-out for non-spring motion (fades, slides). Component tokens
+       like --glass-switch-easing keep their own overshoot curve. */
+    --glass-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* Beam — warm golden */
+    --beam-dim: hsl(45 100% 95% / 0.42);
+    --beam-mid: hsl(45 100% 97% / 0.8);
+    --beam-blend: soft-light;
+
+    /* Dialog panel tokens (Phase 2b batch 5, added 2026-04-21) */
+    --glass-dialog-radius: 20px;
+    --glass-dialog-radius-xl: 24px;
+    /* Modal density. Sidebars and in-scene cards use 0.18; a centered confirm
+       needs substantially more presence so the surface reads as floating
+       foreground, not background tint. 0.50 day puts us in the iOS
+       Sheet / Windows 11 Fluent range; we sit 0.05 lower than pure Fluent
+       because the ::after inner sheen (see GlassDialog.css) contributes
+       surface luminance that pure alpha would have to fake. Premium (hero)
+       goes denser still. */
+    /* Wave 16.1: bumped from 0.50→0.88 (day) / 0.38→0.82 (night). The
+       original decorative-frost values left dialogs near-transparent over
+       content-dense backdrops (masonry grids, dashboards), making text
+       unreadable. Dialogs are working modals — they need Thick Material
+       occlusion, not Thin Material decoration. Premium kept proportionally
+       higher than base. */
+    /* Wave 16.7: lowered 0.88→0.70 (premium 0.90→0.74). The 0.88 was Wave
+       16.1's compensation for backdrop blur not rendering; Wave 16.6 fixed
+       the blur (it was being stripped by Lightning CSS via contrast()). With
+       working blur, 0.88 read as plain white — 0.70 restores milky-glass
+       translucency while the blur carries the occlusion. */
+    --glass-dialog-tint-alpha: 0.70;
+    --glass-dialog-tint-alpha-premium: 0.74;
+    --glass-dialog-shadow:
+      0 18px 48px hsl(260 40% 12% / 0.28),
+      0 6px 16px hsl(260 40% 12% / 0.18);
+    --glass-dialog-shadow-premium:
+      0 28px 72px hsl(260 40% 12% / 0.36),
+      0 10px 24px hsl(260 40% 12% / 0.22);
+
+    /* Skeleton — day (Phase 2b batch 6, added 2026-04-27) */
+    --glass-skeleton-fill:                 hsl(230 25% 78% / 0.42);
+    --glass-skeleton-fill-rm:              hsl(230 25% 78% / 0.50);
+    --glass-skeleton-shimmer-peak:         hsl(45 80% 96% / 0.7);
+    /* Color-matched transparent (alpha 0) for shimmer gradient stops —
+       interpolating from this to --glass-skeleton-shimmer-peak stays
+       within the warm hue, avoiding the grey midpoint that the CSS
+       'transparent' keyword (= rgba(0,0,0,0)) would produce. */
+    --glass-skeleton-shimmer-edge:         hsl(45 80% 96% / 0);
+    --glass-skeleton-sweep-angle:          135deg;
+    --glass-skeleton-sweep-cycle:          1.4s;
+    --glass-skeleton-breathe-cycle:        2.4s;
+    --glass-skeleton-breathe-min:          0.88;
+    /* Edge-feather distance for the sweep mask — fraction of each
+       axis over which the band's alpha ramps from 0 → full near the
+       element's bounds. 16% gives a noticeable falloff even on
+       narrow shapes (60px wide → 9.6px feather on each side, wider
+       than the band's stripe ends). Increase further if the
+       diagonal cut returns; decrease toward 0% only on shapes where
+       the band already exits cleanly through corners. */
+    --glass-skeleton-edge-feather:         16%;
+    --glass-skeleton-radius:               6px;
+    --glass-skeleton-radius-md:            10px;
+    --glass-skeleton-radius-lg:            14px;
+
+    /* Skeleton media-refract — day */
+    --glass-skeleton-refract-fill:         hsl(230 25% 88% / 0.10);
+    --glass-skeleton-refract-blur-min:     2px;
+    --glass-skeleton-refract-blur-max:     6px;
+    --glass-skeleton-refract-saturate-min: 1.4;
+    --glass-skeleton-refract-saturate-max: 1.7;
+    --glass-skeleton-refract-displacement: 10;
+    --glass-skeleton-refract-cycle:        2.4s;
+    --glass-skeleton-refract-rim-top:      hsl(45 100% 95% / 0.95);
+    --glass-skeleton-refract-rim-mid:      hsl(30 100% 85% / 0.45);
+    --glass-skeleton-refract-rim-bot:      hsl(30 100% 80% / 0.55);
+    --glass-skeleton-refract-shadow:       hsl(260 40% 12% / 0.12);
+    --glass-skeleton-beam-color:           hsl(45 100% 96% / 0.85);
+    --glass-skeleton-beam-cycle:           4.5s;
+
+    /* Switch — day (Phase 2b batch 7, added 2026-04-28).
+       Track: glassy when off, CI-accent gradient when on — derived from
+       --theme-* (the brand teal, #04d9d9) so the engaged state matches
+       the rest of the LaightUp accent system instead of a separate warm
+       hue. Mirrors the night derivation. Thumb reuses the scrollbar's
+       4-layer recipe (lesson #46): body + top highlight + screen-blend
+       specular + bottom meniscus + prismatic hairline rim. */
+    --glass-switch-track-off:               hsl(230 25% 78% / 0.42);
+    --glass-switch-track-off-hover:         hsl(230 25% 78% / 0.52);
+    --glass-switch-track-on-from:           hsl(var(--theme-h) calc(var(--theme-s) * 0.82) calc(var(--theme-l) + 8%) / 0.85);
+    --glass-switch-track-on-to:             hsl(calc(var(--theme-h) - 12) calc(var(--theme-s) * 0.88) calc(var(--theme-l) + 4%) / 0.92);
+    --glass-switch-track-on-hover-from:     hsl(var(--theme-h) calc(var(--theme-s) * 0.9) calc(var(--theme-l) + 12%) / 0.92);
+    --glass-switch-track-on-hover-to:       hsl(calc(var(--theme-h) - 12) calc(var(--theme-s) * 0.96) calc(var(--theme-l) + 6%) / 0.96);
+    --glass-switch-track-blur:              6px;
+    --glass-switch-track-saturate:          1.4;
+    --glass-switch-track-rim:               hsl(35 80% 80% / 0.34);
+    --glass-switch-track-rim-on:            hsl(var(--theme-h) 70% 88% / 0.55);
+    --glass-switch-track-shadow:            hsl(260 40% 12% / 0.12);
+    --glass-switch-thumb-fill:              hsl(40 50% 94% / 0.55);
+    --glass-switch-thumb-fill-hover:        hsl(40 50% 94% / 0.72);
+    --glass-switch-thumb-rim-top:           hsl(50 100% 97% / 0.92);
+    --glass-switch-thumb-rim-mid:           hsl(35 80% 80% / 0.40);
+    --glass-switch-thumb-rim-bot:           hsl(50 100% 95% / 0.50);
+    --glass-switch-thumb-specular:          hsl(50 100% 97% / 0.95);
+    --glass-switch-thumb-shadow:            hsl(260 40% 12% / 0.20);
+    --glass-switch-focus-ring:              hsl(var(--theme-h) var(--theme-s) var(--theme-l) / 0.55);
+    /* Inline state labels (off/on text inside the track). Off label
+       reads on the translucent grey track; on label is a deep teal that
+       reads on the CI-accent gradient — picked for readable contrast on
+       each surface, not for matching the surface hue. */
+    --glass-switch-label-off:               hsl(230 35% 22% / 0.72);
+    --glass-switch-label-on:                hsl(var(--theme-h) 90% 16% / 0.9);
+    --glass-switch-easing:                  cubic-bezier(0.34, 1.2, 0.64, 1);
+    --glass-switch-duration:                220ms;
+
+    /* Progress — day (Phase 2b batch 8, added 2026-04-28).
+       Track is glassy translucent grey; fill is a warm peach-amber
+       gradient along --light-angle (engaged = letting light through,
+       same metaphor as Switch on-state). Continuous shimmer inside
+       the fill keeps the surface alive even at static values. Step
+       completion celebrations layered on top — see celebration tokens
+       below. */
+    --glass-progress-track:                 hsl(230 25% 78% / 0.40);
+    --glass-progress-track-rim:             hsl(35 80% 80% / 0.22);
+    --glass-progress-fill-from:             hsl(38 95% 75% / 0.92);
+    --glass-progress-fill-to:               hsl(28 95% 65% / 0.96);
+    --glass-progress-fill-rim:              hsl(45 100% 88% / 0.55);
+    --glass-progress-fill-shadow:           hsl(28 80% 50% / 0.35);
+    --glass-progress-shimmer-peak:          hsl(50 100% 97% / 0.85);
+    --glass-progress-shimmer-edge:          hsl(50 100% 97% / 0);
+    --glass-progress-shimmer-cycle:         1.4s;
+    --glass-progress-fill-duration:         280ms;
+    --glass-progress-easing:                cubic-bezier(0.34, 1.2, 0.64, 1);
+
+    /* Step gap — width of the visual gap between segments in stepped variant */
+    --glass-progress-step-gap-sm:           3px;
+    --glass-progress-step-gap-md:           4px;
+    --glass-progress-step-gap-lg:           6px;
+
+    /* Celebration palettes — used by all four celebration variants
+       (sparkle / rays / spectrum / bloom). Day uses warm spectrum;
+       night uses silver→violet. */
+    --glass-progress-celebrate-color:       hsl(45 100% 96% / 0.95);
+    --glass-progress-celebrate-secondary:   hsl(28 95% 70% / 0.85);
+    --glass-progress-celebrate-bloom:       hsl(45 100% 96% / 0.65);
+    --glass-progress-celebrate-duration:    480ms;
+    --glass-progress-celebrate-completion-duration: 720ms;
+
+    /* Popover surface — day (Phase 2b batch 9, added 2026-04-30).
+       Sits between Menu (action list, 12px radius, narrow) and Dialog
+       (modal sheet, 20px radius). 14px radius is the in-between value.
+       Tint 0.42 day is denser than Tooltip and lighter than Dialog
+       (0.50) — popovers stay visually anchored without becoming
+       modal-loud. Sizes: sm 280 / md 360 / lg 440. Anything > 440px
+       should escalate to a Dialog per spec escalation rule. */
+    --glass-popover-radius:                 14px;
+    --glass-popover-padding:                16px;
+    --glass-popover-tint-alpha:             0.42;
+    --glass-popover-tint:                   hsl(0 0% 100% / var(--glass-popover-tint-alpha));
+    /* surface="solid": near-opaque milky skin for popovers over imagery/media. */
+    --glass-popover-solid-tint:             hsl(0 0% 100% / 0.9);
+    --glass-popover-shadow:
+      0 12px 30px -6px hsl(260 40% 12% / 0.32),
+      0 4px 8px -2px hsl(260 40% 12% / 0.18);
+    --glass-popover-blur:                   18px;
+    --glass-popover-saturate:               var(--glass-saturate);
+    --glass-popover-displacement-scale:     12;
+    --glass-popover-arrow-size:             10px;
+    --glass-popover-arrow-height:           6px;
+    --glass-popover-max-height:             70vh;
+    --glass-popover-width-sm:               280px;
+    --glass-popover-width-md:               360px;
+    --glass-popover-width-lg:               440px;
+
+    /* Checkbox — day (Phase B-1, added 2026-05-06).
+       Sizes follow standard form-density bands: sm (compact list
+       column), md (default form), lg (touch target). Off-state is
+       a translucent glass tile with a low-alpha accent rim that
+       lifts on hover. On-state fills with --theme-* (CI accent
+       loud); the glyph is always white. Same spring as Switch
+       (cubic-bezier 0.34 1.2 0.64 1) keeps the accent vocabulary
+       consistent across form controls. */
+    --glass-checkbox-size-sm:               16px;
+    --glass-checkbox-size-md:               20px;
+    --glass-checkbox-size-lg:               24px;
+    --glass-checkbox-radius-sm:             4px;
+    --glass-checkbox-radius-md:             5px;
+    --glass-checkbox-radius-lg:             6px;
+    --glass-checkbox-bg:                    hsl(0 0% 100% / 0.18);
+    --glass-checkbox-bg-hover:              hsl(0 0% 100% / 0.30);
+    --glass-checkbox-rim:                   hsl(var(--theme-h) var(--theme-s) var(--theme-l) / 0.40);
+    --glass-checkbox-rim-hover:             hsl(var(--theme-h) var(--theme-s) var(--theme-l) / 0.65);
+    --glass-checkbox-fill:                  hsl(var(--theme-h) var(--theme-s) var(--theme-l));
+    --glass-checkbox-fill-hover:            hsl(var(--theme-h) var(--theme-s) calc(var(--theme-l) + 6%));
+    --glass-checkbox-glyph:                 #ffffff;
+    --glass-checkbox-shadow:                hsl(260 40% 12% / 0.10);
+    --glass-checkbox-focus-ring:            hsl(var(--theme-h) var(--theme-s) var(--theme-l) / 0.55);
+    --glass-checkbox-easing:                cubic-bezier(0.34, 1.2, 0.64, 1);
+    --glass-checkbox-duration:              220ms;
+
+    /* ────────────────────────────────────────────────
+       CI ↔ glass bridge tokens (added 2026-05-04)
+
+       These are translation values — moments where the brand colour
+       (CI content layer) needs to live inside the glass world (optics
+       layer). Per the decisions log in
+       `.claude/skills/laightup-ci/references/gaps.md` (2026-04-30
+       "CI is content layer, glass is optics layer"), CI tokens drive
+       surfaces and brand presence; glass tokens drive optics. These
+       bridge values are the seam: when a CI accent needs to read as
+       a rim/glow inside a moonlight surface, it has to be lifted off
+       its pure-saturation hex and into a Purkinje-safe variant first.
+
+       Naming convention: --ci-accent-loud-<context>. The base value
+       --ci-accent-loud (#04d9d9 Bright Teal) is a content-layer token;
+       these *-rim / *-darkmode-red variants are its optics-context
+       cousins.
+
+       Consumed by: library-v2.css (--night-accent, --ef-night-accent).
+       ──────────────────────────────────────────────── */
+
+    /* Bright Teal lifted into the moonlight rim/glow band. The pure
+       hex `#04d9d9` is too saturated against night surfaces and reads
+       as neon CRT rather than moonlit cyan. Lifting lightness to 78%
+       and dropping saturation to 60% pulls it into the rim-light
+       vocabulary while preserving recognizable brand cyan. */
+    --ci-accent-loud-rim:                   hsl(180 60% 78%);
+
+    /* SG02 (Red palette) substitute for dark-mode contexts. Bright
+       Red `#FF5E46` = `hsl(12 100% 65%)` competes with the moon disc
+       in glass dark surfaces ("one warm anchor" rule violation). When
+       the brand owner approves SG02-in-dark-mode, consumers should
+       reach for this magenta-shifted bridge instead of the raw red.
+       Currently undeclared at the consumer side — declared here as a
+       forward-investment so the future swap is one line of CSS. */
+    --ci-accent-loud-darkmode-red:          hsl(330 65% 68%);
+
+    /* ────────────────────────────────────────────────
+       Stacking / z-index (added 2026-05-29)
+
+       First named z-index token. Tooltips are transient, top-most glass
+       surfaces — they must paint above every overlay, dialog, drawer, and
+       lightbox in the host app. The host's current ceiling is the lib-v2
+       lightbox at 9999, so the tooltip sits one band above it.
+
+       The ladder below the tooltip. The host app's chrome (sidebar rail /
+       floating nav pill / rail↔pill transition) sits at z-index ~100–110, so
+       the modal band MUST clear that — the old magic 50/51 left the sidebar
+       painting OVER the dialog scrim. Order, low→high:
+         overlay (scrim)  <  dialog/drawer surface  <  popover/menu/select
+         (these open INSIDE dialogs, so they must out-rank the dialog)  <
+         tooltip (transient, always top).
+       The host command palette (9000) deliberately stays above dialogs but
+       below tooltips.
+
+       `popover-raised` is for a popover that opens ON TOP of another popover
+       of the same surface (e.g. a format picker over a dialog's select menu),
+       where a tie at the popover tier would leave the order to DOM position.
+       `popover-raised-menu` is a select menu opening INSIDE such a raised
+       popover — it must clear the raised tier its own popover sits on.
+       ──────────────────────────────── */
+    --glass-z-overlay:                      1000;
+    --glass-z-dialog:                       1001;
+    --glass-z-popover:                      1100;
+    --glass-z-popover-raised:               1150;
+    --glass-z-popover-raised-menu:          1200;
+    --glass-z-tooltip:                      10000;
+  }
+
+  /* ────────────────────────────────────────────────
+     [data-mode="night"] — MOON MODE OVERRIDES
+     Every value follows the moonlight palette rules in design-intent.md.
+     ──────────────────────────────────────────────── */
+
+  .laightup-management[data-mode="night"],
+  [data-mode="night"] {
+    /* Light position — moon upper-right */
+    --light-x: 82%;
+    --light-y: 12%;
+    --light-angle: 230deg;
+
+    /* ── Dashboard sky atmosphere (NIGHT) ──────────────────────────────
+       Cool moonlit violet body; the warm sun specular is dropped (moon
+       only — the warm anchor in night scenes is the moon disc, not the
+       sky). Same custom-prop name as the day value above. */
+    --ci-gradient-sky-day:
+      radial-gradient(ellipse 70% 55% at 86% 6%,  hsl(225 50% 42% / 0.40), transparent 55%),
+      radial-gradient(ellipse 80% 70% at 12% 94%, hsl(262 40% 30% / 0.45), transparent 60%),
+      linear-gradient(135deg,
+        hsl(232 38% 8%)  0%,
+        hsl(255 34% 11%) 55%,
+        hsl(232 32% 12%) 100%);
+
+    /* --theme-h/s/l intentionally not overridden in night mode — the
+       CI accent palette is locked across modes, and --theme-* derives
+       from --ci-accent-loud-* automatically. If a surface needs more
+       legibility on the darker backdrop, it should lift its own
+       lightness locally (e.g., calc(l + 8%)) rather than altering
+       the global accent. */
+
+    /* Glass tuning — scotopic Purkinje approximation */
+    --glass-saturate: 0.9;
+    --glass-blur-extra: 2px;
+    --glass-tint-alpha: 0.08;
+
+    /* Directional shadows — flipped x, tinted blue-black, longer softer */
+    --shadow-x: -6px;
+    --shadow-y: 12px;
+    --shadow-base: hsl(235 45% 6%);
+
+    /* Prismatic rim — CI brand spectrum, night (Phase A.5 2026-05-06).
+       Same body+accent vocabulary as day rim, shifted into moonlight:
+       c1 keeps the silver-white moon specular; c2-c4 cycle through
+       cool-shifted CI violet body family; c5 closes on the cooled
+       palette accent (--ci-accent-loud-rim, the brand-tinted moonlight
+       lift defined in the bridge tokens). NO warm hues — the silver
+       moon disc remains the only warm anchor in night scenes. */
+    --rim-c1: hsl(215 100% 95% / 0.90);                       /* silver moon specular */
+    --rim-c2: hsl(var(--ci-violet-bright-h) 50% 82% / 0.58);  /* moonlit periwinkle */
+    --rim-c3: hsl(var(--ci-violet-bright-h) 60% 72% / 0.60);  /* moonlit violet */
+    --rim-c4: hsl(200 50% 75% / 0.50);                        /* cool blue-green */
+    --rim-c5: var(--ci-accent-loud-rim);                      /* cooled accent */
+
+    /* Beam — silver (scotopic observer perception) */
+    --beam-dim: hsl(210 22% 92% / 0.32);
+    --beam-mid: hsl(210 28% 96% / 0.68);
+    --beam-blend: screen;
+
+    /* Glass floating composition — moonlight: cool top highlight + deeper
+       plum-black drop; the icon drop-shadow stays in the cool violet family
+       (no warm anchor) per the moonlight palette. */
+    --glass-float-shadow:
+      inset 0 1px 0 hsl(210 25% 92% / 0.10),
+      0 4px 12px hsl(235 45% 6% / 0.40);
+    --glass-float-icon-shadow: drop-shadow(0 2px 6px hsl(248 80% 8% / 0.50));
+
+    /* Glossy brand-star float — moonlight: soft plum-black depth + a faint teal
+       glow for the lifted glass read on the dark substrate. */
+    --glass-star-gloss-float:
+      drop-shadow(0 1px 2px hsl(235 45% 6% / 0.5))
+      drop-shadow(0 0 4px hsl(from var(--ci-accent-loud, #04d9d9) h s l / 0.32));
+
+    /* Dialog panel tokens — night mode
+       Lower alpha than day because moonlight palette glass sits over a
+       darker ambient; 0.38 keeps the modal presence while letting the
+       night tint read through. */
+    /* Wave 16.7: lowered 0.82→0.66 (premium 0.86→0.70) — same rationale as
+       day mode; working blur lets the night tint read through as glass. */
+    --glass-dialog-tint-alpha: 0.66;
+    --glass-dialog-tint-alpha-premium: 0.70;
+    --glass-dialog-shadow:
+      0 18px 48px hsl(235 45% 6% / 0.52),
+      0 6px 16px hsl(235 45% 6% / 0.34);
+    --glass-dialog-shadow-premium:
+      0 28px 72px hsl(235 45% 6% / 0.62),
+      0 10px 24px hsl(235 45% 6% / 0.44);
+  }
+
+  /* ────────────────────────────────────────────────
+     LAIGHTUP CI PALETTE — Red override (SG02)
+
+     CI's two palettes share violet body / foundation / typography
+     and only differ on the accent. Setting data-laightup-palette
+     ="red" on <html> (or any ancestor) swaps the accent hex tokens,
+     the matching -h/-s/-l triplets, and the accent gradient.
+     --theme-h/s/l picks up the new accent via the Tier-2 alias.
+
+     Default = Teal (no attribute needed). Hex values confirmed
+     by brand owner 2026-04-30 (PDF source has typos).
+
+     Dual selector matches both root-level (toolbar-driven in
+     Storybook) and wrapper-level (per-component story decorators)
+     placement, mirroring the night-mode pattern.
+     ──────────────────────────────────────────────── */
+
+  .laightup-management[data-laightup-palette="red"],
+  [data-laightup-palette="red"] {
+    --ci-accent-quiet:   #DC3C46;  /* Red */
+    --ci-accent-loud:    #FF5E46;  /* Bright Red */
+    --ci-accent-quiet-h:  355;
+    --ci-accent-quiet-s:  70%;
+    --ci-accent-quiet-l:  55%;
+    --ci-accent-loud-h:   8;
+    --ci-accent-loud-s:   100%;
+    --ci-accent-loud-l:   64%;
+
+    --ci-gradient-accent:
+      radial-gradient(
+        circle at 100% 0%,
+        var(--ci-accent-loud) 0%,
+        var(--ci-accent-quiet) 100%
+      );
+  }
+
+  /* ────────────────────────────────────────────────
+     Skeleton — night overrides (dual selector)
+     Matches both toolbar-driven (.laightup-management[data-mode='night'])
+     AND wrapper-div NightMode stories ([data-mode='night']).
+     Established codebase pattern — see GlassSpinner.css.
+     ──────────────────────────────────────────────── */
+  .laightup-management[data-mode="night"],
+  [data-mode="night"] {
+    --glass-skeleton-fill:                 hsl(220 25% 18% / 0.55);
+    --glass-skeleton-fill-rm:              hsl(220 25% 18% / 0.62);
+    --glass-skeleton-shimmer-peak:         hsl(215 30% 92% / 0.5);
+    /* Silver-matched transparent for night — same hue as peak, alpha 0. */
+    --glass-skeleton-shimmer-edge:         hsl(215 30% 92% / 0);
+    --glass-skeleton-sweep-angle:          230deg;
+    --glass-skeleton-sweep-cycle:          2.0s;
+    --glass-skeleton-breathe-cycle:        2.0s;
+
+    /* Skeleton media-refract — night */
+    --glass-skeleton-refract-fill:         hsl(220 30% 92% / 0.05);
+    --glass-skeleton-refract-blur-min:     3px;
+    --glass-skeleton-refract-saturate-min: 0.95;
+    --glass-skeleton-refract-saturate-max: 1.15;
+    --glass-skeleton-refract-displacement: 14;
+    --glass-skeleton-refract-cycle:        3.0s;
+    --glass-skeleton-refract-rim-top:      hsl(215 100% 95% / 0.90);
+    --glass-skeleton-refract-rim-mid:      hsl(200 90% 80% / 0.50);
+    --glass-skeleton-refract-rim-bot:      hsl(260 90% 78% / 0.45);
+    --glass-skeleton-refract-shadow:       hsl(235 60% 4% / 0.40);
+    --glass-skeleton-beam-color:           hsl(210 28% 96% / 0.68);
+    --glass-skeleton-beam-cycle:           6.0s;
+
+    /* Switch — night (no warm hue per moonlight rule — the moon disc
+       is the only warm anchor on the page). Track-on uses the night
+       theme amethyst at lower saturation; rim/specular cool-shifted. */
+    --glass-switch-track-off:               hsl(220 25% 18% / 0.55);
+    --glass-switch-track-off-hover:         hsl(220 25% 18% / 0.66);
+    --glass-switch-track-on-from:           hsl(var(--theme-h) calc(var(--theme-s) * 0.78) calc(var(--theme-l) + 8%) / 0.82);
+    --glass-switch-track-on-to:             hsl(calc(var(--theme-h) - 12) calc(var(--theme-s) * 0.85) calc(var(--theme-l) + 4%) / 0.92);
+    --glass-switch-track-on-hover-from:     hsl(var(--theme-h) calc(var(--theme-s) * 0.85) calc(var(--theme-l) + 12%) / 0.90);
+    --glass-switch-track-on-hover-to:       hsl(calc(var(--theme-h) - 12) calc(var(--theme-s) * 0.92) calc(var(--theme-l) + 6%) / 0.96);
+    --glass-switch-track-blur:              7px;
+    --glass-switch-track-saturate:          0.9;
+    --glass-switch-track-rim:               hsl(215 30% 80% / 0.30);
+    --glass-switch-track-rim-on:            hsl(275 70% 85% / 0.55);
+    --glass-switch-track-shadow:            hsl(235 60% 4% / 0.40);
+    --glass-switch-thumb-fill:              hsl(220 30% 92% / 0.18);
+    --glass-switch-thumb-fill-hover:        hsl(220 30% 92% / 0.30);
+    --glass-switch-thumb-rim-top:           hsl(215 100% 95% / 0.85);
+    --glass-switch-thumb-rim-mid:           hsl(200 90% 80% / 0.40);
+    --glass-switch-thumb-rim-bot:           hsl(260 90% 78% / 0.45);
+    --glass-switch-thumb-specular:          hsl(215 100% 95% / 0.85);
+    --glass-switch-thumb-shadow:            hsl(235 60% 4% / 0.55);
+    --glass-switch-focus-ring:              hsl(var(--theme-h) var(--theme-s) calc(var(--theme-l) + 8%) / 0.65);
+    /* Night label colors — bright cool text reads on both the dark
+       translucent off-track and the amethyst on-gradient. Pulled
+       from the silver-to-violet half of the spectrum (no warm). */
+    --glass-switch-label-off:               hsl(215 30% 88% / 0.78);
+    --glass-switch-label-on:                hsl(280 25% 96% / 0.92);
+
+    /* Progress — night (no warm hues per moonlight rule).
+       Fill: silver-violet gradient using theme amethyst at higher
+       lightness. Celebration palette: silver → violet from rim
+       spectrum cool half. */
+    --glass-progress-track:                 hsl(220 25% 18% / 0.55);
+    --glass-progress-track-rim:             hsl(215 30% 80% / 0.20);
+    --glass-progress-fill-from:             hsl(var(--theme-h) calc(var(--theme-s) * 0.78) calc(var(--theme-l) + 8%) / 0.85);
+    --glass-progress-fill-to:               hsl(calc(var(--theme-h) - 12) calc(var(--theme-s) * 0.85) calc(var(--theme-l) + 4%) / 0.92);
+    --glass-progress-fill-rim:              hsl(275 70% 85% / 0.55);
+    --glass-progress-fill-shadow:           hsl(235 60% 4% / 0.50);
+    --glass-progress-shimmer-peak:          hsl(215 100% 96% / 0.78);
+    --glass-progress-shimmer-edge:          hsl(215 100% 96% / 0);
+    --glass-progress-shimmer-cycle:         2.0s;
+
+    --glass-progress-celebrate-color:       hsl(215 100% 96% / 0.92);
+    --glass-progress-celebrate-secondary:   hsl(275 70% 85% / 0.80);
+    --glass-progress-celebrate-bloom:       hsl(215 100% 96% / 0.55);
+
+    /* Popover surface — night (Phase 2b batch 9, added 2026-04-30).
+       Cool dark tint at lower alpha because moonlight ambient is
+       darker — 0.28 keeps the surface readable as glass without
+       turning into a black slab. No warm hues anywhere; shadow
+       deepens to compensate for the looser tint. */
+    --glass-popover-tint-alpha:             0.28;
+    --glass-popover-tint:                   hsl(220 25% 18% / var(--glass-popover-tint-alpha));
+    --glass-popover-solid-tint:             hsl(230 35% 16% / 0.92);
+    --glass-popover-shadow:
+      0 12px 30px -6px hsl(235 45% 6% / 0.45),
+      0 4px 8px -2px hsl(235 45% 6% / 0.22);
+    --glass-popover-displacement-scale:     14;
+
+    /* Checkbox — night (Phase B-1, added 2026-05-06).
+       Off-state shifts to a dark cool-tinted tile (matches Switch
+       night off-track). Rim alpha bumps slightly so the accent is
+       visible against the dark background. Fill keeps CI accent loud
+       (--theme-l intentionally not boosted globally — the saturated
+       teal/red reads fine against indigo-plum at scotopic luminance). */
+    --glass-checkbox-bg:                    hsl(220 25% 18% / 0.55);
+    --glass-checkbox-bg-hover:              hsl(220 25% 18% / 0.66);
+    --glass-checkbox-rim:                   hsl(var(--theme-h) var(--theme-s) calc(var(--theme-l) + 8%) / 0.50);
+    --glass-checkbox-rim-hover:             hsl(var(--theme-h) var(--theme-s) calc(var(--theme-l) + 8%) / 0.78);
+    --glass-checkbox-shadow:                hsl(235 60% 4% / 0.40);
+    --glass-checkbox-focus-ring:            hsl(var(--theme-h) var(--theme-s) calc(var(--theme-l) + 8%) / 0.65);
+
+    /* Foreground tokens — night (added 2026-05-06).
+       Mirror the day muted/subtle pattern but mode-shifted: lighter
+       baseline so cool body text reads on indigo-plum night canvas.
+       Default body stays silver-cool; muted is body-violet desaturated;
+       subtle is the quietest tier. */
+    --glass-text-default:                    hsl(215 20% 94%);
+    --glass-text-muted:                      hsl(var(--theme-body-h, 248) 22% 78%);
+    --glass-text-subtle:                     hsl(var(--theme-body-h, 248) 18% 62%);
+
+    /* Inset rim highlight — night (added 2026-05-06, tuned 2026-05-06).
+       Replaces hardcoded amethyst hsl(250 40% 20% / 0.45). Tuned to
+       match the old visual weight (L=22%, S=40%, A=0.45) so the night
+       rim feels familiar, just hue-shifted from 250° → CI 248°. */
+    --glass-rim-inset:                       hsl(var(--theme-body-h, 248) 40% 22% / 0.45);
+
+    /* Inset rim WARM sibling — night (added 2026-05-06, Phase A.5-9).
+       Per Hard Rule #1 (no warm in night except moon disc), the night
+       sibling is silver-cool, not warm. Reads as "moonlight glancing off
+       the bottom edge" — the dark-mode parallel of the day sun specular.
+       Same alpha band as day for compositional symmetry. */
+    --glass-rim-inset-warm:                  hsl(210 22% 35% / 0.22);
+  }
+}

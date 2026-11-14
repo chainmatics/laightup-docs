@@ -1,0 +1,1285 @@
+# Dein erster Inhalt auf dem Bildschirm
+
+Verstehe die fünf Bausteine deiner ersten Ausspielung.
+
+<!-- section: bevor-du-startest -->
+## Bevor du startest
+Du brauchst Zugang zu deinem laightup-Arbeitsbereich und einen Bildschirm mit eingerichtetem laightup-Player. Die Installation des Players hängt vom Gerät ab. Lass dir den passenden Installationsweg von deinem Ansprechpartner bestätigen.
+
+<!-- section: 1-einen-inhalt-vorbereiten -->
+## 1. Einen Inhalt vorbereiten
+Öffne deine Bibliothek. Eine Datei ist dein Ausgangsmaterial, zum Beispiel ein Bild oder ein Video. Ein Design ist der ausspielbare Inhalt. Erstelle ein Design oder nutze Easy Flow, um ein Motiv mit AI zu entwickeln.
+
+<!-- section: 2-eine-playlist-zusammenstellen -->
+## 2. Eine Playlist zusammenstellen
+Füge deine Designs zu einer Playlist hinzu. Lege die Reihenfolge und die gewünschten Einstellungen für die Wiedergabe fest. Prüfe die Vorschau, bevor du die Playlist für den Bildschirm verwendest.
+
+<!-- section: 3-die-ausspielung-planen -->
+## 3. Die Ausspielung planen
+Im Programmmodus kombinierst du Playlists in einem Sendeplan. Starte mit einem Dauerprogramm und lege dessen aktive Zeiten fest. Im einfachen Planungsmodus liegt die Zeitplanung an den Inhalten beziehungsweise der Playlist. Welche Oberfläche du siehst, hängt von deinem Arbeitsbereich ab.
+
+<!-- section: 4-den-bildschirm-verbinden -->
+## 4. Den Bildschirm verbinden
+Verbinde den Player über seinen angezeigten Kopplungscode mit laightup. Gib dem Display einen eindeutigen Namen und ordne es dem passenden Standort zu.
+
+<!-- section: 5-prufen-und-veroffentlichen -->
+## 5. Prüfen und veröffentlichen
+Designs, Playlists und Sendepläne haben eigene Versionen und Freigaben. Prüfe, ob die benötigten Versionen freigegeben sind, und weise dem Display die passende Playlist beziehungsweise den passenden Sendeplan zu. Kontrolliere die tatsächliche Wiedergabe am Bildschirm.
+
+> Ein gespeicherter Entwurf ist noch keine veröffentlichte Änderung. Prüfe den Freigabe- und Veröffentlichungsstatus, wenn eine Änderung auf dem Display fehlt.
+
+<!-- section: weiter-gehts -->
+## Weiter geht’s
+- [Die wichtigsten Begriffe](/help/grundbegriffe)
+- [Display verbinden](/help/display-verbinden)
+- [Sendepläne verstehen](/help/sendeplaene-verstehen)
+
+
+---
+
+# So funktioniert laightup
+
+Datei, Design, Playlist, Sendeplan und Display einfach erklärt.
+
+<!-- section: vom-material-zum-bildschirm -->
+## Vom Material zum Bildschirm
+| Baustein | Aufgabe | Beispiel |
+| --- | --- | --- |
+| Datei | Ausgangsmaterial in der Bibliothek | Produktfoto, Logo oder Video |
+| Design | Ausspielbarer Inhalt, gegebenenfalls mit Formatvarianten | Ein fertiges Angebotsmotiv |
+| Playlist | Sammlung von Designs mit Wiedergabeeinstellungen | Angebote der Woche |
+| Sendeplan | Kombiniert Playlists und ihre Zeitfenster | Filialprogramm |
+| Display | Gerät, auf dem das Programm läuft | Bildschirm im Eingangsbereich |
+
+<!-- section: datei-und-design-unterscheiden -->
+## Datei und Design unterscheiden
+Eine Datei ist ein Baustein. Sie ist nicht automatisch der fertige Inhalt für die Ausspielung. Das Design bildet die spielbare Einheit und kann Varianten für unterschiedliche Formate enthalten.
+
+<!-- section: playlist-und-sendeplan-unterscheiden -->
+## Playlist und Sendeplan unterscheiden
+Die Playlist beantwortet: Welche Inhalte gehören zusammen? Der Sendeplan beantwortet: Wann und auf welche Weise werden Playlists kombiniert?
+
+<!-- section: zwei-arten-der-zeitplanung -->
+## Zwei Arten der Zeitplanung
+Ein Arbeitsbereich verwendet entweder den einfachen Modus oder den Programmmodus. Im einfachen Modus liegt die Zeitplanung an Inhalten beziehungsweise der Playlist. Im Programmmodus liegen die Zeitfenster im Sendeplan; Playlists und ihre Elemente bleiben dort zeitfrei.
+
+> „Broadcast Plan“, „Playout“ und „Sendeplan“ bezeichnen dieselbe fachliche Funktion. Die sichtbare Bezeichnung kann je nach Oberfläche abweichen.
+
+<!-- section: verwandte-anleitungen -->
+## Verwandte Anleitungen
+- [Playlist zusammenstellen](/help/playlist-erstellen)
+- [Sendepläne verstehen](/help/sendeplaene-verstehen)
+
+
+---
+
+# Den ersten Standort live bringen
+
+Vom passenden Player bis zum sichtbaren Programm.
+
+<!-- section: dein-ergebnis -->
+## Dein Ergebnis
+Am Standort läuft das zugewiesene Programm auf einem registrierten Display.
+
+<!-- section: dein-weg -->
+## Dein Weg
+### 1. [Installation: den richtigen Player vorbereiten](/help/installation)
+Wähle den Weg für dein Display, bevor du mit der Registrierung beginnst.
+
+### 2. [Einen Standort anlegen und pflegen](/help/standort-anlegen)
+Erfasse Adresse und Betriebsinformationen für deine Filiale.
+
+### 3. [Ein Display mit laightup verbinden](/help/display-verbinden)
+Kopple deinen Player über den angezeigten Code.
+
+### 4. [Einem Display ein Programm zuweisen](/help/programm-zuweisen)
+Wähle eine veröffentlichte Playlist oder einen Sendeplan für dein Gerät.
+
+<!-- section: zum-abschluss-prufen -->
+## Zum Abschluss prüfen
+Kontrolliere das Ergebnis in deinem Arbeitsbereich und, bei Ausspielungsaufgaben, am tatsächlichen Bildschirm. Die Vorschau und der Live-Stand sind unterschiedliche Prüfschritte.
+
+
+---
+
+# Eine Aktion auf die Screens bringen
+
+Ein Motiv gestalten, planen und auf den richtigen Displays ausspielen.
+
+<!-- section: dein-ergebnis -->
+## Dein Ergebnis
+Deine Aktion ist freigegeben, zeitlich geplant und den passenden Displays zugeordnet.
+
+<!-- section: dein-weg -->
+## Dein Weg
+### 1. [Mit Easy Flow ein Design erstellen](/help/easy-flow)
+Beschreibe deine Idee, vergleiche Motive und übernimm dein Ergebnis.
+
+### 2. [Eine Playlist zusammenstellen](/help/playlist-erstellen)
+Fasse Designs zu einem gemeinsamen Programm zusammen.
+
+### 3. [Exklusivprogramme und Prioritäten](/help/exklusivprogramm)
+Übernimm das laufende Grundprogramm für ein bestimmtes Zeitfenster.
+
+### 4. [Einem Display ein Programm zuweisen](/help/programm-zuweisen)
+Wähle eine veröffentlichte Playlist oder einen Sendeplan für dein Gerät.
+
+<!-- section: zum-abschluss-prufen -->
+## Zum Abschluss prüfen
+Kontrolliere das Ergebnis in deinem Arbeitsbereich und, bei Ausspielungsaufgaben, am tatsächlichen Bildschirm. Die Vorschau und der Live-Stand sind unterschiedliche Prüfschritte.
+
+
+---
+
+# Inhalte je Standort personalisieren
+
+Ein gemeinsames Design mit lokalen Texten und Werten verwenden.
+
+<!-- section: dein-ergebnis -->
+## Dein Ergebnis
+Du hast auf mindestens zwei Geräten geprüft, welche lokalen Werte erscheinen.
+
+<!-- section: dein-weg -->
+## Dein Weg
+### 1. [Parameter und Platzhalter verstehen](/help/parameter-platzhalter)
+Lasse dasselbe Design auf unterschiedlichen Geräten passende Werte zeigen.
+
+### 2. [Eigene Platzhalter einrichten und testen](/help/platzhalter-anlegen)
+Lege wiederverwendbare Werte für standortbezogene Designs an.
+
+### 3. [Bedingungen, Reihenfolge und Standardwerte](/help/platzhalter-regeln)
+Verstehe, welche Zeile für ein Gerät gewinnt.
+
+### 4. [Standort, Gerätename und Uhrzeit einsetzen](/help/systemplatzhalter)
+Nutze vorhandene Informationen, ohne eigene Wertetabellen zu pflegen.
+
+<!-- section: zum-abschluss-prufen -->
+## Zum Abschluss prüfen
+Kontrolliere das Ergebnis in deinem Arbeitsbereich und, bei Ausspielungsaufgaben, am tatsächlichen Bildschirm. Die Vorschau und der Live-Stand sind unterschiedliche Prüfschritte.
+
+
+---
+
+# Den Arbeitsbereich organisieren
+
+Gemeinsame Einstellungen und klare Zuständigkeiten für dein Team.
+
+<!-- section: dein-ergebnis -->
+## Dein Ergebnis
+Gemeinsame Vorgaben und Zugriffsrechte sind anhand einer konkreten Aufgabe überprüft.
+
+<!-- section: dein-weg -->
+## Dein Weg
+### 1. [Die richtigen Einstellungen finden](/help/einstellungen-ueberblick)
+Unterscheide persönliche Einstellungen, Arbeitsbereich und Systemverwaltung.
+
+### 2. [Arbeitsbereich und Standardwerte einstellen](/help/arbeitsbereich-einstellen)
+Pflege Name, Standardsprache und Ersatzbild an zentraler Stelle.
+
+### 3. [Team, Rollen und Berechtigungen verwalten](/help/team-verwalten)
+Finde die richtige Stelle für Mitglieder und Zugriffsrechte.
+
+### 4. [Entwürfe, Versionen und Freigaben](/help/versionen-freigeben)
+Verstehe den Weg von einer Änderung zur veröffentlichten Version.
+
+<!-- section: zum-abschluss-prufen -->
+## Zum Abschluss prüfen
+Kontrolliere das Ergebnis in deinem Arbeitsbereich und, bei Ausspielungsaufgaben, am tatsächlichen Bildschirm. Die Vorschau und der Live-Stand sind unterschiedliche Prüfschritte.
+
+
+---
+
+# Installation: den richtigen Player vorbereiten
+
+Wähle den Weg für dein Display, bevor du mit der Registrierung beginnst.
+
+<!-- section: dein-ziel -->
+## Dein Ziel
+Der laightup-Player startet auf dem vorgesehenen Gerät und zeigt den Kopplungsbildschirm. Erst danach registrierst du das Gerät in deinem Arbeitsbereich.
+
+<!-- section: was-du-brauchst -->
+## Was du brauchst
+- Das konkrete Gerätemodell und dessen Betriebssystem.
+- Netzwerkzugang am Installationsort.
+- Die für dein Gerät freigegebene Player-Version beziehungsweise Installationsadresse.
+- Zugang zum laightup-Arbeitsbereich und die nötige Berechtigung für die Geräteregistrierung.
+
+<!-- section: 1-die-plattform-zuordnen -->
+## 1. Die Plattform zuordnen
+| Plattform | Vorgesehener Player | Vor dem Start klären |
+| --- | --- | --- |
+| Samsung Smart Signage / Tizen | laightup-Tizen-Player | SSSP-Kompatibilität und freigegebene Installationsadresse beziehungsweise signiertes Paket |
+| Unterstützte Android-Geräte | laightup-Android-Player | Unterstütztes Modell und freigegebenes Installationspaket |
+| Browser | laightup-Web-Player | Freigegebene Player-Adresse und geeignete Betriebsumgebung |
+
+<!-- section: 2-den-freigegebenen-installationsweg-verwenden -->
+## 2. Den freigegebenen Installationsweg verwenden
+Nutze die zu deinem Gerät gehörende Installationsanleitung und die von deinem laightup-Ansprechpartner bereitgestellte Adresse oder Datei. Menüpfade, URLs und Pakete sind geräte- und installationsabhängig. Diese Produktdokumentation enthält deshalb keine universelle Download-Adresse.
+
+> Wichtig: Die Player werden in eigenen Repositories entwickelt. Aus dem Verwaltungsportal lässt sich keine allgemeingültige Installationsanleitung für jedes Hardwaremodell ableiten. Kläre das Modell, bevor du ein Paket installierst.
+
+<!-- section: 3-player-starten-und-verbindung-prufen -->
+## 3. Player starten und Verbindung prüfen
+Starte den eingerichteten Player. Prüfe die Netzwerkverbindung und halte den angezeigten Kopplungscode bereit. Ohne laufenden Player mit Code ist die Registrierung im Portal noch nicht abgeschlossen.
+
+<!-- section: ergebnis-prufen -->
+## Ergebnis prüfen
+Du siehst den Kopplungsbildschirm auf dem tatsächlichen Display. Nun kannst du das Gerät registrieren und deinem Standort zuordnen.
+
+[Weiter: Display registrieren](/help/display-verbinden)
+
+
+---
+
+# Dateien, Designs und Importe
+
+Organisiere Medien und übernimm vorhandene Gestaltung in laightup.
+
+<!-- section: dateien-und-designs-unterscheiden -->
+## Dateien und Designs unterscheiden
+Dateien liefern Bilder und anderes Ausgangsmaterial. Designs bilden die ausspielbare Einheit, die du in einer Playlist verwendest. Bearbeitbare Designs öffnest du im **Design Studio**. Der frühere separate Vorlagen-Bereich wurde mit dem bisherigen Editor entfernt.
+
+<!-- section: dateien-und-ordner-organisieren -->
+## Dateien und Ordner organisieren
+Verwende eindeutige Namen, Ordner und Tags. Ordner samt Unterordnern kannst du im Verzeichnisbaum per Drag-and-drop verschieben; das Ziel öffnet sich anschließend. Ein Doppelklick klappt einen Ordner auf oder zu. Beim Löschen nennt der Dialog den Ordnernamen und weist darauf hin, wenn er nicht leer ist. Datei-Uploads zeigen ihren Fortschritt in einer Meldung.
+
+<!-- section: inhalte-mit-tags-wiederfinden -->
+## Inhalte mit Tags wiederfinden
+1. Öffne die Bibliothek und wähle einen Inhalt oder mehrere Medien aus.
+2. Weise über **+ Tag** ein bestehendes Tag zu oder lege beim Tippen ein neues an.
+3. Verwende den Tag-Filter, um zusammengehörige Medien wiederzufinden.
+4. Nutze dieselben Tags bei Bedarf auch für Playlists, Sendepläne, Standorte und Brand Kits.
+
+Administratoren verwalten unter **Einstellungen → Tags** Namen, Farben und Verwendungen. Ein verwendetes Tag kann nicht einfach gelöscht werden: Entferne zuerst seine Zuordnungen. Ein neues Brand Kit und seine importierten Assets erhalten automatisch ein Tag mit dem Kit-Namen.
+
+<!-- section: pdf-seiten-importieren -->
+## PDF-Seiten importieren
+1. Lade das PDF im gewünschten Bibliotheksbereich hoch.
+2. Wähle bei mehrseitigen PDFs die benötigten Seiten.
+3. Für Medien wird jede gewählte Seite als Bild übernommen; bei mehreren Seiten entsteht ein neuer Ordner.
+4. Für Designs wählst du zwischen einem Design mit mehreren Seiten und einem eigenen Design pro Seite.
+5. Kontrolliere nach dem Import Schriften, Bilder, Seitengrößen und die Lesbarkeit.
+
+Pro Import sind bis zu **100 Seiten** möglich; ein einzelnes mehrseitiges Design umfasst bis zu **10 Seiten**. PDF-Seiten werden für Designs nach Möglichkeit als Vektor übernommen. Wenn die Vektorkonvertierung nicht möglich ist, verwendet der Import ein gerastertes Bild. Eine vektorbasierte PDF-Seite ist nicht automatisch in einzelne editierbare Textobjekte zerlegt.
+
+<!-- section: indesign-dateien-ubernehmen -->
+## InDesign-Dateien übernehmen
+Lade eine **IDML-Datei** oder ein gezipptes InDesign-Paket in der Design-Bibliothek hoch. Der Importdialog zeigt die enthaltenen Bilder und Schriften. Entscheide, ob sie in Bibliothek beziehungsweise Brand Kit übernommen oder nur im Design verwendet werden. Prüfe das importierte Design im Design Studio, bevor du es veröffentlichst.
+
+<!-- section: ein-bild-in-editierbare-ebenen-zerlegen -->
+## Ein Bild in editierbare Ebenen zerlegen
+Öffne bei einem geeigneten Bild-Design das Kontextmenü und wähle **In Ebenen zerlegen**. Es entsteht ein neues Design mit bearbeitbaren Text-, Logo- und Grafik-Ebenen; das Original bleibt erhalten. Im Design Studio kann auch eine einzelne Bild-Ebene zerlegt werden. Die Aktion kostet den angezeigten festen Betrag an KI-Credits. Bei einem Fehler werden die Credits erstattet. Prüfe erkannte Texte und Ebenen vor der weiteren Verwendung.
+
+<!-- section: designs-bearbeiten-und-weiterverwenden -->
+## Designs bearbeiten und weiterverwenden
+Öffne ein bearbeitbares Design im Design Studio. Farben und Schriften des gewählten Brand Kits stehen dort bereit. Speichere bewusst über den Speichern-Button; beim Verlassen mit ungespeicherten Änderungen erscheint eine Rückfrage. Kontrolliere Varianten, Format und Inhalt vor der Freigabe.
+
+Ein Import oder Upload veröffentlicht den Inhalt nicht automatisch. Für die Ausspielung benötigst du die passende veröffentlichte Design-Version in einer Playlist.
+
+<!-- section: weiterfuhrend -->
+## Weiterführend
+- [Design-Varianten und Bedingungen](/help/design-varianten)
+- [Designs zu einer Playlist zusammenstellen](/help/playlist-erstellen)
+- [Einstellungen und Tag-Verwaltung finden](/help/einstellungen-ueberblick)
+
+
+---
+
+# Designs und Formatvarianten
+
+Bereite Inhalte für unterschiedliche Bildschirmformate vor.
+
+<!-- section: varianten-und-formate-unterscheiden -->
+## Varianten und Formate unterscheiden
+Ein Design kann verschiedene Varianten für unterschiedliche Geräte besitzen. Bedingungen entscheiden, welche Variante verwendet wird. Ein weiteres Seitenverhältnis im Easy Flow ist eine Formatbearbeitung des Motivs; kontrolliere anschließend auch die Gerätebedingungen und die veröffentlichte Design-Version.
+
+<!-- section: varianten-gemeinsam-bearbeiten -->
+## Varianten gemeinsam bearbeiten
+1. Öffne den Variantendialog des Designs.
+2. Wähle die zu bearbeitende Variante. Die Liste zeigt ihre Auswertungsreihenfolge.
+3. Hinterlege für jede Variante außer dem Standard mindestens eine Bedingung.
+4. Sortiere die Varianten per Drag-and-drop und kontrolliere die Auswahl mit der Gerätevorschau.
+5. Speichere das gesamte Set gemeinsam.
+
+<!-- section: die-standard-variante-als-ruckfall -->
+## Die Standard-Variante als Rückfall
+Jedes Design hat genau eine **Standard-Variante**. Sie steht immer zuletzt, hat keine Bedingungen und greift, wenn keine andere Variante passt. Sie lässt sich nicht verschieben oder löschen; eine andere Variante kann zum Standard erklärt werden. Das Vorschaubild des Designs zeigt die Standard-Variante. Varianten ohne die nötigen Bedingungen verhindern eine Veröffentlichung.
+
+Wenn zwei Personen gleichzeitig Varianten oder Platzhalter bearbeiten, weist laightup auf den Konflikt hin. Lade den aktuellen Stand neu, bevor du weiterarbeitest. Varianten älterer Versionen kannst du schreibgeschützt ansehen.
+
+<!-- section: ein-format-im-easy-flow-wahlen -->
+## Ein Format im Easy Flow wählen
+1. Nenne das gewünschte Format schon im Briefing, zum Beispiel 4:5.
+2. Wähle das Motiv, das du weiterverwenden möchtest.
+3. Erzeuge bei Bedarf weitere Seitenverhältnisse oder beschreibe einen Formatwechsel beim Verfeinern.
+4. Kontrolliere Text, Personen, Produkt, Logo und Bildausschnitt in jeder Variante.
+5. Übernimm das Ergebnis und speichere dein Design.
+
+Weitere Formate werden auf Grundlage des Originals für ihr Seitenverhältnis aufgebaut, nicht nur passend vergrößert. Downloads erhalten die Zielmaße der Plattform, zum Beispiel 1080 × 1350 Pixel für 4:5. Das ersetzt die inhaltliche Kontrolle nicht.
+
+<!-- section: vor-der-ausspielung-prufen -->
+## Vor der Ausspielung prüfen
+- Sind die Bedingungen vollständig und in der richtigen Reihenfolge?
+- Fällt ein Gerät ohne passende Bedingung auf den gewünschten Standard zurück?
+- Bleiben Pflichtangaben, Preise und Logo lesbar?
+- Ist die richtige Version veröffentlicht?
+
+[Mehr über Easy Flow](/help/easy-flow) · [Freigaben und Versionen](/help/versionen-freigeben)
+
+
+---
+
+# Mit Easy Flow ein Design erstellen
+
+Beschreibe deine Idee, vergleiche Motive und übernimm dein Ergebnis.
+
+<!-- section: 1-deine-idee-beschreiben -->
+## 1. Deine Idee beschreiben
+Formuliere, was du kommunizieren möchtest. Hilfreich sind Anlass, Zielgruppe, Medium, gewünschter Stil und die genaue Textbotschaft. Du kannst Referenzen für das Motiv oder die gewünschte Stimmung verwenden.
+
+**Beispiel:** „Ein Angebotsmotiv für unseren Eingangsbildschirm im Hochformat. Frisches Brot, ruhige Gestaltung. Der Text soll genau ‚Heute frisch gebacken‘ lauten.“
+
+<!-- section: 2-entscheidungen-klaren -->
+## 2. Entscheidungen klären
+Easy Flow hilft dir, das Briefing zu konkretisieren. Prüfe insbesondere Format, Text und Markenbezug, bevor du die Generierung startest. Die Ready-Karte zeigt den erfassten Brief einschließlich Format, Logo-Status und Annahmen. Korrigiere die Angaben dort, bevor du fortfährst. Das Festhalten des Briefings startet die Bildgenerierung noch nicht automatisch. Hast du ein Foto angekündigt, lade es vor der Generierung hoch. Vorgegebene Headlines werden als eigene Textvorgabe behandelt.
+
+<!-- section: 3-varianten-vergleichen -->
+## 3. Varianten vergleichen
+Die Generierung erstellt drei Motivvarianten. Vergleiche sie auf Inhalt, Lesbarkeit und Markenwirkung. Wenn du neue Varianten anforderst, beschreibe konkret, was sich ändern soll.
+
+<!-- section: 4-das-motiv-verfeinern -->
+## 4. Das Motiv verfeinern
+Wähle ein Motiv und beschreibe eine Änderung. Für lokale Retuschen kann eine Bereichsauswahl nötig sein. Prüfe die vorgeschlagene Auswahl und passe sie bei Bedarf an.
+
+<!-- section: 5-ergebnis-ubernehmen -->
+## 5. Ergebnis übernehmen
+Prüfe das ausgewählte Motiv und alle benötigten Formatvarianten. Übernimm das Ergebnis und speichere es als Design. Danach kannst du es im normalen Freigabeprozess weiterverwenden.
+
+> Prüfe AI-Ergebnisse selbst: Schreibweisen, Preise, Personen, Produktdetails und Logos können vom gewünschten Ergebnis abweichen.
+
+<!-- section: fortschritt-und-credits -->
+## Fortschritt und Credits
+Während ein Auftrag läuft, kannst du den Easy Flow minimieren. Eine Meldung informiert über Abschluss oder Fehler. Reichen die KI-Credits nicht aus, erscheint ein Hinweis und die betroffenen Aktionen sind deaktiviert. Doppelte Generierungs- und Format-Anfragen werden gegen doppelte Aufträge und Abbuchungen abgesichert.
+
+<!-- section: weiterfuhrend -->
+## Weiterführend
+- [Referenzen richtig einsetzen](/help/ai-referenzen)
+- [Motiv bearbeiten und retuschieren](/help/motiv-bearbeiten)
+
+
+---
+
+# Bildreferenzen und Markenbezug
+
+Verstehe, wie Referenzbilder und Stimmungsbilder ein Motiv beeinflussen.
+
+<!-- section: motivreferenz-oder-stimmung -->
+## Motivreferenz oder Stimmung?
+Eine Motivreferenz wird als Bild in die Generierung einbezogen. Eine Stimmungsreferenz liefert eine analysierte Beschreibung für den visuellen Stil. Die beiden Rollen haben unterschiedliche Aufgaben.
+
+<!-- section: eine-motivreferenz-verwenden -->
+## Eine Motivreferenz verwenden
+Wähle ein Bild, wenn dessen Motiv als Grundlage dienen soll. Beschreibe ausdrücklich, welche Eigenschaften erhalten bleiben müssen, zum Beispiel das Produkt oder die Gebäudefassade.
+
+> AI rendert Referenzfotos neu. Menschen, Gesichter, Gebäude und Produkte können abweichen; die Referenz wird nicht pixelgenau in das Ergebnis kopiert.
+
+<!-- section: den-markenbezug-prufen -->
+## Den Markenbezug prüfen
+Wähle das passende Brand Kit für den Auftrag. Ein Arbeitsbereich kann mehrere Kits führen; die Auswahl gilt pro Tab. Farben und Schriften können weiter verwendet werden, wenn du das Logo über seinen separaten Schalter abwählst. Bei aktiviertem Logo wird die passende Variante anhand des Hintergrunds gewählt und eingesetzt, statt sie vom Bildmodell nachzeichnen zu lassen. Textfarbregeln berücksichtigen die jeweilige Rolle und den Hintergrund. Kontrolliere das Ergebnis trotzdem gegen deine Markenvorgaben.
+
+<!-- section: pdf-als-referenz -->
+## PDF als Referenz
+Auch ein PDF lässt sich im Referenz-Upload verwenden. Wähle die benötigten Seiten; laightup wandelt sie in Referenzbilder um. Nutze die Rolle Motivreferenz für konkrete Inhalte und die Stilreferenz für Stimmung und Palette, damit das Motiv eines Stilbildes nicht zur eigentlichen Bildvorgabe wird.
+
+<!-- section: prazise-texte-vorgeben -->
+## Präzise Texte vorgeben
+Schreibe Namen, Preise und Pflichtangaben exakt in dein Briefing. Prüfe sie im erzeugten Motiv erneut. Bei einer Änderung hilft eine klare Anweisung wie: „Ändere nur den Preis auf 4,90 €. Behalte Motiv und Logo bei.“
+
+[Zur Easy-Flow-Anleitung](/help/easy-flow)
+
+
+---
+
+# Ein Motiv bearbeiten und retuschieren
+
+Ändere ein ausgewähltes Bild mit einer klaren Anweisung.
+
+<!-- section: die-anderung-eingrenzen -->
+## Die Änderung eingrenzen
+Wähle das bestehende Motiv und beschreibe, was sich ändern soll und was gleich bleiben muss. Trenne eine lokale Änderung von dem Wunsch nach einem komplett neuen Motiv.
+
+<!-- section: einen-bereich-auswahlen -->
+## Einen Bereich auswählen
+Bei einer lokalen Retusche markierst du den betroffenen Bereich. Je nach Konfiguration kann laightup eine Auswahl vorschlagen oder du malst sie selbst. Eine nahezu geschlossene Umrandung wird als gefüllte Fläche erkannt; Ausmalen bleibt möglich. Prüfe die Maskenvorschau, bevor die Bearbeitung ausgeführt wird.
+
+<!-- section: das-ergebnis-vergleichen -->
+## Das Ergebnis vergleichen
+Vergleiche Original und Ergebnis. Kontrolliere neben der gewünschten Änderung auch benachbarte Bereiche, Text, Logo und Produktdetails. Nutze den Vorher-Nachher-Regler oder die Ansicht nebeneinander und den gemeinsamen Zoom. Übernimm das Ergebnis erst, wenn die Änderung passt. Bearbeitungsschritte kannst du ohne neue Generierung kostenfrei zurücknehmen und wiederherstellen; der gewählte Stand bleibt nach einem Neuladen erhalten.
+
+<!-- section: ein-bild-hochskalieren -->
+## Ein Bild hochskalieren
+Ein fertiges Bild kann in höherer Auflösung abgeleitet werden, ohne es neu zu generieren. Motiv, Ausschnitt und Seitenverhältnis bleiben erhalten, das Original bleibt bestehen. Prüfe die gewünschte Auflösung vor der Übernahme.
+
+<!-- section: ein-anderes-format-erzeugen -->
+## Ein anderes Format erzeugen
+Für ein neues Seitenverhältnis verwende die Formatanpassung. Sie arbeitet mit dem ausgewählten Motiv und ist ein eigener Arbeitsschritt.
+
+> Der verfügbare Bearbeitungsablauf hängt von der Konfiguration deines Arbeitsbereichs ab. Automatische Bereichsvorschläge sind nicht in jeder Umgebung aktiv.
+
+[Formatvarianten verstehen](/help/design-varianten)
+
+
+---
+
+# Eine Playlist zusammenstellen
+
+Fasse Designs zu einem gemeinsamen Programm zusammen.
+
+<!-- section: vorbereiten -->
+## Vorbereiten
+Lege fest, welche Designs zusammengehören. Eine Playlist kann beispielsweise Angebote, Markenmotive oder Informationen für den Empfang bündeln.
+
+<!-- section: inhalte-zusammenstellen -->
+## Inhalte zusammenstellen
+1. Lege eine Playlist mit einem aussagekräftigen Namen an.
+2. Füge die gewünschten Designs hinzu.
+3. Ordne die Elemente passend zur gewünschten Wiedergabe.
+4. Prüfe Wiedergabemodus und Ton.
+5. Kontrolliere die Vorschau und den Freigabestatus.
+
+<!-- section: wiedergabe-wahlen -->
+## Wiedergabe wählen
+Playlists unterstützen feste Reihenfolge, Zufallswiedergabe und gewichtete Wiedergabe. Wähle die Einstellung passend zu deinem Programm. Ein Sendeplan kann den Wiedergabemodus einer eingebundenen Playlist überschreiben.
+
+<!-- section: zeitplanung-beachten -->
+## Zeitplanung beachten
+Im Programmmodus legst du Zeitfenster im Sendeplan fest. Im einfachen Modus liegt die Zeitplanung an Inhalten beziehungsweise der Playlist. Übertrage deshalb Anleitungen für Sendepläne nur auf Arbeitsbereiche im Programmmodus.
+
+<!-- section: nach-anderungen -->
+## Nach Änderungen
+Eine Playlist verwendet Versionen und Freigaben. Prüfe, ob du noch einen Entwurf bearbeitest oder bereits die für die Wiedergabe vorgesehene Version freigegeben hast.
+
+[Playlist im Sendeplan verwenden](/help/dauerprogramm)
+
+
+---
+
+# Reihenfolge, Zufall und Gewichtung
+
+Wähle, wie Inhalte innerhalb einer Playlist abgespielt werden.
+
+<!-- section: feste-reihenfolge -->
+## Feste Reihenfolge
+Verwende die feste Reihenfolge, wenn Inhalte in einer bestimmten Abfolge erscheinen sollen. Das passt beispielsweise zu einer zusammenhängenden Informationsstrecke.
+
+<!-- section: zufallswiedergabe -->
+## Zufallswiedergabe
+Die Zufallswiedergabe variiert die Abfolge. Sie eignet sich für Inhalte, bei denen keine feste Reihenfolge nötig ist.
+
+<!-- section: gewichtete-wiedergabe -->
+## Gewichtete Wiedergabe
+Mit Gewichtungen steuerst du die relative Verteilung der Wiedergabe. Gewichte beschreiben ein Verhältnis; sie sind keine Uhrzeit und kein fest gebuchtes Zeitfenster.
+
+<!-- section: uberschreibungen-im-sendeplan -->
+## Überschreibungen im Sendeplan
+Ein Sendeplan kann für eine zugeordnete Playlist einen anderen Wiedergabemodus und eine Ton-Einstellung vorgeben. Wenn Vorschau und erwartetes Verhalten abweichen, prüfe deshalb auch die Einstellungen im Sendeplan.
+
+> Die Gewichtung einer Playlist-Wiedergabe und das Gewicht eines Dauerprogramms sind unterschiedliche Einstellungen. Das Dauerprogramm-Gewicht steuert den Mix mehrerer Programme.
+
+[Dauerprogramme mischen](/help/dauerprogramm)
+
+
+---
+
+# Sendepläne verstehen
+
+Kombiniere Playlists zu einem Programm für deine Displays.
+
+<!-- section: die-drei-programmrollen -->
+## Die drei Programmrollen
+| Rolle | Wirkung | Typischer Einsatz |
+| --- | --- | --- |
+| Dauerprogramm | Bildet das Grundprogramm; mehrere Programme werden nach Gewicht gemischt | Marken- und Angebotsinhalte im Alltag |
+| Exklusivprogramm | Ersetzt während seines Zeitfensters das Dauerprogramm | Eine zeitlich begrenzte Aktion |
+| Mix-In | Streut in einem Intervall zusätzliche Inhalte ein | Ein wiederkehrender Hinweis |
+
+<!-- section: was-lauft-zu-einem-zeitpunkt -->
+## Was läuft zu einem Zeitpunkt?
+Zuerst wird bestimmt, ob ein Exklusivprogramm aktiv ist. Falls ja, ersetzt es das Dauerprogramm. Mix-Ins ergänzen das dann aktive Programm nach ihrem Intervall.
+
+**Beispiel:** Dein Dauerprogramm zeigt Angebote. Zwischen 12 und 13 Uhr übernimmt eine Mittagsaktion als Exklusivprogramm. Ein Mix-In mit einem Servicehinweis wird weiterhin eingestreut.
+
+> Ohne aktives Dauer- oder Exklusivprogramm wird ein Mix-In nicht eingespielt. Ein Mix-In bildet kein eigenständiges Grundprogramm.
+
+<!-- section: kalender-und-vorschau -->
+## Kalender und Vorschau
+Im Tageskalender siehst du die drei Programmrollen auf einer gemeinsamen Stundenachse. Ein Pin beantwortet, welche Komposition zu einem ausgewählten Zeitpunkt gelten würde.
+
+<!-- section: vor-der-veroffentlichung -->
+## Vor der Veröffentlichung
+Prüfe Zeitfenster, Wochentage und Datumsbereiche. Kontrolliere Konflikte und Gerätezuordnung. Veröffentlicht wird eine freigegebene Version des Sendeplans.
+
+- [Dauerprogramm einrichten](/help/dauerprogramm)
+- [Exklusivprogramm und Prioritäten](/help/exklusivprogramm)
+- [Mix-Ins einsetzen](/help/mix-ins)
+- [Kalender und Pin](/help/kalender-vorschau)
+
+
+---
+
+# Ein Dauerprogramm planen
+
+Lege das Grundprogramm für deine Displays fest.
+
+<!-- section: grundprogramm-festlegen -->
+## Grundprogramm festlegen
+Verwende ein Dauerprogramm für Playlists, die innerhalb ihrer aktiven Zeitfenster das reguläre Programm bilden sollen. Wähle die Playlist und lege fest, wann sie aktiv ist.
+
+<!-- section: mehrere-dauerprogramme-kombinieren -->
+## Mehrere Dauerprogramme kombinieren
+Mehrere gleichzeitig aktive Dauerprogramme werden anhand ihrer Gewichte miteinander verwoben. Bei 1:1 werden ihre Inhalte gleichmäßig gemischt. Das Verhältnis 2:1 erhöht den relativen Anteil des ersten Programms.
+
+<!-- section: zeitfenster-kontrollieren -->
+## Zeitfenster kontrollieren
+Prüfe Tageszeit, Wochentage und gegebenenfalls den Gültigkeitszeitraum. Stelle sicher, dass zu allen gewünschten Ausspielzeiten ein Grundprogramm vorhanden ist.
+
+<!-- section: ubernahmen-berucksichtigen -->
+## Übernahmen berücksichtigen
+Ein Exklusivprogramm ersetzt aktive Dauerprogramme in seinem Zeitfenster. Mix-Ins können das aktive Programm ergänzen.
+
+> Gewicht ist ein relatives Mischverhältnis. Für eine zeitlich exklusive Übernahme verwendest du ein Exklusivprogramm.
+
+[Komposition im Kalender prüfen](/help/kalender-vorschau)
+
+
+---
+
+# Exklusivprogramme und Prioritäten
+
+Übernimm das laufende Grundprogramm für ein bestimmtes Zeitfenster.
+
+<!-- section: eine-ubernahme-planen -->
+## Eine Übernahme planen
+Ein Exklusivprogramm ersetzt das Dauerprogramm während seines aktiven Zeitfensters. Nutze es beispielsweise für ein Event oder eine zeitlich begrenzte Aktion.
+
+<!-- section: prioritaten-bei-uberschneidungen -->
+## Prioritäten bei Überschneidungen
+Sind zwei Exklusivprogramme gleichzeitig aktiv, gewinnt die höhere Priorität im gemeinsamen Zeitbereich. Bei gleicher Priorität wird vorläufig der früher gelistete Plan verwendet und ein Konflikt zur Prüfung angezeigt.
+
+<!-- section: konflikte-auflosen -->
+## Konflikte auflösen
+Prüfe die markierte Überschneidung. Passe Zeitfenster oder Priorität an, wenn das Ergebnis nicht beabsichtigt ist. Eine Bestätigung mit „So lassen“ betrifft nur die gewählte Überschneidung.
+
+<!-- section: weiche-oder-sofortige-ubergabe -->
+## Weiche oder sofortige Übergabe
+Bei einer weichen Übergabe wird das laufende Element zu Ende gespielt. Bei einer sofortigen beziehungsweise harten Übergabe wird direkt gewechselt. Die Übergabeart gilt für die Version des Sendeplans, nicht nur für einen einzelnen Plan.
+
+> „Exklusiv“ verdrängt das Dauerprogramm. Aktive Mix-Ins werden weiterhin eingestreut.
+
+[Mix-Ins verstehen](/help/mix-ins)
+
+
+---
+
+# Hinweise mit Mix-Ins einstreuen
+
+Ergänze dein Programm um wiederkehrende Inhalte.
+
+<!-- section: wofur-ein-mix-in-geeignet-ist -->
+## Wofür ein Mix-In geeignet ist
+Nutze Mix-Ins für Hinweise, die wiederholt zwischen dem regulären Programm erscheinen sollen, beispielsweise eine Serviceinformation.
+
+<!-- section: intervall-und-blockgroe -->
+## Intervall und Blockgröße
+Ein Intervall wie „jedes dritte Element“ bestimmt die Einspielhäufigkeit. Die Blockgröße legt fest, wie viele aufeinanderfolgende Elemente beim Einspielen verwendet werden.
+
+<!-- section: mit-welchem-programm-wird-gemischt -->
+## Mit welchem Programm wird gemischt?
+Mix-Ins ergänzen sowohl Dauer- als auch Exklusivprogramme. Sie ersetzen diese Programme nicht.
+
+> Ein Mix-In benötigt ein aktives Dauer- oder Exklusivprogramm. Ohne dieses Grundprogramm bleibt es aus.
+
+<!-- section: im-kalender-prufen -->
+## Im Kalender prüfen
+Setze einen Pin in das gewünschte Zeitfenster. Prüfe in der aufgelösten Komposition, ob das Mix-In eingereiht ist und welches Programm darunter läuft.
+
+[Kalender und Pin nutzen](/help/kalender-vorschau)
+
+
+---
+
+# Kalender und Simulation
+
+Prüfe, welches Programm zu einem bestimmten Zeitpunkt gilt.
+
+<!-- section: den-tageskalender-lesen -->
+## Den Tageskalender lesen
+Die Tagesansicht zeigt die Spuren Mix-In, Exklusiv und Dauerprogramm entlang einer gemeinsamen Stundenachse von 0 bis 24 Uhr. In der Wochenansicht entsprechen die Spalten den Tagen.
+
+<!-- section: die-jetzt-linie -->
+## Die Jetzt-Linie
+Am heutigen Tag zeigt eine cyanfarbene Linie die aktuelle Uhrzeit. Sie wird regelmäßig aktualisiert. Auf anderen Tagen erscheint diese Linie nicht.
+
+<!-- section: einen-plan-auswahlen -->
+## Einen Plan auswählen
+Wähle einen Programmblock, um im rechten Inspektor dessen Zeitfenster und Einstellungen zu sehen. Je nach Rolle findest du Gewicht, Priorität oder Intervall und Blockgröße.
+
+<!-- section: einen-pin-setzen -->
+## Einen Pin setzen
+Setze einen Pin auf Tag und Uhrzeit. Die „Aufgelöste Komposition“ zeigt dir die zu diesem Zeitpunkt aktiven Mix-Ins, das gewinnende Exklusivprogramm und die aktiven Dauerprogramme.
+
+<!-- section: das-ergebnis-bewerten -->
+## Das Ergebnis bewerten
+Die Beschreibung „Was auf dem Bildschirm zu sehen wäre“ fasst die Komposition verständlich zusammen. Prüfe damit insbesondere Übergänge und Überschneidungen.
+
+> Ein Pin zeigt eine berechnete Vorschau für einen Zeitpunkt. Er ist kein Nachweis, dass ein physischer Bildschirm diese Inhalte bereits empfangen und abgespielt hat.
+
+<!-- section: eine-simulation-offnen -->
+## Eine Simulation öffnen
+Öffne aus den Gerätedetails **Simulation anzeigen** oder verwende die gemeinsame Simulation für Playlist, Sendeplan oder Gerät. Die Simulation verwendet dieselbe Abspiellogik wie die Geräte. Ohne echtes Gerät kannst du bei Playlist- und Sendeplan-Vorschauen ein Demo-Gerät im Quer- oder Hochformat verwenden.
+
+<!-- section: mehrere-gerate-vergleichen -->
+## Mehrere Geräte vergleichen
+Wähle bis zu vier Geräte, um sie an einer gemeinsamen Uhr zu vergleichen. Jede Kachel verwendet das tatsächliche Bildschirmformat. Die Tagesliste zeigt die Ausspielungen sekundengenau und nach Blöcken; ein Klick springt zur zugehörigen Uhrzeit. Speichere eine häufig benötigte Kombination aus Modus, Geräten und Sendeplan als Favorit.
+
+<!-- section: lucken-erkennen -->
+## Lücken erkennen
+Fehlen einer Playlist an einem gewählten Tag oder in einem Zeitfenster aktive Inhalte, zeigt der Sendeplan einen nicht blockierenden Hinweis. Auch die Kalenderansichten markieren solche Lücken. Prüfe die Inhaltseinstellungen, statt nur das Zeitfenster des Sendeplans zu verlängern.
+
+[Probleme bei der Ausspielung eingrenzen](/help/inhalt-fehlt)
+
+
+---
+
+# Wiedergabeparameter auf einen Blick
+
+Finde die richtige Einstellung für das gewünschte Verhalten.
+
+<!-- section: welche-einstellung-lost-welche-aufgabe -->
+## Welche Einstellung löst welche Aufgabe?
+| Du möchtest … | Einstellung | Wo du weiterliest |
+| --- | --- | --- |
+| Mehrere Grundprogramme mischen | Gewicht | Dauerprogramme |
+| Eine Aktion zeitweise übernehmen lassen | Exklusiv + Zeitfenster | Exklusivprogramme |
+| Bei Übernahmen einen Gewinner bestimmen | Priorität | Exklusivprogramme |
+| Regelmäßig Hinweise einspielen | Intervall und Blockgröße | Mix-Ins |
+| Einen Wechsel sofort oder nach Elementende ausführen | Übergabeart | Exklusivprogramme |
+| Das Display korrekt ausrichten | Rotation 0°, 90°, 180°, 270° | Geräteverwaltung |
+
+<!-- section: haufige-verwechslungen-vermeiden -->
+## Häufige Verwechslungen vermeiden
+Gewicht ist ein relatives Mischverhältnis, Priorität bestimmt den Gewinner zwischen Exklusivprogrammen und ein Intervall regelt das Einstreuen. Keine dieser Einstellungen ersetzt die anderen.
+
+<!-- section: eine-anderung-uberprufen -->
+## Eine Änderung überprüfen
+Setze in der Sendeplanvorschau einen Pin auf einen betroffenen Zeitpunkt. Vergleiche die berechnete Komposition mit deinem Ziel. Kontrolliere Geräteparameter zusätzlich am tatsächlichen Display.
+
+- [Dauerprogramm](/help/dauerprogramm)
+- [Exklusivprogramm](/help/exklusivprogramm)
+- [Mix-In](/help/mix-ins)
+- [Geräteverwaltung](/help/geraete-verwalten)
+
+
+---
+
+# Ein Display mit laightup verbinden
+
+Kopple deinen Player über den angezeigten Code.
+
+<!-- section: voraussetzungen -->
+## Voraussetzungen
+Der passende laightup-Player muss auf dem vorgesehenen Gerät eingerichtet sein und eine Verbindung zum Dienst aufbauen können. Die Geräteinstallation ist vom jeweiligen Player abhängig.
+
+<!-- section: kopplung-starten -->
+## Kopplung starten
+1. Starte den Player und halte den angezeigten Kopplungscode bereit.
+2. Öffne in laightup den Bereich für Displays beziehungsweise Geräte.
+3. Öffne die Geräteregistrierung und trage den Kopplungscode ein.
+4. Vergib einen eindeutigen Namen, zum Beispiel „Berlin · Empfang · Hochformat“.
+5. Wähle den Standort und die gewünschte Bildschirmausrichtung. Ordne bei Bedarf Gerätegruppen zu.
+6. Bestätige die Registrierung und kontrolliere das neue Gerät in der Übersicht.
+
+<!-- section: danach-ein-programm-zuweisen -->
+## Danach ein Programm zuweisen
+Ein gekoppeltes Gerät braucht ein zugewiesenes Programm: Im einfachen Modus wählst du eine Playlist, im Programmmodus einen Sendeplan. Kontrolliere die veröffentlichte Version, bevor du die Ausgabe am Bildschirm prüfst.
+
+[Programm einem Display zuweisen](/help/programm-zuweisen)
+
+<!-- section: wenn-die-kopplung-nicht-gelingt -->
+## Wenn die Kopplung nicht gelingt
+Prüfe den Code auf Tippfehler und kontrolliere, ob der Player noch denselben Code anzeigt. Prüfe außerdem die Netzwerkverbindung. Notiere bei weiteren Problemen den Gerätetyp und die angezeigte Fehlermeldung.
+
+[Ausspielung prüfen](/help/inhalt-fehlt)
+
+
+---
+
+# Standorte und Gerätegruppen
+
+Halte dein Display-Netzwerk übersichtlich.
+
+<!-- section: standorte-verwenden -->
+## Standorte verwenden
+Ordne ein Gerät dem Standort zu, an dem es betrieben wird. Die Geräteregistrierung unterstützt die Auswahl eines Standorts. Eine klare Zuordnung hilft, das richtige Display wiederzufinden.
+
+<!-- section: gerate-eindeutig-benennen -->
+## Geräte eindeutig benennen
+Verwende einen Namen, der Standort und Einsatz erkennen lässt: „Hamburg · Schaufenster links“ ist aussagekräftiger als „Display 3“.
+
+<!-- section: gerategruppen-nutzen -->
+## Gerätegruppen nutzen
+Geräte können Gruppen zugeordnet werden. Nutze eine konsistente Gruppierung, beispielsweise nach Einsatzzweck oder Display-Typ. Prüfe vor Änderungen immer, welche konkreten Geräte betroffen sind.
+
+<!-- section: ausrichtung-kontrollieren -->
+## Ausrichtung kontrollieren
+Die Geräteregistrierung unterstützt die gewünschte Bildschirmrotation. Prüfe zusätzlich, ob die verwendeten Designs passende Formatvarianten besitzen.
+
+> Standort, Gerätegruppe und zugewiesenes Programm beantworten unterschiedliche Fragen: Wo steht das Gerät, zu welcher Gruppe gehört es und was spielt es ab?
+
+[Display verbinden](/help/display-verbinden)
+
+
+---
+
+# Einem Display ein Programm zuweisen
+
+Wähle eine veröffentlichte Playlist oder einen Sendeplan für dein Gerät.
+
+<!-- section: den-passenden-modus-erkennen -->
+## Den passenden Modus erkennen
+Je nach Planungsmodus weist du dem Display eine Playlist oder einen Sendeplan zu. Im einfachen Modus arbeitest du mit Playlists, im Programmmodus mit Sendeplänen.
+
+<!-- section: die-zuweisung-andern -->
+## Die Zuweisung ändern
+1. Öffne das gewünschte Display und kontrolliere Namen und Standort.
+2. Öffne die Aktion zur Zuweisung einer Playlist beziehungsweise eines Sendeplans.
+3. Wähle das gewünschte Programm in der Liste aus. Die aktuelle Zuweisung wird vorgewählt, wenn sie in der Liste verfügbar ist.
+4. Bestätige die Auswahl mit **Speichern**.
+5. Kontrolliere das Ergebnis am tatsächlichen Bildschirm.
+
+<!-- section: warum-ist-ein-eintrag-nicht-auswahlbar -->
+## Warum ist ein Eintrag nicht auswählbar?
+Ein Eintrag ohne veröffentlichte Version wird in der Auswahl als nicht veröffentlicht gekennzeichnet und kann nicht zugewiesen werden. Veröffentliche zuerst die passende Version und öffne die Auswahl anschließend erneut.
+
+<!-- section: welche-version-wird-verwendet -->
+## Welche Version wird verwendet?
+Die Zuweisung verwendet die veröffentlichte Version. Prüfe vor dem Speichern, ob sie deinen erwarteten Inhalt enthält. Ein neuer Entwurf ist nicht automatisch der Stand für das Display.
+
+> Die Auswahl und Zuweisung eines Programms ist von der Kopplung des Geräts getrennt. Ein erfolgreich verbundenes Display hat damit noch nicht automatisch das gewünschte Programm.
+
+- [Display verbinden](/help/display-verbinden)
+- [Versionen und Freigaben](/help/versionen-freigeben)
+- [Fehlende Inhalte prüfen](/help/inhalt-fehlt)
+
+
+---
+
+# Einen Standort anlegen und pflegen
+
+Erfasse Adresse und Betriebsinformationen für deine Filiale.
+
+<!-- section: dein-ziel -->
+## Dein Ziel
+Deine Geräte sind einer klar benannten Filiale zugeordnet. Adresse, Notizen und Betriebszeiten lassen sich am Standort pflegen.
+
+<!-- section: 1-standort-erfassen -->
+## 1. Standort erfassen
+Öffne den Bereich **Standorte** und die Aktion zum Anlegen eines Standorts. Vergib einen eindeutigen Namen. Ergänze Straße, Stadt und Land sowie die passenden Angaben zu Postleitzahl, Region und Kreis.
+
+<!-- section: 2-informationen-fur-den-betrieb-hinterlegen -->
+## 2. Informationen für den Betrieb hinterlegen
+Nutze Notizen für hilfreiche Angaben zum Standort. Ein Beispiel ist die Position eines Displays im Gebäude. Speichere dort keine Passwörter oder Zugangscodes.
+
+<!-- section: 3-gerate-zuordnen -->
+## 3. Geräte zuordnen
+Wähle den Standort bei der Geräteregistrierung. Kontrolliere die Zuordnung anschließend in der Geräteübersicht. Ein Standort beschreibt den physischen Ort; eine Gerätegruppe beschreibt eine zusätzliche organisatorische Einteilung.
+
+<!-- section: 4-angaben-andern -->
+## 4. Angaben ändern
+Öffne den vorhandenen Standort zur Bearbeitung. Prüfe nach dem Speichern insbesondere Adresse und zugeordnete Geräte. Standortdaten werden auch für gerätebezogene Platzhalter verwendet.
+
+<!-- section: ergebnis-prufen -->
+## Ergebnis prüfen
+Der Standort lässt sich unter seinem Namen wiederfinden. Die Geräte stehen am richtigen Standort und die Adresse ist korrekt.
+
+- [Betriebszeiten einstellen](/help/standort-betriebszeiten)
+- [Standortdaten in Designs verwenden](/help/systemplatzhalter)
+
+
+---
+
+# Betriebszeiten und Neustartzeit einstellen
+
+Unterscheide Standortzeiten von der inhaltlichen Sendeplanung.
+
+<!-- section: wofur-diese-einstellungen-gedacht-sind -->
+## Wofür diese Einstellungen gedacht sind
+Der Standortdialog bietet einen Display-Zeitplan für Wochentage und eine Neustartzeit. Die Einstellungen betreffen den Gerätebetrieb. Ein Sendeplan steuert dagegen, welche Inhalte zu welchen Zeiten laufen.
+
+<!-- section: display-zeitplan-pflegen -->
+## Display-Zeitplan pflegen
+1. Öffne den Standort zur Bearbeitung.
+2. Aktiviere den Display-Zeitplan, wenn du standortbezogene Betriebszeiten verwenden möchtest.
+3. Lege für die gewünschten Wochentage Anfangs- und Endzeiten fest.
+4. Deaktiviere Tage, an denen keine Betriebszeit vorgesehen ist.
+5. Speichere und prüfe die eingetragenen Werte erneut.
+
+<!-- section: neustartzeit-festlegen -->
+## Neustartzeit festlegen
+Trage bei Bedarf eine Neustartzeit am Standort ein. Wähle einen Zeitpunkt, der zum Betrieb passt. Die tatsächliche Ausführung hängt vom Player und seiner Unterstützung der Gerätefunktionen ab; eine gespeicherte Einstellung allein ist noch kein Funktionsnachweis am Gerät.
+
+<!-- section: ergebnis-prufen -->
+## Ergebnis prüfen
+Teste die Einstellung zunächst an einem passenden Gerät. Prüfe getrennt, ob die geplanten Inhalte und der Gerätebetrieb den gewünschten Zeiten entsprechen.
+
+> Ein korrekt geplanter Inhalt kann außerhalb der vorgesehenen Gerätebetriebszeit trotzdem nicht sichtbar sein. Prüfe bei fehlender Anzeige deshalb beide Ebenen.
+
+[Zur Fehlersuche](/help/inhalt-fehlt)
+
+
+---
+
+# Geräte benennen, drehen und gruppieren
+
+Pflege dein Display-Netzwerk, ohne Inhalte neu zu gestalten.
+
+<!-- section: dein-ziel -->
+## Dein Ziel
+Jedes Display ist eindeutig erkennbar, richtig ausgerichtet und organisatorisch zugeordnet.
+
+<!-- section: name-und-notizen-pflegen -->
+## Name und Notizen pflegen
+Öffne das Gerät zur Bearbeitung. Verwende einen Namen wie „Köln · Foyer links“. Die Gerätenotizen bieten Platz für zusätzliche Betriebsinformationen. Speichere die Änderungen und prüfe den Eintrag in der Übersicht.
+
+<!-- section: bildschirmrotation-wahlen -->
+## Bildschirmrotation wählen
+Die Gerätebearbeitung bietet 0°, 90°, 180° und 270°. Wähle die zum Aufbau passende Rotation und kontrolliere das Ergebnis am Gerät. Rotation und Designformat sind unterschiedliche Einstellungen: Ein Hochformatmotiv sollte zusätzlich die passende Formatvariante besitzen.
+
+<!-- section: gruppen-zuordnen -->
+## Gruppen zuordnen
+Ordne das Gerät einer oder mehreren vorhandenen Gruppen zu. In der Gruppenauswahl kann eine neue Gruppe angelegt werden, sofern die entsprechende Aktion verfügbar ist. Ein konsistentes Namensschema erleichtert spätere Auswahl und Verwaltung.
+
+<!-- section: das-programm-getrennt-zuweisen -->
+## Das Programm getrennt zuweisen
+Die Bearbeitung von Name, Notizen, Rotation und Gruppen ist nicht die Programmzuweisung. Öffne dafür die passende Zuweisungsaktion und wähle eine veröffentlichte Playlist beziehungsweise einen Sendeplan.
+
+[Programm einem Display zuweisen](/help/programm-zuweisen)
+
+
+---
+
+# Parameter und Platzhalter verstehen
+
+Lasse dasselbe Design auf unterschiedlichen Geräten passende Werte zeigen.
+
+<!-- section: was-ist-hier-mit-parameter-gemeint -->
+## Was ist hier mit Parameter gemeint?
+Für dynamische Textwerte verwendet die Oberfläche den Begriff **Platzhalter**. Ein Platzhalter wird beim Ausspielen durch einen passenden Wert ersetzt. Davon zu unterscheiden sind Wiedergabeparameter wie Gewicht, Intervall, Priorität oder Rotation.
+
+<!-- section: zwei-arten-von-platzhaltern -->
+## Zwei Arten von Platzhaltern
+| Art | Woher kommt der Wert? | Beispiel |
+| --- | --- | --- |
+| Systemplatzhalter | Aus Gerät, Arbeitsbereich, Standort oder Datum und Uhrzeit | `{{system.location.city}}` |
+| Eigene Platzhalter | Aus einer selbst angelegten Gruppe mit Standardwerten und Bedingungen | Gruppe `angebot`, Spalte `preis` → `angebot.preis` |
+
+<!-- section: ein-design-verschiedene-orte -->
+## Ein Design, verschiedene Orte
+Du gestaltest ein Angebotsmotiv einmal. Für Köln und Berlin können unterschiedliche Werte hinterlegt werden. Das Design bleibt gleich, während die passende Bedingungszeile die Texte für das jeweilige Gerät liefert.
+
+<!-- section: der-weg-zum-richtigen-wert -->
+## Der Weg zum richtigen Wert
+1. Eine Gruppe definiert die verfügbaren Platzhalter.
+2. Die Standardzeile enthält die allgemeinen Werte.
+3. Bedingungszeilen überschreiben Werte für passende Geräte.
+4. Die Gerätevorschau zeigt, was ein konkretes Gerät erhalten würde.
+
+> Änderungen an eigenen Platzhalterwerten werden nach deiner Bestätigung direkt ausgespielt. Sie durchlaufen nicht automatisch die Designfreigabe.
+
+- [Eigene Platzhalter einrichten](/help/platzhalter-anlegen)
+- [Bedingungen und Standardwerte verstehen](/help/platzhalter-regeln)
+- [Wiedergabeparameter nachschlagen](/help/wiedergabe-parameter)
+
+
+---
+
+# Eigene Platzhalter einrichten und testen
+
+Lege wiederverwendbare Werte für standortbezogene Designs an.
+
+<!-- section: voraussetzungen -->
+## Voraussetzungen
+Du brauchst Zugriff auf den Bereich **Platzhalter** und ein breites Browserfenster für den Editor. Lege fest, welche Werte du variieren möchtest, und halte ein Testgerät bereit.
+
+<!-- section: 1-eine-gruppe-anlegen -->
+## 1. Eine Gruppe anlegen
+Wähle **Neue Gruppe**. Vergib einen Namen und ein Kürzel, beispielsweise `angebot`. Das Gruppenkürzel steht vor dem Punkt im Platzhalternamen und lässt sich später nicht ändern.
+
+<!-- section: 2-spalten-definieren -->
+## 2. Spalten definieren
+Lege für jeden Wert einen Platzhalter mit Anzeigename und Kürzel an, beispielsweise „Preis“ mit `preis`. Die Kombination lautet dann `angebot.preis`. Verwende eindeutige Kürzel aus Buchstaben, Ziffern und Unterstrichen; beginne mit einem Buchstaben.
+
+<!-- section: 3-standardwerte-eintragen -->
+## 3. Standardwerte eintragen
+Fülle die Standardzeile vollständig aus. Sie liefert Werte, wenn kein spezifischer Wert für ein Gerät gesetzt ist. Ergänze bei Bedarf Bedingungszeilen für bestimmte Geräte oder Standorte.
+
+<!-- section: 4-gegen-ein-gerat-testen -->
+## 4. Gegen ein Gerät testen
+Wähle in **Test gegen ein Gerät** ein konkretes Gerät. Die Vorschau verwendet auch deine noch nicht gespeicherten Änderungen. Prüfe die markierte Bedingungszeile und die aufgelösten Werte.
+
+<!-- section: 5-anderung-bewusst-ausspielen -->
+## 5. Änderung bewusst ausspielen
+Speichere die Gruppe. Die Bestätigung **Änderungen ausspielen?** weist darauf hin, dass die Werte sofort an Geräte gehen. Bestätige erst, nachdem du die betroffenen Werte geprüft hast.
+
+<!-- section: ergebnis-prufen -->
+## Ergebnis prüfen
+Setze den Platzhalter im Design über die verfügbare Platzhalterauswahl ein. Kontrolliere Vorschau und tatsächliche Anzeige. Nicht mehr bekannte Platzhalter können auf den Geräten leer bleiben.
+
+[Wie Bedingungen ausgewertet werden](/help/platzhalter-regeln)
+
+
+---
+
+# Bedingungen, Reihenfolge und Standardwerte
+
+Verstehe, welche Zeile für ein Gerät gewinnt.
+
+<!-- section: zuerst-gewinnt-die-erste-passende-zeile -->
+## Zuerst gewinnt die erste passende Zeile
+Die Auswertung prüft die Bedingungszeilen in ihrer Reihenfolge. Die erste passende Zeile gewinnt. Die Standardzeile nimmt nicht an dieser Auswahl teil; sie füllt fehlende Werte auf.
+
+<!-- section: leere-werte-fallen-auf-den-standard-zuruck -->
+## Leere Werte fallen auf den Standard zurück
+Ist ein Wert in der gewinnenden Zeile leer, wird der Standardwert der entsprechenden Spalte verwendet. Fehlt auch dieser, bleibt der ausgegebene Wert leer.
+
+| Standard | Passende Zeile | Ausgabe |
+| --- | --- | --- |
+| Preis: 4,90 € | Preis: 3,90 € | 3,90 € |
+| Titel: Frisch für dich | Titel: leer | Frisch für dich |
+
+<!-- section: bedingungen-bewusst-kombinieren -->
+## Bedingungen bewusst kombinieren
+Alle Angaben innerhalb einer Bedingung müssen zutreffen. Zusätzliche Bedingungen können Alternativen bilden. Eine normale Zeile ohne Bedingung greift nicht; dafür gibt es die Standardzeile.
+
+<!-- section: uberschneidungen-prufen -->
+## Überschneidungen prüfen
+Wenn mehrere Zeilen auf dasselbe Gerät passen könnten, ist die Reihenfolge entscheidend. Teste mindestens ein Gerät pro gewünschtem Fall sowie ein Gerät, das auf die Standardwerte zurückfallen soll.
+
+> Prüfe vor dem Ausspielen nicht nur den geänderten Preis. Eine falsche Bedingung kann alle Werte derselben Zeile auf unerwartete Geräte anwenden.
+
+[Zur Gerätevorschau](/help/platzhalter-anlegen)
+
+
+---
+
+# Standort, Gerätename und Uhrzeit einsetzen
+
+Nutze vorhandene Informationen, ohne eigene Wertetabellen zu pflegen.
+
+<!-- section: verfugbare-informationsarten -->
+## Verfügbare Informationsarten
+Systemplatzhalter stellen Informationen zu Gerät, Arbeitsbereich und Standort bereit. Hinzu kommen Datum und Uhrzeit. Die Platzhalterauswahl im Editor ist der richtige Einstieg für den in deiner Umgebung angebotenen Umfang.
+
+| Beispiel | Inhalt |
+| --- | --- |
+| `{{system.device.name}}` | Gerätename |
+| `{{system.location.name}}` | Standortname |
+| `{{system.location.city}}` | Stadt des Standorts |
+| `{{system.location.street}}` | Straße |
+| `{{system.datetime.date}}` | Datum |
+| `{{system.datetime.time}}` | Uhrzeit |
+
+<!-- section: werte-an-der-quelle-pflegen -->
+## Werte an der Quelle pflegen
+Ist der Standortname falsch, korrigiere die Standortdaten. Ein Platzhalter macht unvollständige Stammdaten nicht automatisch richtig. Prüfe außerdem, ob das Gerät dem richtigen Standort zugeordnet ist.
+
+<!-- section: vorschau-richtig-lesen -->
+## Vorschau richtig lesen
+Die Systemgruppe lässt sich gegen ein Gerät testen. Datum und Uhrzeit werden im Player aufgelöst; die Editorvorschau verwendet dafür Beispielwerte. Eine statische Vorschau ist daher kein Nachweis für den späteren exakten Uhrzeitwert.
+
+[Standortdaten pflegen](/help/standort-anlegen)
+
+
+---
+
+# Entwürfe, Versionen und Freigaben
+
+Verstehe den Weg von einer Änderung zur veröffentlichten Version.
+
+<!-- section: welche-inhalte-werden-versioniert -->
+## Welche Inhalte werden versioniert?
+Designs, Playlists und Sendepläne verwenden einen gemeinsamen Freigabeprozess. Jedes Objekt hat dabei seine eigenen Versionen.
+
+<!-- section: die-zustande-verstehen -->
+## Die Zustände verstehen
+| Zustand | Bedeutung |
+| --- | --- |
+| Entwurf | Eine Version wird bearbeitet. |
+| Zur Prüfung | Eine Version wartet auf die Freigabe. |
+| Freigegeben | Eine Version wurde genehmigt. |
+| Abgelehnt | Eine geprüfte Version wurde nicht genehmigt. |
+| Zurückgezogen | Eine eingereichte Freigabeanfrage wurde zurückgenommen. |
+| Ersetzt | Eine neuere Einreichung hat eine ältere Anfrage ersetzt; dieser Zustand wird bei Playlists und Sendeplänen verwendet. |
+
+<!-- section: eine-anderung-prufen -->
+## Eine Änderung prüfen
+Kontrolliere den Inhalt und die betroffenen Varianten. Prüfe bei Playlists auch Reihenfolge und Wiedergabeeinstellungen, bei Sendeplänen Zeitfenster und Zuordnung.
+
+<!-- section: automatische-freigabe -->
+## Automatische Freigabe
+Ein Arbeitsbereich kann automatische Freigaben je Inhaltstyp aktivieren. Der tatsächlich erforderliche Ablauf hängt daher von den Einstellungen deines Arbeitsbereichs ab.
+
+<!-- section: entwurf-und-live-version-unterscheiden -->
+## Entwurf und Live-Version unterscheiden
+Bei Sendeplänen wird die veröffentlichte Version separat vom bearbeitbaren Entwurf gehalten. Eine Änderung am Entwurf ersetzt die Live-Version nicht allein durch das Speichern.
+
+> Wenn eine Änderung fehlt, prüfe nicht nur das Design: Auch die verwendete Playlist und der zugewiesene Sendeplan können eine andere freigegebene beziehungsweise veröffentlichte Version verwenden.
+
+[Fehlende Inhalte eingrenzen](/help/inhalt-fehlt)
+
+
+---
+
+# Ein Inhalt erscheint nicht auf dem Display
+
+Prüfe die Ausspielung entlang der gesamten Kette.
+
+<!-- section: 1-das-richtige-display-prufen -->
+## 1. Das richtige Display prüfen
+Kontrolliere Gerätename, Standort und zugewiesenes Programm. Vergewissere dich, dass du den Bildschirm prüfst, für den der Inhalt vorgesehen ist.
+
+<!-- section: 2-design-und-playlist-prufen -->
+## 2. Design und Playlist prüfen
+Ist das gewünschte Design in der richtigen Playlist enthalten? Prüfe die verwendeten Versionen und deren Freigabestatus. Ein Entwurf kann vom freigegebenen Stand abweichen.
+
+<!-- section: 3-den-sendeplan-prufen -->
+## 3. Den Sendeplan prüfen
+Kontrolliere Datum, Wochentag und Uhrzeit. Setze im Kalender einen Pin auf den betroffenen Zeitpunkt. Prüfe, ob ein Exklusivprogramm das Dauerprogramm verdrängt.
+
+<!-- section: 4-mix-ins-berucksichtigen -->
+## 4. Mix-Ins berücksichtigen
+Falls der fehlende Inhalt als Mix-In eingeplant ist, muss gleichzeitig ein Dauer- oder Exklusivprogramm aktiv sein. Kontrolliere außerdem das eingestellte Intervall.
+
+<!-- section: 5-veroffentlichung-und-gerat-prufen -->
+## 5. Veröffentlichung und Gerät prüfen
+Ist der richtige Sendeplan freigegeben und veröffentlicht? Hat der Player eine Netzwerkverbindung? Eine korrekte Kalender-Vorschau beweist noch nicht die tatsächliche Wiedergabe am Gerät.
+
+<!-- section: wenn-du-unterstutzung-brauchst -->
+## Wenn du Unterstützung brauchst
+Halte Gerätename, Standort, Name von Design, Playlist und Sendeplan sowie Datum und Uhrzeit bereit. Beschreibe, was du erwartet und was du tatsächlich gesehen hast. Teile keine Kopplungscodes oder Zugangsdaten öffentlich.
+
+- [Kalender und Pin](/help/kalender-vorschau)
+- [Versionen und Freigaben](/help/versionen-freigeben)
+
+
+---
+
+# Häufige Fragen
+
+Kurze Antworten auf typische Fragen zur Ausspielung.
+
+<!-- section: warum-sehe-ich-keine-sendeplane -->
+## Warum sehe ich keine Sendepläne?
+Die sichtbare Planung hängt vom Planungsmodus deines Arbeitsbereichs ab. Im einfachen Modus liegt die Zeitplanung an Inhalten beziehungsweise der Playlist; im Programmmodus verwendest du Sendepläne.
+
+<!-- section: ist-eine-datei-bereits-ein-ausspielbarer-inhalt -->
+## Ist eine Datei bereits ein ausspielbarer Inhalt?
+Eine Bibliotheksdatei ist Ausgangsmaterial. Das Design bildet die ausspielbare Einheit. [Die Begriffe im Überblick](/help/grundbegriffe).
+
+<!-- section: warum-wird-ein-mix-in-nicht-abgespielt -->
+## Warum wird ein Mix-In nicht abgespielt?
+Ein Mix-In braucht ein gleichzeitig aktives Dauer- oder Exklusivprogramm. Ohne Grundprogramm wird es nicht eingespielt. Prüfe zusätzlich Zeitfenster und Intervall.
+
+<!-- section: werden-mix-ins-durch-ein-exklusivprogramm-unterbrochen -->
+## Werden Mix-Ins durch ein Exklusivprogramm unterbrochen?
+Ein Exklusivprogramm ersetzt das Dauerprogramm. Mix-Ins können weiterhin in das aktive Exklusivprogramm eingestreut werden.
+
+<!-- section: warum-unterscheidet-sich-ein-ai-motiv-vom-referenzfoto -->
+## Warum unterscheidet sich ein AI-Motiv vom Referenzfoto?
+Motivreferenzen werden bei der Bildgenerierung neu interpretiert; ein Foto wird nicht pixelgenau kopiert. Stilreferenzen liefern Stimmung und Palette. Ein ausgewähltes Brand-Kit-Logo wird separat eingesetzt. Prüfe Personen, Produkte, Texte und den Markenauftritt im Ergebnis. [Mehr zu Referenzen](/help/ai-referenzen).
+
+<!-- section: bedeutet-speichern-automatisch-veroffentlichen -->
+## Bedeutet Speichern automatisch Veröffentlichen?
+Ein bearbeitbarer Entwurf und die veröffentlichte Version sind unterschiedliche Zustände. Prüfe die Freigaben und Veröffentlichung aller beteiligten Objekte.
+
+
+---
+
+# Team, Rollen und Berechtigungen verwalten
+
+Finde die richtige Stelle für Mitglieder und Zugriffsrechte.
+
+<!-- section: dein-ziel -->
+## Dein Ziel
+Teammitglieder erhalten die passenden Aufgabenbereiche. Persönliche Voreinstellungen, Mitgliedschaft und Berechtigungen bleiben dabei getrennte Themen.
+
+<!-- section: mitgliederverwaltung-offnen -->
+## Mitgliederverwaltung öffnen
+Die Mitgliederverwaltung liegt unter **Einstellungen → Mitglieder** und erfordert Administrationsrechte. Prüfe zuerst, ob du den richtigen Arbeitsbereich geöffnet hast.
+
+<!-- section: rollen-gezielt-zuweisen -->
+## Rollen gezielt zuweisen
+Öffne die Bearbeitung des Mitglieds und wähle die passenden Rollen: Admin, Editor, Approver, Viewer oder ITAdmin. Mindestens eine Rolle muss gewählt bleiben. Neue Einladungen starten mit Viewer als Vorauswahl. Die eigenen Administratorrollen lassen sich in diesem Dialog nicht selbst ändern.
+
+<!-- section: arbeitsbereich-und-systemverwaltung-unterscheiden -->
+## Arbeitsbereich und Systemverwaltung unterscheiden
+Die Mitgliedsrollen steuern den Zugriff im Arbeitsbereich. Systemadministrationsfunktionen wie Update-Richtlinien sind davon getrennt. Eine frei konfigurierbare Rollendefinition oder zusätzliche Berechtigungsansicht ist im geprüften main-Stand nicht Teil dieses Ablaufs.
+
+<!-- section: ergebnis-prufen -->
+## Ergebnis prüfen
+Prüfe die Einstellung mit der betroffenen Person anhand einer konkreten Aufgabe: Kann sie den vorgesehenen Inhalt sehen und bearbeiten? Bleiben andere Bereiche wie gewünscht eingeschränkt?
+
+> Eine Berechtigung im Produkt verändert nicht den Freigabestatus eines Designs. Für die Veröffentlichung gelten zusätzlich Versionen und Freigaben.
+
+- [Mitglieder einladen und Rollen zuweisen](/help/mitglieder-einladen)
+- [Mitglieder bearbeiten und deaktivieren](/help/mitglieder-verwalten)
+- [Versionen und Freigaben](/help/versionen-freigeben)
+- [Einstellungen im Überblick](/help/einstellungen-ueberblick)
+
+
+---
+
+# Mitglieder einladen und Rollen zuweisen
+
+Nimm eine Person mit passenden Zugriffsrechten in dein Team auf.
+
+<!-- section: voraussetzungen -->
+## Voraussetzungen
+Du brauchst Administrationsrechte im richtigen Arbeitsbereich. Halte den Namen und die E-Mail-Adresse der Person bereit.
+
+<!-- section: 1-mitgliederverwaltung-offnen -->
+## 1. Mitgliederverwaltung öffnen
+Öffne **Einstellungen → Mitglieder**. Verwende die Aktion zum Hinzufügen eines Mitglieds.
+
+<!-- section: 2-person-und-rollen-erfassen -->
+## 2. Person und Rollen erfassen
+Trage Name und E-Mail-Adresse ein und wähle die passenden Rollen. Der Dialog startet mit **Viewer** als Vorauswahl. Verfügbare Rollen im untersuchten Stand sind Admin, Editor, Approver, Viewer und ITAdmin. Prüfe, welche Rollen die konkrete Aufgabe benötigt.
+
+<!-- section: 3-einladung-absenden -->
+## 3. Einladung absenden
+Prüfe die Angaben und bestätige die Einladung. Kontrolliere die Erfolgsmeldung und den neuen Eintrag in der Mitgliederliste.
+
+<!-- section: 4-berechtigungen-uberprufen -->
+## 4. Berechtigungen überprüfen
+Kontrolliere die ausgewählten Rollen in der Mitgliederbearbeitung und teste gemeinsam eine konkrete Aufgabe. Rollen und der Freigabestatus eines Inhalts sind getrennte Voraussetzungen. Neue Mitglieder benötigen eine Einladung; der automatische Beitritt über die E-Mail-Domain ist auch bei SSO-Anmeldung nicht vorgesehen.
+
+> Die eigenen Administratorrollen lassen sich im Bearbeitungsdialog nicht beliebig selbst ändern. Für solche Änderungen ist eine andere entsprechend berechtigte Person erforderlich.
+
+[Team und Berechtigungen verstehen](/help/team-verwalten)
+
+
+---
+
+# Mitglieder finden, bearbeiten und deaktivieren
+
+Halte die Mitgliederliste deines Arbeitsbereichs aktuell.
+
+<!-- section: mitglieder-gezielt-finden -->
+## Mitglieder gezielt finden
+Die Mitgliederliste lässt sich nach Name oder E-Mail durchsuchen und nach Rolle filtern. Verwende diese Suche, bevor du einen neuen Eintrag anlegst.
+
+<!-- section: name-und-rollen-andern -->
+## Name und Rollen ändern
+Öffne die Bearbeitung des gewünschten Mitglieds. Prüfe Name und Rollen und speichere die Änderung. Kontrolliere danach die aktualisierte Zeile. Eine bestehende E-Mail-Adresse wird im untersuchten Bearbeitungsablauf nicht als frei änderbares Feld an die Aktualisierung gesendet.
+
+<!-- section: deaktivieren-und-reaktivieren -->
+## Deaktivieren und reaktivieren
+Die Aktionsauswahl bietet für aktive Mitglieder eine Deaktivierung und für inaktive Mitglieder eine Reaktivierung. Wähle die richtige Person und prüfe anschließend den angezeigten Status.
+
+<!-- section: vor-dem-loschen-unterscheiden -->
+## Vor dem Löschen unterscheiden
+Deaktivierung und Löschung sind unterschiedliche Aktionen. Wenn nur ein vorübergehender Zugangsstopp benötigt wird, prüfe zuerst die Deaktivierung. Beachte bei einer Löschung den Bestätigungsdialog und die Auswirkungen auf den betroffenen Eintrag.
+
+<!-- section: ergebnis-prufen -->
+## Ergebnis prüfen
+Kontrolliere Suche, Rolle und Aktivitätsstatus des Mitglieds. Änderungen an Mitgliedern verändern nicht automatisch die Veröffentlichung deiner Inhalte.
+
+[Mitglieder einladen](/help/mitglieder-einladen)
+
+
+---
+
+# Die richtigen Einstellungen finden
+
+Unterscheide persönliche Einstellungen, Arbeitsbereich und Systemverwaltung.
+
+<!-- section: personlich-oder-fur-das-ganze-team -->
+## Persönlich oder für das ganze Team?
+Persönliche Einstellungen betreffen dein Profil, deine Sprache und Benachrichtigungen. Einstellungen des Arbeitsbereichs betreffen gemeinsame Grundlagen, etwa den Namen, die Standardsprache oder den Markenauftritt.
+
+<!-- section: die-bereiche-im-uberblick -->
+## Die Bereiche im Überblick
+| Bereich | Wofür? | Zugriff beachten |
+| --- | --- | --- |
+| Profil und Voreinstellungen | Persönliche Angaben und Sprache | Eigenes Konto |
+| Benachrichtigungen | Persönliche Mitteilungen | Eigenes Konto |
+| Allgemein | Arbeitsbereich und gemeinsame Vorgaben | Bearbeitung abhängig von Rolle |
+| Mitglieder | Teammitglieder verwalten | Administration |
+| Brand Kit | Markeninformationen für Inhalte | Berechtigungen beachten |
+| Tags | Gemeinsame Kennzeichnungen | Administration |
+| AI | Generierung und Credits | Verfügbarkeit und Rechte beachten |
+| System | Update-Richtlinien, Tizen-Releases und Schriften | Systemadministration |
+
+<!-- section: nicht-sichtbare-einstellungen -->
+## Nicht sichtbare Einstellungen
+Die Navigation wird nach Zugriffsrechten gefiltert. Eine fehlende Systemfunktion ist nicht automatisch ein Fehler. Die geprüfte main-Navigation bietet keinen Integrationsbereich; aus einer in anderen Entwicklungsständen sichtbaren Vorschau folgt keine verfügbare Datenanbindung.
+
+<!-- section: nachster-schritt -->
+## Nächster Schritt
+- [Arbeitsbereich einstellen](/help/arbeitsbereich-einstellen)
+- [Persönliche Sprache einstellen](/help/persoenliche-einstellungen)
+- [Team und Berechtigungen](/help/team-verwalten)
+
+<!-- section: tags-verwalten -->
+## Tags verwalten
+Unter **Einstellungen → Tags** pflegen Administratoren Namen, Farben und Zuordnungen. Entferne ein Tag zuerst von den zugewiesenen Objekten, bevor du es löschst. [Tags in der Bibliothek verwenden](/help/bibliothek#inhalte-mit-tags-wiederfinden).
+
+
+---
+
+# Arbeitsbereich und Standardwerte einstellen
+
+Pflege Name, Standardsprache und Ersatzbild an zentraler Stelle.
+
+<!-- section: voraussetzungen -->
+## Voraussetzungen
+Die Bearbeitung der allgemeinen Arbeitsbereichseinstellungen ist im untersuchten Stand für die Rolle Admin vorgesehen. Ohne Bearbeitungsrecht können Informationen schreibgeschützt angezeigt werden.
+
+<!-- section: name-und-standardsprache -->
+## Name und Standardsprache
+Öffne **Einstellungen → Allgemein**. Passe den Namen des Arbeitsbereichs an und wähle die Standardsprache. Änderungen am Namensfeld werden beim Verlassen des Felds gespeichert; prüfe die Erfolgsmeldung. Die persönliche Sprache ist eine separate Einstellung.
+
+<!-- section: ersatzbild-hinterlegen -->
+## Ersatzbild hinterlegen
+Der Arbeitsbereich bietet einen Upload für ein Ersatzbild. Unterstützte Dateitypen im Dialog sind JPEG, PNG, GIF, WebP und BMP. Wähle ein geeignetes Bild und prüfe den erfolgreichen Upload.
+
+<!-- section: ergebnis-prufen -->
+## Ergebnis prüfen
+Öffne den Bereich erneut und kontrolliere die gespeicherten Angaben. Ein Ersatzbild ersetzt weder eine korrekt zugewiesene Playlist noch einen veröffentlichten Sendeplan.
+
+[Persönliche Sprache ändern](/help/persoenliche-einstellungen)
+
+
+---
+
+# Persönliche Sprache und Profil pflegen
+
+Passe deine Arbeitsumgebung an, ohne gemeinsame Standortdaten zu ändern.
+
+<!-- section: deine-einstellungen-finden -->
+## Deine Einstellungen finden
+Öffne **Einstellungen**. Die persönlichen Bereiche umfassen Profil, Voreinstellungen und Benachrichtigungen.
+
+<!-- section: sprache-auswahlen -->
+## Sprache auswählen
+Öffne **Voreinstellungen** und wähle die gewünschte persönliche Sprache. Die Standardsprache des Arbeitsbereichs wird getrennt unter den allgemeinen Einstellungen gepflegt.
+
+<!-- section: profil-und-benachrichtigungen -->
+## Profil und Benachrichtigungen
+Nutze das Profil für deine Kontodaten und den eigenen Benachrichtigungsbereich für persönliche Mitteilungen. Verwechsle diese Einstellungen nicht mit Rollen oder gemeinsamen Arbeitsbereichsvorgaben.
+
+<!-- section: wenn-eine-option-fehlt -->
+## Wenn eine Option fehlt
+Die Darstellung kann je nach Umgebung und Rolle variieren. Eine Theme-Einstellung ist im untersuchten Produktcode beispielsweise nur außerhalb der Produktionsumgebung eingeblendet. Das Theme dieses Helpcenters ist davon unabhängig.
+
+[Alle Einstellungsbereiche](/help/einstellungen-ueberblick)

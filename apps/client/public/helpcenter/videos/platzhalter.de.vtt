@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00.000 --> 00:05.000
+Ein Platzhalter wird passend zum Standort ersetzt.
+
+00:05.000 --> 00:11.000
+Berlin: Die Bedingungszeile liefert 3,90 €.
+
+00:11.000 --> 00:18.000
+Köln: Dasselbe Design zeigt 4,50 €.
+
+00:18.000 --> 00:25.000
+Ohne passende Bedingungszeile gilt der Standardwert: 4,90 €.
+
+00:25.000 --> 00:32.000
+Im Design bleibt {{angebot.preis}} stehen. Die Werte werden zentral gepflegt.

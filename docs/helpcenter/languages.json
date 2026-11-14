@@ -1,0 +1,519 @@
+[
+  {
+    "code": "de",
+    "country": "DE",
+    "region": "europe",
+    "nativeName": "Deutsch",
+    "flag": "🇩🇪",
+    "names": {
+      "de": "Deutsch",
+      "en": "German"
+    }
+  },
+  {
+    "code": "en",
+    "country": "GB",
+    "region": "europe",
+    "nativeName": "English",
+    "flag": "🇬🇧",
+    "names": {
+      "de": "Englisch",
+      "en": "English"
+    }
+  },
+  {
+    "code": "fr",
+    "country": "FR",
+    "region": "europe",
+    "nativeName": "Français",
+    "flag": "🇫🇷",
+    "names": {
+      "de": "Französisch",
+      "en": "French"
+    }
+  },
+  {
+    "code": "es",
+    "country": "ES",
+    "region": "europe",
+    "nativeName": "Español",
+    "flag": "🇪🇸",
+    "names": {
+      "de": "Spanisch",
+      "en": "Spanish"
+    }
+  },
+  {
+    "code": "it",
+    "country": "IT",
+    "region": "europe",
+    "nativeName": "Italiano",
+    "flag": "🇮🇹",
+    "names": {
+      "de": "Italienisch",
+      "en": "Italian"
+    }
+  },
+  {
+    "code": "pt",
+    "country": "PT",
+    "region": "europe",
+    "nativeName": "Português",
+    "flag": "🇵🇹",
+    "names": {
+      "de": "Portugiesisch",
+      "en": "Portuguese"
+    }
+  },
+  {
+    "code": "nl",
+    "country": "NL",
+    "region": "europe",
+    "nativeName": "Nederlands",
+    "flag": "🇳🇱",
+    "names": {
+      "de": "Niederländisch",
+      "en": "Dutch"
+    }
+  },
+  {
+    "code": "da",
+    "country": "DK",
+    "region": "europe",
+    "nativeName": "Dansk",
+    "flag": "🇩🇰",
+    "names": {
+      "de": "Dänisch",
+      "en": "Danish"
+    }
+  },
+  {
+    "code": "sv",
+    "country": "SE",
+    "region": "europe",
+    "nativeName": "Svenska",
+    "flag": "🇸🇪",
+    "names": {
+      "de": "Schwedisch",
+      "en": "Swedish"
+    }
+  },
+  {
+    "code": "no",
+    "country": "NO",
+    "region": "europe",
+    "nativeName": "Norsk",
+    "flag": "🇳🇴",
+    "names": {
+      "de": "Norwegisch",
+      "en": "Norwegian"
+    }
+  },
+  {
+    "code": "fi",
+    "country": "FI",
+    "region": "europe",
+    "nativeName": "Suomi",
+    "flag": "🇫🇮",
+    "names": {
+      "de": "Finnisch",
+      "en": "Finnish"
+    }
+  },
+  {
+    "code": "is",
+    "country": "IS",
+    "region": "europe",
+    "nativeName": "Íslenska",
+    "flag": "🇮🇸",
+    "names": {
+      "de": "Isländisch",
+      "en": "Icelandic"
+    }
+  },
+  {
+    "code": "fo",
+    "country": "FO",
+    "region": "europe",
+    "nativeName": "Føroyskt",
+    "flag": "🇫🇴",
+    "names": {
+      "de": "Färöisch",
+      "en": "Faroese"
+    }
+  },
+  {
+    "code": "et",
+    "country": "EE",
+    "region": "europe",
+    "nativeName": "Eesti",
+    "flag": "🇪🇪",
+    "names": {
+      "de": "Estnisch",
+      "en": "Estonian"
+    }
+  },
+  {
+    "code": "lv",
+    "country": "LV",
+    "region": "europe",
+    "nativeName": "Latviešu",
+    "flag": "🇱🇻",
+    "names": {
+      "de": "Lettisch",
+      "en": "Latvian"
+    }
+  },
+  {
+    "code": "lt",
+    "country": "LT",
+    "region": "europe",
+    "nativeName": "Lietuvių",
+    "flag": "🇱🇹",
+    "names": {
+      "de": "Litauisch",
+      "en": "Lithuanian"
+    }
+  },
+  {
+    "code": "pl",
+    "country": "PL",
+    "region": "europe",
+    "nativeName": "Polski",
+    "flag": "🇵🇱",
+    "names": {
+      "de": "Polnisch",
+      "en": "Polish"
+    }
+  },
+  {
+    "code": "cs",
+    "country": "CZ",
+    "region": "europe",
+    "nativeName": "Čeština",
+    "flag": "🇨🇿",
+    "names": {
+      "de": "Tschechisch",
+      "en": "Czech"
+    }
+  },
+  {
+    "code": "sk",
+    "country": "SK",
+    "region": "europe",
+    "nativeName": "Slovenčina",
+    "flag": "🇸🇰",
+    "names": {
+      "de": "Slowakisch",
+      "en": "Slovak"
+    }
+  },
+  {
+    "code": "hu",
+    "country": "HU",
+    "region": "europe",
+    "nativeName": "Magyar",
+    "flag": "🇭🇺",
+    "names": {
+      "de": "Ungarisch",
+      "en": "Hungarian"
+    }
+  },
+  {
+    "code": "sl",
+    "country": "SI",
+    "region": "europe",
+    "nativeName": "Slovenščina",
+    "flag": "🇸🇮",
+    "names": {
+      "de": "Slowenisch",
+      "en": "Slovenian"
+    }
+  },
+  {
+    "code": "hr",
+    "country": "HR",
+    "region": "europe",
+    "nativeName": "Hrvatski",
+    "flag": "🇭🇷",
+    "names": {
+      "de": "Kroatisch",
+      "en": "Croatian"
+    }
+  },
+  {
+    "code": "bs",
+    "country": "BA",
+    "region": "europe",
+    "nativeName": "Bosanski",
+    "flag": "🇧🇦",
+    "names": {
+      "de": "Bosnisch",
+      "en": "Bosnian"
+    }
+  },
+  {
+    "code": "sr",
+    "country": "RS",
+    "region": "europe",
+    "nativeName": "Српски / Srpski",
+    "flag": "🇷🇸",
+    "names": {
+      "de": "Serbisch",
+      "en": "Serbian"
+    }
+  },
+  {
+    "code": "cnr",
+    "country": "ME",
+    "region": "europe",
+    "nativeName": "Crnogorski",
+    "flag": "🇲🇪",
+    "names": {
+      "de": "Montenegrinisch",
+      "en": "Montenegrin"
+    }
+  },
+  {
+    "code": "mk",
+    "country": "MK",
+    "region": "europe",
+    "nativeName": "Македонски",
+    "flag": "🇲🇰",
+    "names": {
+      "de": "Mazedonisch",
+      "en": "Macedonian"
+    }
+  },
+  {
+    "code": "bg",
+    "country": "BG",
+    "region": "europe",
+    "nativeName": "Български",
+    "flag": "🇧🇬",
+    "names": {
+      "de": "Bulgarisch",
+      "en": "Bulgarian"
+    }
+  },
+  {
+    "code": "ro",
+    "country": "RO",
+    "region": "europe",
+    "nativeName": "Română",
+    "flag": "🇷🇴",
+    "names": {
+      "de": "Rumänisch",
+      "en": "Romanian"
+    }
+  },
+  {
+    "code": "sq",
+    "country": "AL",
+    "region": "europe",
+    "nativeName": "Shqip",
+    "flag": "🇦🇱",
+    "names": {
+      "de": "Albanisch",
+      "en": "Albanian"
+    }
+  },
+  {
+    "code": "el",
+    "country": "GR",
+    "region": "europe",
+    "nativeName": "Ελληνικά",
+    "flag": "🇬🇷",
+    "names": {
+      "de": "Griechisch",
+      "en": "Greek"
+    }
+  },
+  {
+    "code": "tr",
+    "country": "TR",
+    "region": "europe",
+    "nativeName": "Türkçe",
+    "flag": "🇹🇷",
+    "names": {
+      "de": "Türkisch",
+      "en": "Turkish"
+    }
+  },
+  {
+    "code": "mt",
+    "country": "MT",
+    "region": "europe",
+    "nativeName": "Malti",
+    "flag": "🇲🇹",
+    "names": {
+      "de": "Maltesisch",
+      "en": "Maltese"
+    }
+  },
+  {
+    "code": "ga",
+    "country": "IE",
+    "region": "europe",
+    "nativeName": "Gaeilge",
+    "flag": "🇮🇪",
+    "names": {
+      "de": "Irisch",
+      "en": "Irish"
+    }
+  },
+  {
+    "code": "cy",
+    "country": "GB",
+    "region": "europe",
+    "nativeName": "Cymraeg",
+    "flag": "🇬🇧",
+    "names": {
+      "de": "Walisisch",
+      "en": "Welsh"
+    }
+  },
+  {
+    "code": "ca",
+    "country": "ES",
+    "region": "europe",
+    "nativeName": "Català",
+    "flag": "🇪🇸",
+    "names": {
+      "de": "Katalanisch",
+      "en": "Catalan"
+    }
+  },
+  {
+    "code": "eu",
+    "country": "ES",
+    "region": "europe",
+    "nativeName": "Euskara",
+    "flag": "🇪🇸",
+    "names": {
+      "de": "Baskisch",
+      "en": "Basque"
+    }
+  },
+  {
+    "code": "gl",
+    "country": "ES",
+    "region": "europe",
+    "nativeName": "Galego",
+    "flag": "🇪🇸",
+    "names": {
+      "de": "Galicisch",
+      "en": "Galician"
+    }
+  },
+  {
+    "code": "rm",
+    "country": "CH",
+    "region": "europe",
+    "nativeName": "Rumantsch",
+    "flag": "🇨🇭",
+    "names": {
+      "de": "Rätoromanisch",
+      "en": "Romansh"
+    }
+  },
+  {
+    "code": "lb",
+    "country": "LU",
+    "region": "europe",
+    "nativeName": "Lëtzebuergesch",
+    "flag": "🇱🇺",
+    "names": {
+      "de": "Luxemburgisch",
+      "en": "Luxembourgish"
+    }
+  },
+  {
+    "code": "ru",
+    "country": "RU",
+    "region": "europe",
+    "nativeName": "Русский",
+    "flag": "🇷🇺",
+    "names": {
+      "de": "Russisch",
+      "en": "Russian"
+    }
+  },
+  {
+    "code": "uk",
+    "country": "UA",
+    "region": "europe",
+    "nativeName": "Українська",
+    "flag": "🇺🇦",
+    "names": {
+      "de": "Ukrainisch",
+      "en": "Ukrainian"
+    }
+  },
+  {
+    "code": "be",
+    "country": "BY",
+    "region": "europe",
+    "nativeName": "Беларуская",
+    "flag": "🇧🇾",
+    "names": {
+      "de": "Belarussisch",
+      "en": "Belarusian"
+    }
+  },
+  {
+    "code": "hy",
+    "country": "AM",
+    "region": "asia",
+    "nativeName": "Հայերեն",
+    "flag": "🇦🇲",
+    "names": {
+      "de": "Armenisch",
+      "en": "Armenian"
+    }
+  },
+  {
+    "code": "ka",
+    "country": "GE",
+    "region": "asia",
+    "nativeName": "ქართული",
+    "flag": "🇬🇪",
+    "names": {
+      "de": "Georgisch",
+      "en": "Georgian"
+    }
+  },
+  {
+    "code": "az",
+    "country": "AZ",
+    "region": "asia",
+    "nativeName": "Azərbaycanca",
+    "flag": "🇦🇿",
+    "names": {
+      "de": "Aserbaidschanisch",
+      "en": "Azerbaijani"
+    }
+  },
+  {
+    "code": "kk",
+    "country": "KZ",
+    "region": "asia",
+    "nativeName": "Қазақша",
+    "flag": "🇰🇿",
+    "names": {
+      "de": "Kasachisch",
+      "en": "Kazakh"
+    }
+  },
+  {
+    "code": "ja",
+    "country": "JP",
+    "region": "asia",
+    "nativeName": "日本語",
+    "flag": "🇯🇵",
+    "names": {
+      "de": "Japanisch",
+      "en": "Japanese"
+    }
+  }
+]

@@ -1,0 +1,836 @@
+{
+  "groups": [
+    {
+      "id": "start",
+      "icon": "rocket",
+      "title": "Erste Schritte",
+      "description": "Von der ersten Idee zur Ausspielung."
+    },
+    {
+      "id": "installation",
+      "icon": "install",
+      "title": "Installation & Start",
+      "description": "Den passenden Player vorbereiten und sicher starten."
+    },
+    {
+      "id": "inhalte",
+      "icon": "design",
+      "title": "Inhalte & Designs",
+      "description": "Dateien organisieren und Designs erstellen."
+    },
+    {
+      "id": "ki",
+      "icon": "spark",
+      "title": "Gestalten mit AI",
+      "description": "Mit Easy Flow von der Idee zum Motiv."
+    },
+    {
+      "id": "playlists",
+      "icon": "playlist",
+      "title": "Playlists",
+      "description": "Inhalte zusammenstellen und abspielen."
+    },
+    {
+      "id": "sendeplaene",
+      "icon": "calendar",
+      "title": "Sendepläne",
+      "description": "Das richtige Programm zur richtigen Zeit."
+    },
+    {
+      "id": "displays",
+      "icon": "monitor",
+      "title": "Displays & Standorte",
+      "description": "Bildschirme verbinden und zuordnen."
+    },
+    {
+      "id": "parameter",
+      "icon": "parameters",
+      "title": "Parameter & Platzhalter",
+      "description": "Ein Design. Passende Werte für jeden Standort."
+    },
+    {
+      "id": "freigaben",
+      "icon": "check",
+      "title": "Versionen & Freigaben",
+      "description": "Änderungen prüfen und kontrolliert veröffentlichen."
+    },
+    {
+      "id": "hilfe",
+      "icon": "help",
+      "title": "Probleme lösen",
+      "description": "Antworten für die tägliche Arbeit."
+    },
+    {
+      "id": "verwaltung",
+      "icon": "team",
+      "title": "Team & Verwaltung",
+      "description": "Menschen, Rollen und Zuständigkeiten organisieren."
+    },
+    {
+      "id": "einstellungen",
+      "icon": "settings",
+      "title": "Einstellungen",
+      "description": "Arbeitsbereich, Sprache und Markenauftritt anpassen."
+    }
+  ],
+  "articles": [
+    {
+      "group": "start",
+      "source": "docs/project-guide.md",
+      "type": "guide",
+      "visual": "fluss",
+      "steps": [],
+      "id": "schnellstart",
+      "slug": "schnellstart",
+      "title": "Dein erster Inhalt auf dem Bildschirm",
+      "description": "Verstehe die fünf Bausteine deiner ersten Ausspielung.",
+      "audience": "Alle Teams",
+      "outcome": "Verstehe die fünf Bausteine deiner ersten Ausspielung.",
+      "tags": [
+        "start",
+        "Alle Teams",
+        "guide"
+      ]
+    },
+    {
+      "group": "start",
+      "source": "docs/architecture/broadcast-plans-playout-model.md",
+      "type": "concept",
+      "visual": "fluss",
+      "steps": [],
+      "id": "grundbegriffe",
+      "slug": "grundbegriffe",
+      "title": "So funktioniert laightup",
+      "description": "Datei, Design, Playlist, Sendeplan und Display einfach erklärt.",
+      "audience": "Alle Teams",
+      "outcome": "Datei, Design, Playlist, Sendeplan und Display einfach erklärt.",
+      "tags": [
+        "start",
+        "Alle Teams",
+        "concept"
+      ]
+    },
+    {
+      "group": "start",
+      "source": "docs/project-guide.md",
+      "type": "journey",
+      "visual": "installation",
+      "steps": [
+        "installation",
+        "standort-anlegen",
+        "display-verbinden",
+        "programm-zuweisen"
+      ],
+      "id": "usecase-standort",
+      "slug": "usecase-standort",
+      "title": "Den ersten Standort live bringen",
+      "description": "Vom passenden Player bis zum sichtbaren Programm.",
+      "audience": "Standortbetrieb",
+      "outcome": "Am Standort läuft das zugewiesene Programm auf einem registrierten Display.",
+      "tags": [
+        "start",
+        "Standortbetrieb",
+        "journey"
+      ]
+    },
+    {
+      "group": "start",
+      "source": "docs/project-guide.md",
+      "type": "journey",
+      "visual": "zeitplan",
+      "steps": [
+        "easy-flow",
+        "playlist-erstellen",
+        "exklusivprogramm",
+        "programm-zuweisen"
+      ],
+      "id": "usecase-kampagne",
+      "slug": "usecase-kampagne",
+      "title": "Eine Aktion auf die Screens bringen",
+      "description": "Ein Motiv gestalten, planen und auf den richtigen Displays ausspielen.",
+      "audience": "Content-Team",
+      "outcome": "Deine Aktion ist freigegeben, zeitlich geplant und den passenden Displays zugeordnet.",
+      "tags": [
+        "start",
+        "Content-Team",
+        "journey"
+      ]
+    },
+    {
+      "group": "start",
+      "source": "docs/project-guide.md",
+      "type": "journey",
+      "visual": "parameter",
+      "steps": [
+        "parameter-platzhalter",
+        "platzhalter-anlegen",
+        "platzhalter-regeln",
+        "systemplatzhalter"
+      ],
+      "id": "usecase-lokalisierung",
+      "slug": "usecase-lokalisierung",
+      "title": "Inhalte je Standort personalisieren",
+      "description": "Ein gemeinsames Design mit lokalen Texten und Werten verwenden.",
+      "audience": "Content-Team",
+      "outcome": "Du hast auf mindestens zwei Geräten geprüft, welche lokalen Werte erscheinen.",
+      "tags": [
+        "start",
+        "Content-Team",
+        "journey",
+        "Platzhalter",
+        "dynamische Inhalte",
+        "Parameter",
+        "personalisieren"
+      ]
+    },
+    {
+      "group": "start",
+      "source": "docs/project-guide.md",
+      "type": "journey",
+      "visual": "verwaltung",
+      "steps": [
+        "einstellungen-ueberblick",
+        "arbeitsbereich-einstellen",
+        "team-verwalten",
+        "versionen-freigeben"
+      ],
+      "id": "usecase-team",
+      "slug": "usecase-team",
+      "title": "Den Arbeitsbereich organisieren",
+      "description": "Gemeinsame Einstellungen und klare Zuständigkeiten für dein Team.",
+      "audience": "Administration",
+      "outcome": "Gemeinsame Vorgaben und Zugriffsrechte sind anhand einer konkreten Aufgabe überprüft.",
+      "tags": [
+        "start",
+        "Administration",
+        "journey"
+      ]
+    },
+    {
+      "group": "installation",
+      "source": "docs/project-guide.md; docs/architecture/map.md",
+      "type": "guide",
+      "visual": "installation",
+      "steps": [],
+      "id": "installation",
+      "slug": "installation",
+      "title": "Installation: den richtigen Player vorbereiten",
+      "description": "Wähle den Weg für dein Display, bevor du mit der Registrierung beginnst.",
+      "audience": "Standortbetrieb",
+      "outcome": "Wähle den Weg für dein Display, bevor du mit der Registrierung beginnst.",
+      "tags": [
+        "installation",
+        "Standortbetrieb",
+        "guide"
+      ]
+    },
+    {
+      "group": "inhalte",
+      "source": "docs/project-guide.md; apps/frontend/src/components/pdf-import/importPdfToLibrary.ts; apps/frontend/src/lib/pdf/pdfLimits.ts; apps/frontend/src/components/idml-import/IdmlImportDialog.tsx; apps/frontend/src/components/content-library-v2/LibCtxMenuV2.tsx; apps/frontend/src/components/settings/tags/TagsSettingsView.tsx",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "bibliothek",
+      "slug": "bibliothek",
+      "title": "Dateien, Designs und Importe",
+      "description": "Organisiere Medien und übernimm vorhandene Gestaltung in laightup.",
+      "audience": "Alle Teams",
+      "outcome": "Organisiere das Material für deine digitale Kommunikation.",
+      "tags": [
+        "inhalte",
+        "Alle Teams",
+        "guide",
+        "Tags",
+        "PDF",
+        "IDML",
+        "InDesign",
+        "Design Studio",
+        "Ebenen",
+        "Import"
+      ]
+    },
+    {
+      "group": "inhalte",
+      "source": "docs/ai/easy-flow-ai-overview.md; apps/frontend/src/components/content-library-v2/LibVariantDialog.tsx; apps/frontend/src/services/designs/variant-order.ts",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "design-varianten",
+      "slug": "design-varianten",
+      "title": "Designs und Formatvarianten",
+      "description": "Bereite Inhalte für unterschiedliche Bildschirmformate vor.",
+      "audience": "Alle Teams",
+      "outcome": "Bereite Inhalte für unterschiedliche Bildschirmformate vor.",
+      "tags": [
+        "inhalte",
+        "Alle Teams",
+        "guide",
+        "Standard-Variante",
+        "Bedingungen",
+        "Gerätetest"
+      ]
+    },
+    {
+      "group": "ki",
+      "source": "docs/ai/easy-flow-ai-overview.md; apps/frontend/src/components/easy-flow/step1/Step1ReadyCheckpoint.tsx; apps/frontend/src/components/easy-flow/step2/Step2Results.tsx",
+      "type": "guide",
+      "visual": "kreativ",
+      "steps": [],
+      "id": "easy-flow",
+      "slug": "easy-flow",
+      "title": "Mit Easy Flow ein Design erstellen",
+      "description": "Beschreibe deine Idee, vergleiche Motive und übernimm dein Ergebnis.",
+      "audience": "Alle Teams",
+      "outcome": "Beschreibe deine Idee, vergleiche Motive und übernimm dein Ergebnis.",
+      "tags": [
+        "ki",
+        "Alle Teams",
+        "guide"
+      ]
+    },
+    {
+      "group": "ki",
+      "source": "docs/ai/easy-flow-ai-overview.md; apps/frontend/src/components/easy-flow/references/convertPdfReferences.ts; apps/frontend/src/services/brand-kit/useSelectedBrandKit.ts",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "ai-referenzen",
+      "slug": "ai-referenzen",
+      "title": "Bildreferenzen und Markenbezug",
+      "description": "Verstehe, wie Referenzbilder und Stimmungsbilder ein Motiv beeinflussen.",
+      "audience": "Alle Teams",
+      "outcome": "Verstehe, wie Referenzbilder und Stimmungsbilder ein Motiv beeinflussen.",
+      "tags": [
+        "ki",
+        "Alle Teams",
+        "guide"
+      ]
+    },
+    {
+      "group": "ki",
+      "source": "docs/ai/easy-flow-ai-overview.md; apps/frontend/src/components/easy-flow/step2/Step2Results.tsx",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "motiv-bearbeiten",
+      "slug": "motiv-bearbeiten",
+      "title": "Ein Motiv bearbeiten und retuschieren",
+      "description": "Ändere ein ausgewähltes Bild mit einer klaren Anweisung.",
+      "audience": "Alle Teams",
+      "outcome": "Ändere ein ausgewähltes Bild mit einer klaren Anweisung.",
+      "tags": [
+        "ki",
+        "Alle Teams",
+        "guide"
+      ]
+    },
+    {
+      "group": "playlists",
+      "source": "docs/architecture/broadcast-plans-playout-model.md",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "playlist-erstellen",
+      "slug": "playlist-erstellen",
+      "title": "Eine Playlist zusammenstellen",
+      "description": "Fasse Designs zu einem gemeinsamen Programm zusammen.",
+      "audience": "Alle Teams",
+      "outcome": "Fasse Designs zu einem gemeinsamen Programm zusammen.",
+      "tags": [
+        "playlists",
+        "Alle Teams",
+        "guide"
+      ]
+    },
+    {
+      "group": "playlists",
+      "source": "docs/architecture/broadcast-plans-playout-model.md",
+      "type": "concept",
+      "visual": "",
+      "steps": [],
+      "id": "wiedergabemodi",
+      "slug": "wiedergabemodi",
+      "title": "Reihenfolge, Zufall und Gewichtung",
+      "description": "Wähle, wie Inhalte innerhalb einer Playlist abgespielt werden.",
+      "audience": "Alle Teams",
+      "outcome": "Wähle, wie Inhalte innerhalb einer Playlist abgespielt werden.",
+      "tags": [
+        "playlists",
+        "Alle Teams",
+        "concept"
+      ]
+    },
+    {
+      "group": "sendeplaene",
+      "source": "docs/helpful-docs/playouts-overview.md",
+      "type": "concept",
+      "visual": "zeitplan",
+      "steps": [],
+      "id": "sendeplaene-verstehen",
+      "slug": "sendeplaene-verstehen",
+      "title": "Sendepläne verstehen",
+      "description": "Kombiniere Playlists zu einem Programm für deine Displays.",
+      "audience": "Alle Teams",
+      "outcome": "Kombiniere Playlists zu einem Programm für deine Displays.",
+      "tags": [
+        "sendeplaene",
+        "Alle Teams",
+        "concept"
+      ]
+    },
+    {
+      "group": "sendeplaene",
+      "source": "docs/helpful-docs/playouts-overview.md",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "dauerprogramm",
+      "slug": "dauerprogramm",
+      "title": "Ein Dauerprogramm planen",
+      "description": "Lege das Grundprogramm für deine Displays fest.",
+      "audience": "Alle Teams",
+      "outcome": "Lege das Grundprogramm für deine Displays fest.",
+      "tags": [
+        "sendeplaene",
+        "Alle Teams",
+        "guide"
+      ]
+    },
+    {
+      "group": "sendeplaene",
+      "source": "docs/helpful-docs/playouts-overview.md",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "exklusivprogramm",
+      "slug": "exklusivprogramm",
+      "title": "Exklusivprogramme und Prioritäten",
+      "description": "Übernimm das laufende Grundprogramm für ein bestimmtes Zeitfenster.",
+      "audience": "Alle Teams",
+      "outcome": "Übernimm das laufende Grundprogramm für ein bestimmtes Zeitfenster.",
+      "tags": [
+        "sendeplaene",
+        "Alle Teams",
+        "guide"
+      ]
+    },
+    {
+      "group": "sendeplaene",
+      "source": "docs/helpful-docs/playouts-overview.md",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "mix-ins",
+      "slug": "mix-ins",
+      "title": "Hinweise mit Mix-Ins einstreuen",
+      "description": "Ergänze dein Programm um wiederkehrende Inhalte.",
+      "audience": "Alle Teams",
+      "outcome": "Ergänze dein Programm um wiederkehrende Inhalte.",
+      "tags": [
+        "sendeplaene",
+        "Alle Teams",
+        "guide"
+      ]
+    },
+    {
+      "group": "sendeplaene",
+      "source": "docs/helpful-docs/playouts-overview.md; apps/frontend/src/components/simulation/SimulationPageView.tsx; apps/frontend/src/components/simulation/lib/simulationUrl.ts",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "kalender-vorschau",
+      "slug": "kalender-vorschau",
+      "title": "Kalender und Simulation",
+      "description": "Prüfe, welches Programm zu einem bestimmten Zeitpunkt gilt.",
+      "audience": "Alle Teams",
+      "outcome": "Prüfe, welches Programm zu einem bestimmten Zeitpunkt gilt.",
+      "tags": [
+        "sendeplaene",
+        "Alle Teams",
+        "guide",
+        "Simulation",
+        "Favoriten",
+        "Gerätevergleich",
+        "Vorschau"
+      ]
+    },
+    {
+      "group": "sendeplaene",
+      "source": "docs/helpful-docs/playouts-overview.md; apps/frontend/src/components/devices/DeviceEditDialog.tsx",
+      "type": "reference",
+      "visual": "zeitplan",
+      "steps": [],
+      "id": "wiedergabe-parameter",
+      "slug": "wiedergabe-parameter",
+      "title": "Wiedergabeparameter auf einen Blick",
+      "description": "Finde die richtige Einstellung für das gewünschte Verhalten.",
+      "audience": "Alle Teams",
+      "outcome": "Finde die richtige Einstellung für das gewünschte Verhalten.",
+      "tags": [
+        "sendeplaene",
+        "Wiedergabe",
+        "Gewicht",
+        "Priorität",
+        "Intervall"
+      ]
+    },
+    {
+      "group": "displays",
+      "source": "apps/frontend/src/components/devices/useDevicesController.ts; apps/frontend/src/components/devices/AssignPlaybackDialog.tsx",
+      "type": "guide",
+      "visual": "registrierung",
+      "steps": [],
+      "id": "display-verbinden",
+      "slug": "display-verbinden",
+      "title": "Ein Display mit laightup verbinden",
+      "description": "Kopple deinen Player über den angezeigten Code.",
+      "audience": "Standortbetrieb",
+      "outcome": "Kopple deinen Player über den angezeigten Code.",
+      "tags": [
+        "displays",
+        "Standortbetrieb",
+        "guide"
+      ]
+    },
+    {
+      "group": "displays",
+      "source": "apps/frontend/src/components/devices/useDevicesController.ts",
+      "type": "guide",
+      "visual": "standort",
+      "steps": [],
+      "id": "standorte",
+      "slug": "standorte",
+      "title": "Standorte und Gerätegruppen",
+      "description": "Halte dein Display-Netzwerk übersichtlich.",
+      "audience": "Standortbetrieb",
+      "outcome": "Halte dein Display-Netzwerk übersichtlich.",
+      "tags": [
+        "displays",
+        "Standortbetrieb",
+        "guide"
+      ]
+    },
+    {
+      "group": "displays",
+      "source": "apps/frontend/src/components/devices/AssignPlaybackDialog.tsx",
+      "type": "guide",
+      "visual": "zuweisung",
+      "steps": [],
+      "id": "programm-zuweisen",
+      "slug": "programm-zuweisen",
+      "title": "Einem Display ein Programm zuweisen",
+      "description": "Wähle eine veröffentlichte Playlist oder einen Sendeplan für dein Gerät.",
+      "audience": "Standortbetrieb",
+      "outcome": "Wähle eine veröffentlichte Playlist oder einen Sendeplan für dein Gerät.",
+      "tags": [
+        "displays",
+        "Standortbetrieb",
+        "guide"
+      ]
+    },
+    {
+      "group": "displays",
+      "source": "apps/frontend/src/components/locations/LocationFormDialog.tsx; apps/frontend/src/components/locations/useLocationsController.ts",
+      "type": "guide",
+      "visual": "standort",
+      "steps": [],
+      "id": "standort-anlegen",
+      "slug": "standort-anlegen",
+      "title": "Einen Standort anlegen und pflegen",
+      "description": "Erfasse Adresse und Betriebsinformationen für deine Filiale.",
+      "audience": "Standortbetrieb",
+      "outcome": "Erfasse Adresse und Betriebsinformationen für deine Filiale.",
+      "tags": [
+        "displays",
+        "Standortbetrieb",
+        "guide"
+      ]
+    },
+    {
+      "group": "displays",
+      "source": "apps/frontend/src/components/locations/LocationFormDialog.tsx; apps/frontend/src/components/locations/useLocationsController.ts",
+      "type": "guide",
+      "visual": "zeitplan",
+      "steps": [],
+      "id": "standort-betriebszeiten",
+      "slug": "standort-betriebszeiten",
+      "title": "Betriebszeiten und Neustartzeit einstellen",
+      "description": "Unterscheide Standortzeiten von der inhaltlichen Sendeplanung.",
+      "audience": "Standortbetrieb",
+      "outcome": "Unterscheide Standortzeiten von der inhaltlichen Sendeplanung.",
+      "tags": [
+        "displays",
+        "Standortbetrieb",
+        "guide"
+      ]
+    },
+    {
+      "group": "displays",
+      "source": "apps/frontend/src/components/devices/DeviceEditDialog.tsx; apps/frontend/src/components/devices/AssignPlaybackDialog.tsx",
+      "type": "guide",
+      "visual": "geraet",
+      "steps": [],
+      "id": "geraete-verwalten",
+      "slug": "geraete-verwalten",
+      "title": "Geräte benennen, drehen und gruppieren",
+      "description": "Pflege dein Display-Netzwerk, ohne Inhalte neu zu gestalten.",
+      "audience": "Standortbetrieb",
+      "outcome": "Pflege dein Display-Netzwerk, ohne Inhalte neu zu gestalten.",
+      "tags": [
+        "displays",
+        "Standortbetrieb",
+        "guide"
+      ]
+    },
+    {
+      "group": "parameter",
+      "source": "apps/frontend/src/components/content-library/editor/placeholderVariables.ts; apps/frontend/src/lib/systemPlaceholders.ts; apps/backend/src/modules/placeholder/resolve-placeholders.ts",
+      "type": "concept",
+      "visual": "parameter",
+      "steps": [],
+      "id": "parameter-platzhalter",
+      "slug": "parameter-platzhalter",
+      "title": "Parameter und Platzhalter verstehen",
+      "description": "Lasse dasselbe Design auf unterschiedlichen Geräten passende Werte zeigen.",
+      "audience": "Alle Teams",
+      "outcome": "Lasse dasselbe Design auf unterschiedlichen Geräten passende Werte zeigen.",
+      "tags": [
+        "parameter",
+        "Alle Teams",
+        "concept",
+        "Parameter",
+        "dynamische Inhalte",
+        "Platzhalter"
+      ]
+    },
+    {
+      "group": "parameter",
+      "source": "apps/frontend/src/components/placeholders/PlaceholderTester.tsx; apps/frontend/src/components/content-library/editor/placeholderVariables.ts; apps/frontend/src/i18n/locales/de.json",
+      "type": "guide",
+      "visual": "platzhalter-setup",
+      "steps": [],
+      "id": "platzhalter-anlegen",
+      "slug": "platzhalter-anlegen",
+      "title": "Eigene Platzhalter einrichten und testen",
+      "description": "Lege wiederverwendbare Werte für standortbezogene Designs an.",
+      "audience": "Alle Teams",
+      "outcome": "Lege wiederverwendbare Werte für standortbezogene Designs an.",
+      "tags": [
+        "parameter",
+        "Alle Teams",
+        "guide",
+        "Parameter",
+        "dynamische Inhalte",
+        "Platzhalter"
+      ]
+    },
+    {
+      "group": "parameter",
+      "source": "apps/backend/src/modules/placeholder/resolve-placeholders.ts; apps/frontend/src/i18n/locales/de.json",
+      "type": "reference",
+      "visual": "platzhalter-regeln",
+      "steps": [],
+      "id": "platzhalter-regeln",
+      "slug": "platzhalter-regeln",
+      "title": "Bedingungen, Reihenfolge und Standardwerte",
+      "description": "Verstehe, welche Zeile für ein Gerät gewinnt.",
+      "audience": "Alle Teams",
+      "outcome": "Verstehe, welche Zeile für ein Gerät gewinnt.",
+      "tags": [
+        "parameter",
+        "Alle Teams",
+        "reference",
+        "Parameter",
+        "dynamische Inhalte",
+        "Platzhalter"
+      ]
+    },
+    {
+      "group": "parameter",
+      "source": "apps/frontend/src/lib/systemPlaceholders.ts; apps/frontend/src/components/placeholders/PlaceholderTester.tsx",
+      "type": "reference",
+      "visual": "systemwerte",
+      "steps": [],
+      "id": "systemplatzhalter",
+      "slug": "systemplatzhalter",
+      "title": "Standort, Gerätename und Uhrzeit einsetzen",
+      "description": "Nutze vorhandene Informationen, ohne eigene Wertetabellen zu pflegen.",
+      "audience": "Alle Teams",
+      "outcome": "Nutze vorhandene Informationen, ohne eigene Wertetabellen zu pflegen.",
+      "tags": [
+        "parameter",
+        "Alle Teams",
+        "reference",
+        "Parameter",
+        "dynamische Inhalte",
+        "Platzhalter"
+      ]
+    },
+    {
+      "group": "freigaben",
+      "source": "docs/project-guide.md; apps/backend/src/common/enums/version-status.enum.ts; apps/frontend/src/i18n/locales/de.json",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "versionen-freigeben",
+      "slug": "versionen-freigeben",
+      "title": "Entwürfe, Versionen und Freigaben",
+      "description": "Verstehe den Weg von einer Änderung zur veröffentlichten Version.",
+      "audience": "Alle Teams",
+      "outcome": "Verstehe den Weg von einer Änderung zur veröffentlichten Version.",
+      "tags": [
+        "freigaben",
+        "Alle Teams",
+        "guide"
+      ]
+    },
+    {
+      "group": "hilfe",
+      "source": "docs/architecture/broadcast-plans-playout-model.md",
+      "type": "troubleshooting",
+      "visual": "",
+      "steps": [],
+      "id": "inhalt-fehlt",
+      "slug": "inhalt-fehlt",
+      "title": "Ein Inhalt erscheint nicht auf dem Display",
+      "description": "Prüfe die Ausspielung entlang der gesamten Kette.",
+      "audience": "Alle Teams",
+      "outcome": "Prüfe die Ausspielung entlang der gesamten Kette.",
+      "tags": [
+        "hilfe",
+        "Alle Teams",
+        "troubleshooting"
+      ]
+    },
+    {
+      "group": "hilfe",
+      "source": "docs/project-guide.md; docs/helpful-docs/playouts-overview.md; apps/frontend/src/components/easy-flow/references/convertPdfReferences.ts",
+      "type": "troubleshooting",
+      "visual": "",
+      "steps": [],
+      "id": "faq",
+      "slug": "faq",
+      "title": "Häufige Fragen",
+      "description": "Kurze Antworten auf typische Fragen zur Ausspielung.",
+      "audience": "Alle Teams",
+      "outcome": "Kurze Antworten auf typische Fragen zur Ausspielung.",
+      "tags": [
+        "hilfe",
+        "Alle Teams",
+        "troubleshooting"
+      ]
+    },
+    {
+      "group": "verwaltung",
+      "source": "apps/frontend/src/components/users/UserFormDialog.tsx; apps/frontend/src/components/settings/settingsNav.ts",
+      "type": "guide",
+      "visual": "verwaltung",
+      "steps": [],
+      "id": "team-verwalten",
+      "slug": "team-verwalten",
+      "title": "Team, Rollen und Berechtigungen verwalten",
+      "description": "Finde die richtige Stelle für Mitglieder und Zugriffsrechte.",
+      "audience": "Administration",
+      "outcome": "Finde die richtige Stelle für Mitglieder und Zugriffsrechte.",
+      "tags": [
+        "verwaltung",
+        "Administration",
+        "guide"
+      ]
+    },
+    {
+      "group": "verwaltung",
+      "source": "apps/frontend/src/components/users/useUsersController.ts; apps/frontend/src/components/users/UserFormDialog.tsx; apps/frontend/src/components/users/UserActionsMenu.tsx",
+      "type": "guide",
+      "visual": "einladung",
+      "steps": [],
+      "id": "mitglieder-einladen",
+      "slug": "mitglieder-einladen",
+      "title": "Mitglieder einladen und Rollen zuweisen",
+      "description": "Nimm eine Person mit passenden Zugriffsrechten in dein Team auf.",
+      "audience": "Administration",
+      "outcome": "Nimm eine Person mit passenden Zugriffsrechten in dein Team auf.",
+      "tags": [
+        "Verwaltung",
+        "Mitglieder",
+        "Team",
+        "Rollen",
+        "Administration"
+      ]
+    },
+    {
+      "group": "verwaltung",
+      "source": "apps/frontend/src/components/users/useUsersController.ts; apps/frontend/src/components/users/UserFormDialog.tsx; apps/frontend/src/components/users/UserActionsMenu.tsx",
+      "type": "guide",
+      "visual": "verwaltung",
+      "steps": [],
+      "id": "mitglieder-verwalten",
+      "slug": "mitglieder-verwalten",
+      "title": "Mitglieder finden, bearbeiten und deaktivieren",
+      "description": "Halte die Mitgliederliste deines Arbeitsbereichs aktuell.",
+      "audience": "Administration",
+      "outcome": "Halte die Mitgliederliste deines Arbeitsbereichs aktuell.",
+      "tags": [
+        "Verwaltung",
+        "Mitglieder",
+        "Team",
+        "Rollen",
+        "Administration"
+      ]
+    },
+    {
+      "group": "einstellungen",
+      "source": "apps/frontend/src/components/settings/settingsNav.ts; apps/frontend/src/components/settings/PreferencesTab.tsx; apps/frontend/src/components/settings/tags/TagsSettingsView.tsx",
+      "type": "reference",
+      "visual": "verwaltung",
+      "steps": [],
+      "id": "einstellungen-ueberblick",
+      "slug": "einstellungen-ueberblick",
+      "title": "Die richtigen Einstellungen finden",
+      "description": "Unterscheide persönliche Einstellungen, Arbeitsbereich und Systemverwaltung.",
+      "audience": "Administration",
+      "outcome": "Unterscheide persönliche Einstellungen, Arbeitsbereich und Systemverwaltung.",
+      "tags": [
+        "einstellungen",
+        "Administration",
+        "reference"
+      ]
+    },
+    {
+      "group": "einstellungen",
+      "source": "apps/frontend/src/components/settings/TenantTab.tsx; apps/frontend/src/components/settings/useCanEditTenantSettings.ts",
+      "type": "guide",
+      "visual": "verwaltung",
+      "steps": [],
+      "id": "arbeitsbereich-einstellen",
+      "slug": "arbeitsbereich-einstellen",
+      "title": "Arbeitsbereich und Standardwerte einstellen",
+      "description": "Pflege Name, Standardsprache und Ersatzbild an zentraler Stelle.",
+      "audience": "Administration",
+      "outcome": "Pflege Name, Standardsprache und Ersatzbild an zentraler Stelle.",
+      "tags": [
+        "einstellungen",
+        "Administration",
+        "guide"
+      ]
+    },
+    {
+      "group": "einstellungen",
+      "source": "apps/frontend/src/components/settings/PreferencesTab.tsx; apps/frontend/src/components/settings/settingsNav.ts",
+      "type": "guide",
+      "visual": "verwaltung",
+      "steps": [],
+      "id": "persoenliche-einstellungen",
+      "slug": "persoenliche-einstellungen",
+      "title": "Persönliche Sprache und Profil pflegen",
+      "description": "Passe deine Arbeitsumgebung an, ohne gemeinsame Standortdaten zu ändern.",
+      "audience": "Administration",
+      "outcome": "Passe deine Arbeitsumgebung an, ohne gemeinsame Standortdaten zu ändern.",
+      "tags": [
+        "einstellungen",
+        "Administration",
+        "guide"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+.stack {
+  display: grid;
+  gap: 24px;
+}
+.form {
+  display: grid;
+  gap: 16px;
+  max-width: 620px;
+}
+.form label {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+}
+.form p {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+.form button[type="submit"] {
+  justify-self: start;
+}
+.path {
+  overflow-wrap: anywhere;
+}
+.error {
+  color: #a62626;
+}
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+.list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #e7e7eb;
+}
+.list li > div {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+.list span {
+  color: #666;
+  font-size: 13px;
+}
+@media (max-width: 540px) {
+  .list li {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

@@ -75,6 +75,20 @@ export class EnvironmentService {
     return new Date(Date.now() + msUntilExpiry);
   }
 
+  // how long after an edit a page version is saved, at least a minute
+  getPageHistoryInterval(): number {
+    let interval: number;
+    try {
+      interval = ms(
+        this.configService.get<string>('PAGE_HISTORY_INTERVAL', '5m') as StringValue,
+      );
+    } catch (err) {
+      interval = NaN;
+    }
+    if (!Number.isFinite(interval)) return ms('5m');
+    return Math.max(interval, ms('1m'));
+  }
+
   getGotenbergUrl(): string | undefined {
     return this.configService.get<string>('GOTENBERG_URL');
   }
@@ -201,6 +215,10 @@ export class EnvironmentService {
 
   getDrawioUrl(): string {
     return this.configService.get<string>('DRAWIO_URL');
+  }
+
+  getUnsplashAccessKey(): string | undefined {
+    return this.configService.get<string>('UNSPLASH_ACCESS_KEY')?.trim() || undefined;
   }
 
   isCloud(): boolean {
@@ -391,6 +409,10 @@ export class EnvironmentService {
       .split(',')
       .map((o) => o.trim())
       .filter(Boolean);
+  }
+
+  getSlackSigningSecret(): string | undefined {
+    return this.configService.get<string>('INTEGRATION_SLACK_SIGNING_SECRET');
   }
 
   getAllowedPrivateNetworks(): string {

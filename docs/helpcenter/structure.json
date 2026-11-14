@@ -1,0 +1,847 @@
+{
+  "schemaVersion": 1,
+  "groups": [
+    {
+      "id": "start",
+      "icon": "rocket"
+    },
+    {
+      "id": "installation",
+      "icon": "install"
+    },
+    {
+      "id": "inhalte",
+      "icon": "design"
+    },
+    {
+      "id": "ki",
+      "icon": "spark"
+    },
+    {
+      "id": "playlists",
+      "icon": "playlist"
+    },
+    {
+      "id": "sendeplaene",
+      "icon": "calendar"
+    },
+    {
+      "id": "displays",
+      "icon": "monitor"
+    },
+    {
+      "id": "parameter",
+      "icon": "parameters"
+    },
+    {
+      "id": "freigaben",
+      "icon": "check"
+    },
+    {
+      "id": "hilfe",
+      "icon": "help"
+    },
+    {
+      "id": "verwaltung",
+      "icon": "team"
+    },
+    {
+      "id": "einstellungen",
+      "icon": "settings"
+    }
+  ],
+  "articles": [
+    {
+      "group": "start",
+      "source": "docs/project-guide.md",
+      "type": "guide",
+      "visual": "fluss",
+      "steps": [],
+      "id": "schnellstart"
+    },
+    {
+      "group": "start",
+      "source": "docs/architecture/broadcast-plans-playout-model.md",
+      "type": "concept",
+      "visual": "fluss",
+      "steps": [],
+      "id": "grundbegriffe"
+    },
+    {
+      "group": "inhalte",
+      "source": "docs/project-guide.md; apps/frontend/src/components/pdf-import/importPdfToLibrary.ts; apps/frontend/src/lib/pdf/pdfLimits.ts; apps/frontend/src/components/idml-import/IdmlImportDialog.tsx; apps/frontend/src/components/content-library-v2/LibCtxMenuV2.tsx; apps/frontend/src/components/settings/tags/TagsSettingsView.tsx",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "bibliothek"
+    },
+    {
+      "group": "inhalte",
+      "source": "docs/ai/easy-flow-ai-overview.md; apps/frontend/src/components/content-library-v2/LibVariantDialog.tsx; apps/frontend/src/services/designs/variant-order.ts",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "design-varianten"
+    },
+    {
+      "group": "ki",
+      "source": "docs/ai/easy-flow-ai-overview.md; apps/frontend/src/components/easy-flow/step1/Step1ReadyCheckpoint.tsx; apps/frontend/src/components/easy-flow/step2/Step2Results.tsx",
+      "type": "guide",
+      "visual": "kreativ",
+      "steps": [],
+      "id": "easy-flow"
+    },
+    {
+      "group": "ki",
+      "source": "docs/ai/easy-flow-ai-overview.md; apps/frontend/src/components/easy-flow/references/convertPdfReferences.ts; apps/frontend/src/services/brand-kit/useSelectedBrandKit.ts",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "ai-referenzen"
+    },
+    {
+      "group": "ki",
+      "source": "docs/ai/easy-flow-ai-overview.md; apps/frontend/src/components/easy-flow/step2/Step2Results.tsx",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "motiv-bearbeiten"
+    },
+    {
+      "group": "playlists",
+      "source": "docs/architecture/broadcast-plans-playout-model.md",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "playlist-erstellen"
+    },
+    {
+      "group": "playlists",
+      "source": "docs/architecture/broadcast-plans-playout-model.md",
+      "type": "concept",
+      "visual": "",
+      "steps": [],
+      "id": "wiedergabemodi"
+    },
+    {
+      "group": "sendeplaene",
+      "source": "docs/helpful-docs/playouts-overview.md",
+      "type": "concept",
+      "visual": "zeitplan",
+      "steps": [],
+      "id": "sendeplaene-verstehen"
+    },
+    {
+      "group": "sendeplaene",
+      "source": "docs/helpful-docs/playouts-overview.md",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "dauerprogramm"
+    },
+    {
+      "group": "sendeplaene",
+      "source": "docs/helpful-docs/playouts-overview.md",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "exklusivprogramm"
+    },
+    {
+      "group": "sendeplaene",
+      "source": "docs/helpful-docs/playouts-overview.md",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "mix-ins"
+    },
+    {
+      "group": "sendeplaene",
+      "source": "docs/helpful-docs/playouts-overview.md; apps/frontend/src/components/simulation/SimulationPageView.tsx; apps/frontend/src/components/simulation/lib/simulationUrl.ts",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "kalender-vorschau"
+    },
+    {
+      "group": "displays",
+      "source": "apps/frontend/src/components/devices/useDevicesController.ts; apps/frontend/src/components/devices/AssignPlaybackDialog.tsx",
+      "type": "guide",
+      "visual": "registrierung",
+      "steps": [],
+      "id": "display-verbinden"
+    },
+    {
+      "group": "displays",
+      "source": "apps/frontend/src/components/devices/useDevicesController.ts",
+      "type": "guide",
+      "visual": "standort",
+      "steps": [],
+      "id": "standorte"
+    },
+    {
+      "group": "displays",
+      "source": "apps/frontend/src/components/devices/AssignPlaybackDialog.tsx",
+      "type": "guide",
+      "visual": "zuweisung",
+      "steps": [],
+      "id": "programm-zuweisen"
+    },
+    {
+      "group": "freigaben",
+      "source": "docs/project-guide.md; apps/backend/src/common/enums/version-status.enum.ts; apps/frontend/src/i18n/locales/de.json",
+      "type": "guide",
+      "visual": "",
+      "steps": [],
+      "id": "versionen-freigeben"
+    },
+    {
+      "group": "hilfe",
+      "source": "docs/architecture/broadcast-plans-playout-model.md",
+      "type": "troubleshooting",
+      "visual": "",
+      "steps": [],
+      "id": "inhalt-fehlt"
+    },
+    {
+      "group": "hilfe",
+      "source": "docs/project-guide.md; docs/helpful-docs/playouts-overview.md; apps/frontend/src/components/easy-flow/references/convertPdfReferences.ts",
+      "type": "troubleshooting",
+      "visual": "",
+      "steps": [],
+      "id": "faq"
+    },
+    {
+      "group": "installation",
+      "source": "docs/project-guide.md; docs/architecture/map.md",
+      "type": "guide",
+      "visual": "installation",
+      "steps": [],
+      "id": "installation"
+    },
+    {
+      "group": "displays",
+      "source": "apps/frontend/src/components/locations/LocationFormDialog.tsx; apps/frontend/src/components/locations/useLocationsController.ts",
+      "type": "guide",
+      "visual": "standort",
+      "steps": [],
+      "id": "standort-anlegen"
+    },
+    {
+      "group": "displays",
+      "source": "apps/frontend/src/components/locations/LocationFormDialog.tsx; apps/frontend/src/components/locations/useLocationsController.ts",
+      "type": "guide",
+      "visual": "zeitplan",
+      "steps": [],
+      "id": "standort-betriebszeiten"
+    },
+    {
+      "group": "displays",
+      "source": "apps/frontend/src/components/devices/DeviceEditDialog.tsx; apps/frontend/src/components/devices/AssignPlaybackDialog.tsx",
+      "type": "guide",
+      "visual": "geraet",
+      "steps": [],
+      "id": "geraete-verwalten"
+    },
+    {
+      "group": "parameter",
+      "source": "apps/frontend/src/components/content-library/editor/placeholderVariables.ts; apps/frontend/src/lib/systemPlaceholders.ts; apps/backend/src/modules/placeholder/resolve-placeholders.ts",
+      "type": "concept",
+      "visual": "parameter",
+      "steps": [],
+      "id": "parameter-platzhalter"
+    },
+    {
+      "group": "parameter",
+      "source": "apps/frontend/src/components/placeholders/PlaceholderTester.tsx; apps/frontend/src/components/content-library/editor/placeholderVariables.ts; apps/frontend/src/i18n/locales/de.json",
+      "type": "guide",
+      "visual": "platzhalter-setup",
+      "steps": [],
+      "id": "platzhalter-anlegen"
+    },
+    {
+      "group": "parameter",
+      "source": "apps/backend/src/modules/placeholder/resolve-placeholders.ts; apps/frontend/src/i18n/locales/de.json",
+      "type": "reference",
+      "visual": "platzhalter-regeln",
+      "steps": [],
+      "id": "platzhalter-regeln"
+    },
+    {
+      "group": "parameter",
+      "source": "apps/frontend/src/lib/systemPlaceholders.ts; apps/frontend/src/components/placeholders/PlaceholderTester.tsx",
+      "type": "reference",
+      "visual": "systemwerte",
+      "steps": [],
+      "id": "systemplatzhalter"
+    },
+    {
+      "group": "sendeplaene",
+      "source": "docs/helpful-docs/playouts-overview.md; apps/frontend/src/components/devices/DeviceEditDialog.tsx",
+      "type": "reference",
+      "visual": "zeitplan",
+      "steps": [],
+      "id": "wiedergabe-parameter"
+    },
+    {
+      "group": "einstellungen",
+      "source": "apps/frontend/src/components/settings/settingsNav.ts; apps/frontend/src/components/settings/PreferencesTab.tsx; apps/frontend/src/components/settings/tags/TagsSettingsView.tsx",
+      "type": "reference",
+      "visual": "verwaltung",
+      "steps": [],
+      "id": "einstellungen-ueberblick"
+    },
+    {
+      "group": "einstellungen",
+      "source": "apps/frontend/src/components/settings/TenantTab.tsx; apps/frontend/src/components/settings/useCanEditTenantSettings.ts",
+      "type": "guide",
+      "visual": "verwaltung",
+      "steps": [],
+      "id": "arbeitsbereich-einstellen"
+    },
+    {
+      "group": "einstellungen",
+      "source": "apps/frontend/src/components/settings/PreferencesTab.tsx; apps/frontend/src/components/settings/settingsNav.ts",
+      "type": "guide",
+      "visual": "verwaltung",
+      "steps": [],
+      "id": "persoenliche-einstellungen"
+    },
+    {
+      "group": "verwaltung",
+      "source": "apps/frontend/src/components/users/UserFormDialog.tsx; apps/frontend/src/components/settings/settingsNav.ts",
+      "type": "guide",
+      "visual": "verwaltung",
+      "steps": [],
+      "id": "team-verwalten"
+    },
+    {
+      "group": "start",
+      "source": "docs/project-guide.md",
+      "type": "journey",
+      "visual": "installation",
+      "steps": [
+        "installation",
+        "standort-anlegen",
+        "display-verbinden",
+        "programm-zuweisen"
+      ],
+      "id": "usecase-standort"
+    },
+    {
+      "group": "start",
+      "source": "docs/project-guide.md",
+      "type": "journey",
+      "visual": "zeitplan",
+      "steps": [
+        "easy-flow",
+        "playlist-erstellen",
+        "exklusivprogramm",
+        "programm-zuweisen"
+      ],
+      "id": "usecase-kampagne"
+    },
+    {
+      "group": "start",
+      "source": "docs/project-guide.md",
+      "type": "journey",
+      "visual": "parameter",
+      "steps": [
+        "parameter-platzhalter",
+        "platzhalter-anlegen",
+        "platzhalter-regeln",
+        "systemplatzhalter"
+      ],
+      "id": "usecase-lokalisierung"
+    },
+    {
+      "group": "start",
+      "source": "docs/project-guide.md",
+      "type": "journey",
+      "visual": "verwaltung",
+      "steps": [
+        "einstellungen-ueberblick",
+        "arbeitsbereich-einstellen",
+        "team-verwalten",
+        "versionen-freigeben"
+      ],
+      "id": "usecase-team"
+    },
+    {
+      "group": "verwaltung",
+      "source": "apps/frontend/src/components/users/useUsersController.ts; apps/frontend/src/components/users/UserFormDialog.tsx; apps/frontend/src/components/users/UserActionsMenu.tsx",
+      "type": "guide",
+      "visual": "einladung",
+      "steps": [],
+      "id": "mitglieder-einladen"
+    },
+    {
+      "group": "verwaltung",
+      "source": "apps/frontend/src/components/users/useUsersController.ts; apps/frontend/src/components/users/UserFormDialog.tsx; apps/frontend/src/components/users/UserActionsMenu.tsx",
+      "type": "guide",
+      "visual": "verwaltung",
+      "steps": [],
+      "id": "mitglieder-verwalten"
+    }
+  ],
+  "updates": [
+    {
+      "id": "2026-10-29-produkt",
+      "date": "2026-10-29",
+      "sourceUpdateId": "60ccedab-8b03-4395-8d87-f4514727ec87",
+      "category": "product",
+      "changes": [
+        {
+          "id": "change-01",
+          "links": [
+            {
+              "articleId": "easy-flow"
+            }
+          ]
+        },
+        {
+          "id": "change-02",
+          "links": [
+            {
+              "articleId": "ai-referenzen"
+            }
+          ]
+        },
+        {
+          "id": "change-03",
+          "links": [
+            {
+              "articleId": "design-varianten"
+            },
+            {
+              "articleId": "motiv-bearbeiten"
+            }
+          ]
+        },
+        {
+          "id": "change-04",
+          "links": [
+            {
+              "articleId": "bibliothek"
+            },
+            {
+              "articleId": "installation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026-10-22-produkt",
+      "date": "2026-10-22",
+      "sourceUpdateId": "06c379c8-11ce-4434-92be-478e6fd7b968",
+      "category": "product",
+      "changes": [
+        {
+          "id": "change-01",
+          "links": [
+            {
+              "articleId": "bibliothek"
+            },
+            {
+              "articleId": "einstellungen-ueberblick"
+            }
+          ]
+        },
+        {
+          "id": "change-02",
+          "links": [
+            {
+              "articleId": "bibliothek"
+            },
+            {
+              "articleId": "ai-referenzen"
+            }
+          ]
+        },
+        {
+          "id": "change-03",
+          "links": [
+            {
+              "articleId": "versionen-freigeben"
+            }
+          ]
+        },
+        {
+          "id": "change-04",
+          "links": [
+            {
+              "articleId": "playlist-erstellen"
+            },
+            {
+              "articleId": "arbeitsbereich-einstellen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026-10-12-produkt",
+      "date": "2026-10-12",
+      "sourceUpdateId": "555a4301-549a-487a-8987-560255d697f1",
+      "category": "product",
+      "changes": [
+        {
+          "id": "change-01",
+          "links": [
+            {
+              "articleId": "bibliothek"
+            },
+            {
+              "articleId": "design-varianten"
+            }
+          ]
+        },
+        {
+          "id": "change-02",
+          "links": [
+            {
+              "articleId": "bibliothek"
+            }
+          ]
+        },
+        {
+          "id": "change-03",
+          "links": [
+            {
+              "articleId": "motiv-bearbeiten"
+            },
+            {
+              "articleId": "mix-ins"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026-10-04-produkt",
+      "date": "2026-10-04",
+      "sourceUpdateId": "f60bdcd8-0873-4c41-9b2f-e60c85687a33",
+      "category": "product",
+      "changes": [
+        {
+          "id": "change-01",
+          "links": [
+            {
+              "articleId": "design-varianten"
+            }
+          ]
+        },
+        {
+          "id": "change-02",
+          "links": [
+            {
+              "articleId": "design-varianten"
+            },
+            {
+              "articleId": "platzhalter-regeln"
+            }
+          ]
+        },
+        {
+          "id": "change-03",
+          "links": [
+            {
+              "articleId": "kalender-vorschau"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026-10-03-produkt",
+      "date": "2026-10-03",
+      "sourceUpdateId": "f32c987f-e52d-4dab-8a70-1c8afffead55",
+      "category": "product",
+      "changes": [
+        {
+          "id": "change-01",
+          "links": [
+            {
+              "articleId": "parameter-platzhalter"
+            },
+            {
+              "articleId": "platzhalter-anlegen"
+            }
+          ]
+        },
+        {
+          "id": "change-02",
+          "links": [
+            {
+              "articleId": "platzhalter-regeln"
+            },
+            {
+              "articleId": "geraete-verwalten"
+            }
+          ]
+        },
+        {
+          "id": "change-03",
+          "links": [
+            {
+              "articleId": "mitglieder-einladen"
+            },
+            {
+              "articleId": "versionen-freigeben"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026-09-24-produkt",
+      "date": "2026-09-24",
+      "sourceUpdateId": "d8c0f1e6-c056-494e-8203-262ba9847d9f",
+      "category": "product",
+      "changes": [
+        {
+          "id": "change-01",
+          "links": [
+            {
+              "articleId": "bibliothek"
+            },
+            {
+              "articleId": "design-varianten"
+            }
+          ]
+        },
+        {
+          "id": "change-02",
+          "links": [
+            {
+              "articleId": "kalender-vorschau"
+            },
+            {
+              "articleId": "programm-zuweisen"
+            }
+          ]
+        },
+        {
+          "id": "change-03",
+          "links": [
+            {
+              "articleId": "bibliothek"
+            },
+            {
+              "articleId": "sendeplaene-verstehen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026-09-20-produkt",
+      "date": "2026-09-20",
+      "sourceUpdateId": "43ee0aca-afef-476e-a17a-d5fb6df37ead",
+      "category": "product",
+      "changes": [
+        {
+          "id": "change-01",
+          "links": [
+            {
+              "articleId": "schnellstart"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026-09-17-produkt",
+      "date": "2026-09-17",
+      "sourceUpdateId": "bd0b7c78-1490-4981-97e3-bff4b7eb3b2c",
+      "category": "product",
+      "changes": [
+        {
+          "id": "change-01",
+          "links": [
+            {
+              "articleId": "motiv-bearbeiten"
+            }
+          ]
+        },
+        {
+          "id": "change-02",
+          "links": [
+            {
+              "articleId": "easy-flow"
+            },
+            {
+              "articleId": "design-varianten"
+            }
+          ]
+        },
+        {
+          "id": "change-03",
+          "links": [
+            {
+              "articleId": "inhalt-fehlt"
+            },
+            {
+              "articleId": "versionen-freigeben"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026-09-10-produkt",
+      "date": "2026-09-10",
+      "sourceUpdateId": "98398000-0d72-4ae5-aa19-d6b8b15feb95",
+      "category": "product",
+      "changes": [
+        {
+          "id": "change-01",
+          "links": [
+            {
+              "articleId": "motiv-bearbeiten"
+            },
+            {
+              "articleId": "design-varianten"
+            }
+          ]
+        },
+        {
+          "id": "change-02",
+          "links": [
+            {
+              "articleId": "bibliothek"
+            }
+          ]
+        },
+        {
+          "id": "change-03",
+          "links": [
+            {
+              "articleId": "sendeplaene-verstehen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026-09-08-produkt",
+      "date": "2026-09-08",
+      "sourceUpdateId": "e4882cb7-27d0-4e54-a529-43ca2f1b18ff",
+      "category": "product",
+      "changes": [
+        {
+          "id": "change-01",
+          "links": [
+            {
+              "articleId": "versionen-freigeben"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026-09-03-produkt",
+      "date": "2026-09-03",
+      "sourceUpdateId": "b1f29a7d-af38-45e8-b25e-752c305a18d9",
+      "category": "product",
+      "changes": [
+        {
+          "id": "change-01",
+          "links": [
+            {
+              "articleId": "programm-zuweisen"
+            }
+          ]
+        },
+        {
+          "id": "change-02",
+          "links": [
+            {
+              "articleId": "standorte"
+            },
+            {
+              "articleId": "geraete-verwalten"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026-08-31-produkt",
+      "date": "2026-08-31",
+      "sourceUpdateId": "9a2562a9-1689-4fad-a432-c2135191a720",
+      "category": "product",
+      "changes": [
+        {
+          "id": "change-01",
+          "links": [
+            {
+              "articleId": "mix-ins"
+            },
+            {
+              "articleId": "exklusivprogramm"
+            }
+          ]
+        },
+        {
+          "id": "change-02",
+          "links": [
+            {
+              "articleId": "versionen-freigeben"
+            }
+          ]
+        },
+        {
+          "id": "change-03",
+          "links": [
+            {
+              "articleId": "ai-referenzen"
+            },
+            {
+              "articleId": "standort-anlegen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026-08-20-produkt",
+      "date": "2026-08-20",
+      "sourceUpdateId": "23ed6ab9-4e6f-49ad-8feb-73f85c0e9089",
+      "category": "product",
+      "changes": [
+        {
+          "id": "change-01",
+          "links": [
+            {
+              "articleId": "standort-betriebszeiten"
+            },
+            {
+              "articleId": "mix-ins"
+            }
+          ]
+        },
+        {
+          "id": "change-02",
+          "links": [
+            {
+              "articleId": "programm-zuweisen"
+            },
+            {
+              "articleId": "versionen-freigeben"
+            }
+          ]
+        },
+        {
+          "id": "change-03",
+          "links": [
+            {
+              "articleId": "motiv-bearbeiten"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

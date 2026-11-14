@@ -1,0 +1,343 @@
+@layer component {
+  /* ─────────────────────────────────────────────────────────────────
+   * GlassSwitch — track
+   *
+   * The track is a glass pill. Off: translucent grey-tint with
+   * backdrop-filter blur+saturate. On: warm peach-amber gradient
+   * (day) or theme-amethyst gradient (night). The transition between
+   * states uses a spring-overshoot easing so the track color and
+   * the thumb position resolve in unison.
+   *
+   * Prismatic hairline rim (lesson #46): three differently-hued
+   * inset shadows simulate spectrum refraction at small scale,
+   * giving the track glass identity without needing a gradient
+   * border.
+   * ─────────────────────────────────────────────────────────────── */
+  .glass-switch {
+    /* All-unset to override Radix's button reset cleanly */
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+    background: var(--glass-switch-track-off);
+    backdrop-filter:
+      blur(var(--glass-switch-track-blur))
+      saturate(var(--glass-switch-track-saturate));
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    isolation: isolate;
+    padding: 0;
+    position: relative;
+    box-shadow:
+      /* prismatic hairline rim — 1px inset edge that reads as glass
+         refraction rather than a solid border */
+      inset 0 0 0 0.5px var(--glass-switch-track-rim),
+      /* directional drop shadow — same indigo-plum the rest of the
+         system uses, never pure black */
+      0 1px 3px var(--glass-switch-track-shadow);
+    transition:
+      background var(--glass-switch-duration) var(--glass-switch-easing),
+      box-shadow var(--glass-switch-duration) var(--glass-switch-easing),
+      backdrop-filter var(--glass-switch-duration) var(--glass-switch-easing);
+  }
+
+  /* Sizes — track dimensions + thumb dimensions, kept proportional.
+     thumb-travel = track-width - thumb-size - 2 * 2px-base-inset. */
+  .glass-switch[data-size='sm'] {
+    width: 36px;
+    height: 20px;
+    --_thumb-size: 16px;
+    --_thumb-travel: 16px;
+  }
+  .glass-switch[data-size='md'] {
+    width: 44px;
+    height: 26px;
+    --_thumb-size: 22px;
+    --_thumb-travel: 18px;
+  }
+  .glass-switch[data-size='lg'] {
+    width: 56px;
+    height: 32px;
+    --_thumb-size: 28px;
+    --_thumb-travel: 24px;
+  }
+
+  /* With-labels sizing — md and lg only. sm doesn't support labels
+     (track too narrow for a fixed slot opposite the thumb without
+     colliding); the component drops labels at sm + emits a dev warn.
+     The thumb diameter and height stay the same as the no-labels
+     variant, so a row mixing labelled + unlabelled switches keeps a
+     consistent visual height — only width changes.
+
+     Geometry (verified by hand):
+       md 68×26 | thumb 22, travel 42, slot 22×18, inset 12 | gaps ≥10
+       lg 84×32 | thumb 28, travel 52, slot 30×22, inset 12 | gaps ≥12
+     Where "gap" = pixels between the visible label slot and the thumb's
+     parked position. */
+  .glass-switch--with-labels[data-size='md'] {
+    width: 68px;
+    --_thumb-travel: 42px;
+  }
+  .glass-switch--with-labels[data-size='lg'] {
+    width: 84px;
+    --_thumb-travel: 52px;
+  }
+
+  /* Hover — track lifts slightly */
+  .glass-switch:hover:not([data-disabled]):not([data-state='checked']) {
+    background: var(--glass-switch-track-off-hover);
+  }
+
+  /* On — warm peach-amber gradient (day) / theme amethyst (night).
+     The gradient runs along --light-angle so the engaged track
+     reads as light traveling across glass — same metaphor as the
+     skeleton sweep, the spinner sun rays, etc. */
+  .glass-switch[data-state='checked'] {
+    background:
+      linear-gradient(
+        var(--light-angle, 135deg),
+        var(--glass-switch-track-on-from),
+        var(--glass-switch-track-on-to)
+      );
+    box-shadow:
+      inset 0 0 0 0.5px var(--glass-switch-track-rim-on),
+      0 1px 6px var(--glass-switch-track-shadow);
+  }
+
+  .glass-switch[data-state='checked']:hover:not([data-disabled]) {
+    background:
+      linear-gradient(
+        var(--light-angle, 135deg),
+        var(--glass-switch-track-on-hover-from),
+        var(--glass-switch-track-on-hover-to)
+      );
+  }
+
+  /* Focus — theme-color outline ring, 2px offset */
+  .glass-switch:focus-visible {
+    outline: 2px solid var(--glass-switch-focus-ring);
+    outline-offset: 2px;
+  }
+
+  /* Disabled — half-alpha + cursor + remove hover affordance */
+  .glass-switch[data-disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+   * GlassSwitch — thumb (4-layer recipe from scrollbar, lesson #46)
+   *
+   *   L1: translucent fill + isolation:isolate (the body)
+   *   L2: top crisp edge highlight (light entering)
+   *   L3: specular catchlight via ::before with mix-blend: screen
+   *       — the "3D glass" cue at small scale
+   *   L4: bottom meniscus glow (light exiting curved underside)
+   *
+   * Plus a prismatic-rim 0.5px inset shadow stack for spectrum
+   * refraction at small scale.
+   *
+   * Position: starts at the leading edge (left in LTR), springs
+   * across to the trailing edge on toggle. transform:translate
+   * is GPU-composited; the spring easing carries the visual rhythm.
+   * ─────────────────────────────────────────────────────────────── */
+  .glass-switch__thumb {
+    background: var(--glass-switch-thumb-fill);
+    border-radius: 999px;
+    display: block;
+    height: var(--_thumb-size);
+    width: var(--_thumb-size);
+    isolation: isolate;
+    position: relative;
+    /* Thumb sits within the track at 2px inset from the leading edge.
+       Translate moves it across by --_thumb-travel = (track-w - thumb-size). */
+    transform: translateX(2px);
+    will-change: transform;
+    box-shadow:
+      /* L2: top crisp edge highlight — bright warm-white catchlight */
+      inset 0 1px 0 var(--glass-switch-thumb-rim-top),
+      /* prismatic hairline rim — peach mid-tone (day) / silver-violet (night) */
+      inset 0 0 0 0.5px var(--glass-switch-thumb-rim-mid),
+      /* L4: bottom meniscus glow — soft warm (day) / cool-violet (night) */
+      inset 0 -1px 1.5px var(--glass-switch-thumb-rim-bot),
+      /* directional drop shadow */
+      0 1px 2px var(--glass-switch-thumb-shadow),
+      /* small ambient — gives the thumb depth without bleeding into track */
+      0 0 4px color-mix(
+        in oklab,
+        var(--glass-switch-thumb-shadow) 60%,
+        transparent
+      );
+    transition:
+      transform var(--glass-switch-duration) var(--glass-switch-easing),
+      background var(--glass-switch-duration) var(--glass-switch-easing),
+      box-shadow var(--glass-switch-duration) var(--glass-switch-easing);
+  }
+
+  /* L3: specular catchlight — small bright dot suggesting curved
+     surface. mix-blend: screen + isolation:isolate scopes the
+     additive light to the thumb (lesson #37 from spinner work).
+     Position upper-left so light from the global --light-angle
+     (135° day, 230° night) hits the thumb's curved cap. */
+  .glass-switch__thumb::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    top: 18%;
+    left: 22%;
+    border-radius: 999px;
+    background: radial-gradient(
+      circle at center,
+      var(--glass-switch-thumb-specular) 0%,
+      color-mix(
+        in oklab,
+        var(--glass-switch-thumb-specular) 40%,
+        transparent
+      ) 45%,
+      transparent 80%
+    );
+    mix-blend-mode: screen;
+    pointer-events: none;
+    opacity: 0.6;
+    transition: opacity var(--glass-switch-duration) var(--glass-switch-easing);
+  }
+
+  /* Hover — thumb body brightens, specular catchlight intensifies */
+  .glass-switch:hover:not([data-disabled]) .glass-switch__thumb {
+    background: var(--glass-switch-thumb-fill-hover);
+  }
+  .glass-switch:hover:not([data-disabled]) .glass-switch__thumb::before {
+    opacity: 0.9;
+  }
+
+  /* Active — thumb compresses (squish-on-press, physical affordance
+     per scrollbar lesson #49). Spring easing makes it pop back
+     after release without us needing a separate animation. */
+  .glass-switch:active:not([data-disabled]) .glass-switch__thumb {
+    transform: translateX(2px) scale(0.92);
+  }
+
+  /* Checked — thumb slides to trailing edge */
+  .glass-switch[data-state='checked'] .glass-switch__thumb {
+    transform: translateX(var(--_thumb-travel));
+  }
+
+  .glass-switch[data-state='checked']:active:not([data-disabled])
+    .glass-switch__thumb {
+    transform: translateX(var(--_thumb-travel)) scale(0.92);
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+   * Inline state labels (opt-in via the `labels` prop, md/lg only)
+   *
+   * Two flex-centered slots, one per state, positioned at opposite
+   * ends of the track. The slot opposite the thumb is the visible one
+   * — off-content on the right when unchecked, on-content on the left
+   * when checked. Opacity swaps on the same spring curve as the
+   * thumb so everything resolves in unison. Decorative (`aria-hidden`)
+   * — Radix already exposes state via ARIA.
+   *
+   * Each slot is a fixed `width × height` flex container so text
+   * (e.g., 'On'/'Off') and icons (12-16px SVGs) center at the SAME
+   * visual position. Without fixed dimensions, a wide text label and
+   * a small icon would land at different x's and visually shift on
+   * content swap.
+   * ─────────────────────────────────────────────────────────────── */
+  .glass-switch__label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+    white-space: nowrap;
+    transition:
+      opacity var(--glass-switch-duration) var(--glass-switch-easing),
+      color var(--glass-switch-duration) var(--glass-switch-easing);
+  }
+
+  /* Per-size slot dimensions and font ramp. Slot is a fixed
+     width × height container so single chars / wide text / icons
+     all center at the same x. Font ramp sized to read legibly even
+     at a single character — uppercase glyphs at 9-11px have enough
+     vertical mass to look intentional. */
+  .glass-switch--with-labels[data-size='md'] .glass-switch__label {
+    font-size: 10px;
+    width: 22px;
+    height: 18px;
+  }
+  .glass-switch--with-labels[data-size='lg'] .glass-switch__label {
+    font-size: 11px;
+    width: 30px;
+    height: 22px;
+  }
+
+  /* On label — slot sits on the LEFT (visible when thumb is on the
+     right, i.e. checked state). Hidden by default. Inset matches the
+     trailing-edge inset for symmetry. */
+  .glass-switch__label--on {
+    color: var(--glass-switch-label-on);
+    opacity: 0;
+  }
+  .glass-switch--with-labels[data-size='md'] .glass-switch__label--on {
+    left: 12px;
+  }
+  .glass-switch--with-labels[data-size='lg'] .glass-switch__label--on {
+    left: 12px;
+  }
+
+  /* Off label — slot sits on the RIGHT (visible when thumb is on
+     the left, i.e. unchecked state). Visible by default. */
+  .glass-switch__label--off {
+    color: var(--glass-switch-label-off);
+    opacity: 1;
+  }
+  .glass-switch--with-labels[data-size='md'] .glass-switch__label--off {
+    right: 12px;
+  }
+  .glass-switch--with-labels[data-size='lg'] .glass-switch__label--off {
+    right: 12px;
+  }
+
+  /* Visibility swap on state change */
+  .glass-switch[data-state='checked'] .glass-switch__label--on {
+    opacity: 1;
+  }
+  .glass-switch[data-state='checked'] .glass-switch__label--off {
+    opacity: 0;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+   * Reduced motion — snap, no spring overshoot, faster cross-fade
+   * on the track color
+   * ─────────────────────────────────────────────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    .glass-switch,
+    .glass-switch__thumb,
+    .glass-switch__thumb::before {
+      transition-duration: 100ms;
+      transition-timing-function: ease-out;
+    }
+
+    .glass-switch:active:not([data-disabled]) .glass-switch__thumb,
+    .glass-switch[data-state='checked']:active:not([data-disabled])
+      .glass-switch__thumb {
+      /* Drop the squish — no compression under reduced motion */
+      transform: translateX(2px);
+    }
+
+    .glass-switch[data-state='checked']:active:not([data-disabled])
+      .glass-switch__thumb {
+      transform: translateX(var(--_thumb-travel));
+    }
+  }
+}

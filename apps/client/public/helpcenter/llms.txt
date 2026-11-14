@@ -1,0 +1,78 @@
+# laightup Helpcenter
+
+> Anleitungen für die Digital-Signage-Plattform laightup. Sprache: Deutsch.
+
+## Erste Schritte
+
+- [Dein erster Inhalt auf dem Bildschirm](/helpcenter/markdown/schnellstart.md): Verstehe die fünf Bausteine deiner ersten Ausspielung.
+- [So funktioniert laightup](/helpcenter/markdown/grundbegriffe.md): Datei, Design, Playlist, Sendeplan und Display einfach erklärt.
+- [Den ersten Standort live bringen](/helpcenter/markdown/usecase-standort.md): Vom passenden Player bis zum sichtbaren Programm.
+- [Eine Aktion auf die Screens bringen](/helpcenter/markdown/usecase-kampagne.md): Ein Motiv gestalten, planen und auf den richtigen Displays ausspielen.
+- [Inhalte je Standort personalisieren](/helpcenter/markdown/usecase-lokalisierung.md): Ein gemeinsames Design mit lokalen Texten und Werten verwenden.
+- [Den Arbeitsbereich organisieren](/helpcenter/markdown/usecase-team.md): Gemeinsame Einstellungen und klare Zuständigkeiten für dein Team.
+
+## Installation & Start
+
+- [Installation: den richtigen Player vorbereiten](/helpcenter/markdown/installation.md): Wähle den Weg für dein Display, bevor du mit der Registrierung beginnst.
+
+## Inhalte & Designs
+
+- [Dateien, Designs und Importe](/helpcenter/markdown/bibliothek.md): Organisiere Medien und übernimm vorhandene Gestaltung in laightup.
+- [Designs und Formatvarianten](/helpcenter/markdown/design-varianten.md): Bereite Inhalte für unterschiedliche Bildschirmformate vor.
+
+## Gestalten mit AI
+
+- [Mit Easy Flow ein Design erstellen](/helpcenter/markdown/easy-flow.md): Beschreibe deine Idee, vergleiche Motive und übernimm dein Ergebnis.
+- [Bildreferenzen und Markenbezug](/helpcenter/markdown/ai-referenzen.md): Verstehe, wie Referenzbilder und Stimmungsbilder ein Motiv beeinflussen.
+- [Ein Motiv bearbeiten und retuschieren](/helpcenter/markdown/motiv-bearbeiten.md): Ändere ein ausgewähltes Bild mit einer klaren Anweisung.
+
+## Playlists
+
+- [Eine Playlist zusammenstellen](/helpcenter/markdown/playlist-erstellen.md): Fasse Designs zu einem gemeinsamen Programm zusammen.
+- [Reihenfolge, Zufall und Gewichtung](/helpcenter/markdown/wiedergabemodi.md): Wähle, wie Inhalte innerhalb einer Playlist abgespielt werden.
+
+## Sendepläne
+
+- [Sendepläne verstehen](/helpcenter/markdown/sendeplaene-verstehen.md): Kombiniere Playlists zu einem Programm für deine Displays.
+- [Ein Dauerprogramm planen](/helpcenter/markdown/dauerprogramm.md): Lege das Grundprogramm für deine Displays fest.
+- [Exklusivprogramme und Prioritäten](/helpcenter/markdown/exklusivprogramm.md): Übernimm das laufende Grundprogramm für ein bestimmtes Zeitfenster.
+- [Hinweise mit Mix-Ins einstreuen](/helpcenter/markdown/mix-ins.md): Ergänze dein Programm um wiederkehrende Inhalte.
+- [Kalender und Simulation](/helpcenter/markdown/kalender-vorschau.md): Prüfe, welches Programm zu einem bestimmten Zeitpunkt gilt.
+- [Wiedergabeparameter auf einen Blick](/helpcenter/markdown/wiedergabe-parameter.md): Finde die richtige Einstellung für das gewünschte Verhalten.
+
+## Displays & Standorte
+
+- [Ein Display mit laightup verbinden](/helpcenter/markdown/display-verbinden.md): Kopple deinen Player über den angezeigten Code.
+- [Standorte und Gerätegruppen](/helpcenter/markdown/standorte.md): Halte dein Display-Netzwerk übersichtlich.
+- [Einem Display ein Programm zuweisen](/helpcenter/markdown/programm-zuweisen.md): Wähle eine veröffentlichte Playlist oder einen Sendeplan für dein Gerät.
+- [Einen Standort anlegen und pflegen](/helpcenter/markdown/standort-anlegen.md): Erfasse Adresse und Betriebsinformationen für deine Filiale.
+- [Betriebszeiten und Neustartzeit einstellen](/helpcenter/markdown/standort-betriebszeiten.md): Unterscheide Standortzeiten von der inhaltlichen Sendeplanung.
+- [Geräte benennen, drehen und gruppieren](/helpcenter/markdown/geraete-verwalten.md): Pflege dein Display-Netzwerk, ohne Inhalte neu zu gestalten.
+
+## Parameter & Platzhalter
+
+- [Parameter und Platzhalter verstehen](/helpcenter/markdown/parameter-platzhalter.md): Lasse dasselbe Design auf unterschiedlichen Geräten passende Werte zeigen.
+- [Eigene Platzhalter einrichten und testen](/helpcenter/markdown/platzhalter-anlegen.md): Lege wiederverwendbare Werte für standortbezogene Designs an.
+- [Bedingungen, Reihenfolge und Standardwerte](/helpcenter/markdown/platzhalter-regeln.md): Verstehe, welche Zeile für ein Gerät gewinnt.
+- [Standort, Gerätename und Uhrzeit einsetzen](/helpcenter/markdown/systemplatzhalter.md): Nutze vorhandene Informationen, ohne eigene Wertetabellen zu pflegen.
+
+## Versionen & Freigaben
+
+- [Entwürfe, Versionen und Freigaben](/helpcenter/markdown/versionen-freigeben.md): Verstehe den Weg von einer Änderung zur veröffentlichten Version.
+
+## Probleme lösen
+
+- [Ein Inhalt erscheint nicht auf dem Display](/helpcenter/markdown/inhalt-fehlt.md): Prüfe die Ausspielung entlang der gesamten Kette.
+- [Häufige Fragen](/helpcenter/markdown/faq.md): Kurze Antworten auf typische Fragen zur Ausspielung.
+
+## Team & Verwaltung
+
+- [Team, Rollen und Berechtigungen verwalten](/helpcenter/markdown/team-verwalten.md): Finde die richtige Stelle für Mitglieder und Zugriffsrechte.
+- [Mitglieder einladen und Rollen zuweisen](/helpcenter/markdown/mitglieder-einladen.md): Nimm eine Person mit passenden Zugriffsrechten in dein Team auf.
+- [Mitglieder finden, bearbeiten und deaktivieren](/helpcenter/markdown/mitglieder-verwalten.md): Halte die Mitgliederliste deines Arbeitsbereichs aktuell.
+
+## Einstellungen
+
+- [Die richtigen Einstellungen finden](/helpcenter/markdown/einstellungen-ueberblick.md): Unterscheide persönliche Einstellungen, Arbeitsbereich und Systemverwaltung.
+- [Arbeitsbereich und Standardwerte einstellen](/helpcenter/markdown/arbeitsbereich-einstellen.md): Pflege Name, Standardsprache und Ersatzbild an zentraler Stelle.
+- [Persönliche Sprache und Profil pflegen](/helpcenter/markdown/persoenliche-einstellungen.md): Passe deine Arbeitsumgebung an, ohne gemeinsame Standortdaten zu ändern.

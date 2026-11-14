@@ -40,6 +40,9 @@ export class StaticModule implements OnModuleInit {
         FILE_IMPORT_SIZE_LIMIT:
           this.environmentService.getFileImportSizeLimit(),
         DRAWIO_URL: this.environmentService.getDrawioUrl(),
+        UNSPLASH_ENABLED: Boolean(
+          this.environmentService.getUnsplashAccessKey(),
+        ),
         SUBDOMAIN_HOST: this.environmentService.isCloud()
           ? this.environmentService.getSubdomainHost()
           : undefined,
@@ -67,6 +70,34 @@ export class StaticModule implements OnModuleInit {
 
       fs.writeFileSync(indexFilePath, transformedHtml);
 
+      const redirectsFile = join(clientDistPath, 'helpcenter/redirects.json');
+      const helpRedirects: Record<string, string> = fs.existsSync(redirectsFile)
+        ? JSON.parse(fs.readFileSync(redirectsFile, 'utf8'))
+        : {};
+      app.addHook('onRequest', async (req: any, res: any) => {
+        if (!['GET', 'HEAD'].includes(req.method)) return;
+        const url = new URL(req.raw.url, 'http://localhost');
+        const pathname = url.pathname.replace(/\/$/, '');
+        const markdown = pathname.match(
+          /^\/helpcenter\/markdown\/([a-z0-9-]+)\.md$/,
+        );
+        const key = markdown ? `/help/${markdown[1]}` : pathname;
+        const target = Object.prototype.hasOwnProperty.call(helpRedirects, key)
+          ? helpRedirects[key]
+          : undefined;
+        if (
+          typeof target !== 'string' ||
+          !/^\/help\/(?:[a-z0-9-]+\/)?[a-z0-9-]+$/.test(target)
+        )
+          return;
+        const destination = markdown
+          ? `/helpcenter/markdown/${target.split('/').pop()}.md`
+          : target;
+        return res
+          .header('Cache-Control', 'no-cache')
+          .redirect(destination + url.search, 308);
+      });
+
       const RENDER_PATH = '*';
 
       await app.register(fastifyStatic, {
@@ -84,6 +115,11 @@ export class StaticModule implements OnModuleInit {
       });
 
       app.get(RENDER_PATH, (req: any, res: any) => {
+        // a missing hashed asset belongs to another build, so don't answer it with the app shell
+        if (req.url.startsWith('/assets/')) {
+          return res.code(404).header('Cache-Control', 'no-store').send();
+        }
+
         const stream = fs.createReadStream(indexFilePath);
         res
           .header('Cache-Control', 'no-cache, no-store, must-revalidate')

@@ -9,10 +9,12 @@ import {
   IsString,
   Min,
 } from 'class-validator';
+import { SUPPORTED_LOCALES } from '../workspace.constants';
 
 export class UpdateWorkspaceDto extends PartialType(CreateWorkspaceDto) {
   @IsOptional()
   @IsArray()
+  @IsString({ each: true })
   emailDomains: string[];
 
   @IsOptional()
@@ -38,6 +40,10 @@ export class UpdateWorkspaceDto extends PartialType(CreateWorkspaceDto) {
   @IsOptional()
   @IsBoolean()
   disablePublicSharing: boolean;
+
+  @IsOptional()
+  @IsBoolean()
+  disableExport: boolean;
 
   @IsOptional()
   @IsBoolean()
@@ -76,6 +82,11 @@ export class UpdateWorkspaceDto extends PartialType(CreateWorkspaceDto) {
   @IsString()
   @IsIn(['read', 'edit'])
   defaultPageEditMode: string;
+
+  @IsOptional()
+  @IsString()
+  @IsIn(SUPPORTED_LOCALES)
+  defaultLocale: string;
 
   @IsOptional()
   @IsBoolean()

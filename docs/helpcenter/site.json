@@ -1,0 +1,12 @@
+{
+  "title": "laightup Hilfebereich",
+  "description": "laightup Produktdokumentation",
+  "footerText": "Generative Signage and Beyond.",
+  "accentColor": "#32008a",
+  "headerColor": "#28005a",
+  "contentWidth": "comfortable",
+  "font": "geist",
+  "showFeedback": true,
+  "showPrint": true,
+  "showMarkdown": true
+}

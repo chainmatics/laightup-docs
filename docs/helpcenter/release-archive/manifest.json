@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "projectId": "8cb274a4-9504-440e-852a-8230b5c3c309",
+  "complete": true,
+  "adoptionReviewComplete": true,
+  "releases": [
+    "60ccedab-8b03-4395-8d87-f4514727ec87",
+    "06c379c8-11ce-4434-92be-478e6fd7b968",
+    "555a4301-549a-487a-8987-560255d697f1",
+    "f60bdcd8-0873-4c41-9b2f-e60c85687a33",
+    "f32c987f-e52d-4dab-8a70-1c8afffead55",
+    "d8c0f1e6-c056-494e-8203-262ba9847d9f",
+    "43ee0aca-afef-476e-a17a-d5fb6df37ead",
+    "bd0b7c78-1490-4981-97e3-bff4b7eb3b2c",
+    "98398000-0d72-4ae5-aa19-d6b8b15feb95",
+    "e4882cb7-27d0-4e54-a529-43ca2f1b18ff",
+    "b1f29a7d-af38-45e8-b25e-752c305a18d9",
+    "9a2562a9-1689-4fad-a432-c2135191a720",
+    "23ed6ab9-4e6f-49ad-8feb-73f85c0e9089"
+  ],
+  "updates": [
+    {
+      "id": "06c379c8-11ce-4434-92be-478e6fd7b968",
+      "title": "Production-Release 2026-10-22",
+      "kind": "production",
+      "releaseDate": "2026-10-22",
+      "createdAt": "2026-10-22T21:15:49.448Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-06c379c8",
+      "bodySha256": "df3acad1715e0b018b56fd0ddb7ce3c3a438ee92373b517befa5d5b287338b0d",
+      "rawFile": "raw/06c379c8-11ce-4434-92be-478e6fd7b968-df3acad1715e0b018b56fd0ddb7ce3c3a438ee92373b517befa5d5b287338b0d.md",
+      "linkedUpdates": [],
+      "adoptedSources": []
+    },
+    {
+      "id": "08cc6063-45a6-42ca-acc0-7c7ed54b7bfe",
+      "title": "Staging-Release 2026-10-19",
+      "kind": "context",
+      "releaseDate": null,
+      "createdAt": "2026-10-19T14:51:16.547Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-08cc6063",
+      "bodySha256": "ec1785445232f46e067a7b041b4b0b5b52ee5d6d88077abe33d8d79bd21f849c",
+      "rawFile": "raw/08cc6063-45a6-42ca-acc0-7c7ed54b7bfe-ec1785445232f46e067a7b041b4b0b5b52ee5d6d88077abe33d8d79bd21f849c.md",
+      "linkedUpdates": []
+    },
+    {
+      "id": "23ed6ab9-4e6f-49ad-8feb-73f85c0e9089",
+      "title": "Production-Release — 2026-08-20",
+      "kind": "production",
+      "releaseDate": "2026-08-20",
+      "createdAt": "2026-08-20T13:43:48.540Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-23ed6ab9",
+      "bodySha256": "cf72ff5270bbaa6c34bfc81916f0a65424daf17b957e504e0c9e81be166a5999",
+      "rawFile": "raw/23ed6ab9-4e6f-49ad-8feb-73f85c0e9089-cf72ff5270bbaa6c34bfc81916f0a65424daf17b957e504e0c9e81be166a5999.md",
+      "linkedUpdates": [],
+      "adoptedSources": []
+    },
+    {
+      "id": "43ee0aca-afef-476e-a17a-d5fb6df37ead",
+      "title": "Staging & Production-Release 2026-09-20",
+      "kind": "production",
+      "releaseDate": "2026-09-20",
+      "createdAt": "2026-09-21T14:31:10.375Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-43ee0aca",
+      "bodySha256": "e43180c1edfb83875f1d9f12f7f02c7e0894f44107f8632a9d08072e34d7d513",
+      "rawFile": "raw/43ee0aca-afef-476e-a17a-d5fb6df37ead-e43180c1edfb83875f1d9f12f7f02c7e0894f44107f8632a9d08072e34d7d513.md",
+      "linkedUpdates": [],
+      "adoptedSources": []
+    },
+    {
+      "id": "49df44de-bb86-4727-a111-bc8a397b3cf9",
+      "title": "Staging-Release 2026-09-16",
+      "kind": "context",
+      "releaseDate": null,
+      "createdAt": "2026-09-16T14:49:59.422Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-49df44de",
+      "bodySha256": "fdfb34b2a4e1df2f9195c0c192f904b36e2fc937e2ee6024e05b3a2a9d797240",
+      "rawFile": "raw/49df44de-bb86-4727-a111-bc8a397b3cf9-fdfb34b2a4e1df2f9195c0c192f904b36e2fc937e2ee6024e05b3a2a9d797240.md",
+      "linkedUpdates": []
+    },
+    {
+      "id": "4b39245b-51b8-4c05-a30f-17158a0a24b9",
+      "title": "Staging-Release 2026-09-28",
+      "kind": "context",
+      "releaseDate": null,
+      "createdAt": "2026-09-28T18:54:38.296Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-4b39245b",
+      "bodySha256": "328286527a1afc053697c7a91fc11d2d8a75684e071c80af7ca067836e3ed31c",
+      "rawFile": "raw/4b39245b-51b8-4c05-a30f-17158a0a24b9-328286527a1afc053697c7a91fc11d2d8a75684e071c80af7ca067836e3ed31c.md",
+      "linkedUpdates": []
+    },
+    {
+      "id": "548d3a26-59d4-4ea0-81cb-e21fa6981e07",
+      "title": "Staging-Release 2026-08-24",
+      "kind": "context",
+      "releaseDate": null,
+      "createdAt": "2026-08-24T13:50:58.875Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-548d3a26",
+      "bodySha256": "6e72a98de033df2284189f328accb22ffe294d76a0900cb68a509c54cfd3d1df",
+      "rawFile": "raw/548d3a26-59d4-4ea0-81cb-e21fa6981e07-6e72a98de033df2284189f328accb22ffe294d76a0900cb68a509c54cfd3d1df.md",
+      "linkedUpdates": []
+    },
+    {
+      "id": "555a4301-549a-487a-8987-560255d697f1",
+      "title": "Production-Release 2026-10-12",
+      "kind": "production",
+      "releaseDate": "2026-10-12",
+      "createdAt": "2026-10-12T16:06:53.029Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-555a4301",
+      "bodySha256": "434203431a7a6de931d298ccf9d39a6e728699a70da1513c92c088a37cb16c66",
+      "rawFile": "raw/555a4301-549a-487a-8987-560255d697f1-434203431a7a6de931d298ccf9d39a6e728699a70da1513c92c088a37cb16c66.md",
+      "linkedUpdates": [],
+      "adoptedSources": []
+    },
+    {
+      "id": "5894aaea-085f-4957-8f65-be2af6c4f7c6",
+      "title": "Staging-Release 2026-09-07",
+      "kind": "context",
+      "releaseDate": null,
+      "createdAt": "2026-09-07T13:43:37.238Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-5894aaea",
+      "bodySha256": "b9d860e85e35d6bfdebd4a1acd20054f81de7604fa91fb64f48e4b091b1b698e",
+      "rawFile": "raw/5894aaea-085f-4957-8f65-be2af6c4f7c6-b9d860e85e35d6bfdebd4a1acd20054f81de7604fa91fb64f48e4b091b1b698e.md",
+      "linkedUpdates": []
+    },
+    {
+      "id": "60ccedab-8b03-4395-8d87-f4514727ec87",
+      "title": "Production-Release 2026-10-29",
+      "kind": "production",
+      "releaseDate": "2026-10-29",
+      "createdAt": "2026-10-29T21:32:18.109Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-60ccedab",
+      "bodySha256": "c1058ee19c13e0c568122ff1fabacaf6e6417acd3e1813bd1aaf6656e0216268",
+      "rawFile": "raw/60ccedab-8b03-4395-8d87-f4514727ec87-c1058ee19c13e0c568122ff1fabacaf6e6417acd3e1813bd1aaf6656e0216268.md",
+      "linkedUpdates": [],
+      "adoptedSources": []
+    },
+    {
+      "id": "98398000-0d72-4ae5-aa19-d6b8b15feb95",
+      "title": "Production-Release 2026-09-10",
+      "kind": "production",
+      "releaseDate": "2026-09-10",
+      "createdAt": "2026-09-10T16:23:24.992Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-98398000",
+      "bodySha256": "f7d052299568b1da8bc58a60209427ebbc253e4451cec1fa371aacf4d6c4432b",
+      "rawFile": "raw/98398000-0d72-4ae5-aa19-d6b8b15feb95-f7d052299568b1da8bc58a60209427ebbc253e4451cec1fa371aacf4d6c4432b.md",
+      "linkedUpdates": [
+        "5894aaea-085f-4957-8f65-be2af6c4f7c6"
+      ],
+      "adoptedSources": [
+        "5894aaea-085f-4957-8f65-be2af6c4f7c6"
+      ]
+    },
+    {
+      "id": "9a2562a9-1689-4fad-a432-c2135191a720",
+      "title": "Production-Release 2026-08-31",
+      "kind": "production",
+      "releaseDate": "2026-08-31",
+      "createdAt": "2026-08-31T06:58:56.605Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-9a2562a9",
+      "bodySha256": "17f68abbe8ba0d26aebf7bd3c06f6c83e955fd8abacac1d30fc6412cbad4de27",
+      "rawFile": "raw/9a2562a9-1689-4fad-a432-c2135191a720-17f68abbe8ba0d26aebf7bd3c06f6c83e955fd8abacac1d30fc6412cbad4de27.md",
+      "linkedUpdates": [
+        "548d3a26-59d4-4ea0-81cb-e21fa6981e07"
+      ],
+      "adoptedSources": [
+        "548d3a26-59d4-4ea0-81cb-e21fa6981e07"
+      ]
+    },
+    {
+      "id": "b1f29a7d-af38-45e8-b25e-752c305a18d9",
+      "title": "Production-Release 2026-09-03",
+      "kind": "production",
+      "releaseDate": "2026-09-03",
+      "createdAt": "2026-09-03T12:56:35.337Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-b1f29a7d",
+      "bodySha256": "1620d1afdc8a052b3dc8405ee75fcbf2865a090fe871d2d033571bedf2d7078d",
+      "rawFile": "raw/b1f29a7d-af38-45e8-b25e-752c305a18d9-1620d1afdc8a052b3dc8405ee75fcbf2865a090fe871d2d033571bedf2d7078d.md",
+      "linkedUpdates": [
+        "dc7e92b9-72d0-4f6b-b3e5-76bc1eb7b344"
+      ],
+      "adoptedSources": [
+        "dc7e92b9-72d0-4f6b-b3e5-76bc1eb7b344"
+      ]
+    },
+    {
+      "id": "bd0b7c78-1490-4981-97e3-bff4b7eb3b2c",
+      "title": "Production-Release 2026-09-17",
+      "kind": "production",
+      "releaseDate": "2026-09-17",
+      "createdAt": "2026-09-17T17:58:01.817Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-bd0b7c78",
+      "bodySha256": "bc11108bf59b9a5e7208ca4d4c879f73c8b19ab4327f535a8ee1ffab8a0558ba",
+      "rawFile": "raw/bd0b7c78-1490-4981-97e3-bff4b7eb3b2c-bc11108bf59b9a5e7208ca4d4c879f73c8b19ab4327f535a8ee1ffab8a0558ba.md",
+      "linkedUpdates": [
+        "49df44de-bb86-4727-a111-bc8a397b3cf9"
+      ],
+      "adoptedSources": [
+        "49df44de-bb86-4727-a111-bc8a397b3cf9"
+      ]
+    },
+    {
+      "id": "d8c0f1e6-c056-494e-8203-262ba9847d9f",
+      "title": "Production-Release 2026-09-24",
+      "kind": "production",
+      "releaseDate": "2026-09-24",
+      "createdAt": "2026-09-24T15:10:26.381Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-d8c0f1e6",
+      "bodySha256": "83556b9ac936eda6615ba92b14759c5ca204d97a7ed6b5fb1ac4c7d611b2ead5",
+      "rawFile": "raw/d8c0f1e6-c056-494e-8203-262ba9847d9f-83556b9ac936eda6615ba92b14759c5ca204d97a7ed6b5fb1ac4c7d611b2ead5.md",
+      "linkedUpdates": [],
+      "adoptedSources": []
+    },
+    {
+      "id": "dc7e92b9-72d0-4f6b-b3e5-76bc1eb7b344",
+      "title": "Staging-Release 2026-08-31",
+      "kind": "context",
+      "releaseDate": null,
+      "createdAt": "2026-08-31T17:45:19.546Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-dc7e92b9",
+      "bodySha256": "8a81cf64b16c0c7929209417551685feb5d8cae3fd41275fd3a04e9abe6f033d",
+      "rawFile": "raw/dc7e92b9-72d0-4f6b-b3e5-76bc1eb7b344-8a81cf64b16c0c7929209417551685feb5d8cae3fd41275fd3a04e9abe6f033d.md",
+      "linkedUpdates": []
+    },
+    {
+      "id": "e4882cb7-27d0-4e54-a529-43ca2f1b18ff",
+      "title": "Production-Hotfix 2026-09-08",
+      "kind": "production",
+      "releaseDate": "2026-09-08",
+      "createdAt": "2026-09-08T12:19:32.404Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-e4882cb7",
+      "bodySha256": "3c4b2addde98bb509d6491fc6f08f0c1974f346db1de2082018c92631e5c01e6",
+      "rawFile": "raw/e4882cb7-27d0-4e54-a529-43ca2f1b18ff-3c4b2addde98bb509d6491fc6f08f0c1974f346db1de2082018c92631e5c01e6.md",
+      "linkedUpdates": [],
+      "adoptedSources": []
+    },
+    {
+      "id": "ea6a2602-44a3-4bee-9844-d213a68d19f0",
+      "title": "Staging-Release 2026-10-26",
+      "kind": "context",
+      "releaseDate": null,
+      "createdAt": "2026-10-26T16:40:04.902Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-ea6a2602",
+      "bodySha256": "f6b1378df28704671a48c2a23ee97924ea919bb54449b8b95e942ae59efcafa6",
+      "rawFile": "raw/ea6a2602-44a3-4bee-9844-d213a68d19f0-f6b1378df28704671a48c2a23ee97924ea919bb54449b8b95e942ae59efcafa6.md",
+      "linkedUpdates": []
+    },
+    {
+      "id": "f32c987f-e52d-4dab-8a70-1c8afffead55",
+      "title": "Production-Release 2026-10-03",
+      "kind": "production",
+      "releaseDate": "2026-10-03",
+      "createdAt": "2026-10-03T10:53:49.739Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-f32c987f",
+      "bodySha256": "b15e19607830213de89cfc91e1bb7fcaeb6d6555d35a2d4d119974679bf0f7c1",
+      "rawFile": "raw/f32c987f-e52d-4dab-8a70-1c8afffead55-b15e19607830213de89cfc91e1bb7fcaeb6d6555d35a2d4d119974679bf0f7c1.md",
+      "linkedUpdates": [
+        "4b39245b-51b8-4c05-a30f-17158a0a24b9"
+      ],
+      "adoptedSources": [
+        "4b39245b-51b8-4c05-a30f-17158a0a24b9"
+      ]
+    },
+    {
+      "id": "f60bdcd8-0873-4c41-9b2f-e60c85687a33",
+      "title": "Staging & Production-Release 2026-10-04",
+      "kind": "production",
+      "releaseDate": "2026-10-04",
+      "createdAt": "2026-10-04T13:50:17.091Z",
+      "url": "https://linear.app/chainmatics/project/laightup-1a11fbca5ad3/activity#project-update-f60bdcd8",
+      "bodySha256": "0db65c70fbd4710c141bf2773b2a2a0ad061a51a5b1523832491c29c291ebbe2",
+      "rawFile": "raw/f60bdcd8-0873-4c41-9b2f-e60c85687a33-0db65c70fbd4710c141bf2773b2a2a0ad061a51a5b1523832491c29c291ebbe2.md",
+      "linkedUpdates": [],
+      "adoptedSources": []
+    }
+  ]
+}

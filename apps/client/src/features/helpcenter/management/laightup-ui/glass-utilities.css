@@ -1,0 +1,573 @@
+/* ═════════════════════════════════════════════════════════════════════════
+   @chainmatics/laightup-glass — glass-utilities.css
+
+   The .glass-* utility classes composed from tokens.css. Lives in the
+   @layer component so tokens/state/mode all cascade through correctly.
+
+   Every utility applies:
+     - a variable backdrop-filter (blur + saturate, with scotopic
+       desaturation in dark mode)
+     - a subtle glass-tinted background
+     - a directional multi-layer box-shadow
+     - an inset rim for the glass edge
+     - a ::before pseudo for the specular highlight (day) or directional
+       wash (night, via the .night selector)
+     - a ::after pseudo for the conic prismatic rim
+
+   Sizes (sm/md/lg/xl) scale the shadow, blur, and border-radius
+   proportionally. All other behavior is identical.
+   ═════════════════════════════════════════════════════════════════════════ */
+
+@layer component {
+  /* Shared glass behaviors used by every variant */
+  .glass {
+    position: relative;
+    isolation: isolate;
+    background: hsl(0 0% 100% / var(--glass-tint-alpha, 0.18));
+    /* Step 1: unprefixed fallback WITHOUT url() — survives the build pipeline
+       cleanly. The url(#glass-refract-md) variant is dropped by the bundler
+       when present in an unprefixed declaration; this plain blur+saturate form
+       applies as a basic frost in all modern browsers. */
+    backdrop-filter:
+      blur(calc(11px + var(--glass-blur-extra, 0px)))
+      saturate(var(--glass-saturate, 1.6));
+    border: 1px solid hsl(0 0% 100% / 0.55);
+    box-shadow:
+      0 1px 2px hsl(from var(--shadow-base) h s l / 0.06),
+      calc(var(--shadow-x) * 0.5) calc(var(--shadow-y) * 0.5) 12px hsl(from var(--shadow-base) h s l / 0.09),
+      calc(var(--shadow-x) * 1.0) calc(var(--shadow-y) * 1.0) 26px hsl(from var(--shadow-base) h s l / 0.10),
+      inset 1.3px 1.3px 0 hsl(0 0% 100% / 0.9),
+      inset -1px -1px 0 var(--glass-rim-inset),
+      inset -3px -3px 0 var(--glass-rim-inset-warm);
+  }
+
+  /* Specular highlight (day) — radial at light position */
+  .glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      80% 60% at var(--hl-x, var(--light-x)) var(--hl-y, var(--light-y)),
+      hsl(0 0% 100% / 0.40) 0%,
+      hsl(0 0% 100% / 0.10) 30%,
+      transparent 60%
+    );
+    pointer-events: none;
+    mix-blend-mode: var(--beam-blend, soft-light);
+    z-index: 2;
+  }
+
+  /* Specular wash (night) — linear directional from --light-angle.
+     Overrides the day radial via higher specificity (compound selector).
+     See design-intent.md §"Moonlight palette rules" rule 6a. */
+  .laightup-management[data-mode="night"] .glass::before,
+  [data-mode="night"] .glass::before {
+    background: linear-gradient(
+      var(--light-angle),
+      hsl(215 30% 92% / 0.14) 0%,
+      hsl(218 28% 85% / 0.07) 18%,
+      hsl(222 30% 72% / 0.025) 42%,
+      transparent 72%
+    );
+    mix-blend-mode: soft-light;
+  }
+
+  /* Prismatic rim — conic gradient rotating with --light-angle */
+  .glass::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: conic-gradient(
+      from calc(var(--light-angle) - 90deg),
+      var(--rim-c1) 0deg,
+      var(--rim-c2) 20deg,
+      var(--rim-c3) 45deg,
+      var(--rim-c4) 78deg,
+      var(--rim-c5) 110deg,
+      transparent 155deg,
+      transparent 285deg,
+      var(--rim-c4) 325deg,
+      var(--rim-c1) 360deg
+    );
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  /* ──────────────────────────────────────────────
+     Size variants
+     ────────────────────────────────────────────── */
+
+  .glass-card-sm {
+    border-radius: 14px;
+  }
+  .glass-card-md {
+    border-radius: 18px;
+  }
+  .glass-card-lg {
+    border-radius: 22px;
+  }
+  .glass-card-xl {
+    border-radius: 28px;
+  }
+  /* Default alias */
+  .glass-card {
+    border-radius: 18px;
+  }
+
+  /* Semantic variants — same glass recipe, different border-radius and
+     intended-surface connotation. Components can add tighter padding etc. */
+  .glass-panel {
+    border-radius: 20px;
+  }
+  .glass-sidebar {
+    border-radius: 16px;
+  }
+  .glass-button {
+    border-radius: 10px;
+  }
+  .glass-input {
+    border-radius: 10px;
+  }
+  .glass-badge {
+    border-radius: 999px;
+  }
+  .glass-toast {
+    border-radius: 14px;
+  }
+
+  /* Dark mode override for the .glass base recipe.
+
+     Rule 5 (moonlight palette): "Rim lights are silver, never gold.
+     hsl(210 25% 92% / 0.35) top rim, hsl(250 40% 20% / 0.45) bottom rim."
+     The day-mode inset rim was white-top / plum-violet-bottom (warm-ish).
+     Night replaces both with the rule-5-prescribed silver top and
+     plum-dark bottom, and shifts the tint/border to the scotopic palette.
+
+     Usage is always class="glass <variant>" — the .glass class above owns
+     the physical recipe, variants (glass-card-sm, glass-panel, etc.) add
+     only border-radius. There is no standalone variant-only recipe. */
+  .laightup-management[data-mode="night"] .glass,
+  [data-mode="night"] .glass {
+    background: hsl(220 22% 18% / var(--glass-tint-alpha, 0.08));
+    border: 1px solid hsl(210 25% 85% / 0.18);
+    box-shadow:
+      0 1px 2px hsl(from var(--shadow-base) h s l / 0.06),
+      calc(var(--shadow-x) * 0.5) calc(var(--shadow-y) * 0.5) 12px hsl(from var(--shadow-base) h s l / 0.09),
+      calc(var(--shadow-x) * 1.0) calc(var(--shadow-y) * 1.0) 26px hsl(from var(--shadow-base) h s l / 0.10),
+      inset 1.3px 1.3px 0 hsl(210 25% 92% / 0.35),
+      inset -1px -1px 0 var(--glass-rim-inset),
+      inset -3px -3px 0 var(--glass-rim-inset-warm);
+  }
+
+  /* ── Solid surface variant ───────────────────────────────────────────────
+     A calmer, more opaque frosted glass — the surface the quick-action tiles
+     (GlassActionTile) already use: backdrop blur + an opaque-ish tint + a
+     simple inset highlight, WITHOUT the bright light-specular veil (::before)
+     or the prismatic rim (::after) of the default refractive `.glass`. For
+     dense content panels (e.g. dashboard widgets) where the Refracted-Light
+     flourishes read as busy or over-lighten the surface, while still wanting
+     the depth of a backdrop blur. Compose as class="glass glass-solid" or via
+     <GlassCard solid>. The compound `.glass.glass-solid` selector beats both
+     the `.glass` base and the size variants regardless of stylesheet order. */
+  .glass.glass-solid {
+    background: hsl(0 0% 100% / 0.4);
+    border: 1px solid hsl(0 0% 100% / 0.6);
+    box-shadow:
+      inset 1px 1px 0 hsl(0 0% 100% / 0.7),
+      0 8px 22px -12px hsl(var(--ci-violet-bright-h, 268) 50% 40% / 0.3);
+    /* Near-zero plain blur — NOT the base `.glass` SVG refraction
+       (url(#glass-refract-md)), whose displacement reads as harsh over the flat
+       dashboard (nothing rich to refract). The real win is the @supports
+       override further down (it beats the base `.glass` refraction in Chrome);
+       this is the no-@supports fallback. NOTE: must be a non-initial value —
+       Lightning CSS strips `backdrop-filter: none` as a redundant default, so
+       `none` here would silently vanish and the refraction would leak back. */
+    backdrop-filter: blur(4px) saturate(1.3);
+  }
+  /* Solid is matte — drop the refractive specular veil + prismatic rim. */
+  .glass.glass-solid::before,
+  .glass.glass-solid::after {
+    display: none;
+  }
+  .laightup-management[data-mode="night"] .glass.glass-solid,
+  [data-mode="night"] .glass.glass-solid {
+    background: hsl(232 30% 16% / 0.5);
+    border-color: hsl(230 30% 60% / 0.18);
+    box-shadow:
+      inset 1px 1px 0 hsl(210 25% 92% / 0.18),
+      0 8px 22px -12px hsl(235 50% 4% / 0.5);
+  }
+
+  /* ── Opaque surface variant ──────────────────────────────────────────────
+     A fully opaque panel: no tint alpha, no backdrop blur, no specular veil
+     or prismatic rim. For dense working surfaces (data tables, editors) where
+     the canvas showing through costs legibility. Compose as
+     class="glass glass-opaque" or via <GlassCard opaque>. */
+  .glass.glass-opaque {
+    background: hsl(0 0% 100%);
+    border: 1px solid hsl(248 25% 88%);
+    box-shadow: 0 8px 22px -14px hsl(var(--ci-violet-bright-h, 268) 50% 40% / 0.28);
+    /* Blur of a surface nothing shows through: cheap, and a non-initial value
+       is required so Lightning CSS cannot strip it (see .glass-solid). */
+    backdrop-filter: blur(1px);
+  }
+  .glass.glass-opaque::before,
+  .glass.glass-opaque::after {
+    display: none;
+  }
+  .laightup-management[data-mode="night"] .glass.glass-opaque,
+  [data-mode="night"] .glass.glass-opaque {
+    background: hsl(232 30% 16%);
+    border-color: hsl(230 30% 60% / 0.22);
+    box-shadow: 0 8px 22px -14px hsl(235 50% 4% / 0.5);
+  }
+
+  /* ── Aurora surface variant (Tier-3 hero chrome) ─────────────────────────
+     The premium "lit from within" surface for hero cards (dashboard hero,
+     login backdrop, premium CTA): a deeper, more layered float + a slow
+     cyan→violet aurora light-wash. The wash is a CSS stand-in that crossfades
+     out once a Tier-3 GlassRefractCanvas paints its first frame (toggle
+     [data-refract-ready="true"] on the surface). Replaces the default `.glass`
+     point-specular ::before with the aurora and keeps a softened prismatic rim.
+     Compose as class="glass glass-aurora" (or <GlassCard aurora>) and pair with
+     a <GlassRefractCanvas> child for the live WebGL upgrade. Stronger blur than
+     the bulk surfaces — reserve for 1–2 hero surfaces per page. */
+  .glass.glass-aurora {
+    /* Near-zero plain blur (see the .glass-solid note re: non-initial value +
+       @supports override). The aurora hero gets its depth from the ::before
+       light-wash + layered shadows, not from a heavy backdrop blur. */
+    backdrop-filter: blur(5px) saturate(1.5);
+    background: hsl(0 0% 100% / 0.42);
+    border: 1px solid hsl(0 0% 100% / 0.7);
+    box-shadow:
+      inset 1.5px 1.5px 0 hsl(0 0% 100% / 0.9),
+      inset -1px -1px 0 var(--glass-rim-inset),
+      0 4px 10px -6px hsl(var(--ci-violet-bright-h, 268) 60% 35% / 0.3),
+      0 34px 70px -26px hsl(var(--ci-violet-bright-h, 268) 60% 35% / 0.5),
+      -20px 10px 56px -30px hsl(var(--ci-accent-loud-h, 180) 70% 45% / 0.3);
+  }
+  .laightup-management[data-mode="night"] .glass.glass-aurora,
+  [data-mode="night"] .glass.glass-aurora {
+    background: hsl(232 30% 16% / 0.5);
+    border-color: hsl(230 32% 64% / 0.2);
+    box-shadow:
+      inset 1.5px 1.5px 0 hsl(210 25% 92% / 0.3),
+      0 4px 10px -6px hsl(235 50% 4% / 0.6),
+      0 34px 70px -26px hsl(235 50% 4% / 0.72),
+      -20px 10px 56px -30px hsl(var(--ci-accent-loud-h, 180) 60% 30% / 0.22);
+  }
+  /* Aurora light-wash — overrides the base point-specular ::before (content /
+     position / inset / pointer-events inherit from `.glass::before`). z below
+     the surface content; normal blend (not the specular's soft-light). */
+  .glass.glass-aurora::before {
+    z-index: 0;
+    mix-blend-mode: normal;
+    background:
+      radial-gradient(
+        58% 80% at 14% 16%,
+        hsl(var(--ci-accent-loud-h, 180) 90% 70% / 0.2),
+        transparent 60%
+      ),
+      radial-gradient(
+        70% 92% at 90% 94%,
+        hsl(var(--ci-violet-bright-h, 268) 78% 62% / 0.22),
+        transparent 62%
+      );
+    filter: blur(6px);
+    opacity: 1;
+    transition: opacity 600ms ease;
+    /* No idle drift: an always-on animation anywhere inside a glass surface
+       re-rasterizes its whole recipe (backdrop-filter + blend + conic mask)
+       every frame — measured ~25% of a CPU core per hero surface, for a 20s
+       drift nobody perceives. Static wash renders identically. */
+  }
+  .laightup-management[data-mode="night"] .glass.glass-aurora::before,
+  [data-mode="night"] .glass.glass-aurora::before {
+    mix-blend-mode: normal;
+    background:
+      radial-gradient(
+        58% 80% at 14% 16%,
+        hsl(var(--ci-accent-loud-h, 180) 80% 55% / 0.22),
+        transparent 60%
+      ),
+      radial-gradient(
+        70% 92% at 90% 94%,
+        hsl(var(--ci-violet-bright-h, 268) 72% 52% / 0.26),
+        transparent 62%
+      );
+  }
+  /* Tier-3 canvas painted its first frame → retire the CSS stand-in (the
+     GlassRefractCanvas fades in over the same 600ms). */
+  .glass.glass-aurora[data-refract-ready="true"]::before {
+    opacity: 0;
+  }
+  /* Soften the prismatic rim a touch for the larger hero surface. */
+  .glass.glass-aurora::after {
+    opacity: 0.62;
+  }
+
+  /* GlassActionTile backdrop — declared here in the GLOBAL sheet (not only in
+     the component-imported GlassActionTile.css) because Next/Lightning's CSS
+     pipeline applies that component sheet's background/border/shadow but DROPS
+     its backdrop-filter, while backdrop-filter declared in this globally
+     `@import`ed sheet applies correctly (same as the `.glass` recipe). Without
+     this the action tiles are the only dashboard surface missing their frost.
+     Matches the calm Tier-2 blur the solid widgets use. */
+  .glass-action-tile {
+    backdrop-filter: blur(4px) saturate(1.3);
+  }
+
+  /* ──────────────────────────────────────────────
+     Reduced motion
+     ────────────────────────────────────────────── */
+
+  @media (prefers-reduced-motion: reduce) {
+    .glass,
+    .glass-card,
+    .glass-card-sm,
+    .glass-card-md,
+    .glass-card-lg,
+    .glass-card-xl,
+    .glass-panel,
+    .glass-sidebar,
+    .glass-button,
+    .glass-input,
+    .glass-badge,
+    .glass-toast {
+      /* Disable backdrop-filter animation targets — the @property vars stay
+         static, so transitions become no-ops. No additional rule needed here
+         because the hook disables the drift timeline via gsap.matchMedia. */
+    }
+  }
+}
+
+/* Step 2: enhanced SVG-refraction chain. Browsers that support url() inside
+   backdrop-filter get the prismatic refraction on top of the basic blur.
+   @supports gates this so the plain fallback above ALWAYS applies first, then
+   capable browsers cascade-override with the richer value.
+
+   Wrapped in @layer component so this declaration lives in the same cascade
+   layer as the .glass base rule above — clean cascade semantics; the
+   @supports test decides which of two same-layer rules wins, not layer order. */
+@layer component {
+  @supports (backdrop-filter: url("#x")) {
+    .glass {
+      backdrop-filter:
+        url(#glass-refract-md)
+        blur(calc(11px + var(--glass-blur-extra, 0px)))
+        saturate(var(--glass-saturate, 1.6));
+    }
+    /* The matte (solid) and aurora dashboard surfaces OPT OUT of the SVG
+       refraction. It MUST be re-asserted HERE — inside the SAME @supports as the
+       .glass base above — because that base rule otherwise wins for the
+       unprefixed `backdrop-filter` (the url(#…) displacement is the "harsh" edge
+       artifact on the dashboard). Specificity (0,2,0) > (0,1,0) → these win.
+       Value is a plain near-zero blur, NOT `none`: Lightning CSS strips
+       `backdrop-filter: none` as a redundant initial value (it kept only the
+       -webkit- prefix last time, so the unprefixed refraction leaked through).
+       A real blur value survives minification and overrides the url() refraction. */
+    /* Only the unprefixed property — Lightning auto-adds -webkit- and keeps
+       BOTH. If we write -webkit- ourselves too, its dedup drops the unprefixed
+       one (the one Chrome uses) and the refraction leaks back. */
+    .glass.glass-solid {
+      backdrop-filter: blur(4px) saturate(1.3);
+    }
+    .glass.glass-aurora {
+      backdrop-filter: blur(5px) saturate(1.5);
+    }
+    .glass.glass-opaque {
+      backdrop-filter: blur(1px);
+    }
+  }
+}
+
+/* ── Glassy convex icon medallion ─────────────────────────────────────────
+   A reusable "3D glass pebble" for small icon chips — the exact recipe the
+   topbar search icon (GlassTopbar.css) established, lifted here so widget icon
+   chips, action-tile chips, etc. don't re-hand-roll it. SIZE-AGNOSTIC: the
+   consumer sets width / height / border-radius and the inner icon size; this
+   utility only paints the convex glass — a tinted top-lit gradient, a white
+   rim, a layered inset specular + a soft drop float, and a glossy top sheen
+   (::before). Tint hue via --gm-h (default CI body violet); the `--teal`
+   modifier swaps to the cyan/teal accent family. Flips to a darker convex
+   pebble under [data-mode='night']. The icon glyph inherits `color`. */
+.glass-icon-medallion {
+  --gm-h: var(--ci-violet-bright-h);
+  position: relative;
+  background: linear-gradient(
+    155deg,
+    hsl(0 0% 100% / 0.95),
+    hsl(var(--ci-violet-bright-h) 55% 92% / 0.55) 52%,
+    hsl(var(--gm-h) 60% 80% / 0.42)
+  );
+  border: 1px solid hsl(0 0% 100% / 0.8);
+  box-shadow:
+    inset 0 1.5px 1px hsl(0 0% 100% / 0.95),
+    inset 0 -2px 3px hsl(var(--gm-h) 50% 55% / 0.28),
+    inset 1px 0 1px hsl(0 0% 100% / 0.6),
+    0 2px 4px hsl(var(--ci-violet-bright-h) 45% 40% / 0.22),
+    0 4px 9px hsl(var(--ci-violet-bright-h) 45% 35% / 0.16);
+  color: var(--ci-violet-bright);
+}
+.glass-icon-medallion::before {
+  content: '';
+  position: absolute;
+  inset: 2px 3px auto 3px;
+  height: 42%;
+  border-radius: inherit;
+  background: linear-gradient(hsl(0 0% 100% / 0.9), hsl(0 0% 100% / 0));
+  pointer-events: none;
+}
+.glass-icon-medallion--teal {
+  --gm-h: var(--ci-accent-loud-h);
+  color: var(--ci-accent-quiet);
+}
+.laightup-management[data-mode='night'] .glass-icon-medallion {
+  background: linear-gradient(
+    155deg,
+    hsl(230 35% 38% / 0.95),
+    hsl(232 32% 24% / 0.85) 55%,
+    hsl(var(--gm-h) 45% 30% / 0.5)
+  );
+  border-color: hsl(230 40% 70% / 0.4);
+  box-shadow:
+    inset 0 1.5px 1px hsl(0 0% 100% / 0.4),
+    inset 0 -2px 3px hsl(232 40% 10% / 0.6),
+    0 2px 5px hsl(232 50% 6% / 0.5);
+  color: hsl(var(--gm-h) 70% 80%);
+}
+.laightup-management[data-mode='night'] .glass-icon-medallion--teal {
+  color: hsl(var(--ci-accent-loud-h) 70% 80%);
+}
+.laightup-management[data-mode='night'] .glass-icon-medallion::before {
+  background: linear-gradient(hsl(0 0% 100% / 0.35), hsl(0 0% 100% / 0));
+}
+
+/* ── "Ready" choreography: spring-bounce + orbital ring ───────────────────
+   The tactile "I'm finished" signal for a media tile arriving — a 4-phase
+   spring bounce plus a cyan arc that orbits the tile once. Established by Easy
+   Flow generation Step 2a (Step2Generating.module.css) and reused by the
+   dashboard hero variant cards; the error-prone machinery (the @property
+   registration + the two keyframes + the ring colour/glow) lives here so both
+   consume ONE source.
+
+   Usage:
+     • Bounce — `animation: glass-spring-bounce <dur> <easing> both;` on the
+       tile/clip. Tune the variant via --gsb-lift (apex rise, default -10px)
+       and --gsb-start-scale (initial scale, default 1).
+     • Ring — a ::before/::after with `inset: -3px; padding: 3px;` a mask that
+       cuts the centre (mask-composite: exclude), `filter:
+       var(--glass-orbital-ring-filter);` and `animation: glass-orbital-tracer
+       <dur> <easing> both;`. The conic-gradient itself stays inline in the
+       consumer (referencing --glass-orbital-angle + --glass-ring-color) so the
+       @property-driven angle animation resolves directly with no var-in-var
+       indirection. Tint via --glass-ring-color (default Bright Teal). */
+@property --glass-orbital-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+.laightup-management {
+  --glass-ring-color: var(--ci-accent-loud, #04d9d9);
+  --glass-orbital-ring-filter:
+    drop-shadow(0 0 4px var(--glass-ring-color))
+    drop-shadow(0 0 12px var(--glass-ring-color));
+}
+@keyframes glass-spring-bounce {
+  /* Anticipation — squash before launch */
+  0% {
+    transform: translateY(0) scale(var(--gsb-start-scale, 1));
+  }
+  12.5% {
+    transform: translateY(0) scaleX(1.05) scaleY(0.93);
+  }
+  /* Launch — lift + grow */
+  41.7% {
+    transform: translateY(var(--gsb-lift, -10px)) scaleX(1.06) scaleY(1.06);
+  }
+  /* Apex — held briefly */
+  48% {
+    transform: translateY(var(--gsb-lift, -10px)) scaleX(1.06) scaleY(1.06);
+  }
+  /* Drop — fall + slight stretch */
+  77.2% {
+    transform: translateY(0) scaleX(0.96) scaleY(1.04);
+  }
+  /* Settle — rebound to rest */
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes glass-orbital-tracer {
+  0% {
+    --glass-orbital-angle: 0deg;
+    opacity: 0;
+  }
+  22% {
+    opacity: 1;
+  }
+  78% {
+    opacity: 1;
+  }
+  100% {
+    --glass-orbital-angle: 360deg;
+    opacity: 0;
+  }
+}
+
+/* ── Archived / historical read-only preview ──────────────────────────────
+   Desaturates + slightly flattens a surface so a frozen snapshot (e.g. the
+   planner while viewing a past version) reads as "not the live thing". Pairs
+   with a banner + read-only state. The consumer keeps `transition: filter …`
+   on the base element so applying/removing the class animates both ways. */
+@layer component {
+  .glass-archived {
+    filter: var(--glass-filter-archived);
+  }
+}
+
+/* ── Ambient idle-motion gate ─────────────────────────────────────────────
+   Decorative loops marked `data-ambient-motion` freeze once <GlassAmbientMotionGate />
+   flags the user as idle. A single running CSS animation keeps Chromium's frame
+   pipeline awake at the display refresh rate — measured 16-21% of a CPU core for
+   ONE 10px pulsing dot, 0.0% for none — so idle motion must reach exactly zero,
+   not merely be reduced. Pausing preserves the keyframe position — right for
+   symmetric pulses; one-way gradient sweeps are instead PARKED off-screen in
+   the app registry (index.css), because a paused sweep freezes as a visible
+   streak.
+   Unlayered on purpose: this must beat component rules without a specificity war. */
+.laightup-management[data-user-idle='true'] [data-ambient-motion],
+.laightup-management[data-user-idle='true'] [data-ambient-motion]::before,
+.laightup-management[data-user-idle='true'] [data-ambient-motion]::after,
+.laightup-management[data-user-idle='true'] [data-ambient-motion] *,
+.laightup-management[data-user-idle='true'] [data-ambient-motion] *::before,
+.laightup-management[data-user-idle='true'] [data-ambient-motion] *::after {
+  animation-play-state: paused !important;
+}
+
+/* The library's own ambient loops, registered against the same gate. These are
+   decorative and always-on (unlike spinners / skeletons / indeterminate
+   progress, which signal real in-flight work and must keep moving). */
+.laightup-management[data-user-idle='true'] .glass-status-dot--pulse::after,
+.laightup-management[data-user-idle='true'] .glass-crystal-rim,
+.laightup-management[data-user-idle='true'] .glass-crystal-table,
+.laightup-management[data-user-idle='true'] .glass-presence-crystal-float,
+.laightup-management[data-user-idle='true'] .glass-presence-crystal-avatar::after,
+.laightup-management[data-user-idle='true'] .glass-journey-pill.active::before,
+.laightup-management[data-user-idle='true'] .glass-journey-pill.active::after,
+.laightup-management[data-user-idle='true'] .glass-journey-crystal.active .glass-journey-gem .g-veins path,
+.laightup-management[data-user-idle='true'] .glass-journey-crystal.active .glass-journey-gem .g-core,
+.laightup-management[data-user-idle='true'] .glass-journey-crystal.active .glass-journey-gem .g-halo,
+.laightup-management[data-user-idle='true'] .glass-journey-crystal.active .glass-journey-gem .g-rim {
+  animation-play-state: paused !important;
+}
+/* GlassProgress is deliberately NOT gated: its shimmer is the documented
+   "still working" signal (see GlassProgress.css — it only stops at
+   --complete), and waiting motionless on a progress bar is the normal case. */

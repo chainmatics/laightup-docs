@@ -1,0 +1,222 @@
+/* GlassTextarea.css — multi-line input sibling of GlassInput.
+
+   Same hue family + tone system as GlassInput (248° day; night moonlight 242°
+   default / brand 248°), same focus ring, just adapted for a multi-line
+   surface: explicit padding on all four sides, min-height for usability,
+   vertical resize affordance. */
+
+@layer component {
+  .glass-textarea {
+    appearance: none;
+    width: 100%;
+    min-height: 60px;
+    padding: 8px 10px;
+    border: 1px solid hsl(0 0% 100% / 0.45);
+    border-radius: 10px;
+    /* Night-mode violet hue: moonlight 242° default, brand 248° via tone (same
+       system as GlassInput). Replaces the old 258° drift. */
+    --glass-input-night-h: 242;
+    background: hsl(248 55% 96% / 0.55);
+    color: hsl(230 25% 15%);
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.005em;
+    outline: 0;
+    resize: vertical;
+    /* Scrollbar matches the GlassScrollArea `subtle` violet rail (262° family). */
+    --glass-textarea-scroll-thumb: hsl(262 42% 62% / 0.34);
+    --glass-textarea-scroll-thumb-hover: hsl(262 48% 62% / 0.48);
+    --glass-textarea-scroll-track: hsl(258 28% 60% / 0.12);
+    scrollbar-width: thin;
+    scrollbar-color: var(--glass-textarea-scroll-thumb)
+      var(--glass-textarea-scroll-track);
+    backdrop-filter: blur(12px) saturate(1.3);
+    box-shadow:
+      0 2px 8px hsl(0 0% 0% / 0.05),
+      inset 0 1px 0 hsl(0 0% 100% / 0.55);
+    transition:
+      background 150ms ease,
+      border-color 150ms ease,
+      box-shadow 150ms ease;
+  }
+
+  /* One 21px line (0.875rem x 1.5) + 2 x 8.5px padding + 2px border = 40px. */
+  .glass-textarea--sm {
+    box-sizing: border-box;
+    min-height: 40px;
+    padding: 8.5px 12px;
+    resize: none;
+  }
+
+  .glass-textarea--auto-grow {
+    box-sizing: border-box;
+    field-sizing: content;
+    max-height: var(--glass-textarea-max-height, 160px);
+    overflow-y: auto;
+    resize: none;
+  }
+  /* field-sizing sizes an empty field from its placeholder, so a long one must not wrap. */
+  .glass-textarea--auto-grow::placeholder {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .glass-textarea:hover {
+    scrollbar-color: var(--glass-textarea-scroll-thumb-hover)
+      var(--glass-textarea-scroll-track);
+  }
+
+  /* Fallback for engines without scrollbar-color (Safari); Chromium uses the standard props. */
+  .glass-textarea::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .glass-textarea::-webkit-scrollbar-track {
+    margin-block: 6px;
+    border-radius: 999px;
+    background: var(--glass-textarea-scroll-track);
+  }
+  .glass-textarea::-webkit-scrollbar-thumb {
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: var(--glass-textarea-scroll-thumb);
+    background-clip: padding-box;
+  }
+  .glass-textarea::-webkit-scrollbar-thumb:hover {
+    background: var(--glass-textarea-scroll-thumb-hover);
+    background-clip: padding-box;
+  }
+  .glass-textarea::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  /* Glass resize grip (Chromium/Safari); Firefox has no resizer pseudo and keeps its native one. */
+  .glass-textarea::-webkit-resizer {
+    background: linear-gradient(
+      135deg,
+      transparent 0 48%,
+      var(--glass-text-subtle) 48% 56%,
+      transparent 56% 68%,
+      var(--glass-text-subtle) 68% 76%,
+      transparent 76%
+    );
+    border-bottom-right-radius: 10px;
+  }
+
+  .glass-textarea::placeholder {
+    color: currentColor;
+    opacity: 0.45;
+  }
+
+  .glass-textarea:focus {
+    background: hsl(248 50% 93% / 0.7);
+    border-color: hsl(
+      var(--theme-h, 268) var(--theme-s, 70%) var(--theme-l, 62%) / 0.5
+    );
+    box-shadow:
+      0 0 0 2px hsl(0 0% 100% / 0.9),
+      0 0 0 4px
+        hsl(var(--theme-h, 268) var(--theme-s, 70%) var(--theme-l, 62%) / 0.6),
+      inset 0 1px 0 hsl(0 0% 100% / 0.65);
+  }
+
+  .glass-textarea:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    resize: none;
+  }
+
+  .glass-textarea[aria-invalid='true'] {
+    border-color: hsl(4 80% 60% / 0.7);
+    box-shadow:
+      0 0 0 2px hsl(4 80% 60% / 0.18),
+      inset 0 1px 0 hsl(0 0% 100% / 0.55);
+  }
+
+  /* `tone="brand"` → warmer CI Bright Violet (248°) for night; default is the
+     moonlight-cooled 242° (see GlassInput). */
+  .glass-textarea[data-tone='brand'] {
+    --glass-input-night-h: 248;
+  }
+
+  /* ── Night mode — deep violet recess (moonlight 242° / brand 248°) ── */
+
+  .laightup-management[data-mode='night'] .glass-textarea {
+    background: hsl(var(--glass-input-night-h, 242) 50% 22% / 0.55);
+    backdrop-filter: blur(14px) saturate(0.9);
+    border-color: hsl(210 25% 85% / 0.15);
+    box-shadow:
+      0 2px 8px hsl(235 45% 6% / 0.3),
+      inset 0 1px 0 hsl(210 25% 92% / 0.1);
+    color: hsl(215 20% 94%);
+    --glass-textarea-scroll-thumb: hsl(260 45% 64% / 0.26);
+    --glass-textarea-scroll-thumb-hover: hsl(260 50% 64% / 0.42);
+    --glass-textarea-scroll-track: hsl(258 35% 16% / 0.3);
+  }
+
+  .laightup-management[data-mode='night'] .glass-textarea::placeholder {
+    color: hsl(215 20% 94%);
+    opacity: 0.4;
+  }
+
+  .laightup-management[data-mode='night'] .glass-textarea:focus {
+    background: hsl(var(--glass-input-night-h, 242) 55% 26% / 0.7);
+    border-color: hsl(
+      var(--theme-h, 260) var(--theme-s, 52%) var(--theme-l, 68%) / 0.5
+    );
+    box-shadow:
+      0 0 0 2px hsl(210 25% 92% / 0.9),
+      0 0 0 4px
+        hsl(var(--theme-h, 260) var(--theme-s, 52%) var(--theme-l, 68%) / 0.6),
+      inset 0 1px 0 hsl(210 25% 92% / 0.15);
+  }
+
+  .laightup-management[data-mode='night'] .glass-textarea[aria-invalid='true'] {
+    border-color: hsl(4 80% 62% / 0.65);
+    box-shadow:
+      0 0 0 2px hsl(4 80% 62% / 0.2),
+      inset 0 1px 0 hsl(210 25% 92% / 0.1);
+  }
+
+  /* ── Elevated variant (mirrors GlassInput) ── */
+  .glass-textarea--elevated {
+    --glass-textarea-scroll-thumb: hsl(262 45% 60% / 0.42);
+    --glass-textarea-scroll-thumb-hover: hsl(262 50% 58% / 0.56);
+    background: hsl(248 55% 97% / 0.78);
+    border-color: hsl(0 0% 100% / 0.55);
+    box-shadow:
+      0 3px 9px hsl(260 40% 18% / 0.1),
+      0 1px 2px hsl(260 40% 18% / 0.06),
+      inset 0 1px 0 hsl(0 0% 100% / 0.6);
+  }
+  .glass-textarea--elevated:focus {
+    background: hsl(248 55% 98% / 0.9);
+    box-shadow:
+      0 0 0 2px hsl(0 0% 100% / 0.9),
+      0 0 0 4px
+        hsl(var(--theme-h, 268) var(--theme-s, 70%) var(--theme-l, 62%) / 0.6),
+      0 3px 9px hsl(260 40% 18% / 0.1),
+      inset 0 1px 0 hsl(0 0% 100% / 0.6);
+  }
+  .laightup-management[data-mode='night'] .glass-textarea--elevated {
+    --glass-textarea-scroll-thumb: hsl(260 48% 66% / 0.32);
+    --glass-textarea-scroll-thumb-hover: hsl(260 52% 66% / 0.48);
+    background: hsl(var(--glass-input-night-h, 242) 50% 25% / 0.65);
+    border-color: hsl(210 25% 85% / 0.18);
+    box-shadow:
+      0 3px 9px hsl(235 45% 6% / 0.35),
+      0 1px 2px hsl(235 45% 6% / 0.25),
+      inset 0 1px 0 hsl(210 25% 92% / 0.12);
+  }
+  .laightup-management[data-mode='night'] .glass-textarea--elevated:focus {
+    box-shadow:
+      0 0 0 2px hsl(210 25% 92% / 0.9),
+      0 0 0 4px
+        hsl(var(--theme-h, 260) var(--theme-s, 52%) var(--theme-l, 68%) / 0.6),
+      0 3px 9px hsl(235 45% 6% / 0.35),
+      inset 0 1px 0 hsl(210 25% 92% / 0.12);
+  }
+}
